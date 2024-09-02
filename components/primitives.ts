@@ -6,7 +6,7 @@ export const title = tv({
     color: {
       violet: "from-[#FF1CF7] to-[#b249f8]",
       yellow: "from-[#FF705B] to-[#FFB457]",
-      blue: "from-[#5EA2EF] to-[#0072F5]",
+      blue: "text-[#3E68FD]",  // Updated to use the solid color
       cyan: "from-[#00b7fa] to-[#01cfea]",
       green: "from-[#6FEE8D] to-[#17c964]",
       pink: "from-[#FF72E1] to-[#F54C7A]",
@@ -29,13 +29,16 @@ export const title = tv({
       color: [
         "violet",
         "yellow",
-        "blue",
         "cyan",
         "green",
         "pink",
         "foreground",
       ],
       class: "bg-clip-text text-transparent bg-gradient-to-b",
+    },
+    {
+      color: "blue",
+      class: "text-[#3E68FD]",  // Apply the solid color to blue variant
     },
   ],
 });

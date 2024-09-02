@@ -29,7 +29,7 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-          <Image
+            <Image
               src={uxlogo}
               alt="UX Club Logo"
               width={48} // Adjusted width
@@ -76,7 +76,7 @@ export const Navbar = () => {
           <Button
             isExternal
             as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
+            className="text-sm font-normal text-white bg-blue-500 hover:bg-blue-600"
             href={siteConfig.links.sponsor}
             variant="flat"
           >
