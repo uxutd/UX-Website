@@ -1,5 +1,7 @@
 import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,7 +12,6 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center w-full max-w-3xl text-center p-2 leading-tight">
         <div
           className={cn(
-            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 w-64"
+            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 w-64",
           )}
         >
           <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out duration-300 hover:text-neutral-600 dark:hover:text-neutral-400">
@@ -45,7 +46,7 @@ export default function Home() {
               radius: "full",
               variant: "shadow",
             }),
-            "bg-blue-500 hover:bg-blue-600 shadow-none" // Ensure no shadow
+            "bg-blue-500 hover:bg-blue-600 shadow-none", // Ensure no shadow
           )}
           href={siteConfig.links.docs}
         >
@@ -61,10 +62,10 @@ export default function Home() {
             Creating Events that Excel Your Career
           </h3>
           <Carousel
+            className="w-full max-w-sm"
             opts={{
               align: "start",
             }}
-            className="w-full max-w-sm"
           >
             <CarouselContent>
               {Array.from({ length: 5 }).map((_, index) => (

@@ -13,15 +13,12 @@ import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
-import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-} from "@/components/icons";
 
 import uxlogo from "../public/UX_Color_Logo.png"; // Correct image import
+
+import { siteConfig } from "@/config/site";
+import { ThemeSwitch } from "@/components/theme-switch";
+import { TwitterIcon, GithubIcon, DiscordIcon } from "@/components/icons";
 
 export const Navbar = () => {
   return (
@@ -30,12 +27,12 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Image
-              src={uxlogo}
               alt="UX Club Logo"
-              width={48} // Adjusted width
+              className="rounded-sm" // Optional: rounded corners for a polished look
               height={48} // Adjusted height
               quality={100} // High-quality image rendering
-              className="rounded-sm" // Optional: rounded corners for a polished look
+              src={uxlogo}
+              width={48} // Adjusted width
             />
           </NextLink>
         </NavbarBrand>
