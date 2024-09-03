@@ -1,24 +1,20 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 
-import { Calendar } from "@/components/ui/calendar"
-
-import { title } from "@/components/primitives";
+import { Calendar } from "@/components/ui/calendar";
 
 export default function CalendarPage() {
+  const [date, setDate] = React.useState<Date | undefined>(new Date());
 
-    const [date, setDate] = React.useState<Date | undefined>(new Date())
-
-    return (
-        <div>
-            <Calendar
-                mode="single"
-                selected={date}
-                onSelect={setDate}
-                className="rounded-md border shadow"
-            />
-        </div>
-
-    );
+  return (
+    <div>
+      <Calendar
+        className="rounded-md border shadow"
+        mode="single"
+        selected={date}
+        onSelect={setDate}
+      />
+    </div>
+  );
 }
