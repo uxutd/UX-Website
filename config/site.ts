@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "User Experience Club at UT Dallas",
+  description: "Spreading user experience awareness since 2014",
   navItems: [
     {
       label: "Home",
@@ -14,52 +14,34 @@ export const siteConfig = {
     },
     {
       label: "Events",
-      href: "/pricing",
-    },
-    {
-      label: "Calendar",
-      href: "/blog",
-    },
-  ],
-  navMenuItems: [
-    {
-      label: "Profile",
-      href: "/profile",
-    },
-    {
-      label: "Dashboard",
-      href: "/dashboard",
-    },
-    {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Team",
-      href: "/team",
+      href: "/events",
     },
     {
       label: "Calendar",
       href: "/calendar",
     },
+  ],
+  navMenuItems: [
     {
-      label: "Settings",
-      href: "/settings",
+      label: "Home",
+      href: "/",
     },
     {
-      label: "Help & Feedback",
-      href: "/help-feedback",
+      label: "About",
+      href: "/about",
     },
     {
-      label: "Logout",
-      href: "/logout",
+      label: "Events",
+      href: "/events",
+    },
+    {
+      label: "Calendar",
+      href: "/calendar",
     },
   ],
   links: {
-    github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui.org",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    instagram: "https://www.instagram.com/ux_utd/",
+    linkedin: "",
+    discord: "https://discord.gg/PSVMTuzh",
   },
 };
