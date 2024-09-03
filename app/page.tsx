@@ -1,6 +1,7 @@
 import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
+
 import { Footer } from "@/components/footer";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
@@ -18,7 +19,7 @@ export default function Home() {
     <section className="flex flex-col items-center justify-center gap-4">
       <div className="flex flex-col items-center justify-center w-full max-w-3xl text-center p-2 leading-tight">
         <AnimatedShinyText />
-        <h1 className={title({ color: "blue" }) }>
+        <h1 className={title({ color: "blue" })}>
           We help design the future by empowering UT Dallas students through
           user-centric design
         </h1>
@@ -79,32 +80,46 @@ export default function Home() {
       <section>
         <div className="flex p-6 pt-12">
           <div className="flex-1 pr-6">
-            <h2 className="text-3xl font-bold text-blue-600 mb-4">Our Highlights</h2>
+            <h2 className="text-3xl font-bold text-blue-600 mb-4">
+              Our Highlights
+            </h2>
             <p className="text-gray-700 mb-4">
-              Our mission is to spread awareness about user centered design. Based at the University of Texas at Dallas, we welcome anyone in the DFW area to attend our beginner friendly events. Look out for our annual Conference and Design Challenge!
+              Our mission is to spread awareness about user centered design.
+              Based at the University of Texas at Dallas, we welcome anyone in
+              the DFW area to attend our beginner friendly events. Look out for
+              our annual Conference and Design Challenge!
             </p>
           </div>
           <div className="flex-1">
             <img
-              src="/api/placeholder/400/300"
-              alt="Event photo"
+              alt="Event"
               className="w-full h-auto rounded-lg"
+              src="/api/placeholder/400/300"
             />
           </div>
         </div>
         <div className="flex p-6 px-12 pt-12">
           <div className="flex-1">
-            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">27+ <br />Sponsors</h1>
+            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+              27+ <br />
+              Sponsors
+            </h1>
           </div>
           <div className="flex-1">
-            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">50+ <br />Events</h1>
+            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+              50+ <br />
+              Events
+            </h1>
           </div>
           <div className="flex-1">
-            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">1000+ <br />Attendees</h1>
+            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+              1000+ <br />
+              Attendees
+            </h1>
           </div>
         </div>
       </section>
-          <Footer />
+      <Footer />
     </section>
   );
 }
