@@ -16,10 +16,6 @@ export const siteConfig = {
       label: "Events",
       href: "/events",
     },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
   ],
   navMenuItems: [
     {
@@ -34,14 +30,12 @@ export const siteConfig = {
       label: "Events",
       href: "/events",
     },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
   ],
   links: {
     instagram: "https://www.instagram.com/ux_utd/",
     linkedin: "",
     discord: "https://discord.gg/PSVMTuzh",
+    github: "",
+    sponsor: "",
   },
 };

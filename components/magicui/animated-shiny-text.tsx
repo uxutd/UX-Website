@@ -1,4 +1,5 @@
 import { CSSProperties, FC, ReactNode } from "react";
+
 import { cn } from "@/lib/utils";
 
 interface AnimatedShinyTextProps {
@@ -20,7 +21,7 @@ const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
         // Shimmer effect and gradient
         "[background-position:0_0] [background-size:var(--shimmer-width)_100%] transition-[background-position_1s_cubic-bezier(.6,.6,0,1)_infinite]",
         "bg-gradient-to-r from-transparent via-black/80 via-50% to-transparent dark:via-white/80",
-        className
+        className,
       )}
       style={
         {

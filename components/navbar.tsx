@@ -18,8 +18,7 @@ import uxlogo from "../public/UX_Color_Logo.png"; // Correct image import
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { TwitterIcon, GithubIcon, DiscordIcon } from "@/components/icons";
-
+import { GithubIcon, DiscordIcon } from "@/components/icons";
 export const Navbar = () => {
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
@@ -58,9 +57,6 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
-          </Link>
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500" />
           </Link>
