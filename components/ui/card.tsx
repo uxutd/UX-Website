@@ -35,10 +35,6 @@ const CardTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, children, ...props }, ref) => {
-  if (!children) {
-    console.warn("CardTitle component is missing content.");
-  }
-
   return (
     <h3
       ref={ref}

@@ -18,8 +18,7 @@ import uxlogo from "../public/UX_Color_Logo.png"; // Correct image import
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { TwitterIcon, GithubIcon, DiscordIcon } from "@/components/icons";
-
+import { GithubIcon, DiscordIcon } from "@/components/icons";
 export const Navbar = () => {
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
@@ -58,9 +57,6 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
-          </Link>
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500" />
           </Link>
@@ -94,17 +90,7 @@ export const Navbar = () => {
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
-                href={item.href}
-                size="lg"
-              >
+              <Link href={item.href} size="lg">
                 {item.label}
               </Link>
             </NavbarMenuItem>

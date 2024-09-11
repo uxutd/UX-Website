@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "User Experience Club at UT Dallas",
+  description: "Spreading user experience awareness since 2014",
   navItems: [
     {
       label: "Home",
@@ -14,52 +14,28 @@ export const siteConfig = {
     },
     {
       label: "Events",
-      href: "/pricing",
-    },
-    {
-      label: "Calendar",
-      href: "/blog",
+      href: "/events",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Home",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "About",
+      href: "/about",
     },
     {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Team",
-      href: "/team",
-    },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Events",
+      href: "/events",
     },
   ],
   links: {
-    github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui.org",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    instagram: "https://www.instagram.com/ux_utd/",
+    linkedin: "",
+    discord: "https://discord.gg/PSVMTuzh",
+    github: "",
+    sponsor: "",
   },
 };

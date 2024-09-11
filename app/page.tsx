@@ -2,6 +2,7 @@ import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 
+import { Footer } from "@/components/footer";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,18 +16,17 @@ import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+    <section className="flex flex-col items-center justify-center gap-4">
       <div className="flex flex-col items-center justify-center w-full max-w-3xl text-center p-2 leading-tight">
         <div
           className={cn(
-            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 w-64",
+            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 mb-4",
           )}
         >
-          <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out duration-300 hover:text-neutral-600 dark:hover:text-neutral-400">
-            <span>The UX Club @ UT Dallas</span>
+          <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+            <span>User Experience Club @ UT Dallas</span>
           </AnimatedShinyText>
         </div>
-
         <h1 className={title({ color: "blue" })}>
           We help design the future by empowering UT Dallas students through
           user-centric design
@@ -36,7 +36,6 @@ export default function Home() {
         </h2>
       </div>
 
-      {/* Centering the button */}
       <div className="flex justify-center w-full mt-4">
         <Link
           isExternal
@@ -46,23 +45,22 @@ export default function Home() {
               radius: "full",
               variant: "shadow",
             }),
-            "bg-blue-500 hover:bg-blue-600 shadow-none", // Ensure no shadow
+            "bg-blue-500 hover:bg-blue-600 shadow-none",
           )}
-          href={siteConfig.links.docs}
+          href={siteConfig.links.discord}
         >
           Learn More
           <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
         </Link>
       </div>
 
-      {/* New Carousel Section */}
-      <section className="w-full py-8 bg-gray-100 dark:bg-gray-800 rounded-lg mt-8">
-        <div className="flex flex-col items-center justify-center max-w-3xl mx-auto p-4">
-          <h3 className="text-xl font-semibold text-center mb-6 text-gray-900 dark:text-gray-100">
+      <section className="w-[100vw] sm:w-[70vw] py-16 dark:bg-gray-800 bg-[#0c1533] rounded-3xl mt-8 overflow-hidden">
+        <div className="flex flex-col items-center justify-centermax-w-3xl mx-auto">
+          <h1 className="text-3xl lg:text-md text-white font-semibold text-center mb-6 text-gray-900 dark:text-gray-100">
             Creating Events that Excel Your Career
-          </h3>
+          </h1>
           <Carousel
-            className="w-full max-w-sm"
+            className="w-[100vw] sm:w-[80vw]"
             opts={{
               align: "start",
             }}
@@ -71,8 +69,8 @@ export default function Home() {
               {Array.from({ length: 5 }).map((_, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
-                    <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6 text-gray-900 dark:text-gray-100">
+                    <Card className="bg-white">
+                      <CardContent className="flex h-[12rem] items-center justify-center p-6 text-gray-900 dark:text-gray-100">
                         <span className="text-3xl font-semibold">
                           {index + 1}
                         </span>
@@ -85,6 +83,49 @@ export default function Home() {
           </Carousel>
         </div>
       </section>
+      <section>
+        <div className="flex p-6 pt-12">
+          <div className="flex-1 pr-6">
+            <h2 className="text-3xl font-bold text-blue-600 mb-4">
+              Our Highlights
+            </h2>
+            <p className="text-gray-700 mb-4">
+              Our mission is to spread awareness about user-centered design.
+              Based at the University of Texas at Dallas, we welcome anyone in
+              the DFW area to attend our beginner-friendly events. Look out for
+              our annual Conference and Design Challenge!
+            </p>
+          </div>
+          <div className="flex-1">
+            <img
+              alt="Event"
+              className="w-full h-auto rounded-lg"
+              src="/api/placeholder/400/300"
+            />
+          </div>
+        </div>
+        <div className="flex p-6 px-12 pt-12">
+          <div className="flex-1">
+            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+              27+ <br />
+              Sponsors
+            </h1>
+          </div>
+          <div className="flex-1">
+            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+              50+ <br />
+              Events
+            </h1>
+          </div>
+          <div className="flex-1">
+            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+              1000+ <br />
+              Attendees
+            </h1>
+          </div>
+        </div>
+      </section>
+      <Footer />
     </section>
   );
 }
