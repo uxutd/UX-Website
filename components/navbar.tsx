@@ -14,7 +14,7 @@ import NextLink from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
 
-import uxlogo from "../public/UX_Color_Logo.png"; // Correct image import
+import uxlogo from "../public/UX_Color_Logo.svg"; // Correct image import
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -35,7 +35,7 @@ export const Navbar = () => {
             />
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
+        <ul className="hidden lg:flex gap-4 justify-center ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
