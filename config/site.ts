@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "User Experience Club at UT Dallas",
+  name: "UX Club",
   description: "Spreading user experience awareness since 2014",
   navItems: [
     {
