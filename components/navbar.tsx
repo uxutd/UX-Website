@@ -18,6 +18,7 @@ import clsx from "clsx";
 import { usePathname } from "next/navigation"; // Use usePathname from next/navigation
 
 import uxlogo from "../public/UX_Color_Logo.svg"; // Correct image import
+
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon, DiscordIcon } from "@/components/icons";
@@ -53,7 +54,7 @@ export const Navbar = () => {
                   "data-[active=true]:font-medium",
                   pathname === item.href
                     ? "text-primary font-bold" // Active link styling
-                    : "hover:text-primary transition-colors"
+                    : "hover:text-primary transition-colors",
                 )}
                 href={item.href}
               >

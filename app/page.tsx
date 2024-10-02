@@ -22,10 +22,10 @@ export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 ">
       <div className="flex flex-col items-center justify-center w-full max-w-3xl text-center p-2 leading-tight pt-12">
-        <div className="flex absolute top-[10vw] left-[-10vw]">
+        <div className="flex absolute top-[10vw] left-[-10vw] hidden lg:flex">
           <Image alt="UX Club" height={450} src="/Arrow.png" width={450} />
         </div>
-        <div className="flex absolute top-[10vw] right-[-10vw]">
+        <div className="flex absolute top-[10vw] right-[-10vw] hidden lg:flex">
           <Image alt="UX Club" height={450} src="/Pixie.png" width={450} />
         </div>
         <BlurFade blur="30px" duration={3}>
@@ -47,7 +47,7 @@ export default function Home() {
             />
             <BlurFade delay={3}>
               <h2 className={subtitle({ class: "mt-4" })}>
-                630+ Members, 50+ Sponsors, 100+ Events
+                More than just a pretty interface!
               </h2>
             </BlurFade>
           </div>
@@ -73,7 +73,7 @@ export default function Home() {
       </div>
 
       <section className="w-[100vw] sm:w-[70vw] py-16 dark:bg-gray-800 bg-[#0c1533] rounded-3xl mt-12 overflow-hidden">
-        <div className="flex flex-col items-center justify-centermax-w-3xl mx-auto">
+        <div className="flex flex-col items-center justify-center max-w-3xl mx-auto">
           <h1 className="text-3xl lg:text-md text-white font-semibold text-center mb-6 text-gray-900 dark:text-gray-100">
             Creating Events that Excel Your Career
           </h1>
@@ -107,8 +107,8 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className="flex p-6 pt-12">
-          <div className="flex-1 pr-6">
+        <div className="flex flex-col md:flex-row p-6 pt-12">
+          <div className="flex-1 pr-6 mb-6 md:mb-0">
             <h2 className="text-3xl font-bold text-blue-600 mb-4">
               Our Highlights
             </h2>
@@ -127,22 +127,22 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="flex p-6 px-12 pt-12">
-          <div className="flex-1">
+        <div className="flex flex-col md:flex-row p-6 px-12 pt-12">
+          <div className="flex-1 mb-6 md:mb-0">
             <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
               <NumberTicker className="text-blue-600" value={27} />+
               <br />
               Sponsors
             </h1>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 mb-6 md:mb-0">
             <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
               <NumberTicker className="text-blue-600" value={50} />+
               <br />
               Events
             </h1>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 mb-6 md:mb-0">
             <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
               <NumberTicker className="text-blue-600" value={1000} />+
               <br />
