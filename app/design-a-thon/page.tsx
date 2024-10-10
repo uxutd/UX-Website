@@ -17,8 +17,7 @@ import { subtitle } from "@/components/primitives";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern";
 
-export default function DesignPnpx shadcn@latest add "https://magicui.design/r/dot-pattern"
-age() {
+export default function DesignPage() {
   // FAQ data
   const faqs = [
     {
@@ -34,7 +33,7 @@ age() {
     {
       question: "How do I register?",
       answer:
-        "You can register by clicking the 'Register Now' button on this page.",
+        'You can register by clicking the "Register Now" button on this page.',
     },
     {
       question: "Will there be prizes?",
@@ -87,7 +86,7 @@ age() {
           What is UXPerience: The First Draft?
         </h1>
         <p className="text-base md:text-lg mb-2">
-          &quot;UXPerience: The First Draft&quot; is a one of a kind
+          &quot;UXPerience: The First Draft&quot; is a one-of-a-kind
           design-a-thon aimed at fostering creativity and innovation in the
           field of User Experience (UX) Design. In this intense 24-hour event,
           participants will work on a design project from scratch, collaborating
