@@ -22,12 +22,12 @@ export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 ">
       <div className="flex flex-col items-center justify-center w-full max-w-3xl text-center p-2 leading-tight pt-12">
-          <div className="flex absolute top-[10vw] left-[-10vw]">
-            <Image alt="UX Club" height={450} src="/Arrow.png" width={450} />
-          </div>
-          <div className="flex absolute top-[10vw] right-[-10vw]">
-            <Image alt="UX Club" height={450} src="/Pixie.png" width={450} />
-          </div>
+        <div className="flex absolute top-[10vw] left-[-10vw]">
+          <Image alt="UX Club" height={450} src="/Arrow.png" width={450} />
+        </div>
+        <div className="flex absolute top-[10vw] right-[-10vw]">
+          <Image alt="UX Club" height={450} src="/Pixie.png" width={450} />
+        </div>
         <BlurFade blur="30px" duration={2}>
           <div
             className={cn(

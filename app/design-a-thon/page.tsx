@@ -17,7 +17,8 @@ import { subtitle } from "@/components/primitives";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern";
 
-export default function DesignPage() {
+export default function DesignPnpx shadcn@latest add "https://magicui.design/r/dot-pattern"
+age() {
   // FAQ data
   const faqs = [
     {
