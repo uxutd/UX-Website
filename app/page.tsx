@@ -47,7 +47,7 @@ export default function Home() {
             />
             <BlurFade delay={2}>
               <h2 className={subtitle({ class: "mt-4" })}>
-                630+ Members, 50+ Sponsors, 100+ Events
+                More than just a pretty interface!
               </h2>
             </BlurFade>
           </div>
@@ -115,14 +115,14 @@ export default function Home() {
               Sponsors
             </h1>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 mb-6 md:mb-0">
             <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
               <NumberTicker className="text-blue-600" value={114} />+
               <br />
               Events
             </h1>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 mb-6 md:mb-0">
             <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
               <NumberTicker className="text-blue-600" value={1082} />+
               <br />

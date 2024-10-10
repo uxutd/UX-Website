@@ -1,3 +1,5 @@
+"use client"; // This makes the component a client component
+
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -13,13 +15,17 @@ import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
+import { usePathname } from "next/navigation"; // Use usePathname from next/navigation
 
 import uxlogo from "../public/UX_Color_Logo.svg"; // Correct image import
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon, DiscordIcon } from "@/components/icons";
+
 export const Navbar = () => {
+  const pathname = usePathname(); // Get the current pathname
+
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -27,23 +33,29 @@ export const Navbar = () => {
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Image
               alt="UX Club Logo"
-              className="rounded-sm" // Optional: rounded corners for a polished look
-              height={48} // Adjusted height
-              quality={100} // High-quality image rendering
+              className="rounded-sm"
+              height={48}
+              quality={100}
               src={uxlogo}
-              width={48} // Adjusted width
+              width={48}
             />
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden lg:flex gap-4 justify-center ml-2">
+      </NavbarContent>
+
+      {/* Centered Navigation Links */}
+      <NavbarContent className="hidden lg:flex justify-center basis-full">
+        <ul className="flex gap-4 justify-center items-center mx-auto w-full max-w-md">
           {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
+            <NavbarItem key={item.href} className="w-full text-center">
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  "data-[active=true]:font-medium",
+                  pathname === item.href
+                    ? "text-primary font-bold" // Active link styling
+                    : "hover:text-primary transition-colors",
                 )}
-                color="foreground"
                 href={item.href}
               >
                 {item.label}
@@ -52,6 +64,7 @@ export const Navbar = () => {
           ))}
         </ul>
       </NavbarContent>
+
       <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
@@ -79,15 +92,15 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
+        <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
+          <DiscordIcon className="text-default-500" />
         </Link>
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
 
       <NavbarMenu>
-        <div className="mx-4 mt-2 flex flex-col gap-2">
+        <div className="mx-3 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link href={item.href} size="lg">
