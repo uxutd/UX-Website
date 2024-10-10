@@ -22,13 +22,13 @@ export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 ">
       <div className="flex flex-col items-center justify-center w-full max-w-3xl text-center p-2 leading-tight pt-12">
-        <div className="flex absolute top-[10vw] left-[-10vw] hidden lg:flex">
-          <Image alt="UX Club" height={450} src="/Arrow.png" width={450} />
-        </div>
-        <div className="flex absolute top-[10vw] right-[-10vw] hidden lg:flex">
-          <Image alt="UX Club" height={450} src="/Pixie.png" width={450} />
-        </div>
-        <BlurFade blur="30px" duration={3}>
+          <div className="flex absolute top-[10vw] left-[-10vw]">
+            <Image alt="UX Club" height={450} src="/Arrow.png" width={450} />
+          </div>
+          <div className="flex absolute top-[10vw] right-[-10vw]">
+            <Image alt="UX Club" height={450} src="/Pixie.png" width={450} />
+          </div>
+        <BlurFade blur="30px" duration={2}>
           <div
             className={cn(
               "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
@@ -45,7 +45,7 @@ export default function Home() {
               className="tracking-tight inline font-semibold text-[2.3rem] lg:text-5xl leading-9 text-[#3E68FD]"
               words="We help design the future by empowering UT Dallas students through user-centric design"
             />
-            <BlurFade delay={3}>
+            <BlurFade delay={2}>
               <h2 className={subtitle({ class: "mt-4" })}>
                 More than just a pretty interface!
               </h2>
@@ -72,9 +72,9 @@ export default function Home() {
         </Link>
       </div>
 
-      <section className="w-[100vw] sm:w-[70vw] py-16 dark:bg-gray-800 bg-[#0c1533] rounded-3xl mt-12 overflow-hidden">
-        <div className="flex flex-col items-center justify-center max-w-3xl mx-auto">
-          <h1 className="text-3xl lg:text-md text-white font-semibold text-center mb-6 text-gray-900 dark:text-gray-100">
+      <section className="w-[100vw] sm:w-[70vw] py-8 pb-14 dark:bg-gray-800 bg-[#0c1533] rounded-3xl mt-12 overflow-hidden">
+        <div className="flex flex-col items-center justify-centermax-w-3xl mx-auto">
+          <h1 className="text-3xl lg:text-md text-white font-semibold text-center mb-8 text-gray-900 dark:text-gray-100">
             Creating Events that Excel Your Career
           </h1>
           <Carousel
@@ -107,8 +107,31 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className="flex flex-col md:flex-row p-6 pt-12">
-          <div className="flex-1 pr-6 mb-6 md:mb-0">
+        <div className="flex p-6 px-12 pt-12">
+          <div className="flex-1">
+            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+              <NumberTicker className="text-blue-600" value={52} />+
+              <br />
+              Sponsors
+            </h1>
+          </div>
+          <div className="flex-1 mb-6 md:mb-0">
+            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+              <NumberTicker className="text-blue-600" value={114} />+
+              <br />
+              Events
+            </h1>
+          </div>
+          <div className="flex-1 mb-6 md:mb-0">
+            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+              <NumberTicker className="text-blue-600" value={1082} />+
+              <br />
+              Attendees
+            </h1>
+          </div>
+        </div>
+        <div className="flex p-12 pt-12">
+          <div className="flex-1 pr-6">
             <h2 className="text-3xl font-bold text-blue-600 mb-4">
               Our Highlights
             </h2>
@@ -125,29 +148,6 @@ export default function Home() {
               className="w-full h-auto rounded-lg"
               src="/highlights-pic.png"
             />
-          </div>
-        </div>
-        <div className="flex flex-col md:flex-row p-6 px-12 pt-12">
-          <div className="flex-1 mb-6 md:mb-0">
-            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
-              <NumberTicker className="text-blue-600" value={27} />+
-              <br />
-              Sponsors
-            </h1>
-          </div>
-          <div className="flex-1 mb-6 md:mb-0">
-            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
-              <NumberTicker className="text-blue-600" value={50} />+
-              <br />
-              Events
-            </h1>
-          </div>
-          <div className="flex-1 mb-6 md:mb-0">
-            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
-              <NumberTicker className="text-blue-600" value={1000} />+
-              <br />
-              Attendees
-            </h1>
           </div>
         </div>
       </section>
