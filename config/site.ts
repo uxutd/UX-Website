@@ -16,6 +16,10 @@ export const siteConfig = {
       label: "Events",
       href: "/events",
     },
+    {
+      label: "Design-a-thon",
+      href: "/design-a-thon",
+    },
   ],
   navMenuItems: [
     {
@@ -29,6 +33,10 @@ export const siteConfig = {
     {
       label: "Events",
       href: "/events",
+    },
+    {
+      label: "Design-a-thon",
+      href: "/design-a-thon",
     },
   ],
   links: {
