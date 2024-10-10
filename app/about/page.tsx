@@ -1,9 +1,9 @@
-import { title } from "@/components/primitives";
+"use client";
 
 export default function AboutPage() {
   return (
-    <div>
-      <h1 className={title()}>About</h1>
-    </div>
+    <section className="flex flex-col items-center justify-center gap-4">
+      <h1>Behind the pretty interface,</h1>
+    </section>
   );
 }

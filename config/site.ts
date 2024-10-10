@@ -13,6 +13,10 @@ export const siteConfig = {
       href: "/about",
     },
     {
+      label: "Design-a-thon",
+      href: "/design-a-thon",
+    },
+    {
       label: "Events",
       href: "/events",
     },
@@ -27,6 +31,10 @@ export const siteConfig = {
       href: "/about",
     },
     {
+      label: "Design-a-thon",
+      href: "/design-a-thon",
+    },
+    {
       label: "Events",
       href: "/events",
     },
@@ -37,5 +45,6 @@ export const siteConfig = {
     discord: "https://discord.gg/PSVMTuzh",
     github: "",
     sponsor: "",
+    register: "",
   },
 };
