@@ -3,7 +3,6 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 
-import { Footer } from "@/components/footer";
 import { siteConfig } from "@/config/site";
 import { subtitle } from "@/components/primitives";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,7 +19,7 @@ import BlurFade from "@/components/magicui/blur-fade";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 ">
+    <main className="flex flex-col items-center justify-center w-full flex-1 px-[10vw] pt-24 gap-4 text-center">
       <div className="flex flex-col items-center justify-center w-full max-w-3xl text-center p-2 leading-tight pt-12">
         <div className="flex absolute top-[10vw] left-[-10vw]">
           <Image alt="UX Club" height={450} src="/Arrow.png" width={450} />
@@ -130,8 +129,9 @@ export default function Home() {
             </h1>
           </div>
         </div>
+
         <div className="flex p-12 pt-12">
-          <div className="flex-1 pr-6">
+          <div className="flex-1 pr-6 text-left">
             <h2 className="text-3xl font-bold text-blue-600 mb-4">
               Our Highlights
             </h2>
@@ -151,7 +151,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer />
-    </section>
+    </main>
   );
 }
