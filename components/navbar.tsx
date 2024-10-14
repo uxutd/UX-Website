@@ -22,12 +22,24 @@ import uxlogo from "../public/UX_Color_Logo.svg"; // Correct image import
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon, DiscordIcon } from "@/components/icons";
+import { useEffect, useState } from "react";
 
 export const Navbar = () => {
   const pathname = usePathname(); // Get the current pathname
+  const [isVisible, setIsVisible] = useState(false); // State to control visibility
+
+  useEffect(() => {
+    // Fade-in effect
+    const timer = setTimeout(() => setIsVisible(true), 100); // Delay to allow for the transition
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
+    <NextUINavbar
+      maxWidth="xl"
+      position="sticky"
+      className={`transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
@@ -51,7 +63,7 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:font-medium",
+                  "data-[active=true]:font-medium transition-transform duration-200 ease-in-out",
                   pathname === item.href
                     ? "text-primary font-bold" // Active link styling
                     : "hover:text-primary transition-colors",
@@ -71,10 +83,10 @@ export const Navbar = () => {
       >
         <NavbarItem className="hidden sm:flex gap-2">
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
+            <DiscordIcon className="text-default-500 transition-transform duration-200 ease-in-out hover:scale-110" />
           </Link>
           <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
+            <GithubIcon className="text-default-500 transition-transform duration-200 ease-in-out hover:scale-110" />
           </Link>
           <ThemeSwitch />
         </NavbarItem>
@@ -82,7 +94,7 @@ export const Navbar = () => {
           <Button
             isExternal
             as={Link}
-            className="text-sm font-normal text-white bg-blue-500 hover:bg-blue-600"
+            className="text-sm font-normal text-white bg-blue-500 hover:bg-blue-600 transition-transform duration-200"
             href={siteConfig.links.sponsor}
             variant="flat"
           >
@@ -93,13 +105,13 @@ export const Navbar = () => {
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
         <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-          <DiscordIcon className="text-default-500" />
+          <DiscordIcon className="text-default-500 transition-transform duration-200 ease-in-out hover:scale-110" />
         </Link>
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
 
-      <NavbarMenu>
+      <NavbarMenu className="transition-transform duration-300 ease-in-out">
         <div className="mx-3 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
