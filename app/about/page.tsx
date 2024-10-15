@@ -1,6 +1,13 @@
 import Image from "next/image";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import BlurFade from "@/components/magicui/blur-fade";
+import { ChevronRight } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+
+
+
 
 export default function AboutPage() {
   const officers = [
@@ -19,7 +26,7 @@ export default function AboutPage() {
     {
       name: "Varshni Karthikeyan",
       title: "Secretary",
-      img: "/varshni.jpg",
+      img: "/manasa.jpg",
       linkedIn: "https://www.linkedin.com/in/officer3/",
     },
     {
@@ -82,7 +89,6 @@ export default function AboutPage() {
       img: "/vaishali.jpg",
       linkedIn: "https://www.linkedin.com/in/officer7/",
     },
-    
   ];
 
   const officersRowFour = [
@@ -101,7 +107,7 @@ export default function AboutPage() {
     {
       name: "Manasa Valluru",
       title: "Designer",
-      img: "/manasa.jpg",
+      img: "/varshni.jpg",
       linkedIn: "https://www.linkedin.com/in/officer6/",
     },
     {
@@ -110,7 +116,6 @@ export default function AboutPage() {
       img: "/maci.jpg",
       linkedIn: "https://www.linkedin.com/in/officer7/",
     },
-    
   ];
 
   const officersRowFive = [
@@ -132,15 +137,14 @@ export default function AboutPage() {
       img: "/vidur.jpg",
       linkedIn: "https://www.linkedin.com/in/officer6/",
     },
-    
   ];
 
   return (
     <>
       {/* Intro Section */}
-      <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center h-[600px] md:h-[870px]">
+      <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center h-[90vh] md:h-[85vh]">
         <div className="container mx-auto px-4 md:px-36 flex flex-col justify-center h-full">
-          <h1 className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0  " style={{ wordSpacing: '0.65rem' }}>
+          <h1 className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0" style={{ wordSpacing: '0.65rem' }}>
             Behind the pretty
           </h1>
           <h1 className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0" style={{ wordSpacing: '0.75rem' }}>
@@ -162,208 +166,83 @@ export default function AboutPage() {
         </div>
       </section>
 
-
-      {/* About Section */}
       {/* About Section */}
       <main className="px-[5vw] md:px-[10vw]">
-      <section className="flex flex-col md:flex-row items-start justify-between gap-8 mt-12 p-6 md:pl-16">
-        
-        {/* Image Section */}
-        <div className="w-full md:w-[40%] mb-6 md:mb-0 flex-1">
-          <div className="relative">
-            
-            {/* <div className="bg-gradient-to-r from-[#253B75] to-[#0C1533] w-[450px] h-[230px] rounded-lg absolute top-4 left-4 md:left-8 z-0" />*/}
-            
-              {/* Image */}
+        <section className="flex flex-col md:flex-row items-start justify-between gap-8 mt-12 p-6 md:pl-16">
+          {/* Image Section */}
+          <div className="w-full md:w-[40%] mb-6 md:mb-0 flex-1">
+            <div className="hov-wrapper grow relative">
               <Image
                 alt="About"
                 className="absolute rounded-lg relative z-10 mt-6 flex-1"
-                height={230}  
-                width={450}  
-                objectFit="cover"  
+                height={230}
+                width={450}
+                objectFit="cover"
                 src="/AboutPic.png"
               />
-
+            </div>
           </div>
-        </div>
 
-        {/* Text Section */}
-        <div className="w-full md:w-[60%] lg:w-[65%] pr-12 md:pr-16 lg:pr-24 flex-1">
-          <p className="text-lg leading-relaxed mt-4">
-            User experience is for <span className="text-[#3E68FD]">everyone</span>, encompassing multiple disciplines such as design, research, psychology,
-            business analytics, and more to achieve a user-friendly product.
-            <br /><br />
-            User experience is a connecting experience. Here at UX Club UTD we give you the resources to bring client and concepts together. We teach you how to blend empathy, art, and software. We teach you how to <span className="text-[#3E68FD]">design the future</span>.
-          </p>
-        </div>
-      </section>
+          {/* Text Section */}
+          <div className="w-full md:w-[60%] lg:w-[65%] pr-12 md:pr-16 lg:pr-24 flex-1">
+            <p className="text-lg leading-relaxed mt-4">
+              User experience is for <span className="text-[#3E68FD]">everyone</span>, encompassing multiple disciplines such as design, research, psychology,
+              business analytics, and more to achieve a user-friendly product.
+              <br /><br />
+              User experience is a connecting experience. Here at UX Club UTD we give you the resources to bring client and concepts together. We teach you how to blend empathy, art, and software. We teach you how to <span className="text-[#3E68FD]">design the future</span>.
+            </p>
+          </div>
+        </section>
 
-
-
-
+       
         {/* Meet the Team Header */}
-        <section className="w-full flex justify-center mt-16">
+        <section className="w-full flex justify-center mt-10">
           <BlurFade>
             <div className="py-8">
-              <WordPullUp
-                className="tracking-tight inline font-semibold text-[2rem] md:text-[2.3rem] lg:text-5xl leading-9 text-center"
-                words="Meet the team!"
-              />
+              <AnimatedGradientText>
+                <span className="tracking-tight inline font-semibold text-[2rem] md:text-[2.3rem] lg:text-5xl leading-9 text-center inline animate-gradient bg-gradient-to-r from-[#253B75] via-[#3E68FD] to-[#253B75] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent">
+                  Meet the Team!
+                </span>
+                
+              </AnimatedGradientText>
             </div>
           </BlurFade>
         </section>
 
-        {/* Officers Section */}
-        <section className="flex flex-wrap justify-center mt-8">
-          {officers.map((officer, index) => (
-            <div key={index} className="m-3">
-              <div className="officer-wrapper grow relative">
-                <Image
-                  alt={officer.name}
-                  className="rounded-lg w-[250px] h-[250px] object-cover transition-opacity duration-300 hover:opacity-50"
-                  height={250}
-                  src={officer.img}
-                  width={250}
-                />
-                <div className="absolute inset-0 flex justify-center items-center">
-                  <a
-                    className="fab fa-linkedin text-white text-2xl"
-                    href={officer.linkedIn}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <span className="sr-only">LinkedIn</span>
-                  </a>
-                </div>
-              </div>
-              <div className="text-center mt-2">
-                <p className="font-bold text-lg md:text-xl">{officer.name}</p>
-                <p className="text-sm text-gray-500">{officer.title}</p>
-              </div>
-            </div>
-          ))}
-        </section>
 
-        {/* Second Row of Officers */}
-        <section className="flex flex-wrap justify-center mt-8">
-          {officersRowTwo.map((officer, index) => (
-            <div key={index} className="m-3">
-              <div className="officer-wrapper grow relative">
-                <Image
-                  alt={officer.name}
-                  className="rounded-lg w-[250px] h-[250px] object-cover transition-opacity duration-300 hover:opacity-50"
-                  height={250}
-                  src={officer.img}
-                  width={250}
-                />
-                <div className="absolute inset-0 flex justify-center items-center">
-                  <a
-                    className="fab fa-linkedin text-white text-2xl"
-                    href={officer.linkedIn}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <span className="sr-only">LinkedIn</span>
-                  </a>
+        {/* Officers Sections */}
+        {[officers, officersRowTwo, officersRowThree, officersRowFour, officersRowFive].map((officerRow, rowIndex) => (
+          <section key={rowIndex} className="flex flex-wrap justify-center mt-8">
+            {officerRow.map((officer, index) => (
+              <div key={index} className="m-4">
+                <div className="hov-wrapper grow relative">
+                  <Image
+                    alt={officer.name}
+                    className="rounded-lg w-[250px] h-[250px] object-cover transition-transform duration-300 transform hover:scale-105"
+                    height={250}
+                    src={officer.img}
+                    width={250}
+                  />
+                  <div className="absolute inset-0 flex justify-center items-center">
+                    <a
+                      className="fab fa-linkedin text-white text-2xl"
+                      href={officer.linkedIn}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <span className="sr-only">LinkedIn</span>
+                    </a>
+                  </div>
+                </div>
+                <div className="text-center mt-2">
+                  <p className="font-bold text-lg md:text-xl">{officer.name}</p>
+                  <p className="text-sm text-gray-500">{officer.title}</p>
                 </div>
               </div>
-              <div className="text-center mt-2">
-                <p className="font-bold text-lg md:text-xl">{officer.name}</p>
-                <p className="text-sm text-gray-500">{officer.title}</p>
-              </div>
-            </div>
-          ))}
-        </section>
-
-        <section className="flex flex-wrap justify-center mt-8">
-          {officersRowThree.map((officer, index) => (
-            <div key={index} className="m-3">
-              <div className="officer-wrapper grow relative">
-                <Image
-                  alt={officer.name}
-                  className="rounded-lg w-[250px] h-[250px] object-cover transition-opacity duration-300 hover:opacity-50"
-                  height={250}
-                  src={officer.img}
-                  width={250}
-                />
-                <div className="absolute inset-0 flex justify-center items-center">
-                  <a
-                    className="fab fa-linkedin text-white text-2xl"
-                    href={officer.linkedIn}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <span className="sr-only">LinkedIn</span>
-                  </a>
-                </div>
-              </div>
-              <div className="text-center mt-2">
-                <p className="font-bold text-lg md:text-xl">{officer.name}</p>
-                <p className="text-sm text-gray-500">{officer.title}</p>
-              </div>
-            </div>
-          ))}
-        </section>
-        <section className="flex flex-wrap justify-center mt-8">
-          {officersRowFour.map((officer, index) => (
-            <div key={index} className="m-3">
-              <div className="officer-wrapper grow relative">
-                <Image
-                  alt={officer.name}
-                  className="rounded-lg w-[250px] h-[250px] object-cover transition-opacity duration-300 hover:opacity-50"
-                  height={250}
-                  src={officer.img}
-                  width={250}
-                />
-                <div className="absolute inset-0 flex justify-center items-center">
-                  <a
-                    className="fab fa-linkedin text-white text-2xl"
-                    href={officer.linkedIn}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <span className="sr-only">LinkedIn</span>
-                  </a>
-                </div>
-              </div>
-              <div className="text-center mt-2">
-                <p className="font-bold text-lg md:text-xl">{officer.name}</p>
-                <p className="text-sm text-gray-500">{officer.title}</p>
-              </div>
-            </div>
-          ))}
-        </section>
-        <section className="flex flex-wrap justify-center mt-8">
-          {officersRowFive.map((officer, index) => (
-            <div key={index} className="m-3">
-              <div className="officer-wrapper grow relative">
-                <Image
-                  alt={officer.name}
-                  className="rounded-lg w-[250px] h-[250px] object-cover transition-opacity duration-300 hover:opacity-50"
-                  height={250}
-                  src={officer.img}
-                  width={250}
-                />
-                <div className="absolute inset-0 flex justify-center items-center">
-                  <a
-                    className="fab fa-linkedin text-white text-2xl"
-                    href={officer.linkedIn}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <span className="sr-only">LinkedIn</span>
-                  </a>
-                </div>
-              </div>
-              <div className="text-center mt-2">
-                <p className="font-bold text-lg md:text-xl">{officer.name}</p>
-                <p className="text-sm text-gray-500">{officer.title}</p>
-              </div>
-            </div>
-          ))}
-        </section>
-        <br /><br />
-        <br /><br />
+            ))}
+          </section>
+        ))}
+        <br/>
       </main>
     </>
   );

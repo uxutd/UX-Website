@@ -142,10 +142,10 @@ export default function Home() {
               our annual Conference and Design Challenge!
             </p>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 hov-wrapper grow relative">
             <img
               alt="Event"
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-lg "
               src="/highlights-pic.png"
             />
           </div>
