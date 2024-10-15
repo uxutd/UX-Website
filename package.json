@@ -9,6 +9,7 @@
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
+		"@fortawesome/fontawesome-free": "^6.6.0",
 		"@internationalized/date": "^3.5.5",
 		"@nextui-org/button": "2.0.37",
 		"@nextui-org/calendar": "^2.0.11",
