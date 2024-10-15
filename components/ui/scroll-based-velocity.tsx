@@ -27,6 +27,7 @@ interface ParallaxProps {
 
 export const wrap = (min: number, max: number, v: number) => {
   const rangeSize = max - min;
+
   return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
 };
 
@@ -62,6 +63,7 @@ export function VelocityScroll({
           const containerWidth = containerRef.current.offsetWidth;
           const textWidth = textRef.current.offsetWidth;
           const newRepetitions = Math.ceil(containerWidth / textWidth) + 2;
+
           setRepetitions(newRepetitions);
         }
       };
@@ -69,12 +71,14 @@ export function VelocityScroll({
       calculateRepetitions();
 
       window.addEventListener("resize", calculateRepetitions);
+
       return () => window.removeEventListener("resize", calculateRepetitions);
     }, [children]);
 
     const x = useTransform(baseX, (v) => `${wrap(-100 / repetitions, 0, v)}%`);
 
     const directionFactor = React.useRef<number>(1);
+
     useAnimationFrame((t, delta) => {
       let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
@@ -91,8 +95,8 @@ export function VelocityScroll({
 
     return (
       <div
-        className="w-full overflow-hidden whitespace-nowrap"
         ref={containerRef}
+        className="w-full overflow-hidden whitespace-nowrap"
       >
         <motion.div className={cn("inline-block", className)} style={{ x }}>
           {Array.from({ length: repetitions }).map((_, i) => (

@@ -1,4 +1,5 @@
 import { CSSProperties, ReactNode, useEffect, useRef, useState } from "react";
+
 import { cn } from "@/lib/utils";
 
 interface NeonBorderProps {
@@ -63,6 +64,7 @@ const NeonBorder: React.FC<NeonBorderProps> = ({
     const updateDimensions = () => {
       if (containerRef.current) {
         const { offsetWidth, offsetHeight } = containerRef.current;
+
         setDimensions({ width: offsetWidth, height: offsetHeight });
       }
     };
@@ -78,6 +80,10 @@ const NeonBorder: React.FC<NeonBorderProps> = ({
   return (
     <div
       ref={containerRef}
+      className={cn(
+        "relative z-10 rounded-[var(--border-radius)] overflow-hidden",
+        className,
+      )}
       style={
         {
           "--border-size": `${borderSize}px`,
@@ -86,10 +92,6 @@ const NeonBorder: React.FC<NeonBorderProps> = ({
           "--neon-second-color": neonColors.secondColor,
         } as CSSProperties
       }
-      className={cn(
-        "relative z-10 rounded-[var(--border-radius)] overflow-hidden",
-        className
-      )}
       {...props}
     >
       <div
@@ -98,7 +100,7 @@ const NeonBorder: React.FC<NeonBorderProps> = ({
           "before:absolute before:-left-[var(--border-size)] before:-top-[var(--border-size)] before:-z-10 before:block",
           "before:h-[calc(100% + var(--border-size) * 2)] before:w-[calc(100% + var(--border-size) * 2)] before:rounded-[var(--border-radius)] before:content-['']",
           "before:bg-[linear-gradient(135deg,var(--neon-first-color),var(--neon-second-color))] before:bg-[length:100%_200%]",
-          "before:animate-background-position-spin"
+          "before:animate-background-position-spin",
         )}
       />
       {children}

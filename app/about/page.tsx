@@ -1,13 +1,7 @@
 import Image from "next/image";
-import WordPullUp from "@/components/magicui/word-pull-up";
+
 import BlurFade from "@/components/magicui/blur-fade";
-import { ChevronRight } from "lucide-react";
-
-import { cn } from "@/lib/utils";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
-
-
-
 
 export default function AboutPage() {
   const officers = [
@@ -144,13 +138,19 @@ export default function AboutPage() {
       {/* Intro Section */}
       <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center h-[90vh] md:h-[85vh]">
         <div className="container mx-auto px-4 md:px-36 flex flex-col justify-center h-full">
-          <h1 className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0" style={{ wordSpacing: '0.65rem' }}>
+          <h1
+            className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0"
+            style={{ wordSpacing: "0.65rem" }}
+          >
             Behind the pretty
           </h1>
-          <h1 className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0" style={{ wordSpacing: '0.75rem' }}>
+          <h1
+            className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0"
+            style={{ wordSpacing: "0.75rem" }}
+          >
             interfaces,
           </h1>
-          
+
           <h2 className="text-2xl md:text-[1.875rem] mt-2">
             We are <span className="text-[#3E68FD]">innovators</span>
           </h2>
@@ -176,9 +176,9 @@ export default function AboutPage() {
                 alt="About"
                 className="absolute rounded-lg relative z-10 mt-6 flex-1"
                 height={230}
-                width={450}
                 objectFit="cover"
                 src="/AboutPic.png"
+                width={450}
               />
             </div>
           </div>
@@ -186,15 +186,20 @@ export default function AboutPage() {
           {/* Text Section */}
           <div className="w-full md:w-[60%] lg:w-[65%] pr-12 md:pr-16 lg:pr-24 flex-1">
             <p className="text-lg leading-relaxed mt-4">
-              User experience is for <span className="text-[#3E68FD]">everyone</span>, encompassing multiple disciplines such as design, research, psychology,
+              User experience is for{" "}
+              <span className="text-[#3E68FD]">everyone</span>, encompassing
+              multiple disciplines such as design, research, psychology,
               business analytics, and more to achieve a user-friendly product.
-              <br /><br />
-              User experience is a connecting experience. Here at UX Club UTD we give you the resources to bring client and concepts together. We teach you how to blend empathy, art, and software. We teach you how to <span className="text-[#3E68FD]">design the future</span>.
+              <br />
+              <br />
+              User experience is a connecting experience. Here at UX Club UTD we
+              give you the resources to bring client and concepts together. We
+              teach you how to blend empathy, art, and software. We teach you
+              how to <span className="text-[#3E68FD]">design the future</span>.
             </p>
           </div>
         </section>
 
-       
         {/* Meet the Team Header */}
         <section className="w-full flex justify-center mt-10">
           <BlurFade>
@@ -203,16 +208,23 @@ export default function AboutPage() {
                 <span className="tracking-tight inline font-semibold text-[2rem] md:text-[2.3rem] lg:text-5xl leading-9 text-center inline animate-gradient bg-gradient-to-r from-[#253B75] via-[#3E68FD] to-[#253B75] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent">
                   Meet the Team!
                 </span>
-                
               </AnimatedGradientText>
             </div>
           </BlurFade>
         </section>
 
-
         {/* Officers Sections */}
-        {[officers, officersRowTwo, officersRowThree, officersRowFour, officersRowFive].map((officerRow, rowIndex) => (
-          <section key={rowIndex} className="flex flex-wrap justify-center mt-8">
+        {[
+          officers,
+          officersRowTwo,
+          officersRowThree,
+          officersRowFour,
+          officersRowFive,
+        ].map((officerRow, rowIndex) => (
+          <section
+            key={rowIndex}
+            className="flex flex-wrap justify-center mt-8"
+          >
             {officerRow.map((officer, index) => (
               <div key={index} className="m-4">
                 <div className="hov-wrapper grow relative">
@@ -242,7 +254,7 @@ export default function AboutPage() {
             ))}
           </section>
         ))}
-        <br/>
+        <br />
       </main>
     </>
   );
