@@ -21,14 +21,6 @@ import NumberTicker from "@/components/magicui/number-ticker";
 
 // Fixing the import order here
 
-export function Iphone15ProDemo() {
-  return (
-    <div className="relative">
-      <Iphone15Pro className="size-full" />
-    </div>
-  );
-}
-
 export default function DesignPage() {
   return (
     <>
@@ -113,9 +105,6 @@ export default function DesignPage() {
                 <NumberTicker className="text-white" value={40} />+ Projects
               </h1>
             </div>
-            {/* <div className="flex-1 h-[70vh]">
-                  <Iphone15Pro className="size-full" src="https://lu.ma/embed/event/evt-BSCDnA2C8SG382k/simple" isIframe/>
-                </div>  */}
             <div className="flex-1 h-[20vh]">
               <img
                 alt="UXPERIENCE Logo"
@@ -130,21 +119,6 @@ export default function DesignPage() {
             text="A Design-a-thon done like never before. November 9 - 10. "
           />
         </section>
-
-        {/* <section className="text-white w-screen h-screen bg-[#08195E]">
-        <BentoGrid className="px-[10vw] pt-8 mx-auto">
-              {items.map((item, i) => (
-                <BentoGridItem
-                  key={i}
-                  title={item.title}
-                  description={item.description}
-                  header={item.header}
-                  icon={item.icon}
-                  className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-                />
-              ))}
-            </BentoGrid>
-      </section> */}
 
         <section className="flex items-center w-screen h-screen justify-center gap-4">
           <h1 className="text-4xl font-bold text-center mt-8">
@@ -215,3 +189,5 @@ const items = [
     icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
   },
 ];
+
+export { items };
