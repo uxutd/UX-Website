@@ -77,6 +77,7 @@ export default function Iphone15Pro({
             aria-hidden="false"
             className="w-full h-full px-6 py-5 rounded-4xl"
             src={src}
+            title="Embedded Content"
           />
         </foreignObject>
       )}
