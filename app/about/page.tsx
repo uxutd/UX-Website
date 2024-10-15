@@ -5,131 +5,134 @@ import BlurFade from "@/components/magicui/blur-fade";
 export default function AboutPage() {
   const officers = [
     {
-      name: "Vincent Joubarne",
+      name: "Mani Vipat",
       title: "President",
-      img: "/vincent.jpg.png",
+      img: "/mani.jpg",
       linkedIn: "https://www.linkedin.com/in/vincentjoubarne/",
     },
     {
-      name: "Officer 2",
+      name: "Kshitij K",
       title: "Vice President",
-      img: "/vincent.jpg.png",
+      img: "/kk.jpg",
       linkedIn: "https://www.linkedin.com/in/officer2/",
     },
     {
-      name: "Officer 3",
+      name: "Varshni Karthikeyan",
       title: "Secretary",
-      img: "/officer3.jpg.png",
+      img: "/varshni.jpg",
       linkedIn: "https://www.linkedin.com/in/officer3/",
     },
     {
-      name: "Officer 4",
+      name: "Manasa Paruchuri",
       title: "Marketing Director",
-      img: "/officer4.jpg.png",
+      img: "/manasap.jpg",
       linkedIn: "https://www.linkedin.com/in/officer4/",
     },
   ];
 
   const officersRowTwo = [
     {
-      name: "Officer 5",
+      name: "Shaz Kumar",
       title: "Director",
-      img: "/officer5.jpg.png",
+      img: "/shaz.jpg",
       linkedIn: "https://www.linkedin.com/in/officer5/",
     },
     {
-      name: "Officer 6",
+      name: "Jasper Cao",
       title: "Treasurer",
-      img: "/officer6.jpg.png",
+      img: "/jasper.jpg",
       linkedIn: "https://www.linkedin.com/in/officer6/",
     },
     {
-      name: "Officer 7",
+      name: "Adit Patel",
       title: "Logistics Coordinator",
-      img: "/officer7.jpg.png",
+      img: "/adit.jpg",
       linkedIn: "https://www.linkedin.com/in/officer7/",
     },
     {
-      name: "Officer 8",
+      name: "Sally Nguyen",
       title: "Social Media Coordinator",
-      img: "/officer8.jpg.png",
+      img: "/sally.jpg",
       linkedIn: "https://www.linkedin.com/in/officer8/",
     },
   ];
 
   const officersRowThree = [
     {
-      name: "Officer 5",
+      name: "Tanvi Deshpande",
       title: "Student Engagement",
-      img: "/officer5.jpg.png",
+      img: "/tanvi.jpg",
       linkedIn: "https://www.linkedin.com/in/officer5/",
     },
     {
-      name: "Officer 6",
+      name: "Cory Olson",
       title: "Event Coordinator",
-      img: "/officer6.jpg.png",
+      img: "/cory.jpg",
       linkedIn: "https://www.linkedin.com/in/officer6/",
     },
     {
-      name: "Officer 7",
+      name: "Sai Gudisa",
       title: "Event Coordinator",
-      img: "/officer7.jpg.png",
+      img: "/sai.jpg",
       linkedIn: "https://www.linkedin.com/in/officer7/",
     },
     {
-      name: "Officer 8",
-      title: "Corporate Relations",
-      img: "/officer8.jpg.png",
-      linkedIn: "https://www.linkedin.com/in/officer8/",
+      name: "Vaishali Sathiyachalam",
+      title: "Event Coordinator",
+      img: "/vaishali.jpg",
+      linkedIn: "https://www.linkedin.com/in/officer7/",
     },
+    
   ];
 
   const officersRowFour = [
     {
-      name: "Officer 5",
+      name: "Abel Thomas",
       title: "Corporate Relations",
-      img: "/officer5.jpg.png",
+      img: "/abel.jpg",
       linkedIn: "https://www.linkedin.com/in/officer5/",
     },
     {
-      name: "Officer 6",
+      name: "Maha Shaikh",
+      title: "Corporate Relations",
+      img: "/maha.jpg",
+      linkedIn: "https://www.linkedin.com/in/officer8/",
+    },
+    {
+      name: "Manasa Valluru",
       title: "Designer",
-      img: "/officer6.jpg.png",
+      img: "/manasa.jpg",
       linkedIn: "https://www.linkedin.com/in/officer6/",
     },
     {
-      name: "Officer 7",
+      name: "Maci Thomas",
       title: "Designer",
-      img: "/officer7.jpg.png",
+      img: "/maci.jpg",
       linkedIn: "https://www.linkedin.com/in/officer7/",
     },
-    {
-      name: "Officer 8",
-      title: "Designer",
-      img: "/officer8.jpg.png",
-      linkedIn: "https://www.linkedin.com/in/officer8/",
-    },
+    
   ];
 
   const officersRowFive = [
     {
-      name: "Officer 5",
+      name: "Danielle Khaitas",
+      title: "Designer",
+      img: "/danielle.jpg",
+      linkedIn: "https://www.linkedin.com/in/officer8/",
+    },
+    {
+      name: "Vyom Sethia",
       title: "Designer Coordinator",
-      img: "/officer5.jpg.png",
+      img: "/vyom.jpg",
       linkedIn: "https://www.linkedin.com/in/officer5/",
     },
     {
-      name: "Officer 6",
+      name: "Vidur Nangia",
       title: "Web Developer",
-      img: "/officer6.jpg.png",
+      img: "/vidur.jpg",
       linkedIn: "https://www.linkedin.com/in/officer6/",
     },
-    {
-      name: "Officer 7",
-      title: "Event Coordinator",
-      img: "/officer7.jpg.png",
-      linkedIn: "https://www.linkedin.com/in/officer7/",
-    },
+    
   ];
 
   return (
@@ -217,7 +220,7 @@ export default function AboutPage() {
               <div className="officer-wrapper grow relative">
                 <Image
                   alt={officer.name}
-                  className="rounded-lg transition-opacity duration-300 hover:opacity-50"
+                  className="rounded-lg w-[250px] h-[250px] object-cover transition-opacity duration-300 hover:opacity-50"
                   height={250}
                   src={officer.img}
                   width={250}
@@ -248,7 +251,7 @@ export default function AboutPage() {
               <div className="officer-wrapper grow relative">
                 <Image
                   alt={officer.name}
-                  className="rounded-lg transition-opacity duration-300 hover:opacity-50"
+                  className="rounded-lg w-[250px] h-[250px] object-cover transition-opacity duration-300 hover:opacity-50"
                   height={250}
                   src={officer.img}
                   width={250}
@@ -278,7 +281,7 @@ export default function AboutPage() {
               <div className="officer-wrapper grow relative">
                 <Image
                   alt={officer.name}
-                  className="rounded-lg transition-opacity duration-300 hover:opacity-50"
+                  className="rounded-lg w-[250px] h-[250px] object-cover transition-opacity duration-300 hover:opacity-50"
                   height={250}
                   src={officer.img}
                   width={250}
@@ -307,7 +310,7 @@ export default function AboutPage() {
               <div className="officer-wrapper grow relative">
                 <Image
                   alt={officer.name}
-                  className="rounded-lg transition-opacity duration-300 hover:opacity-50"
+                  className="rounded-lg w-[250px] h-[250px] object-cover transition-opacity duration-300 hover:opacity-50"
                   height={250}
                   src={officer.img}
                   width={250}
@@ -336,7 +339,7 @@ export default function AboutPage() {
               <div className="officer-wrapper grow relative">
                 <Image
                   alt={officer.name}
-                  className="rounded-lg transition-opacity duration-300 hover:opacity-50"
+                  className="rounded-lg w-[250px] h-[250px] object-cover transition-opacity duration-300 hover:opacity-50"
                   height={250}
                   src={officer.img}
                   width={250}
