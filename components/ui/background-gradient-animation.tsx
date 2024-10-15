@@ -6,7 +6,8 @@ export const BackgroundGradientAnimation = ({
   gradientBackgroundStart = "rgb(2, 205, 158)",
   gradientBackgroundEnd = "rgb(2, 120, 158)",
 
-  firstColor = "2, 7, 158)",
+
+  firstColor = "2, 7, 158",
   secondColor = "2, 59, 158",
   thirdColor = "2, 7, 158",
   fourthColor = "2, 7, 158",

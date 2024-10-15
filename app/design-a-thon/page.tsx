@@ -44,6 +44,7 @@ export default function DesignPage() {
           >
             <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
               <span>The UX Club presents</span>
+
             </AnimatedShinyText>
           </div>
         </BlurFade>
@@ -154,6 +155,7 @@ export default function DesignPage() {
         </BackgroundGradientAnimation>
       </section>
     </main>
+
     </>
   );
 }
