@@ -6,6 +6,7 @@ export const BackgroundGradientAnimation = ({
   gradientBackgroundStart = "rgb(2, 205, 158)",
   gradientBackgroundEnd = "rgb(2, 120, 158)",
 
+
   firstColor = "2, 7, 158",
   secondColor = "2, 59, 158",
   thirdColor = "2, 7, 158",
@@ -116,8 +117,8 @@ export const BackgroundGradientAnimation = ({
       <div className={cn("", className)}>{children}</div>
       <div
         className={cn(
-          "gradients-container h-full w-full blur-lg",
-          isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(40px)]"
+          "gradients-container h-full w-full blur-xl",
+          isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(60px)]"
         )}
       >
         <div

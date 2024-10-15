@@ -22,9 +22,17 @@ import uxlogo from "../public/UX_Color_Logo.svg"; // Correct image import
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon, DiscordIcon } from "@/components/icons";
+import { useEffect, useState } from "react";
 
 export const Navbar = () => {
   const pathname = usePathname(); // Get the current pathname
+  const [isVisible, setIsVisible] = useState(false); // State to control visibility
+
+  useEffect(() => {
+    // Fade-in effect
+    const timer = setTimeout(() => setIsVisible(true), 100); // Delay to allow for the transition
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <motion.div
@@ -118,7 +126,7 @@ export const Navbar = () => {
 
         <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
+            <DiscordIcon className="text-default-500 transition-transform duration-200 ease-in-out hover:scale-110" />
           </Link>
           <ThemeSwitch />
           <NavbarMenuToggle />
