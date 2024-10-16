@@ -136,7 +136,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Intro Section */}
-      <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center h-[90vh] md:h-[85vh]">
+      <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center min-h-screen md:min-h-[85vh]">
         <div className="container mx-auto px-4 md:px-36 flex flex-col justify-center h-full">
           <h1
             className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0"
@@ -146,7 +146,7 @@ export default function AboutPage() {
           </h1>
           <h1
             className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0"
-            style={{ wordSpacing: "0.75rem" }}
+            style={{ wordSpacing: "0.65rem" }}
           >
             interfaces,
           </h1>
