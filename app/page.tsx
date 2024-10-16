@@ -107,46 +107,52 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="flex p-6 px-12 pt-12">
+        {/* Container for the number tickers */}
+        <div className="flex flex-col md:flex-row p-4 sm:p-6 lg:px-12 pt-6 sm:pt-12 gap-4">
           <div className="flex-1">
-            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+            <h1 className="text-[2rem] sm:text-[3rem] font-bold text-center text-blue-600 mb-4">
               <NumberTicker className="text-blue-600" value={52} />+
               <br />
               Sponsors
             </h1>
           </div>
           <div className="flex-1 mb-6 md:mb-0">
-            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+            <h1 className="text-[2rem] sm:text-[3rem] font-bold text-center text-blue-600 mb-4">
               <NumberTicker className="text-blue-600" value={114} />+
               <br />
               Events
             </h1>
           </div>
           <div className="flex-1 mb-6 md:mb-0">
-            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+            <h1 className="text-[2rem] sm:text-[3rem] font-bold text-center text-blue-600 mb-4">
               <NumberTicker className="text-blue-600" value={1082} />+
               <br />
               Attendees
             </h1>
           </div>
         </div>
+
+        {/* Highlights section */}
         <section>
-          <div className="flex flex-col lg:flex-row items-center justify-between p-6 px-12 pt-12 gap-6">
+          <div className="flex flex-col lg:flex-row items-center justify-between p-4 sm:p-6 lg:px-12 pt-6 sm:pt-12 gap-6">
+            {/* Text Section */}
             <div className="flex-1 lg:pr-12 text-left">
-              <h2 className="text-3xl font-bold text-blue-600 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-4">
                 Our Highlights
               </h2>
-              <p className="text-gray-700 mb-4 text-lg">
-                Our mission is to spread awareness about user-centered design. Based at
-                the University of Texas at Dallas, we welcome anyone in the DFW area to
-                attend our beginner-friendly events. Look out for our annual Conference
-                and Design Challenge!
+              <p className="text-gray-700 mb-4 text-base sm:text-lg">
+                Our mission is to spread awareness about user-centered design.
+                Based at the University of Texas at Dallas, we welcome anyone in
+                the DFW area to attend our beginner-friendly events. Look out
+                for our annual Conference and Design Challenge!
               </p>
             </div>
-            <div className="flex-1 flex justify-center items-center lg:max-w-lg">
+
+            {/* Image Section */}
+            <div className="flex-1 flex justify-center items-center w-full lg:max-w-lg">
               <img
                 alt="Event"
-                className="w-full h-auto rounded-lg object-cover"
+                className="w-full h-auto rounded-3xl object-cover"
                 src="/highlights-pic.png"
               />
             </div>

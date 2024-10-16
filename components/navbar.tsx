@@ -61,7 +61,7 @@ export const Navbar = () => {
         </NavbarContent>
 
         {/* Centered Navigation Links */}
-        <NavbarContent className="hidden lg:flex justify-center basis-full">
+        <NavbarContent className="hidden md:flex justify-center basis-full">
           <ul className="flex gap-4 justify-center items-center mx-auto w-full max-w-md">
             {siteConfig.navMenuItems.map((item) => (
               <NavbarItem
@@ -122,7 +122,7 @@ export const Navbar = () => {
             </Link>
             <ThemeSwitch />
           </NavbarItem>
-          <NavbarItem className="hidden md:flex">
+          <NavbarItem className="hidden sm:flex">
             <Button
               isExternal
               as={Link}

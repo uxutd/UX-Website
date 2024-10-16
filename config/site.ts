@@ -35,7 +35,7 @@ export const siteConfig = {
       href: "/events",
       sublinks: [
         {
-          label: "Coming Soon",
+          label: "Coming Soon!",
           href: "/events",
         },
       ],
