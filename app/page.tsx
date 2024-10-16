@@ -21,10 +21,10 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center w-full flex-1 px-[10vw] pt-24 gap-4 text-center">
       <div className="flex flex-col items-center justify-center w-full max-w-3xl text-center p-2 leading-tight pt-12">
-        <div className="flex absolute top-[10vw] left-[-10vw]">
+        <div className="flex absolute top-[10vw] left-[-10vw] hidden lg:flex">
           <Image alt="UX Club" height={450} src="/Arrow.png" width={450} />
         </div>
-        <div className="flex absolute top-[10vw] right-[-10vw]">
+        <div className="flex absolute top-[10vw] right-[-10vw] hidden lg:flex">
           <Image alt="UX Club" height={450} src="/Pixie.png" width={450} />
         </div>
         <BlurFade blur="30px" duration={2}>
@@ -71,13 +71,13 @@ export default function Home() {
         </Link>
       </div>
 
-      <section className="w-[100vw] sm:w-[70vw] py-8 pb-14 dark:bg-gray-800 bg-[#0c1533] rounded-3xl mt-12 overflow-hidden">
-        <div className="flex flex-col items-center justify-centermax-w-3xl mx-auto">
-          <h1 className="text-3xl lg:text-md text-white font-semibold text-center mb-8 text-gray-900 dark:text-gray-100">
+      <section className="w-[90vw] sm:w-[80vw] py-8 pb-14 dark:bg-[#1A1B1F] bg-[#121625] rounded-3xl mt-12 overflow-hidden">
+        <div className="flex flex-col items-center justify-center max-w-5xl mx-auto">
+          <h1 className="text-4xl lg:text-3xl text-gray-200 font-semibold text-center mb-8">
             Creating Events that Excel Your Career
           </h1>
           <Carousel
-            className="w-[100vw] sm:w-[80vw]"
+            className="w-[90vw] sm:w-[80vw]"
             opts={{
               align: "start",
             }}
@@ -105,24 +105,26 @@ export default function Home() {
           </Carousel>
         </div>
       </section>
+
       <section>
-        <div className="flex p-6 px-12 pt-12">
+        {/* Container for the number tickers */}
+        <div className="flex flex-col md:flex-row p-4 sm:p-6 lg:px-12 pt-6 sm:pt-12 gap-4">
           <div className="flex-1">
-            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+            <h1 className="text-[2rem] sm:text-[3rem] font-bold text-center text-blue-600 mb-4">
               <NumberTicker className="text-blue-600" value={52} />+
               <br />
               Sponsors
             </h1>
           </div>
           <div className="flex-1 mb-6 md:mb-0">
-            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+            <h1 className="text-[2rem] sm:text-[3rem] font-bold text-center text-blue-600 mb-4">
               <NumberTicker className="text-blue-600" value={114} />+
               <br />
               Events
             </h1>
           </div>
           <div className="flex-1 mb-6 md:mb-0">
-            <h1 className="text-[3rem] font-bold text-center text-blue-600 mb-4">
+            <h1 className="text-[2rem] sm:text-[3rem] font-bold text-center text-blue-600 mb-4">
               <NumberTicker className="text-blue-600" value={1082} />+
               <br />
               Attendees
@@ -130,26 +132,32 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex p-12 pt-12">
-          <div className="flex-1 pr-6 text-left">
-            <h2 className="text-3xl font-bold text-blue-600 mb-4">
-              Our Highlights
-            </h2>
-            <p className="text-gray-700 mb-4">
-              Our mission is to spread awareness about user-centered design.
-              Based at the University of Texas at Dallas, we welcome anyone in
-              the DFW area to attend our beginner-friendly events. Look out for
-              our annual Conference and Design Challenge!
-            </p>
+        {/* Highlights section */}
+        <section>
+          <div className="flex flex-col lg:flex-row items-center justify-between p-4 sm:p-6 lg:px-12 pt-6 sm:pt-12 gap-6">
+            {/* Text Section */}
+            <div className="flex-1 lg:pr-12 text-left">
+              <h2 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-4">
+                Our Highlights
+              </h2>
+              <p className="text-gray-700 mb-4 text-base sm:text-lg">
+                Our mission is to spread awareness about user-centered design.
+                Based at the University of Texas at Dallas, we welcome anyone in
+                the DFW area to attend our beginner-friendly events. Look out
+                for our annual Conference and Design Challenge!
+              </p>
+            </div>
+
+            {/* Image Section */}
+            <div className="flex-1 flex justify-center items-center w-full lg:max-w-lg">
+              <img
+                alt="Event"
+                className="w-full h-auto rounded-3xl object-cover"
+                src="/highlights-pic.png"
+              />
+            </div>
           </div>
-          <div className="flex-1 hov-wrapper grow relative">
-            <img
-              alt="Event"
-              className="w-full h-auto rounded-lg "
-              src="/highlights-pic.png"
-            />
-          </div>
-        </div>
+        </section>
       </section>
     </main>
   );

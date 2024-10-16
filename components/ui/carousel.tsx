@@ -28,6 +28,7 @@ type CarouselContextProps = {
   scrollNext: () => void;
   canScrollPrev: boolean;
   canScrollNext: boolean;
+  currentIndex: number; // Track the current index
 } & CarouselProps;
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
@@ -67,14 +68,15 @@ const Carousel = React.forwardRef<
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
+    const [currentIndex, setCurrentIndex] = React.useState(0); // Track the current index
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
         return;
       }
-
       setCanScrollPrev(api.canScrollPrev());
       setCanScrollNext(api.canScrollNext());
+      setCurrentIndex(api.selectedScrollSnap()); // Update current index
     }, []);
 
     const scrollPrev = React.useCallback(() => {
@@ -102,7 +104,6 @@ const Carousel = React.forwardRef<
       if (!api || !setApi) {
         return;
       }
-
       setApi(api);
     }, [api, setApi]);
 
@@ -110,7 +111,6 @@ const Carousel = React.forwardRef<
       if (!api) {
         return;
       }
-
       onSelect(api);
       api.on("reInit", onSelect);
       api.on("select", onSelect);
@@ -124,7 +124,7 @@ const Carousel = React.forwardRef<
       <CarouselContext.Provider
         value={{
           carouselRef,
-          api: api,
+          api,
           opts,
           orientation:
             orientation || (opts?.axis === "y" ? "vertical" : "horizontal"),
@@ -132,6 +132,7 @@ const Carousel = React.forwardRef<
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          currentIndex, // Provide currentIndex to the context
         }}
       >
         <div
@@ -143,6 +144,7 @@ const Carousel = React.forwardRef<
           {...props}
         >
           {children}
+          <CarouselIndicators /> {/* Add the indicators component here */}
         </div>
       </CarouselContext.Provider>
     );
@@ -256,6 +258,47 @@ const CarouselNext = React.forwardRef<
 });
 
 CarouselNext.displayName = "CarouselNext";
+
+// CarouselIndicators component
+const CarouselIndicators = () => {
+  const { api, currentIndex } = useCarousel();
+  const [slides, setSlides] = React.useState(0);
+
+  // Effect to set the number of slides
+  React.useEffect(() => {
+    if (api) {
+      const updateSlides = () => {
+        setSlides(api.scrollSnapList().length); // Get the total number of slides
+      };
+
+      updateSlides(); // Set initial number of slides
+      api.on("reInit", updateSlides); // Update on reInit
+      api.on("select", updateSlides); // Update on selection change
+
+      // Cleanup function to remove event listeners
+      return () => {
+        api.off("reInit", updateSlides);
+        api.off("select", updateSlides);
+      };
+    }
+  }, [api]);
+
+  return (
+    <div className="flex justify-center mt-4">
+      {Array.from({ length: slides }).map((_, index) => (
+        <button
+          key={index}
+          aria-label={`Slide ${index + 1}`}
+          className={cn("mx-1 h-2 w-2 rounded-full", {
+            "bg-blue-500": index === currentIndex, // Change color for the active dot
+            "bg-gray-300": index !== currentIndex,
+          })}
+          onClick={() => api?.scrollTo(index)} // Scroll to the specific index on click
+        />
+      ))}
+    </div>
+  );
+};
 
 export {
   type CarouselApi,

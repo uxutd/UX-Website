@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+
 import { title } from "@/components/primitives";
 
 export default function EventsPage() {
@@ -16,22 +17,22 @@ export default function EventsPage() {
       }}
     >
       <Typography
-        variant="h2"
         className={title()}
         sx={{
           fontWeight: "bold",
           color: "#333",
-          marginBottom: "16px"
+          marginBottom: "16px",
         }}
+        variant="h2"
       >
         Under Construction
       </Typography>
       <Typography
-        variant="body1"
         sx={{
           color: "#666",
-          fontSize: "18px"
+          fontSize: "18px",
         }}
+        variant="body1"
       >
         We&apos;re working hard to bring this page to life. Stay tuned!
       </Typography>

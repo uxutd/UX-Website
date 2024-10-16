@@ -2,8 +2,10 @@ import Image from "next/image";
 
 import BlurFade from "@/components/magicui/blur-fade";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+
 import { LinkedinIcon } from "@/components/icons"; // Ensure the correct path is set for the LinkedIn icon
 import WordPullUp from "@/components/magicui/word-pull-up";
+
 
 export default function AboutPage() {
   const officers = [
@@ -138,6 +140,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Intro Section */}
+
       <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center min-h-screen md:min-h-[87.5vh]">
         <div className="container mx-auto px-4 md:px-36 flex flex-col justify-center h-full">
           <h1
@@ -225,7 +228,9 @@ export default function AboutPage() {
         ].map((officerRow, rowIndex) => (
           <section
             key={rowIndex}
+
             className="flex flex-wrap justify-center text-center mt-8"
+
           >
             {officerRow.map((officer, index) => (
               <div key={index} className="m-4">
@@ -254,6 +259,10 @@ export default function AboutPage() {
             ))}
           </section>
         ))}
+
+
+        <br />
+
       </main>
     </>
   );
