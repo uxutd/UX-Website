@@ -120,7 +120,7 @@ export default function DesignPage() {
               <img
                 alt="UXPERIENCE Logo"
                 className="absolute items-center w-[30vw]"
-                src="/pixie.png"
+                src="/Pixie.png"
               />
             </div>
           </div>
