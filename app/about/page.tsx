@@ -2,10 +2,7 @@ import Image from "next/image";
 
 import BlurFade from "@/components/magicui/blur-fade";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
-
 import { LinkedinIcon } from "@/components/icons"; // Ensure the correct path is set for the LinkedIn icon
-import WordPullUp from "@/components/magicui/word-pull-up";
-
 
 export default function AboutPage() {
   const officers = [
@@ -93,7 +90,7 @@ export default function AboutPage() {
     {
       name: "Abel Thomas",
       title: "Corporate Relations",
-      img: "/abel.jpg",
+      img: "/UX_Officers/abel.jpg",
       linkedIn: "https://www.linkedin.com/in/officer5/",
     },
     {
@@ -228,9 +225,7 @@ export default function AboutPage() {
         ].map((officerRow, rowIndex) => (
           <section
             key={rowIndex}
-
             className="flex flex-wrap justify-center text-center mt-8"
-
           >
             {officerRow.map((officer, index) => (
               <div key={index} className="m-4">
@@ -246,10 +241,10 @@ export default function AboutPage() {
                 <div className="flex items-center justify-center mt-2">
                   <h3 className="text-lg font-semibold">{officer.name}</h3>
                   <a
-                    href={officer.linkedIn}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="ml-2 flex items-center"
+                    href={officer.linkedIn}
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
                     <LinkedinIcon className="w-6 h-6 text-[#3E68FD]" />
                   </a>
@@ -260,9 +255,7 @@ export default function AboutPage() {
           </section>
         ))}
 
-
         <br />
-
       </main>
     </>
   );
