@@ -86,12 +86,14 @@
   border-radius: 0.5rem; /* Rounded corners */
 }
 
-.officer-wrapper img {
+.off-wrapper img {
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-.hov-wrapper:hover img {
+.off-wrapper:hover img {
   transform: scale(1.05);
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+
   /*filter: grayscale(100%); /* Slight gray overlay */
 }
 
@@ -115,4 +117,3 @@
 .font-bricolage {
   font-family: 'Bricolage Grotesque', sans-serif;
 }
-
