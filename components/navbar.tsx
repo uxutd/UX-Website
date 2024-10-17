@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -78,7 +79,7 @@ export const Navbar = () => {
                       "data-[active=true]:font-medium",
                       pathname === item.href
                         ? "text-primary font-bold" // Active link styling
-                        : "hover:text-primary transition-colors",
+                        : "hover:text-primary transition-colors"
                     )}
                     href={item.href}
                   >
@@ -142,6 +143,9 @@ export const Navbar = () => {
         <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500 transition-transform duration-200 ease-in-out hover:scale-110" />
+          </Link>
+          <Link isExternal aria-label="Instagram" href={siteConfig.links.instagram}>
+            <InstagramIcon className="text-default-500 transition-transform duration-200 ease-in-out hover:scale-110" />
           </Link>
           <ThemeSwitch />
           <NavbarMenuToggle />

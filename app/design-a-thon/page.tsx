@@ -40,14 +40,14 @@ export default function DesignPage() {
           </div>
           <div className="flex items-center justify-center relative">
             <BlurFade delay={5}>
-              <div className="hover:rotate-[4deg] hover:scale-110 transition ease-out relative">
+              <div className="relative overflow-hidden hover:rotate-[4deg] hover:scale-110 transition ease-out">
                 <img
                   alt="UXPERIENCE Logo"
-                  className="w-[40vw] max-w-[600px] h-auto" // Added max width for larger screens
+                  className="w-[60vw] max-w-[600px] h-auto sm:w-[40vw]" // Increased width for mobile, reverted for larger screens
                   src="/Group3.svg"
                 />
                 <TypingAnimation
-                  className="absolute inset-0 flex items-center justify-center font-bold text-[#08195E] rotate-[-2deg] p-10 text-[3rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] xl:text-[4rem]"
+                  className="absolute inset-0 flex items-center justify-center font-bold text-[#08195E] rotate-[-2deg] text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[4rem] p-[3%] sm:p-[2%] md:p-[5%] lg:p-[5%] xl:p-[5%] max-w-full overflow-hidden whitespace-nowrap min-w-0" // Keep whitespace-nowrap
                   duration={320}
                   text="The First Draft"
                 />
