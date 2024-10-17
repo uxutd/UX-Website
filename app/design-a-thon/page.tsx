@@ -57,7 +57,7 @@ export default function DesignPage() {
               </div>
             </BlurFade>
           </div>
-          <BlurFade delay={5}>
+          <BlurFade delay={2}>
             <div className="flex flex-col gap-4">
               <span className="text-2xl font-bold text-[#08195E] hover:scale-110 transition ease-out">
                 November 9th - 10th
