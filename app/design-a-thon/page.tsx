@@ -42,7 +42,7 @@ export default function DesignPage() {
           </BlurFade>
 
           <div className="flex items-center justify-center relative">
-            <BlurFade delay={5}>
+            <BlurFade delay={2}>
               <div className="relative overflow-hidden hover:rotate-[4deg] hover:scale-110 transition ease-out">
                 <img
                   alt="UXPERIENCE Logo"
@@ -51,7 +51,7 @@ export default function DesignPage() {
                 />
                 <TypingAnimation
                   className="absolute inset-0 flex items-center justify-center font-bold text-[#08195E] rotate-[-2deg] text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[4rem] p-[3%] sm:p-[2%] md:p-[5%] lg:p-[5%] xl:p-[5%] max-w-full overflow-hidden whitespace-nowrap min-w-0" // Keep whitespace-nowrap
-                  duration={320}
+                  duration={200}
                   text="The First Draft"
                 />
               </div>
