@@ -22,7 +22,7 @@ import uxlogo from "../public/UX_Color_Logo.svg"; // Correct image import
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon, DiscordIcon } from "@/components/icons";
+import { DiscordIcon, InstagramIcon } from "@/components/icons";
 
 export const Navbar = () => {
   const pathname = usePathname(); // Get the current pathname
@@ -117,8 +117,12 @@ export const Navbar = () => {
             >
               <DiscordIcon className="text-default-500" />
             </Link>
-            <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-              <GithubIcon className="text-default-500" />
+            <Link
+              isExternal
+              aria-label="Instagram"
+              href={siteConfig.links.instagram}
+            >
+              <InstagramIcon className="text-default-500" />
             </Link>
             <ThemeSwitch />
           </NavbarItem>
@@ -127,7 +131,7 @@ export const Navbar = () => {
               isExternal
               as={Link}
               className="text-sm font-normal text-white bg-blue-500 hover:bg-blue-600"
-              href={siteConfig.links.sponsor}
+              href={siteConfig.links.mailinglist}
               variant="flat"
             >
               Join Us

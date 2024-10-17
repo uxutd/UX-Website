@@ -3,7 +3,6 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 
-import { siteConfig } from "@/config/site";
 import { subtitle } from "@/components/primitives";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -55,7 +54,6 @@ export default function Home() {
 
       <div className="flex justify-center w-full">
         <Link
-          isExternal
           className={cn(
             buttonStyles({
               color: "primary",
@@ -64,7 +62,7 @@ export default function Home() {
             }),
             "bg-blue-500 hover:bg-blue-600 shadow-none",
           )}
-          href={siteConfig.links.discord}
+          href={"/about"}
         >
           Learn More
           <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
