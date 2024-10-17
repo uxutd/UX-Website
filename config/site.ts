@@ -3,6 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: "UX Club",
   description: "Spreading user experience awareness since 2014",
+  icon: "/UX_Color_Logo.svg",
   navItems: [
     {
       label: "Home",
