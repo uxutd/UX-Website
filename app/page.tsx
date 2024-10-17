@@ -149,7 +149,7 @@ export default function Home() {
             </div>
 
             {/* Image Section */}
-            <div className="flex-1 flex justify-center items-center w-full lg:max-w-lg">
+            <div className="flex-1 flex justify-center items-center w-full lg:max-w-lg off-wrapper grow relative">
               <img
                 alt="Event"
                 className="w-full h-auto rounded-3xl object-cover"
