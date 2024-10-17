@@ -24,20 +24,23 @@ export default function DesignPage() {
     <>
       <main className="flex flex-col items-center justify-center w-full flex-1 px-[10vw] gap-4 text-center">
         <section className="flex flex-col h-screen items-center pt-48 gap-4">
-          <BlurFade blur="30px" delay={3} duration={2}>
-            <div
-              className={cn(
-                "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
-              )}
-            >
-              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                <span>The UX Club presents</span>
-              </AnimatedShinyText>
+          <div
+            className={cn(
+              "group rounded-full border border-black/10 bg-neutral-200 text-base text-black transition-all ease-in hover:cursor-pointer hover:bg-neutral-300 dark:border-white/10 dark:bg-neutral-800 dark:hover:bg-neutral-700",
+            )}
+          >
+            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-700 hover:duration-300 hover:dark:text-neutral-300">
+              <span>The UX Club presents</span>
+            </AnimatedShinyText>
+          </div>
+          <BlurFade>
+            <div className="flex items-center justify-center w-[100vw]">
+              <TextHoverEffect
+                text="UXPERIENCE"
+              />
             </div>
           </BlurFade>
-          <div className="flex items-center justify-center w-[100vw]">
-            <TextHoverEffect text="UXPERIENCE" />
-          </div>
+
           <div className="flex items-center justify-center relative">
             <BlurFade delay={5}>
               <div className="relative overflow-hidden hover:rotate-[4deg] hover:scale-110 transition ease-out">
