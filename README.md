@@ -1,53 +1,39 @@
-# Next.js & NextUI Template
+# UX Club at Dallas Website
 
-This is a template for creating applications using Next.js 14 (app directory) and NextUI (v2).
+The UX Club at Dallas website serves as the central hub for all things related to the UX community at the University of Texas at Dallas. It provides members with information on events, resources, and ways to get involved in the UX design community. Designed with a focus on modern user experience, accessibility, and performance, the platform helps streamline communication and collaboration for over 600 members.
 
-[Try it on CodeSandbox](https://githubbox.com/nextui-org/next-app-template)
+[Live Demo](https://uxclubdallas.vercel.app/) | [Source Code](https://github.com/your-username/ux-club-dallas)
 
-## Technologies Used
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![MagicUI](https://img.shields.io/badge/MagicUI-AB47BC?style=for-the-badge)
+![NextUI](https://img.shields.io/badge/NextUI-0078D4?style=for-the-badge&logo=react&logoColor=white)
+![shadcn](https://img.shields.io/badge/shadcn-556CFC?style=for-the-badge&logo=shadcn)
+![Aceternity UI](https://img.shields.io/badge/Aceternity%20UI-42A5F5?style=for-the-badge)
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [NextUI v2](https://nextui.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+## Key Features
 
-## How to Use
+- **Dynamic Event Listings**: Stay updated on the latest UX Club events, workshops, and meetings with real-time event information and interactive sign-ups.
 
-### Use the template with create-next-app
+- **Member Resources and Guides**: Access educational resources, tutorials, and guides related to UX design and development, created specifically for members of the club.
 
-To create a new project based on this template using `create-next-app`, run the following command:
+- **Community Engagement**: A forum-like space where members can interact, ask questions, and collaborate on design projects and discussions.
 
-```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
-```
+- **Modern Design System**: Built using MagicUI, NextUI, and Aceternity UI to ensure a sleek, responsive, and accessible user interface.
 
-### Install dependencies
+- **Fully Responsive**: Optimized for all devices, providing an excellent user experience whether you're on a desktop or mobile device.
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+- **Fast and Scalable**: Powered by Next.js and TypeScript, the website is highly performant and scalable to meet the growing needs of the UX Club.
 
-```bash
-npm install
-```
+## Getting Started
 
-### Run the development server
+### Prerequisites
 
-```bash
-npm run dev
-```
+Ensure you have [Node.js](https://nodejs.org/) and [TypeScript](https://www.typescriptlang.org/) installed.
 
-### Setup pnpm (optional)
+### Installation
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+1. **Clone the repository to get started**
 
-```bash
-public-hoist-pattern[]=*@nextui-org/*
-```
-
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
-
-## License
-
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+   ```bash
+   git clone https://github.com/your-username/ux-club-dallas.git
