@@ -2,7 +2,7 @@
 
 The UX Club at Dallas website serves as the central hub for all things related to the UX community at the University of Texas at Dallas. It provides members with information on events, resources, and ways to get involved in the UX design community. Designed with a focus on modern user experience, accessibility, and performance, the platform helps streamline communication and collaboration for over 600 members.
 
-[Live Demo](https://ux-website.vercel.app/) | [Source Code](https://github.com/your-username/ux-club-dallas)
+[Live Demo](https://ux-website.vercel.app/)
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
