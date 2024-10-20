@@ -2,7 +2,13 @@ import Image from "next/image";
 
 import BlurFade from "@/components/magicui/blur-fade";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+
 import { LinkedinIcon } from "@/components/icons"; // Ensure the correct path is set for the LinkedIn icon
+import WordPullUp from "@/components/magicui/word-pull-up";
+
+import { FlipWords } from "@/components/ui/components/ui/flip-words";
+import { WordRotate } from "@/components/ui/word-rotate";
+
 
 export default function AboutPage() {
   const officers = [
@@ -10,25 +16,25 @@ export default function AboutPage() {
       name: "Mani Vipat",
       title: "President",
       img: "/UX_Officers/mani.jpg",
-      linkedIn: "https://www.linkedin.com/in/vincentjoubarne/",
+      linkedIn: "https://www.linkedin.com/in/manasivipat/",
     },
     {
       name: "Kshitij K",
       title: "Vice President",
       img: "/UX_Officers/kk.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer2/",
+      linkedIn: "https://www.linkedin.com/in/kshitijkulshrestha/",
     },
     {
       name: "Varshni Karthikeyan",
       title: "Secretary",
       img: "/UX_Officers/varshni.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer3/",
+      linkedIn: "https://www.linkedin.com/in/varshnik/",
     },
     {
       name: "Manasa Paruchuri",
       title: "Marketing Director",
       img: "/UX_Officers/manasap.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer4/",
+      linkedIn: "https://www.linkedin.com/in/manasaparuchuri/",
     },
   ];
 
@@ -37,25 +43,25 @@ export default function AboutPage() {
       name: "Shaz Kumar",
       title: "Director",
       img: "/UX_Officers/shaz.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer5/",
+      linkedIn: "https://www.linkedin.com/in/shaswatkumar1/",
     },
     {
       name: "Jasper Cao",
       title: "Treasurer",
       img: "/UX_Officers/jasper.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer6/",
+      linkedIn: "https://www.linkedin.com/in/caojasper/",
     },
     {
       name: "Adit Patel",
       title: "Logistics Coordinator",
       img: "/UX_Officers/adit.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer7/",
+      linkedIn: "https://www.linkedin.com/in/adit-patel-a03095182/",
     },
     {
       name: "Sally Nguyen",
       title: "Social Media Coordinator",
       img: "/UX_Officers/sally.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer8/",
+      linkedIn: "https://www.linkedin.com/in/an-nguyen-tran/",
     },
   ];
 
@@ -64,25 +70,25 @@ export default function AboutPage() {
       name: "Tanvi Deshpande",
       title: "Student Engagement",
       img: "/UX_Officers/tanvi.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer5/",
+      linkedIn: "https://www.linkedin.com/in/tanvi-d/",
     },
     {
       name: "Cory Olson",
       title: "Event Coordinator",
       img: "/UX_Officers/cory.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer6/",
+      linkedIn: "https://www.linkedin.com/in/cory-olson-094b34262/",
     },
     {
       name: "Sai Gudisa",
       title: "Event Coordinator",
       img: "/UX_Officers/sai.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer7/",
+      linkedIn: "https://www.linkedin.com/in/venkatasai-gudisa/",
     },
     {
       name: "Vaishali Sathiyachalam",
       title: "Event Coordinator",
       img: "/UX_Officers/vaishali.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer7/",
+      linkedIn: "https://www.linkedin.com/in/vaishali-sathiyachalam/",
     },
   ];
 
@@ -91,25 +97,25 @@ export default function AboutPage() {
       name: "Abel Thomas",
       title: "Corporate Relations",
       img: "/UX_Officers/abel.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer5/",
+      linkedIn: "https://www.linkedin.com/in/abel-thomas-at/",
     },
     {
       name: "Maha Shaikh",
       title: "Corporate Relations",
       img: "/UX_Officers/maha.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer8/",
+      linkedIn: "https://www.linkedin.com/in/mahashaikhh/",
     },
     {
       name: "Manasa Valluru",
       title: "Designer",
       img: "/UX_Officers/manasav.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer6/",
+      linkedIn: "https://www.linkedin.com/in/manasa-valluru-28a729201/",
     },
     {
       name: "Maci Thomas",
       title: "Designer",
       img: "/UX_Officers/maci.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer7/",
+      linkedIn: "https://www.linkedin.com/in/macit16/",
     },
   ];
 
@@ -118,44 +124,41 @@ export default function AboutPage() {
       name: "Danielle Khaitas",
       title: "Designer",
       img: "/UX_Officers/danielle.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer8/",
+      linkedIn: "https://www.linkedin.com/in/danielle-khaitas/",
     },
     {
       name: "Vyom Sethia",
       title: "Designer Coordinator",
       img: "/UX_Officers/vyom.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer5/",
+      linkedIn: "https://www.linkedin.com/in/vyomsethia/",
     },
     {
       name: "Vidur Nangia",
       title: "Web Developer",
       img: "/UX_Officers/vidur.jpg",
-      linkedIn: "https://www.linkedin.com/in/officer6/",
+      linkedIn: "https://www.linkedin.com/in/vidur-nangia/",
     },
+    
   ];
+
+  const heroWords = ["innovators", "engineers", "designers", "futurists"];
 
   return (
     <>
       {/* Intro Section */}
 
       <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center min-h-screen md:min-h-[87.5vh]">
-        <div className="container mx-auto px-4 md:px-36 flex flex-col justify-center h-full">
-          <h1
-            className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0"
-            style={{ wordSpacing: "0.25rem" }}
-          >
+        <div className="container mx-auto px-4 md:px-36 flex flex-col justify-center h-full animate-slide-in">
+          <h1 className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0" style={{ wordSpacing: "0.25rem" }}>
             Behind the pretty
           </h1>
-          <h1
-            className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0"
-            style={{ wordSpacing: "0.65rem" }}
-          >
+          <h1 className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0" style={{ wordSpacing: "0.65rem" }}>
             interfaces,
           </h1>
-
-          <h2 className="text-2xl md:text-[1.875rem] mt-2">
-            We are <span className="text-[#3E68FD]">innovators</span>
-          </h2>
+          <div className="inline-block flex flex-row gap-2">
+            <h2 className="text-2xl md:text-[1.575rem] mt-2 inline-block">We are</h2>
+            <WordRotate className="text-2xl md:text-[1.575rem] text-[#3E68FD] p-0 m-0 inline-block gap-1" words={["innovators", "researchers", "designers", "collaborators", "curators", "storytellers","developers"]} />
+          </div>
           <p className="mt-4 w-full text-lg md:text-[1.625rem] font-extralight leading-tight">
             The UX Club at UT Dallas has been around since 2014 with the
           </p>
@@ -168,18 +171,20 @@ export default function AboutPage() {
         </div>
       </section>
 
+
+
       {/* About Section */}
       <main className="px-[5vw] md:px-[10vw]">
         <section className="flex flex-col md:flex-row items-start justify-between gap-8 mt-12 p-6 md:pl-16">
           {/* Image Section */}
           <div className="w-full md:w-[40%] mb-6 md:mb-0 flex-1">
-            <div className="hov-wrapper grow relative">
+            <div className="off-wrapper grow relative">
               <Image
                 alt="About"
                 className="absolute rounded-lg relative z-10 mt-6 flex-1"
                 height={230}
                 objectFit="cover"
-                src="/AboutPic.png"
+                src="/ConferenceAbout.jpg"
                 width={450}
               />
             </div>
@@ -216,38 +221,40 @@ export default function AboutPage() {
         </section>
 
         {/* Officers Sections */}
+        {/* Officers Sections */}
         {[
-          officers,
-          officersRowTwo,
-          officersRowThree,
-          officersRowFour,
-          officersRowFive,
+  officers,
+  officersRowTwo,
+  officersRowThree,
+  officersRowFour,
+  officersRowFive,
         ].map((officerRow, rowIndex) => (
           <section
             key={rowIndex}
-            className="flex flex-wrap justify-center text-center mt-8"
+            className="flex flex-col sm:flex-row flex-wrap justify-center text-center mt-8"
           >
             {officerRow.map((officer, index) => (
-              <div key={index} className="m-4">
+              <div
+                key={index}
+                className="m-4 relative w-full sm:w-auto flex flex-col items-center"
+              >
                 <div className="off-wrapper grow relative">
-                  <Image
-                    alt={officer.name}
-                    className="rounded-lg w-[250px] h-[250px] object-cover"
-                    height={250}
-                    src={officer.img}
-                    width={250}
-                  />
-                </div>
-                <div className="flex items-center justify-center mt-2">
-                  <h3 className="text-lg font-semibold">{officer.name}</h3>
                   <a
-                    className="ml-2 flex items-center"
                     href={officer.linkedIn}
-                    rel="noopener noreferrer"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <LinkedinIcon className="w-6 h-6 text-[#3E68FD]" />
+                    <Image
+                      alt={officer.name}
+                      className="rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square"
+                      height={250}
+                      src={officer.img}
+                      width={250}
+                    />
                   </a>
+                </div>
+                <div className="flex justify-center mt-2">
+                  <h3 className="text-lg font-semibold">{officer.name}</h3>
                 </div>
                 <h4 className="text-sm text-center">{officer.title}</h4>
               </div>
@@ -255,7 +262,12 @@ export default function AboutPage() {
           </section>
         ))}
 
+
+
+
+
         <br />
+
       </main>
     </>
   );
