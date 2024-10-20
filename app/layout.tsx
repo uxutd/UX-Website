@@ -16,7 +16,29 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/UX_White_Logo.svg",
+    icon: "/UX_White_Logo.svg", // Path to your favicon or icon
+  },
+  openGraph: {
+    title: siteConfig.name, // Title for the Open Graph preview
+    description: siteConfig.description, // Description for the Open Graph preview
+    url: "https://ux-website.vercel.app/", // Replace with your site's URL
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: "/UX_White_Logo.svg", // Path to your logo
+        width: 800, // Optional: width of the image
+        height: 600, // Optional: height of the image
+        alt: siteConfig.name, // Alternative text for the image
+      },
+    ],
+    locale: "en_US", // Optional: the locale for the page
+    type: "website", // Type of your content
+  },
+  twitter: {
+    card: "summary_large_image", // Use 'summary' for a smaller image preview
+    title: siteConfig.name, // Title for Twitter preview
+    description: siteConfig.description, // Description for Twitter preview
+    images: ["/path/to/your/logo.png"], // Path to your logo
   },
 };
 

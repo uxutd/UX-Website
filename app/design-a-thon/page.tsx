@@ -24,37 +24,40 @@ export default function DesignPage() {
     <>
       <main className="flex flex-col items-center justify-center w-full flex-1 px-[10vw] gap-4 text-center">
         <section className="flex flex-col h-screen items-center pt-48 gap-4">
-          <BlurFade blur="30px" delay={3} duration={2}>
-            <div
-              className={cn(
-                "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
-              )}
-            >
-              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                <span>The UX Club presents</span>
-              </AnimatedShinyText>
+          <div
+            className={cn(
+              "group rounded-full border border-black/10 bg-neutral-200 text-base text-black transition-all ease-in hover:cursor-pointer hover:bg-neutral-300 dark:border-white/10 dark:bg-neutral-800 dark:hover:bg-neutral-700",
+            )}
+          >
+            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-700 hover:duration-300 hover:dark:text-neutral-300">
+              <span>The UX Club presents</span>
+            </AnimatedShinyText>
+          </div>
+          <BlurFade>
+            <div className="flex items-center justify-center w-[100vw]">
+              <TextHoverEffect
+                text="UXPERIENCE"
+              />
             </div>
           </BlurFade>
-          <div className="flex items-center justify-center w-[100vw]">
-            <TextHoverEffect text="UXPERIENCE" />
-          </div>
+
           <div className="flex items-center justify-center relative">
-            <BlurFade delay={5}>
-              <div className="hover:rotate-[4deg] hover:scale-110 transition ease-out relative">
+            <BlurFade delay={2}>
+              <div className="relative overflow-hidden hover:rotate-[4deg] hover:scale-110 transition ease-out">
                 <img
                   alt="UXPERIENCE Logo"
-                  className="w-[40vw] max-w-[600px] h-auto" // Added max width for larger screens
+                  className="w-[60vw] max-w-[600px] h-auto sm:w-[40vw]" // Increased width for mobile, reverted for larger screens
                   src="/Group3.svg"
                 />
                 <TypingAnimation
-                  className="absolute inset-0 flex items-center justify-center font-bold text-[#08195E] rotate-[-2deg] p-10 text-[3rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] xl:text-[4rem]"
-                  duration={320}
+                  className="absolute inset-0 flex items-center justify-center font-bold text-[#08195E] rotate-[-2deg] text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[4rem] p-[3%] sm:p-[2%] md:p-[5%] lg:p-[5%] xl:p-[5%] max-w-full overflow-hidden whitespace-nowrap min-w-0" // Keep whitespace-nowrap
+                  duration={200}
                   text="The First Draft"
                 />
               </div>
             </BlurFade>
           </div>
-          <BlurFade delay={5}>
+          <BlurFade delay={2}>
             <div className="flex flex-col gap-4">
               <span className="text-2xl font-bold text-[#08195E] hover:scale-110 transition ease-out">
                 November 9th - 10th

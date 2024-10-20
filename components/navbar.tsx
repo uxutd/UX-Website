@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -22,7 +23,7 @@ import uxlogo from "../public/UX_Color_Logo.svg"; // Correct image import
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon, DiscordIcon } from "@/components/icons";
+import { DiscordIcon, InstagramIcon } from "@/components/icons";
 
 export const Navbar = () => {
   const pathname = usePathname(); // Get the current pathname
@@ -78,7 +79,7 @@ export const Navbar = () => {
                       "data-[active=true]:font-medium",
                       pathname === item.href
                         ? "text-primary font-bold" // Active link styling
-                        : "hover:text-primary transition-colors",
+                        : "hover:text-primary transition-colors"
                     )}
                     href={item.href}
                   >
@@ -117,8 +118,12 @@ export const Navbar = () => {
             >
               <DiscordIcon className="text-default-500" />
             </Link>
-            <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-              <GithubIcon className="text-default-500" />
+            <Link
+              isExternal
+              aria-label="Instagram"
+              href={siteConfig.links.instagram}
+            >
+              <InstagramIcon className="text-default-500" />
             </Link>
             <ThemeSwitch />
           </NavbarItem>
@@ -127,7 +132,7 @@ export const Navbar = () => {
               isExternal
               as={Link}
               className="text-sm font-normal text-white bg-blue-500 hover:bg-blue-600"
-              href={siteConfig.links.sponsor}
+              href={siteConfig.links.mailinglist}
               variant="flat"
             >
               Join Us
@@ -138,6 +143,9 @@ export const Navbar = () => {
         <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500 transition-transform duration-200 ease-in-out hover:scale-110" />
+          </Link>
+          <Link isExternal aria-label="Instagram" href={siteConfig.links.instagram}>
+            <InstagramIcon className="text-default-500 transition-transform duration-200 ease-in-out hover:scale-110" />
           </Link>
           <ThemeSwitch />
           <NavbarMenuToggle />

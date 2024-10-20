@@ -111,7 +111,7 @@ export const TextHoverEffect = ({
         }}
         textAnchor="middle"
         transition={{
-          duration: 20,
+          duration: 10,
           ease: "easeInOut",
         }}
         x="50%"
