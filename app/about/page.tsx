@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import BlurFade from "@/components/magicui/blur-fade";
-import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 
 import { LinkedinIcon } from "@/components/icons"; // Ensure the correct path is set for the LinkedIn icon
 import WordPullUp from "@/components/magicui/word-pull-up";

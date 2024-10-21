@@ -62,6 +62,7 @@ module.exports = {
       },
 
       animation: {
+		gradient: "gradient 8s linear infinite",
         'slide-in': 'slideIn 0.5s ease-out forwards', // Changed to 'slide-in'
         first: 'moveVertical 30s ease infinite',
         second: 'moveInCircle 20s reverse infinite',
@@ -112,7 +113,12 @@ module.exports = {
             transform: 'translateY(0)', // Slide down to original position
             opacity: '1'
           }
-        }
+        },
+		gradient: {
+			to: {
+			  backgroundPosition: "var(--bg-size) 0",
+			},
+		  },
       }
     }
   },
