@@ -27,6 +27,7 @@ export default function DesignPage() {
           <BlurFade>
             <div className="flex items-center justify-center w-[100vw]">
               <TextHoverEffect text="UXPERIENCE" />
+              <TextHoverEffect text="UXPERIENCE" />
             </div>
           </BlurFade>
 
