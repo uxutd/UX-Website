@@ -53,7 +53,7 @@ export default function Home() {
         </BlurFade>
         </a>
         <BlurFade>
-          <div className="py-8">
+          <div className="py-8 hover:scale-105 transition ease-out">
             <WordPullUp
               className="tracking-tight inline font-semibold text-[2.3rem] lg:text-5xl leading-9 text-[#3E68FD]"
               words="We help design the future by empowering UT Dallas students through user-centric design"
@@ -150,8 +150,8 @@ export default function Home() {
         <section>
           <div className="flex flex-col lg:flex-row items-center justify-between p-4 sm:p-6 lg:px-12 pt-6 sm:pt-12 gap-6">
             {/* Text Section */}
-            <div className="flex-1 lg:pr-12 text-left">
-              <h2 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-4">
+            <div className="flex-1 lg:pr-12 text-left ">
+              <h2 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-4 hover:scale-105 transition ease-out">
                 Our Highlights
               </h2>
               <p className="text-gray-700 mb-4 text-base sm:text-lg">
@@ -179,7 +179,7 @@ export default function Home() {
             <div className="flex flex-col lg:flex-row justify-start items-start text-left gap-6">
               {/* Text Section */}
               <div className="flex-1">
-                <h2 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-4 ">
+                <h2 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-4 hover:scale-105 transition ease-out">
                   Sponsors
                 </h2>
               </div>

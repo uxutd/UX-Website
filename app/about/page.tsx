@@ -208,7 +208,7 @@ export default function AboutPage() {
         </section>
 
         {/* Meet the Team Header */}
-        <section className="w-full flex justify-center mt-10">
+        <section className="w-full flex justify-center mt-10 hover:scale-105 transition ease-out">
           <BlurFade>
             <div className="py-8">
               <AnimatedGradientText>

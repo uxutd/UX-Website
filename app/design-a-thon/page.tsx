@@ -31,7 +31,7 @@ export default function DesignPage() {
 
   const saturdaySchedule = [
     { time: "9:00am", event: "Check In/Boothing", location: "ECSW Atrium" },
-    { time: "10:00am", event: "Team Forming", location: "ECSW 'Bird's Nest'" },
+    { time: "10:00am", event: "Team Formin Mixer", location: "ECSW 'Bird's Nest'" },
     { time: "10:00am", event: "& Sponsor Networking", location: "ECSW Atrium" },
     { time: "11:00am", event: "Opening Ceremony", location: "SLC 1.102" },
     { time: "12:00pm", event: "Designing Starts 💙", location: "Anywhere!" },
@@ -119,7 +119,7 @@ export default function DesignPage() {
             Unleash Your Creativity at Our Design-a-thon
           </p>
           <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-            <Card className="lg:row-span-2 bg-white rounded-lg shadow-md p-4 hover:scale-110 transition ease-out">
+            <Card className="lg:row-span-2 bg-white rounded-lg shadow-md p-4 ">
               <CardHeader>
                 <h3 className="text-xl font-semibold text-gray-900">What is a Design-a-thon?</h3>
               </CardHeader>
@@ -130,7 +130,7 @@ export default function DesignPage() {
               </CardContent>
             </Card>
             
-            <Card className="bg-white rounded-lg shadow-md p-4 hover:scale-110 transition ease-out">
+            <Card className="bg-white rounded-lg shadow-md p-4 ">
               <CardHeader>
                 <h3 className="text-xl font-semibold text-gray-900">What We Do</h3>
               </CardHeader>
@@ -144,7 +144,7 @@ export default function DesignPage() {
               </CardContent>
             </Card>
             
-            <Card className="bg-white rounded-lg shadow-md p-4 hover:scale-110 transition ease-out">
+            <Card className="bg-white rounded-lg shadow-md p-4 ">
               <CardHeader>
                 <h3 className="text-xl font-semibold text-gray-900">How to Join</h3>
               </CardHeader>
@@ -155,7 +155,7 @@ export default function DesignPage() {
               </CardContent>
             </Card>
             
-            <Card className="lg:col-span-2 bg-white rounded-lg shadow-md p-4 hover:scale-110 transition ease-out">
+            <Card className="lg:col-span-2 bg-white rounded-lg shadow-md p-4 ">
               <CardHeader>
                 <h3 className="text-xl font-semibold text-gray-900">Who Can Participate?</h3>
               </CardHeader>
@@ -245,7 +245,7 @@ export default function DesignPage() {
               </div>
             ))}
             
-  </div>
+      </div>
 
   {/* Sunday Schedule */}
   <div className="flex flex-col w-full mx-auto px-4">
@@ -268,7 +268,7 @@ export default function DesignPage() {
                             Anywhere!
                         </div>
                     </div>
-</div>
+                </div>
                     <div className="bg-white mb-8 mx-2 p-2 border-2 rounded-3xl border-[#05149C] border-opacity-20 hover:scale-105 transition ease-out">
                     <div className="border-b border-[#4D8889] p-2">
                         <div className="flex justify-between pb-1">
@@ -372,8 +372,8 @@ export default function DesignPage() {
         
         <section className="flex items-center justify-center h-full gap-4">
           <BackgroundGradientAnimation>
-            <div className="absolute z-50 inset-0 flex flex-col gap-2 items-center justify-center pointer-events-none text-center">
-              <p className="text-white font-bold text-3xl md:text-4xl lg:text-7xl drop-shadow-2xl">
+            <div className="absolute z-50 inset-0 flex flex-col gap-2 items-center justify-center pointer-events-none text-center ">
+              <p className="text-white font-bold text-3xl md:text-4xl lg:text-7xl drop-shadow-2xl ">
                 This is Your Experience.
               </p>
             </div>
