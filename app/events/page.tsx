@@ -13,7 +13,7 @@ export default function EventsPage() {
         height: "100vh",
         backgroundColor: "#f0f0f0", // light background
         textAlign: "center",
-        padding: "0 20px", // small padding for mobile view
+        padding: { xs: "0 10px", sm: "0 20px", md: "0 40px" }, // responsive padding
       }}
     >
       <Typography

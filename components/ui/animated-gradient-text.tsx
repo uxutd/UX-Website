@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
-
 import { cn } from "@/lib/utils";
 
-export default function AnimatedGradientText({
+export function AnimatedGradientText({
   children,
   className,
 }: {
@@ -12,15 +11,15 @@ export default function AnimatedGradientText({
   return (
     <div
       className={cn(
-        "group relative mx-auto flex max-w-fit flex-row items-center justify-center rounded-2xl px-4 py-1.5 text-sm font-medium transition-shadow duration-500 ease-out [--bg-size:300%]",
-        className,
+        "relative mx-auto flex max-w-fit items-center justify-center text-sm font-medium transition-shadow duration-500 ease-out",
+        className
       )}
     >
-      <div
-        className={`absolute inset-0 block h-full w-full animate-gradient bg-gradient-to-r from-[#253B75]/50 via-[#0C1533]/50 to-[#0C1533]/50 bg-[length:var(--bg-size)_100%] ![mask-composite:subtract] [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)]`}
-      />
-
-      {children}
+      <span
+        className="bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient"
+      >
+        {children}
+      </span>
     </div>
   );
 }
