@@ -9,7 +9,6 @@ import { cn } from "@/lib/utils";
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import NumberTicker from "@/components/magicui/number-ticker";
 import { Card, CardHeader, CardContent } from "@mui/material";
-import AnimatedGradientText from "@/components/ui/animated-gradient-text";
 import SparklesText from "@/components/ui/sparkles-text";
 
 
