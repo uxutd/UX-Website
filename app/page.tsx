@@ -2,6 +2,8 @@ import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
+import ImageGrid from '@/components/imagegrid';
+
 
 import { subtitle } from "@/components/primitives";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,8 +18,19 @@ import NumberTicker from "@/components/magicui/number-ticker";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import BlurFade from "@/components/magicui/blur-fade";
 
+const images: string[] = [
+  '/corporateTransparent/adobe.png', '/corporateTransparent/austincsi.svg', '/corporateTransparent/axurelogo.png',
+  '/corporateTransparent/balsamiq.png', '/corporateTransparent/bigdesign.png', '/corporateTransparent/bigforesight.png', 
+   '/corporateTransparent/bottlerocket.png', '/corporateTransparent/capitalone.png',
+  '/corporateTransparent/credera.png', '/corporateTransparent/ibm-logo.png', '/corporateTransparent/intuit_logo.png',
+  '/corporateTransparent/ladies-that-ux.png', '/corporateTransparent/paycom-logo.png', '/corporateTransparent/cbre.png',
+  '/corporateTransparent/axurelogo.png', '/corporateTransparent/projekt202.png', '/corporateTransparent/rosenfeld.png',
+  '/corporateTransparent/sticker-mule.svg',  '/corporateTransparent/worldia.png', '/corporateTransparent/universalmind.png'
+  ];
+
 export default function Home() {
   return (
+    
     <main className="flex flex-col items-center justify-center w-full flex-1 px-[10vw] pt-24 gap-4 text-center">
       <div className="flex flex-col items-center justify-center w-full max-w-3xl text-center p-2 leading-tight pt-12">
         <div className="flex absolute top-[10vw] left-[-10vw] hidden lg:flex">
@@ -159,6 +172,32 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/*-------BLOCKIANA------*/}
+        {/* Header Section */}
+          <section className="w-full p-4 sm:p-6 lg:px-12 pt-6 sm:pt-12">
+            <div className="flex flex-col lg:flex-row justify-start items-start text-left gap-6">
+              {/* Text Section */}
+              <div className="flex-1">
+                <h2 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-4 ">
+                  Sponsors
+                </h2>
+              </div>
+            </div>
+          </section>
+          <br />
+
+          {/* Image Grid Section */}
+          <section className="w-full px-4 lg:px-8 items-center justify-center">
+            <div className="flex">
+              <div className="w-full lg:max-w-screen-lg items-center justify-center off-wrapper grow relative justify-center">
+                <ImageGrid images={images} />
+              </div>
+            </div>
+          </section>
+
+
+        <br />
       </section>
     </main>
   );
