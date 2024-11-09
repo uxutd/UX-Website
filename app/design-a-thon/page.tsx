@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import NumberTicker from "@/components/magicui/number-ticker";
 import { Card, CardHeader, CardContent } from "@mui/material";
-import { AnimatedGradientTextTwo } from "@/components/ui/animated-gradient-text-2";
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 import SparklesText from "@/components/ui/sparkles-text";
 
 
@@ -67,7 +67,6 @@ export default function DesignPage() {
 
           <BlurFade>
             <div className="flex items-center justify-center pt-12 w-[100vw]">
-              <TextHoverEffect text="UXPERIENCE" />
               <TextHoverEffect text="UXPERIENCE" />
             </div>
           </BlurFade>
@@ -206,15 +205,14 @@ export default function DesignPage() {
       className="luma-checkout--button hover:scale-105 transition ease-out"
       href="https://discord.gg/BBwy4Gfh"
     >
-     <AnimatedGradientTextTwo>
-        <hr className="" />{" "}
+     <AnimatedGradientText>
         <span
           className={cn(
             `inline animate-gradient text-2xl bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
           )}
         >Stay updated!
         </span>
-      </AnimatedGradientTextTwo>
+      </AnimatedGradientText>
     </a>
 
     <br />
