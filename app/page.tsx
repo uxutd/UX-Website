@@ -22,7 +22,7 @@ const images: string[] = [
   '/corporateTransparent/adobe.png', '/corporateTransparent/austincsi.svg', '/corporateTransparent/axurelogo.png',
   '/corporateTransparent/balsamiq.png', '/corporateTransparent/bigdesign.png', '/corporateTransparent/bigforesight.png', 
    '/corporateTransparent/bottlerocket.png', '/corporateTransparent/capitalone.png',
-  '/corporateTransparent/credera.png', '/corporateTransparent/ibm-logo.png', '/corporateTransparent/intuit_logo.png',
+  '/corporateTransparent/credera.png', '/corporateTransparent/ibm-logo.png', '/corporateTransparent/Intuit_logo.png',
   '/corporateTransparent/ladies-that-ux.png', '/corporateTransparent/paycom-logo.png', '/corporateTransparent/cbre.png',
   '/corporateTransparent/axurelogo.png', '/corporateTransparent/projekt202.png', '/corporateTransparent/rosenfeld.png',
   '/corporateTransparent/sticker-mule.svg',  '/corporateTransparent/worldia.png', '/corporateTransparent/universalmind.png'
