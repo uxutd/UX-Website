@@ -94,7 +94,7 @@ export default function DesignPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  A Design-a-thon is an exciting event where participants collaborate to solve real-world problems through design thinking. It's a marathon of creativity, innovation, and teamwork, typically lasting 24-48 hours.
+                  A Design-a-thon is an exciting event where participants collaborate to solve real-world problems through design thinking. It{`'`}s a marathon of creativity, innovation, and teamwork, typically lasting 24-48 hours.
                 </p>
               </CardContent>
             </Card>
@@ -119,7 +119,7 @@ export default function DesignPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Registration is easy! Visit our website, fill out the application form, and select your preferred team size. We'll review your application and get back to you within a week.
+                  Registration is easy! Visit our website, fill out the application form, and select your preferred team size. We{`'`}ll review your application and get back to you within a week.
                 </p>
               </CardContent>
             </Card>
@@ -222,7 +222,7 @@ export default function DesignPage() {
                             <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuw" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="LocationOnIcon" style={{ fontSize: 'large', marginRight: '2px' }}>
                                 <path d="..." />
                             </svg>
-                            ECSW "Bird's Nest"
+                            ECSW {`"`}Bird{`'`}s Nest{`"`}
                         </div>
                     </div>
                  </div>
@@ -503,7 +503,7 @@ export default function DesignPage() {
                             <svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuw" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="LocationOnIcon" style={{ fontSize: 'large', marginRight: '2px' }}>
                                 <path d="..." />
                             </svg>
-                            ECSW Atrium"
+                            ECSW Atrium
                         </div>
                     </div>
                 </div>

@@ -124,7 +124,7 @@ export default function DesignPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  A Design-a-thon is an exciting event where participants collaborate to solve real-world problems through design thinking. It's a marathon of creativity, innovation, and teamwork, typically lasting 24-48 hours.
+                  A Design-a-thon is an exciting event where participants collaborate to solve real-world problems through design thinking. It{`'`}s a marathon of creativity, innovation, and teamwork, typically lasting 24-48 hours.
                 </p>
               </CardContent>
             </Card>
@@ -149,7 +149,7 @@ export default function DesignPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Registration is easy! Visit our website, fill out the application form, and select your preferred team size. We'll review your application and get back to you within a week.
+                  Registration is easy! Visit our website, fill out the application form, and select your preferred team size. We{`'`}ll review your application and get back to you within a week.
                 </p>
               </CardContent>
             </Card>
