@@ -208,7 +208,7 @@ export default function AboutPage() {
         </section>
 
         {/* Meet the Team Header */}
-        <section className="w-full flex justify-center mt-10">
+        <section className="w-full flex justify-center mt-10 hover:scale-105 transition ease-out">
           <BlurFade>
             <div className="py-8">
               <AnimatedGradientText>
@@ -223,20 +223,21 @@ export default function AboutPage() {
         {/* Officers Sections */}
         {/* Officers Sections */}
         {[
-  officers,
-  officersRowTwo,
-  officersRowThree,
-  officersRowFour,
-  officersRowFive,
+          officers,
+          officersRowTwo,
+          officersRowThree,
+          officersRowFour,
+          officersRowFive,
         ].map((officerRow, rowIndex) => (
           <section
             key={rowIndex}
+            
             className="flex flex-col sm:flex-row flex-wrap justify-center text-center mt-8"
           >
             {officerRow.map((officer, index) => (
               <div
                 key={index}
-                className="m-4 relative w-full sm:w-auto flex flex-col items-center"
+                className="m-4 relative w-full sm:w-auto flex flex-col items-center "
               >
                 <div className="off-wrapper grow relative">
                   <a
