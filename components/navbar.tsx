@@ -79,7 +79,7 @@ export const Navbar = () => {
                       "data-[active=true]:font-medium",
                       pathname === item.href
                         ? "text-primary font-bold" // Active link styling
-                        : "hover:text-primary transition-colors"
+                        : "hover:text-primary transition-colors",
                     )}
                     href={item.href}
                   >
@@ -144,7 +144,11 @@ export const Navbar = () => {
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500 transition-transform duration-200 ease-in-out hover:scale-110" />
           </Link>
-          <Link isExternal aria-label="Instagram" href={siteConfig.links.instagram}>
+          <Link
+            isExternal
+            aria-label="Instagram"
+            href={siteConfig.links.instagram}
+          >
             <InstagramIcon className="text-default-500 transition-transform duration-200 ease-in-out hover:scale-110" />
           </Link>
           <ThemeSwitch />
