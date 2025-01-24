@@ -82,43 +82,41 @@ export default function Home() {
           Learn More
           <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
         </Link>
-      </div>
-
-     <section className="w-[90vw] sm:w-[80vw] py-8 pb-14 px-4 sm:px-8 dark:bg-[#1A1B1F] bg-[#121625] rounded-3xl mt-12 overflow-hidden">
-  <div className="flex flex-col items-center justify-center max-w-5xl mx-auto">
-    <h1 className="text-4xl lg:text-3xl text-gray-200 font-semibold text-center mb-8">
-      Creating Events that Excel Your Career
-    </h1>
-    <Carousel
-      className="w-[90vw] sm:w-[80vw] px-4 sm:px-8"
-      opts={{
-        align: "start",
-      }}
-    >
-      <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-            <div>
-              <Card>
-                <CardContent className="flex items-center justify-center text-gray-900 dark:text-gray-100">
-                  <Image
-                    alt={`Image ${index + 1}`}
-                    height={200} // adjust the height as per your requirements
-                    objectFit="cover" // adjust the object-fit as per your requirements
-                    src={`/ux-pic${index + 1}.png`}
-                    style={{ borderRadius: "10px" }}
-                    width={500} // adjust the width as per your requirements
-                  />
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </Carousel>
-  </div>
-</section>
-
+      </div>   
+      <section className="w-[90vw] sm:w-[80vw] py-8 pb-14 px-4 sm:px-8 dark:bg-[#1A1B1F] bg-[#121625] rounded-3xl mt-12 overflow-hidden">
+        <div className="flex flex-col items-center justify-center max-w-5xl mx-auto">
+          <h1 className="text-4xl lg:text-3xl text-gray-200 font-semibold text-center mb-8">
+            Creating Events that Excel Your Career
+          </h1>
+          <Carousel
+            className="w-[90vw] sm:w-[80vw] px-4 sm:px-8"
+            opts={{
+              align: "start",
+            }}
+          >
+            <CarouselContent>
+              {Array.from({ length: 5 }).map((_, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div>
+                    <Card>
+                      <CardContent className="flex items-center justify-center text-gray-900 dark:text-gray-100">
+                        <Image
+                          alt={`Image ${index + 1}`}
+                          height={200} // adjust the height as per your requirements
+                          objectFit="cover" // adjust the object-fit as per your requirements
+                          src={`/ux-pic${index + 1}.png`}
+                          style={{ borderRadius: "10px" }}
+                          width={500} // adjust the width as per your requirements
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
+      </section>
 
       <section>
         {/* Container for the number tickers */}
