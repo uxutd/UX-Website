@@ -94,7 +94,7 @@ export default function Home() {
           <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
         </Link>
       </div>
-
+      
       <section className="w-[90vw] sm:w-[80vw] py-8 pb-14 px-4 sm:px-8 dark:bg-[#1A1B1F] bg-[#121625] rounded-3xl mt-12 overflow-hidden">
         <div className="flex flex-col items-center justify-center max-w-5xl mx-auto">
           <h1 className="text-4xl lg:text-3xl text-gray-200 font-semibold text-center mb-8">
