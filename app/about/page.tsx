@@ -145,7 +145,7 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Intro Section */}
+      {/* hero Section */}
 
       <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center min-h-screen md:min-h-[87.5vh]">
         <div className="container mx-auto px-4 md:px-36 flex flex-col justify-center h-full animate-slide-in">

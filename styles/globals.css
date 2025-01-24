@@ -3,6 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -31,6 +32,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -58,16 +60,18 @@
     --chart-5: 340 75% 55%
   }
 }
+
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
-*{
+* {
   font-family: "Bricolage Grotesque", sans-serif;
 }
 
@@ -81,7 +85,8 @@
 .officer-wrapper {
   position: relative;
   overflow: hidden;
-  border-radius: 0.5rem; /* Rounded corners */
+  border-radius: 0.5rem;
+  /* Rounded corners */
 }
 
 .off-wrapper img {
@@ -107,7 +112,8 @@
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   font-size: 2.5rem;
-  color: #0e76a8; /* LinkedIn blue */
+  color: #0e76a8;
+  /* LinkedIn blue */
   z-index: 10;
 }
 
@@ -118,15 +124,19 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Default for smaller screens */
-  @media (min-width: 768px) {
-  grid-template-columns: repeat(3, 1fr);
-}
-  @media (min-width: 1024px) {
-  grid-template-columns: repeat(4, 1fr);
-}
+  grid-template-columns: repeat(2, 1fr);
 
-  grid-auto-rows: 100px; /* Set a consistent row height */
+  /* Default for smaller screens */
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  grid-auto-rows: 100px;
+  /* Set a consistent row height */
   gap: 20px;
   padding: 10px;
 }
@@ -138,11 +148,287 @@
   object-fit: contain;
   max-width: 100%;
   max-height: 100%;
-  background-color: var(--card); /* Set the background color for the box */
-  border: 1px solid var(--border); /* Define a border to create a box effect */
-  border-radius: var(--radius); /* Optional: rounding corners */
-  padding: 10px; /* Space between the image and box edges */
+  background-color: var(--card);
+  /* Set the background color for the box */
+  border: 1px solid var(--border);
+  /* Define a border to create a box effect */
+  border-radius: var(--radius);
+  /* Optional: rounding corners */
+  padding: 10px;
+  /* Space between the image and box edges */
+}
+
+
+.fullscreen-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Fill the viewport height */
+}
+
+.event-box {
+  width: 1075px;
+  height: 375px;
+  background-color: #3e68fd;
+  border-radius: 36px;
+}
+
+.right-justify-events {
+  text-align: right;
+}
+
+.event-box {
+  width: 90%;
+  max-width: 1075px;
+  height: 375px;
+  background-color: #3e68fd;
+  border-radius: 36px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Media query for smaller screens (like iPhone) */
+@media (max-width: 1000px) {
+  .event-box {
+    width: 95%;
+    /* Increase the percentage width for smaller devices */
+    border-radius: 20px;
+    /* Reduce border radius for better proportions */
+    height: 185px;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-box {
+    padding: 0.5rem;
+    /* Adjust padding to avoid content cramping */
+    border-radius: 16px;
+    /* Further reduce the border radius */
+  }
+}
+
+.iphone-image {
+  width: 250px;
+  height: auto;
+  position: absolute;
+  left: 890px;
+  top: 20px;
+  z-index: 1;
+}
+
+@media (min-width: 1280px) {
+  .iphone-image {
+    width: 250px;
+    height: auto;
+    position: absolute;
+    left: 870px;
+    top: 200px;
+    z-index: 1;
+  }
+}
+
+/* Hide the iPhone image on smaller screens */
+@media (max-width: 1000px) {
+  .iphone-image {
+    display: none;
+    /* Completely hide the element */
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .iphone-image {
+    width: 250px;
+    /* Shrink the width significantly */
+    height: auto;
+    /* Maintain aspect ratio */
+    left: 1130px !important;
+    /* Adjust horizontal position */
+    top: 210px;
+    /* Adjust vertical position */
+  }
 }
 
 
 
+/* Base styles for the arrow image */
+.arrowpsst-image {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  right: 155px;
+  top: 130px;
+  z-index: 1;
+}
+
+/* Shrink the arrow image for smaller screens */
+@media (max-width: 1000px) {
+  .arrowpsst-image {
+    width: 50px;
+    /* Shrink the width significantly */
+    height: auto;
+    /* Maintain aspect ratio */
+    right: 55px;
+    /* Adjust horizontal position */
+    top: 130px;
+    /* Adjust vertical position */
+  }
+}
+
+@media (min-width: 1001px) {
+  .arrowpsst-image {
+    width: 50px;
+    height: auto;
+    /* Maintain aspect ratio */
+    right: 450px;
+    /* Adjust horizontal position */
+    top: 130px;
+    /* Adjust vertical position */
+  }
+}
+
+.psst-text {
+  wordSpacing: "0.1rem";
+  position: 'absolute';
+  left: 400px;
+}
+
+
+
+@media (min-width: 1280px) {
+  .arrow-image {
+    width: 250px;
+    height: auto;
+    position: absolute;
+    right: 300px;
+    top: 40px;
+    z-index: 1;
+    transform: 'rotate(-15deg)'
+  }
+
+}
+
+/* Shrink the arrow image for smaller screens */
+@media (max-width: 1000px) {
+  .arrow-image {
+    width: 100px;
+    /* Shrink the width significantly */
+    height: auto;
+    /* Maintain aspect ratio */
+    position: absolute;
+    left: 105px;
+    /* Adjust horizontal position */
+    top: 255px !important;
+    /* Adjust vertical position */
+  }
+}
+
+/* Expand the arrow image for larger screens */
+@media (min-width: 1001px) {
+  .arrow-image {
+    width: 200px;
+    /* Increase the width */
+    height: auto;
+    /* Maintain aspect ratio */
+    left: 450px;
+    /* Adjust horizontal position */
+    top: 400px;
+    /* Adjust vertical position */
+  }
+}
+
+
+
+
+
+@media (max-width: 1000px) {
+  .upnext-text {
+    position: absolute;
+    /* Ensure the position is absolute */
+    top: 310px !important;
+    /* Move the text upwards */
+    left: 0;
+    /* Optional: Center or adjust horizontally */
+    transform: translateX(20%);
+    /* Optional: Adjust horizontal alignment */
+  }
+}
+
+@media (min-width: 1001px) {
+  .upnext-text {
+    position: absolute;
+    /* Ensure the position is absolute */
+    top: 520px !important;
+    /* Move the text upwards */
+    left: 250px;
+    /* Optional: Center or adjust horizontally */
+    transform: translateX(20%);
+    /* Optional: Adjust horizontal alignment */
+  }
+}
+
+.psst-text {
+  text-align: right;
+  /* Align text to the right */
+  padding-right: 3rem;
+  /* Equivalent to pr-12 */
+  padding-bottom: 1rem;
+  /* Equivalent to pb-4 */
+}
+
+.psst-text h1 {
+  font-size: 1rem;
+  /* Equivalent to text-1xl */
+  padding-left: 3.125rem;
+  /* Equivalent to px-50 */
+  padding-bottom: 2.5rem;
+  /* Equivalent to pb-10 */
+  font-weight: 600;
+  /* Equivalent to font-semibold */
+  color: #000000;
+  /* Text color */
+  line-height: 1.25;
+  /* Equivalent to leading-tight */
+  position: absolute;
+  /* Set absolute positioning */
+  right: 40px;
+  /* Positioning from the right */
+  word-spacing: 0.1rem;
+  /* Space between words */
+  -webkit-text-stroke-width: 0.5px;
+  /* Stroke width */
+  -webkit-text-stroke-color: #3e68fd;
+  /* Stroke color */
+  color: #3e68fd;
+  /* Fallback text color */
+}
+
+@media screen and (min-width: 1001px) {
+  .psst-text h1 {
+    font-size: 1rem;
+    /* Equivalent to text-sm */
+    padding-left: 1.875rem;
+    /* Equivalent to px-3 */
+    padding-bottom: 1.25rem;
+    /* Equivalent to pb-5 */
+    font-weight: 600;
+    /* Equivalent to font-semibold */
+    color: #000000;
+    /* Text color */
+    line-height: 1.25;
+    /* Equivalent to leading-tight */
+    position: absolute;
+    /* Set absolute positioning */
+    right: 300px;
+    /* Positioning from the right */
+    word-spacing: 0.1rem;
+    /* Space between words */
+    -webkit-text-stroke-width: 0.5px;
+    /* Stroke width */
+    -webkit-text-stroke-color: #3e68fd;
+    /* Stroke color */
+    color: #3e68fd;
+    /* Fallback text color */
+  }
+
+}
