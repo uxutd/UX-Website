@@ -102,7 +102,7 @@ export default function EventsPage() {
         </section>
 
         {/* Up Next Section */}
-        <section className="flex flex-col pt-12 pb-80">
+        <section className="flex flex-col pt-12">
           <img src="/arrow.png" alt="Arrow" className="arrow-image" />
           <div className="upnext-text flex justify-start px-4 md:px-10">
             <h1
@@ -129,7 +129,6 @@ export default function EventsPage() {
             alignItems: "center",
             gap: "1.5rem",
             padding: "1rem",
-            marginTop: isMobile ? "48rem" : "57.2rem",
           }}
         >
           <Box
