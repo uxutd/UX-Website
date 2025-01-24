@@ -249,8 +249,6 @@
   }
 }
 
-
-
 /* Base styles for the arrow image */
 .arrowpsst-image {
   width: 100px;
@@ -336,9 +334,6 @@
     /* Adjust vertical position */
   }
 }
-
-
-
 
 
 @media (max-width: 1000px) {
