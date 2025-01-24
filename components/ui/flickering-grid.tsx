@@ -38,14 +38,18 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
         return `rgba(0, 0, 0,`;
       }
       const canvas = document.createElement("canvas");
+
       canvas.width = canvas.height = 1;
       const ctx = canvas.getContext("2d");
+
       if (!ctx) return "rgba(255, 0, 0,";
       ctx.fillStyle = color;
       ctx.fillRect(0, 0, 1, 1);
       const [r, g, b] = ctx.getImageData(0, 0, 1, 1).data;
+
       return `rgba(${r}, ${g}, ${b},`;
     };
+
     return toRGBA(color);
   }, [color]);
 
@@ -54,6 +58,7 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
       const canvasWidth = width || canvas.clientWidth;
       const canvasHeight = height || canvas.clientHeight;
       const dpr = window.devicePixelRatio || 1;
+
       canvas.width = canvasWidth * dpr;
       canvas.height = canvasHeight * dpr;
       canvas.style.width = `${canvasWidth}px`;
@@ -62,6 +67,7 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
       const rows = Math.floor(canvasHeight / (squareSize + gridGap));
 
       const squares = new Float32Array(cols * rows);
+
       for (let i = 0; i < squares.length; i++) {
         squares[i] = Math.random() * maxOpacity;
       }
@@ -106,6 +112,7 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
           const opacity = squares[i * rows + j];
+
           ctx.fillStyle = `${memoizedColor}${opacity})`;
           ctx.fillRect(
             i * (squareSize + gridGap) * dpr,
@@ -121,9 +128,11 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
 
   useEffect(() => {
     const canvas = canvasRef.current;
+
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
+
     if (!ctx) return;
 
     let animationFrameId: number;
@@ -134,6 +143,7 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
       if (!isInView) return;
 
       const deltaTime = (time - lastTime) / 1000;
+
       lastTime = time;
 
       updateSquares(squares, deltaTime);
@@ -171,12 +181,12 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     <canvas
       ref={canvasRef}
       className={`size-full pointer-events-none ${className}`}
+      height={height}
       style={{
         width: width || "100%",
         height: height || "100%",
       }}
       width={width}
-      height={height}
     />
   );
 };

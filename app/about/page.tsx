@@ -2,13 +2,8 @@ import Image from "next/image";
 
 import BlurFade from "@/components/magicui/blur-fade";
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
-
-import { LinkedinIcon } from "@/components/icons"; // Ensure the correct path is set for the LinkedIn icon
-import WordPullUp from "@/components/magicui/word-pull-up";
-
-import { FlipWords } from "@/components/ui/components/ui/flip-words";
+// Ensure the correct path is set for the LinkedIn icon
 import { WordRotate } from "@/components/ui/word-rotate";
-
 
 export default function AboutPage() {
   const officers = [
@@ -138,7 +133,6 @@ export default function AboutPage() {
       img: "/UX_Officers/vidur.jpg",
       linkedIn: "https://www.linkedin.com/in/vidur-nangia/",
     },
-    
   ];
 
   const heroWords = ["innovators", "engineers", "designers", "futurists"];
@@ -149,15 +143,34 @@ export default function AboutPage() {
 
       <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center min-h-screen md:min-h-[87.5vh]">
         <div className="container mx-auto px-4 md:px-36 flex flex-col justify-center h-full animate-slide-in">
-          <h1 className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0" style={{ wordSpacing: "0.25rem" }}>
+          <h1
+            className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0"
+            style={{ wordSpacing: "0.25rem" }}
+          >
             Behind the pretty
           </h1>
-          <h1 className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0" style={{ wordSpacing: "0.65rem" }}>
+          <h1
+            className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0"
+            style={{ wordSpacing: "0.65rem" }}
+          >
             interfaces,
           </h1>
           <div className="inline-block flex flex-row gap-2">
-            <h2 className="text-2xl md:text-[1.575rem] mt-2 inline-block">We are</h2>
-            <WordRotate className="text-2xl md:text-[1.575rem] text-[#3E68FD] p-0 m-0 inline-block gap-1" words={["innovators", "researchers", "designers", "collaborators", "curators", "storytellers","developers"]} />
+            <h2 className="text-2xl md:text-[1.575rem] mt-2 inline-block">
+              We are
+            </h2>
+            <WordRotate
+              className="text-2xl md:text-[1.575rem] text-[#3E68FD] p-0 m-0 inline-block gap-1"
+              words={[
+                "innovators",
+                "researchers",
+                "designers",
+                "collaborators",
+                "curators",
+                "storytellers",
+                "developers",
+              ]}
+            />
           </div>
           <p className="mt-4 w-full text-lg md:text-[1.625rem] font-extralight leading-tight">
             The UX Club at UT Dallas has been around since 2014 with the
@@ -170,8 +183,6 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-
-
 
       {/* About Section */}
       <main className="px-[5vw] md:px-[10vw]">
@@ -231,7 +242,6 @@ export default function AboutPage() {
         ].map((officerRow, rowIndex) => (
           <section
             key={rowIndex}
-            
             className="flex flex-col sm:flex-row flex-wrap justify-center text-center mt-8"
           >
             {officerRow.map((officer, index) => (
@@ -242,8 +252,8 @@ export default function AboutPage() {
                 <div className="off-wrapper grow relative">
                   <a
                     href={officer.linkedIn}
-                    target="_blank"
                     rel="noopener noreferrer"
+                    target="_blank"
                   >
                     <Image
                       alt={officer.name}
@@ -263,12 +273,7 @@ export default function AboutPage() {
           </section>
         ))}
 
-
-
-
-
         <br />
-
       </main>
     </>
   );

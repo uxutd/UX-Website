@@ -27,7 +27,6 @@ const EventTitle: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 
 const EventDate: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <Typography
-    variant="body2"
     sx={{
       color: "white",
       fontFamily: "Bricolage Grotesque",
@@ -36,6 +35,7 @@ const EventDate: React.FC<{ children: React.ReactNode }> = ({ children }) => (
       textShadow: "0.1875rem 0.125rem 0.25rem #3E68FD",
       marginTop: "0.001rem",
     }}
+    variant="body2"
   >
     {children}
   </Typography>
@@ -47,13 +47,49 @@ export default function EventsPage() {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const events = [
-    { title: "End-of-Semester Social", date: "12/02/2024", image: "/eossocial.jpg", alt: "Event 1" },
-    { title: "UXperience: The First Draft", date: "11/09/2024", image: "/designathon.jpg", alt: "Event 2" },
-    { title: "Design & Unwind Social", date: "10/30/2024", image: "/designandunwind.jpg", alt: "Event 3" },
-    { title: "Design Systems Workshop", date: "10/07/2024", image: "/designsystems.jpg", alt: "Event 4", sx: { objectPosition: "center bottom", transform: "scale(1.1)" } },
-    { title: "Intro to UX Design Workshop", date: "09/30/2024", image: "/introtoux.jpg", alt: "Event 5" },
-    { title: "Figma Workshop Series", date: "09/24/2024 - 11/12/2024", image: "/figmaworkshop.png", alt: "Event 6" },
-    { title: "Fall 2024 Kickoff", date: "09/12/2024", image: "/fallkickoff.jpg", alt: "Event 7" },
+    {
+      title: "End-of-Semester Social",
+      date: "12/02/2024",
+      image: "/eossocial.jpg",
+      alt: "Event 1",
+    },
+    {
+      title: "UXperience: The First Draft",
+      date: "11/09/2024",
+      image: "/designathon.jpg",
+      alt: "Event 2",
+    },
+    {
+      title: "Design & Unwind Social",
+      date: "10/30/2024",
+      image: "/designandunwind.jpg",
+      alt: "Event 3",
+    },
+    {
+      title: "Design Systems Workshop",
+      date: "10/07/2024",
+      image: "/designsystems.jpg",
+      alt: "Event 4",
+      sx: { objectPosition: "center bottom", transform: "scale(1.1)" },
+    },
+    {
+      title: "Intro to UX Design Workshop",
+      date: "09/30/2024",
+      image: "/introtoux.jpg",
+      alt: "Event 5",
+    },
+    {
+      title: "Figma Workshop Series",
+      date: "09/24/2024 - 11/12/2024",
+      image: "/figmaworkshop.png",
+      alt: "Event 6",
+    },
+    {
+      title: "Fall 2024 Kickoff",
+      date: "09/12/2024",
+      image: "/fallkickoff.jpg",
+      alt: "Event 7",
+    },
   ];
 
   const visibleEvents = showMore ? events : events.slice(0, 6);
@@ -93,17 +129,13 @@ export default function EventsPage() {
                 ECSW 1.316
               </h1>
             </div>
-            <img
-              src="/iphonebig.png"
-              alt="iphone"
-              className="iphone-image"
-            />
+            <img alt="iphone" className="iphone-image" src="/iphonebig.png" />
           </Box>
         </section>
 
         {/* Up Next Section */}
         <section className="flex flex-col pt-12">
-          <img src="/arrow.png" alt="Arrow" className="arrow-image" />
+          <img alt="Arrow" className="arrow-image" src="/arrow.png" />
           <div className="upnext-text flex justify-start px-4 md:px-10">
             <h1
               className="text-1xl md:text-3xl font-semibold leading-tight text-[#000000]"
@@ -142,7 +174,6 @@ export default function EventsPage() {
             }}
           >
             <Typography
-              variant="h2"
               gutterBottom
               sx={{
                 marginTop: isMobile ? 0 : "-3.75rem",
@@ -151,12 +182,13 @@ export default function EventsPage() {
                 color: "#3E68FD",
                 textAlign: isMobile ? "center" : "left",
               }}
+              variant="h2"
             >
               Previous Events
             </Typography>
             <img
-              src="/smallsquigglyarrow.png"
               alt="Arrow"
+              src="/smallsquigglyarrow.png"
               style={{
                 width: isMobile ? "10rem" : "12.5rem",
                 height: "auto",
@@ -202,10 +234,10 @@ export default function EventsPage() {
                   }}
                 >
                   <CardMedia
+                    alt={event.alt}
                     component="img"
                     height="100%"
                     image={event.image}
-                    alt={event.alt}
                     sx={{
                       objectFit: "cover",
                       width: "100%",
@@ -237,7 +269,6 @@ export default function EventsPage() {
           </Box>
           <Box sx={{ marginTop: "1.5rem" }}>
             <button
-              onClick={() => setShowMore(!showMore)}
               style={{
                 padding: "0.25rem 0.5rem",
                 fontSize: "1.75rem",
@@ -248,6 +279,7 @@ export default function EventsPage() {
                 border: "0.1875rem solid #3E68FD",
                 borderRadius: "0.5rem",
               }}
+              onClick={() => setShowMore(!showMore)}
             >
               {showMore ? "See less" : "See more"}
             </button>
