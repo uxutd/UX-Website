@@ -34,12 +34,6 @@ export const siteConfig = {
     {
       label: "Events",
       href: "/events",
-      // sublinks: [
-      //   {
-      //     label: "Coming Soon!",
-      //     href: "/events",
-      //   },
-      // ],
     },
     {
       label: "Design-a-thon",
