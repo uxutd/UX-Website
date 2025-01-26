@@ -139,7 +139,7 @@ export default function EventsPage() {
 
         {/* Up Next Section */}
         <section className="flex flex-col pt-12 sm:pb-10 md:pb-20 ">
-          <img alt="Arrow" className="arrow-image hover:scale-105 transition ease-out" src="/arrow.png" />
+          <img alt="Arrow" className="arrow-image hover:scale-105 transition ease-out" src="/Arrow.png" />
           <div className="upnext-text flex justify-start px-4 md:px-10">
             <h1
               className="text-1xl md:text-3xl font-semibold leading-tight text-[#ffffff] hover:scale-105 transition ease-out"
