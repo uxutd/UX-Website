@@ -138,7 +138,8 @@ export default function AboutPage() {
       img: "/UX_Officers/vidur.jpg",
       linkedIn: "https://www.linkedin.com/in/vidur-nangia/",
     },
-    
+
+
   ];
 
   const heroWords = ["innovators", "engineers", "designers", "futurists"];
@@ -147,7 +148,7 @@ export default function AboutPage() {
     <>
       {/* Intro Section */}
 
-      <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center min-h-screen md:min-h-[87.5vh]">
+      <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center min-h-screen md:min-h-[87.5vh] py-20">
         <div className="container mx-auto px-4 md:px-36 flex flex-col justify-center h-full animate-slide-in">
           <h1 className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0" style={{ wordSpacing: "0.25rem" }}>
             Behind the pretty
@@ -157,7 +158,7 @@ export default function AboutPage() {
           </h1>
           <div className="inline-block flex flex-row gap-2">
             <h2 className="text-2xl md:text-[1.575rem] mt-2 inline-block">We are</h2>
-            <WordRotate className="text-2xl md:text-[1.575rem] text-[#3E68FD] p-0 m-0 inline-block gap-1" words={["innovators", "researchers", "designers", "collaborators", "curators", "storytellers","developers"]} />
+            <WordRotate className="text-2xl md:text-[1.575rem] text-[#3E68FD] p-0 m-0 inline-block gap-1" words={["innovators", "researchers", "designers", "collaborators", "curators", "storytellers", "developers"]} />
           </div>
           <p className="mt-4 w-full text-lg md:text-[1.625rem] font-extralight leading-tight">
             The UX Club at UT Dallas has been around since 2014 with the
@@ -231,7 +232,7 @@ export default function AboutPage() {
         ].map((officerRow, rowIndex) => (
           <section
             key={rowIndex}
-            
+
             className="flex flex-col sm:flex-row flex-wrap justify-center text-center mt-8"
           >
             {officerRow.map((officer, index) => (

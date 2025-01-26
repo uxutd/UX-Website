@@ -22,7 +22,6 @@ import { useEffect, useState } from "react";
 import uxlogo from "../public/UX_Color_Logo.svg"; // Correct image import
 
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
 import { DiscordIcon, InstagramIcon } from "@/components/icons";
 
 export const Navbar = () => {
@@ -79,7 +78,7 @@ export const Navbar = () => {
                       "data-[active=true]:font-medium",
                       pathname === item.href
                         ? "text-primary font-bold" // Active link styling
-                        : "hover:text-primary transition-colors"
+                        : "hover:text-primary transition-colors",
                     )}
                     href={item.href}
                   >
@@ -125,7 +124,7 @@ export const Navbar = () => {
             >
               <InstagramIcon className="text-default-500" />
             </Link>
-            <ThemeSwitch />
+            {/* <ThemeSwitch />  for dark mode pc */}
           </NavbarItem>
           <NavbarItem className="hidden sm:flex">
             <Button
@@ -144,10 +143,14 @@ export const Navbar = () => {
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500 transition-transform duration-200 ease-in-out hover:scale-110" />
           </Link>
-          <Link isExternal aria-label="Instagram" href={siteConfig.links.instagram}>
+          <Link
+            isExternal
+            aria-label="Instagram"
+            href={siteConfig.links.instagram}
+          >
             <InstagramIcon className="text-default-500 transition-transform duration-200 ease-in-out hover:scale-110" />
           </Link>
-          <ThemeSwitch />
+          {/* <ThemeSwitch /> for dark mode mobile */}
           <NavbarMenuToggle />
         </NavbarContent>
 
