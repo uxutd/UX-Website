@@ -87,7 +87,7 @@ export const Navbar = () => {
                 </motion.div>
 
                 {/* Render sublinks if they exist */}
-                {item.sublinks && item.sublinks.length > 0 && (
+                {/* {item.sublinks && item.sublinks.length > 0 && (
                   <div className="absolute left-1/2 transform -translate-x-1/2 z-10 hidden flex-col gap-1 bg-white border border-gray-300 rounded-md shadow-md group-hover:flex">
                     {item.sublinks.map((sublink, subIndex) => (
                       <Link
@@ -99,7 +99,7 @@ export const Navbar = () => {
                       </Link>
                     ))}
                   </div>
-                )}
+                )} */}
               </NavbarItem>
             ))}
           </ul>
@@ -162,7 +162,7 @@ export const Navbar = () => {
                   {item.label}
                 </Link>
                 {/* Render sublinks if they exist */}
-                {item.sublinks && item.sublinks.length > 0 && (
+                {/* {item.sublinks && item.sublinks.length > 0 && (
                   <div className="ml-4 flex flex-col gap-2 pl-4 border-l border-gray-300 mt-1">
                     {item.sublinks.map((sublink, subIndex) => (
                       <Link
@@ -175,7 +175,7 @@ export const Navbar = () => {
                       </Link>
                     ))}
                   </div>
-                )}
+                )} */}
               </NavbarMenuItem>
             ))}
           </div>
