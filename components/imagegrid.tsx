@@ -6,7 +6,7 @@ interface ImageGridProps {
 
 const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
   return (
-    <div className="grid-container">
+    <div className="grid-container ">
       {images.map((image, index) => (
         <img
           key={index}
