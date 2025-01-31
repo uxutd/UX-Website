@@ -185,7 +185,7 @@ export default function Home() {
         {/*-------BLOCKIANA------*/}
         {/* Header Section */}
         <section className="w-full p-4 sm:p-6 lg:px-12 pt-6 sm:pt-12">
-          <div className="flex flex-col lg:flex-row justify-start items-start text-left gap-6">
+          <div className="flex flex-col lg:flex-row justify-center items-center text-center gap-6">
             {/* Text Section */}
             <div className="flex-1">
               <h2 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-4 hover:scale-105 transition ease-out">
@@ -197,11 +197,9 @@ export default function Home() {
         <br />
 
         {/* Image Grid Section */}
-        <section className="w-full px-4 lg:px-8 items-center justify-center">
-          <div className="flex">
-            <div className="w-full lg:max-w-screen-lg items-center justify-center off-wrapper grow relative justify-center">
-              <ImageGrid images={images} />
-            </div>
+        <section className="w-full px-4 lg:px-8 flex items-center justify-center">
+          <div className="w-full lg:max-w-screen-lg flex justify-center items-center off-wrapper grow relative">
+            <ImageGrid images={images} />
           </div>
         </section>
 
