@@ -208,6 +208,28 @@
   }
 }
 
+.flyer-image {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  left: 894.5px;
+  top: 258px;
+  z-index: 1;
+  border-radius: 6px;
+}
+
+.flyer-box {
+  width: 175px;
+  height: auto;
+  background-color: #3e68fd;
+  border-radius: 36px;
+  position: absolute;
+  left: 905px;
+  top: 260px;
+  z-index: 1;
+  opacity: 100;
+}
+
 .iphone-image {
   width: 250px;
   height: auto;
