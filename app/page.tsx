@@ -3,7 +3,6 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 
-import ImageGrid from "@/components/imagegrid";
 import { subtitle } from "@/components/primitives";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -32,7 +31,6 @@ const images: string[] = [
   "/corporateTransparent/ladies-that-ux.png",
   "/corporateTransparent/paycom-logo.png",
   "/corporateTransparent/cbre.png",
-  "/corporateTransparent/axurelogo.png",
   "/corporateTransparent/projekt202.png",
   "/corporateTransparent/rosenfeld.png",
   "/corporateTransparent/sticker-mule.svg",
@@ -198,8 +196,22 @@ export default function Home() {
 
         {/* Image Grid Section */}
         <section className="w-full px-4 lg:px-8 flex items-center justify-center">
-          <div className="w-full lg:max-w-screen-lg flex justify-center items-center off-wrapper grow relative">
-            <ImageGrid images={images} />
+          <div className="w-full lg:max-w-screen-lg flex flex-wrap justify-center gap-4">
+            {images.map((src, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center p-2"
+                style={{ flex: "1 0 16.66%", maxWidth: "16.66%" }}
+              >
+                <Image
+                  alt={`Corporate logo ${index + 1}`}
+                  src={src}
+                  width={150}
+                  height={150}
+                  className="object-contain"
+                />
+              </div>
+            ))}
           </div>
         </section>
 
