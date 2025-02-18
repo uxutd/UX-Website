@@ -112,7 +112,7 @@ export default function EventsPage() {
                   WebkitTextStroke: "0.25px white",
                 }}
               >
-                Spring 2025 Kickoff
+                Design for Devs
               </h1>
               <h1
                 className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#ffffff]"
@@ -121,7 +121,7 @@ export default function EventsPage() {
                   WebkitTextStroke: "0.25px white",
                 }}
               >
-                February 3, 7:30 pm
+                February 17 & 18, 7:00 pm
               </h1>
               <h1
                 className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
@@ -130,10 +130,13 @@ export default function EventsPage() {
                   WebkitTextStroke: "1.75px white",
                 }}
               >
-                SCI 1.210
+                ECSW 1.355 & ECSW 1.315
               </h1>
             </div>
-            <img alt="iphone" className="iphone-image hover:scale-105 transition ease-out" src="/iphonebig.png" />
+            <Box className="flyer-box">
+            </Box>
+            {/* <img alt="iphone" className="flyer-image hover:scale-105 transition ease-out" src="/SpringKickoff.png" /> */}
+            <img alt="iphone" className="iphone-image hover:scale-105 transition ease-out" src="/iphonerect.png" />
           </Box>
         </section>
 
@@ -299,3 +302,4 @@ export default function EventsPage() {
     </div>
   );
 }
+
