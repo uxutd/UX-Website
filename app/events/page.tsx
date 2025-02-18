@@ -136,7 +136,7 @@ export default function EventsPage() {
             <Box className="flyer-box">
             </Box>
             {/* <img alt="iphone" className="flyer-image hover:scale-105 transition ease-out" src="/SpringKickoff.png" /> */}
-            <img alt="iphone" className="iphone-image hover:scale-105 transition ease-out" src="/iphonerect.png" />
+            <img alt="iphone" className="iphone-image hover:scale-105 transition ease-out" src="/iphone.png" />
           </Box>
         </section>
 
