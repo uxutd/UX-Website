@@ -196,13 +196,19 @@ export default function DesignPage() {
                 </div>
 
                 {/* Second Div (Right Side) */}
+                {/* Second Div (Right Side) */}
                 <div className="pr-4 md:pr-36 pl-4 py-4 md:py-8 flex flex-col gap-4 flex-1">
                   <div className="flex-1 flex flex-col px-4 md:px-12 gap-2 sm:gap-4 p-4 sm:p-8 border-2 border-white rounded-lg bg-[#ffffff] w-full max-w-full md:max-w-[45vw] min-h-[200px] md:min-h-[300px] shadow-lg">
                     <img
-                      src="/dthonwinner.png"
+                      src="/dthonwinnernames.png"
                       alt="Designathon Winner"
                       className="w-full h-full object-cover rounded-lg"
                     />
+
+                  </div>
+                  {/* Add the text "First prize winner!" here */}
+                  <div className="text-center text-xl font-bold text-[#08195E] mt-2">
+                    First prize winner!
                   </div>
                 </div>
               </div>
