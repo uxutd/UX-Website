@@ -3,7 +3,7 @@ import Image from "next/image";
 import BlurFade from "@/components/magicui/blur-fade";
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 
-import { LinkedinIcon } from "@/components/icons"; // Ensure the correct path is set for the LinkedIn icon
+import { LinkedinIcon } from "@/components/icons";
 import WordPullUp from "@/components/magicui/word-pull-up";
 
 import { FlipWords } from "@/components/ui/components/ui/flip-words";
@@ -15,131 +15,162 @@ export default function AboutPage() {
     {
       name: "Mani Vipat",
       title: "President",
-      img: "/UX_Officers/mani.jpg",
+      img: "/UX_Officers/mani.svg",
       linkedIn: "https://www.linkedin.com/in/manasivipat/",
     },
     {
-      name: "Kshitij K",
+      name: "Kshitij Kulshrestha",
       title: "Vice President",
-      img: "/UX_Officers/kk.jpg",
+      img: "/UX_Officers/kk.svg",
       linkedIn: "https://www.linkedin.com/in/kshitijkulshrestha/",
     },
     {
       name: "Varshni Karthikeyan",
       title: "Secretary",
-      img: "/UX_Officers/varshni.jpg",
+      img: "/UX_Officers/varshni.svg",
       linkedIn: "https://www.linkedin.com/in/varshnik/",
     },
     {
-      name: "Manasa Paruchuri",
+      name: "Manasa Valluru",
       title: "Marketing Director",
-      img: "/UX_Officers/manasap.jpg",
-      linkedIn: "https://www.linkedin.com/in/manasaparuchuri/",
+      img: "/UX_Officers/manasav.svg",
+      linkedIn: "https://www.linkedin.com/in/manasa-valluru-28a729201/",
     },
   ];
 
   const officersRowTwo = [
-    {
-      name: "Shaz Kumar",
-      title: "Director",
-      img: "/UX_Officers/shaz.jpg",
-      linkedIn: "https://www.linkedin.com/in/shaswatkumar1/",
-    },
+
     {
       name: "Jasper Cao",
-      title: "Treasurer",
+      title: "Finance",
       img: "/UX_Officers/jasper.jpg",
       linkedIn: "https://www.linkedin.com/in/caojasper/",
     },
     {
-      name: "Adit Patel",
-      title: "Logistics Coordinator",
-      img: "/UX_Officers/adit.jpg",
-      linkedIn: "https://www.linkedin.com/in/adit-patel-a03095182/",
+      name: "Ankiita Murali",
+      title: "Finance",
+      img: "/UX_Officers/ankiita.svg",
+      linkedIn: "https://www.linkedin.com/in/ankiita-murali/",
     },
     {
-      name: "Sally Nguyen",
-      title: "Social Media Coordinator",
-      img: "/UX_Officers/sally.jpg",
-      linkedIn: "https://www.linkedin.com/in/an-nguyen-tran/",
+      name: "Vaishali Sathiyachalam",
+      title: "Event Coordinator",
+      img: "/UX_Officers/vai.svg",
+      linkedIn: "https://www.linkedin.com/in/vaishali-sathiyachalam/",
+    },
+    {
+      name: "Sumayya Ali",
+      title: "Event Coordinator",
+      img: "/UX_Officers/sumayya.svg",
+      linkedIn: "https://www.linkedin.com/in/sumayyaali04/",
     },
   ];
 
   const officersRowThree = [
     {
+      name: "Sahil Lalani",
+      title: "Corporate Relations",
+      img: "/UX_Officers/sahil.svg",
+      linkedIn: "https://www.linkedin.com/in/sahil-lalani/",
+    },
+    {
+      name: "Srinaya Vemula",
+      title: "Corporate Relations",
+      img: "/UX_Officers/sri.svg",
+      linkedIn: "https://www.linkedin.com/in/srinayavemula/",
+    },
+    {
       name: "Tanvi Deshpande",
       title: "Student Engagement",
-      img: "/UX_Officers/tanvi.jpg",
+      img: "/UX_Officers/tanvi.svg",
       linkedIn: "https://www.linkedin.com/in/tanvi-d/",
     },
     {
-      name: "Cory Olson",
-      title: "Event Coordinator",
-      img: "/UX_Officers/cory.jpg",
-      linkedIn: "https://www.linkedin.com/in/cory-olson-094b34262/",
-    },
-    {
-      name: "Sai Gudisa",
-      title: "Event Coordinator",
-      img: "/UX_Officers/sai.jpg",
-      linkedIn: "https://www.linkedin.com/in/venkatasai-gudisa/",
-    },
-    {
-      name: "Vaishali Sathiyachalam",
-      title: "Event Coordinator",
-      img: "/UX_Officers/vaishali.jpg",
-      linkedIn: "https://www.linkedin.com/in/vaishali-sathiyachalam/",
-    },
+      name: "Shreya Mekala",
+      title: "Student Engagement",
+      img: "/UX_Officers/shreya.svg",
+      linkedIn: "https://www.linkedin.com/in/shreyamekala04/",
+    }, 
   ];
 
   const officersRowFour = [
     {
-      name: "Abel Thomas",
-      title: "Corporate Relations",
-      img: "/UX_Officers/abel.jpg",
-      linkedIn: "https://www.linkedin.com/in/abel-thomas-at/",
-    },
-    {
-      name: "Maha Shaikh",
-      title: "Corporate Relations",
-      img: "/UX_Officers/maha.jpg",
-      linkedIn: "https://www.linkedin.com/in/mahashaikhh/",
-    },
-    {
-      name: "Manasa Valluru",
+      name: "Elise Hart",
       title: "Designer",
-      img: "/UX_Officers/manasav.jpg",
-      linkedIn: "https://www.linkedin.com/in/manasa-valluru-28a729201/",
+      img: "/UX_Officers/elise.svg",
+      linkedIn: "https://www.linkedin.com/in/elisech/",
     },
     {
-      name: "Maci Thomas",
+      name: "Ananya Singamsetty",
       title: "Designer",
-      img: "/UX_Officers/maci.jpg",
-      linkedIn: "https://www.linkedin.com/in/macit16/",
+      img: "/UX_Officers/ananya.svg",
+      linkedIn: "https://www.linkedin.com/in/ananyasingamsetty/",
+    },
+    {
+      name: "Tram La",
+      title: "Designer",
+      img: "/UX_Officers/tram.svg",
+      linkedIn: "https://www.linkedin.com/in/tram-la-tla2design/",
+    },
+    {
+      name: "Sally Nguyen",
+      title: "Social Media Coordinator",
+      img: "/UX_Officers/sally.svg",
+      linkedIn: "https://www.linkedin.com/in/an-nguyen-tran/",
     },
   ];
 
   const officersRowFive = [
     {
-      name: "Danielle Khaitas",
-      title: "Designer",
-      img: "/UX_Officers/danielle.jpg",
-      linkedIn: "https://www.linkedin.com/in/danielle-khaitas/",
-    },
-    {
-      name: "Vyom Sethia",
-      title: "Designer Coordinator",
-      img: "/UX_Officers/vyom.jpg",
-      linkedIn: "https://www.linkedin.com/in/vyomsethia/",
+      name: "Hiba Mubeen",
+      title: "Media Coordinator",
+      img: "/UX_Officers/hiba.svg",
+      linkedIn: "https://www.linkedin.com/in/hiba-mubeen/",
     },
     {
       name: "Vidur Nangia",
       title: "Web Developer",
-      img: "/UX_Officers/vidur.jpg",
+      img: "/UX_Officers/vidur.svg",
       linkedIn: "https://www.linkedin.com/in/vidur-nangia/",
     },
-
-
+    {
+      name: "Rohan Cheruku",
+      title: "Web Developer",
+      img: "/UX_Officers/rohan.svg",
+      linkedIn: "https://www.linkedin.com/in/rohancheruku/",
+    },
+    {
+      name: "Vincent Joubarne",
+      title: "Chief of Internal Affairs",
+      img: "/UX_Officers/vincent.svg",
+      linkedIn: "https://www.linkedin.com/in/vincentjoubarne/",
+    },
+  ];
+  const officersRowSix = [
+    {
+      name: "Nawaar A-Salam",
+      title: "Advisor",
+      img: "/UX_Officers/nawaar.svg",
+      linkedIn: "https://www.linkedin.com/in/nasalam/",
+    },
+    {
+      name: "Manasa Paruchuri",
+      title: "Advisor",
+      img: "/UX_Officers/manasap.svg",
+      linkedIn: "https://www.linkedin.com/in/manasaparuchuri/",
+    },
+    {
+      name: "Shaz Kumar",
+      title: "Advisor",
+      img: "/UX_Officers/shaz.jpg",
+      linkedIn: "https://www.linkedin.com/in/shaswatkumar1/",
+    },
+    {
+      name: "Abel Thomas",
+      title: "Corporate Advisor",
+      img: "/UX_Officers/abel.svg",
+      linkedIn: "https://www.linkedin.com/in/abel-thomas-at/",
+    },
   ];
 
   const heroWords = ["innovators", "engineers", "designers", "futurists"];
@@ -179,16 +210,12 @@ export default function AboutPage() {
         <section className="flex flex-col md:flex-row items-start justify-between gap-8 mt-12 p-6 md:pl-16">
           {/* Image Section */}
           <div className="w-full md:w-[40%] mb-6 md:mb-0 flex-1">
-            <div className="off-wrapper grow relative">
-              <Image
-                alt="About"
-                className="absolute rounded-lg relative z-10 mt-6 flex-1"
-                height={230}
-                objectFit="cover"
-                src="/ConferenceAbout.jpg"
-                width={450}
-              />
-            </div>
+            <img
+              alt="About"
+              className="rounded-lg mt-6 w-full h-auto"
+              src="/ConferenceAbout.jpg"
+              style={{ height: "300px", width: "450px", objectFit: "cover" }}
+            />
           </div>
 
           {/* Text Section */}
@@ -209,7 +236,7 @@ export default function AboutPage() {
         </section>
 
         {/* Meet the Team Header */}
-        <section className="w-full flex justify-center mt-10 hover:scale-105 transition ease-out">
+        <section className="w-full flex justify-center mt-10">
           <BlurFade>
             <div className="py-8">
               <AnimatedGradientText>
@@ -222,23 +249,22 @@ export default function AboutPage() {
         </section>
 
         {/* Officers Sections */}
-        {/* Officers Sections */}
         {[
           officers,
           officersRowTwo,
           officersRowThree,
           officersRowFour,
           officersRowFive,
+          officersRowSix,
         ].map((officerRow, rowIndex) => (
           <section
             key={rowIndex}
-
-            className="flex flex-col sm:flex-row flex-wrap justify-center text-center mt-8"
+            className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8"
           >
             {officerRow.map((officer, index) => (
               <div
                 key={index}
-                className="m-4 relative w-full sm:w-auto flex flex-col items-center "
+                className="m-2 sm:m-4 relative flex flex-col items-center"
               >
                 <div className="off-wrapper grow relative">
                   <a
@@ -248,7 +274,7 @@ export default function AboutPage() {
                   >
                     <Image
                       alt={officer.name}
-                      className="rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square"
+                      className={`rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square ${["tanvi", "shreya", "ananya", "tram", "sally", "rohan"].includes(officer.name.toLowerCase()) ? "object-[top_center]" : ""}`}
                       height={250}
                       src={officer.img}
                       width={250}
@@ -256,17 +282,13 @@ export default function AboutPage() {
                   </a>
                 </div>
                 <div className="flex justify-center mt-2">
-                  <h3 className="text-lg font-semibold">{officer.name}</h3>
+                  <h3 className="text-sm sm:text-lg font-semibold">{officer.name}</h3>
                 </div>
-                <h4 className="text-sm text-center">{officer.title}</h4>
+                <h4 className="text-xs sm:text-sm text-center">{officer.title}</h4>
               </div>
             ))}
           </section>
         ))}
-
-
-
-
 
         <br />
 

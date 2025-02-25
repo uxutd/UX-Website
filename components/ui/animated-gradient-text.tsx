@@ -16,7 +16,7 @@ export function AnimatedGradientText({
         className,
       )}
     >
-      <span className="bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient">
+      <span className="bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffffff] bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient">
         {children}
       </span>
     </div>

@@ -1,15 +1,18 @@
 "use client";
 import { useEffect } from "react";
-import { Card, CardHeader, CardContent } from "@mui/material";
+import { Card, CardHeader, CardContent, useMediaQuery } from "@mui/material";
 
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import TypingAnimation from "@/components/ui/typing-animation";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
-import BlurFade from "@/components/magicui/blur-fade";
+import { Button } from "@/components/ui/button";
+import { BoxReveal } from "@/components/magicui/box-reveal"; import BlurFade from "@/components/magicui/blur-fade";
 import { cn } from "@/lib/utils";
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 import SparklesText from "@/components/ui/sparkles-text";
+import { HyperText } from "@/components/magicui/hyper-text";
+
 
 export default function DesignPage() {
   useEffect(() => {
@@ -109,34 +112,90 @@ export default function DesignPage() {
           <BlurFade delay={2}>
             <div className="flex flex-col gap-4">
               <span className="text-2xl font-bold text-[#08195E] hover:scale-110 transition ease-out">
-                November 9th - 10th
+                November 9th - 10th 2024
               </span>
-              <script
-                id="luma-checkout"
-                src="https://embed.lu.ma/checkout-button.js"
-              />
               <a
                 className="luma-checkout--button hover:scale-105 transition ease-out"
-                data-luma-action="checkout"
-                data-luma-event-id="evt-BSCDnA2C8SG382k"
-                href="https://lu.ma/event/evt-BSCDnA2C8SG382k"
+                href="https://discord.gg/BBwy4Gfh"
               >
-                Register for Event
+                <AnimatedGradientText>
+                  <span
+                    className={cn(
+                      `inline animate-gradient text-2xl bg-gradient-to-r from-sky-500 via-blue-300 to-white bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+                    )}
+                  >
+                    Check out Dthon pics!
+                  </span>
+                </AnimatedGradientText>
               </a>
             </div>
           </BlurFade>
-        </section>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+          <br />
 
-        <section className="bg-[#0C1533] text-white h-full sm:h-full w-screen">
+        </section>
+
+
+
+
+        <section className="text-white h-[85vw] w-[100vw] flex flex-col items-center justify-center px-4 text-center">
+          <BackgroundGradientAnimation>
+            {/* Add a relative and higher z-index to the content container */}
+            <div className="relative z-10 flex flex-col md:flex-row p-4 sm:p-6 lg:px-12 pt-6 sm:pt-12 gap-8 w-full max-w-7xl items-center">
+              {/* Right Side - Stats */}
+              <div className="flex-1 flex flex-col gap-8">
+                {/* First Row of Stats */}
+                <div className="flex flex-col md:flex-row gap-8">
+                  <div className="flex-1">
+                    <h1 className="text-[3rem] sm:text-[6rem] font-bold text-[#ffffff] inset-0 mb-4">
+                      <HyperText>177+ registrations</HyperText>
+                    </h1>
+                  </div>
+                  <div className="flex-1">
+                    <h1 className="text-[2.5rem] sm:text-[4rem] font-bold text-[#ffffff] mb-4">
+                      <HyperText>$1400+ in Won Prizes</HyperText>
+                    </h1>
+                  </div>
+                </div>
+
+                {/* Second Row of Stats */}
+                <div className="flex flex-col md:flex-row gap-8">
+                  <div className="flex-1">
+                    <h1 className="text-[2.5rem] sm:text-[4rem] font-bold text-[#ffffff] mb-4">
+                      <HyperText>20+ Professionals</HyperText>
+                    </h1>
+                  </div>
+                  <div className="flex-1">
+                    <h1 className="text-[2.5rem] sm:text-[4rem] font-bold text-[#ffffff] mb-4">
+                      <HyperText>10+ Design Workshops</HyperText>
+                    </h1>
+                  </div>
+                </div>
+              </div>
+
+              {/* Left Side - Image */}
+              <div className="flex-1 flex items-center justify-center mb-6 md:mb-0">
+                <img
+                  src="path-to-your-image-1.jpg"
+                  alt="Image 1"
+                  className="w-[300px] sm:w-[400px] max-w-full h-auto rounded-lg"
+                />
+              </div>
+            </div>
+          </BackgroundGradientAnimation>
+        </section>
+
+        <section className="pt-10 pb-10 w-screen flex justify-center items-center max-w-7xl px-4">
+          <div className="flex justify-center w-full">
+            <img
+              src="/ConferenceAbout.jpg" />
+            "
+
+          </div>
+        </section>
+
+
+
+        {/* Saturday Schedule 
           <div className="py-24 sm:py-32 mb-[-10]">
             <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 ">
               <h2 className="text-center text-base/7 font-semibold  text-indigo-600">
@@ -221,7 +280,8 @@ export default function DesignPage() {
               </div>
             </div>
           </div>
-        </section>
+          */}
+
 
         <section className="flex flex-col h-full items-center pt-36 gap-4 ">
           <div className="group rounded-full border border-black/5 bg-neutral-100 mt-[-50] text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800">
@@ -247,7 +307,7 @@ export default function DesignPage() {
               <AnimatedGradientText>
                 <span
                   className={cn(
-                    `inline animate-gradient text-2xl bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+                    `inline animate-gradient text-2xl bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-white/40 bg-clip-text text-transparent`,
                   )}
                 >
                   Stay updated!
@@ -459,18 +519,18 @@ export default function DesignPage() {
           </div>
         </section>
 
-        <br />
+
 
         <section className="flex items-center justify-center h-full gap-4">
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex flex-col gap-2 items-center justify-center pointer-events-none text-center ">
               <p className="text-white font-bold text-3xl md:text-4xl lg:text-7xl drop-shadow-2xl ">
-                This is Your Experience.
+                Thank you for joining us.
               </p>
             </div>
           </BackgroundGradientAnimation>
         </section>
-      </main>
+      </main >
     </>
   );
 }
