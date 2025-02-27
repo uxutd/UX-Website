@@ -137,7 +137,7 @@ export default function DesignPage() {
 
 
 
-        <section className="text-white h-[85vw] w-[100vw] flex flex-col justify-cente items-center px-4">
+        <section className="text-white h-[60vw] w-[100vw] flex flex-col justify-cente items-center px-4">
           <BackgroundGradientAnimation>
             <div className="relative z-10 ">
               <div className="px-18 md:px-36 py-4 md:py-8 flex flex-col ">
@@ -164,32 +164,40 @@ export default function DesignPage() {
               <div className="flex flex-col md:flex-row w-full">
                 {/* First Div (Left Side) */}
                 <div className="pl-4 md:pl-36 pr-4 py-4 md:py-8 flex flex-col gap-4 flex-1">
-                  <div className="flex-1 flex flex-col px-4 md:px-12 gap-2 sm:gap-4 p-4 sm:p-8 border-2 border-white rounded-lg bg-transparent w-full max-w-full md:max-w-[45vw] min-h-[200px] md:min-h-[300px] shadow-lg">
+                  <div className="flex-1 flex flex-col px-4 md:px-12 gap-1 sm:gap-2 p-4 sm:p-8 border-2 border-white rounded-lg bg-transparent w-full max-w-full md:max-w-[45vw] min-h-[200px] md:min-h-[300px] shadow-lg">
                     {/* First Row of Stats */}
-                    <div className="flex flex-col md:flex-row gap-2 sm:gap-4">
+                    <div className="flex flex-col md:flex-row gap-1 sm:gap-5 mt-11">
                       <div className="flex-1">
-                        <h1 className="text-1xl md:text-[1.935rem] font-semibold leading-tight mb-2 text-[#ffffff]">
-                          177+ registrations
-                        </h1>
+                        <div className="bg-white text-[#4694D6] rounded-2xl p-2 flex items-center justify-center h-[100px] shadow-lg">
+                          <h1 className="text-1xl md:text-[1.935rem] font-semibold leading-tight text-center">
+                            177+ Registrations
+                          </h1>
+                        </div>
                       </div>
                       <div className="flex-1">
-                        <h1 className="text-1xl md:text-[1.935rem] font-semibold leading-tight mb-2 text-[#ffffff]">
-                          $1400+ in Won Prizes
-                        </h1>
+                        <div className="bg-white text-[#4694D6] rounded-2xl p-2 flex items-center justify-center h-[100px] shadow-lg">
+                          <h1 className="text-1xl md:text-[1.935rem] font-semibold leading-tight text-center">
+                            $1400+ in Won Prizes
+                          </h1>
+                        </div>
                       </div>
                     </div>
 
                     {/* Second Row of Stats */}
-                    <div className="flex flex-col md:flex-row gap-2 sm:gap-4">
+                    <div className="flex flex-col md:flex-row gap-1 sm:gap-5 mt-8">
                       <div className="flex-1">
-                        <h1 className="text-1xl md:text-[1.935rem] font-semibold leading-tight mb-2 text-[#ffffff]">
-                          20+ Professionals
-                        </h1>
+                        <div className="bg-white text-[#4694D6] rounded-2xl p-2 flex items-center justify-center h-[100px] shadow-lg">
+                          <h1 className="text-1xl md:text-[1.935rem] font-semibold leading-tight text-center">
+                            20+ Professionals
+                          </h1>
+                        </div>
                       </div>
                       <div className="flex-1">
-                        <h1 className="text-1xl md:text-[1.935rem] font-semibold leading-tight mb-2 text-[#ffffff]">
-                          10+ Design Workshops
-                        </h1>
+                        <div className="bg-white text-[#4694D6] rounded-2xl p-2 flex items-center justify-center h-[100px] shadow-lg">
+                          <h1 className="text-1xl md:text-[1.935rem] font-semibold leading-tight text-center">
+                            10+ Design Workshops
+                          </h1>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -198,17 +206,15 @@ export default function DesignPage() {
                 {/* Second Div (Right Side) */}
                 {/* Second Div (Right Side) */}
                 <div className="pr-4 md:pr-36 pl-4 py-4 md:py-8 flex flex-col gap-4 flex-1">
-                  <div className="flex-1 flex flex-col px-4 md:px-12 gap-2 sm:gap-4 p-4 sm:p-8 border-2 border-white rounded-lg bg-[#ffffff] w-full max-w-full md:max-w-[45vw] min-h-[200px] md:min-h-[300px] shadow-lg">
+                  <div className="flex-1 flex flex-col px-4 md:px-12 gap-2 sm:gap-0 p-4 sm:p-8 border-2 border-white rounded-lg bg-[#ffffff] w-full max-w-full md:max-w-[45vw] min-h-[200px] md:min-h-[300px] shadow-lg">
+                  <div className="text-center text-xl font-bold text-[#4694D6] mt-1" style={{ fontSize: "2rem" }}>
+                      First Prize Winner!
+                    </div>
                     <img
                       src="/dthonwinnernames.png"
                       alt="Designathon Winner"
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-[full] h-[full] object-cover rounded-lg"
                     />
-
-                  </div>
-                  {/* Add the text "First prize winner!" here */}
-                  <div className="text-center text-xl font-bold text-[#08195E] mt-2">
-                    First prize winner!
                   </div>
                 </div>
               </div>
