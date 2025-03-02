@@ -10,9 +10,6 @@ import {
   useTheme,
 } from "@mui/material";
 
-
-
-
 export default function EventsPage() {
   const [showMore, setShowMore] = useState(false);
   const theme = useTheme();
@@ -112,7 +109,7 @@ export default function EventsPage() {
                   WebkitTextStroke: "0.25px white",
                 }}
               >
-                Design for Devs
+                Porfolio Essentials
               </h1>
               <h1
                 className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#ffffff]"
@@ -121,7 +118,7 @@ export default function EventsPage() {
                   WebkitTextStroke: "0.25px white",
                 }}
               >
-                February 17 & 18, 7:00 pm
+                March 5th, 7pm
               </h1>
               <h1
                 className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
@@ -130,7 +127,7 @@ export default function EventsPage() {
                   WebkitTextStroke: "1.75px white",
                 }}
               >
-                ECSW 1.355 & ECSW 1.315
+                ECSS 2.412
               </h1>
             </div>
             <Box className="flyer-box">
