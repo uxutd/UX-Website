@@ -116,7 +116,7 @@ export default function DesignPage() {
               </span>
               <a
                 className="luma-checkout--button hover:scale-105 transition ease-out"
-                href="https://utdallas.box.com/s/v9yh4qihrimg2h30f3crpfc4p8809kj9"
+                href="https://utdallas.box.com/s/x5q67ny4oglb5amn4qe9yhhdbr4il789"
               >
                 <AnimatedGradientText>
                   <span
