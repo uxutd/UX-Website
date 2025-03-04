@@ -101,39 +101,39 @@ export default function EventsPage() {
         {/* Top Section */}
         <section className="flex flex-col items-center pt-12 gap-6">
           <Box className="event-box">
-            <div className="px-4 md:px-6 py-1 md:py-4 flex flex-col ">
-              <h1
-                className="text-3xl md:text-[3.1rem] font-semibold leading-tight mb-2 text-[#ffffff] "
-                style={{
-                  wordSpacing: "0.25rem",
-                  WebkitTextStroke: "0.25px white",
-                }}
-              >
-                Porfolio Essentials
-              </h1>
-              <h1
-                className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#ffffff]"
-                style={{
-                  wordSpacing: "0.65rem",
-                  WebkitTextStroke: "0.25px white",
-                }}
-              >
-                March 5th, 7pm
-              </h1>
-              <h1
-                className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
-                style={{
-                  wordSpacing: "0.65rem",
-                  WebkitTextStroke: "1.75px white",
-                }}
-              >
-                ECSS 2.412
-              </h1>
+
+            <div className="px-4 md:px-6 py-1 md:py-4 flex flex-col md:flex-row items-start justify-between">
+              {/* Text Content */}
+              <div className="flex flex-col">
+                <h1
+                  className="text-3xl md:text-[3.1rem] font-semibold leading-tight mb-2 text-white"
+                  style={{ wordSpacing: "0.25rem", WebkitTextStroke: "0.25px white" }}
+                >
+                  Portfolio Essentials
+                </h1>
+                <h1
+                  className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
+                  style={{ wordSpacing: "0.65rem", WebkitTextStroke: "0.25px white" }}
+                >
+                  March 5, 7 pm
+                </h1>
+                <h1
+                  className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
+                  style={{ wordSpacing: "0.65rem", WebkitTextStroke: "1.75px white" }}
+                >
+                  ECSS 2.412
+                </h1>
+              </div>
+
+              {/* Flyer Image */}
+              <img
+                alt="Portfolio Essentials Flyer"
+                className="w-[21.625rem] md:w-[24.75rem]  mt-4 md:mt-[32px] md:mr-[32px] md:ml-4"
+                src="/PortfolioEssentialsFlyer.png"
+              />
+
+
             </div>
-            <Box className="flyer-box">
-            </Box>
-            {/* <img alt="iphone" className="flyer-image hover:scale-105 transition ease-out" src="/SpringKickoff.png" /> */}
-            <img alt="iphone" className="iphone-image hover:scale-105 transition ease-out" src="/iphone.png" />
           </Box>
         </section>
 

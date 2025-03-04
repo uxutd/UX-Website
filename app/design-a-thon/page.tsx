@@ -116,7 +116,8 @@ export default function DesignPage() {
               </span>
               <a
                 className="luma-checkout--button hover:scale-105 transition ease-out"
-                href="https://utdallas.box.com/s/v9yh4qihrimg2h30f3crpfc4p8809kj9"
+                href="https://utdallas.box.com/s/x5q67ny4oglb5amn4qe9yhhdbr4il789"
+
               >
                 <AnimatedGradientText>
                   <span
@@ -131,40 +132,45 @@ export default function DesignPage() {
             </div>
           </BlurFade>
           <br />
+          <br />
 
         </section>
 
 
 
 
-        <section className="text-white h-[60vw] w-[100vw] flex flex-col justify-cente items-center px-4">
-          <BackgroundGradientAnimation>
-            <div className="relative z-10 ">
-              <div className="px-18 md:px-36 py-4 md:py-8 flex flex-col ">
+        <section className="text-white h-auto w-[100vw] flex flex-col justify-center items-center px-4">
+          <BackgroundGradientAnimation
+            containerClassName="h-auto" // Allow the gradient to expand
+          >
+            <div className="relative z-10">
+              <div className="px-18 md:px-36 py-4 md:py-8 flex flex-col">
                 <h1
-                  className="text-left text-3xl md:text-[2.5rem] font-semibold leading-tight mb-2 text-[#ffffff] "
+                  className="text-left text-3xl md:text-[2.5rem] font-semibold leading-tight mb-2 text-[#ffffff]"
                   style={{
                     wordSpacing: "0.25rem",
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  Designathon 2024: The First Draft
+                  <TypingAnimation
+                    text="Designathon 2024: The First Draft"
+                  />
                 </h1>
               </div>
 
               {/* Wide Image (Centered and Longer) */}
-              <div className="flex items-center px-24 justify-center w-full h-[40vh]"> {/* Adjust height as needed */}
+              <div className="flex items-center px-24 justify-center w-full h-[40vh]">
                 <img
                   src="/dthongroup.png"
                   alt="Designathon Group"
-                  className="w-[80vw] h-[40vh] object-cover rounded-lg" /* Ensure the image scales properly */
+                  className="w-[80vw] h-[40vh] object-cover rounded-lg"
                 />
               </div>
 
               <div className="flex flex-col md:flex-row w-full">
                 {/* First Div (Left Side) */}
                 <div className="pl-4 md:pl-36 pr-4 py-4 md:py-8 flex flex-col gap-4 flex-1">
-                  <div className="flex-1 flex flex-col px-4 md:px-12 gap-1 sm:gap-2 p-4 sm:p-8 border-2 border-white rounded-lg bg-transparent w-full max-w-full md:max-w-[45vw] min-h-[200px] md:min-h-[300px] shadow-lg">
+                  <div className="flex-1 flex flex-col px-4 md:px-12 gap-1 sm:gap-2 p-4 sm:p-8 border-2 border-white rounded-lg bg-transparent w-full max-w-full md:max-w-[45vw] min-h-[250px] md:min-h-[350px] shadow-lg pb-8">
                     {/* First Row of Stats */}
                     <div className="flex flex-col md:flex-row gap-1 sm:gap-5 mt-11">
                       <div className="flex-1">
@@ -200,14 +206,15 @@ export default function DesignPage() {
                         </div>
                       </div>
                     </div>
+                    <br /> <br />
                   </div>
+
                 </div>
 
                 {/* Second Div (Right Side) */}
-                {/* Second Div (Right Side) */}
                 <div className="pr-4 md:pr-36 pl-4 py-4 md:py-8 flex flex-col gap-4 flex-1">
-                  <div className="flex-1 flex flex-col px-4 md:px-12 gap-2 sm:gap-0 p-4 sm:p-8 border-2 border-white rounded-lg bg-[#ffffff] w-full max-w-full md:max-w-[45vw] min-h-[200px] md:min-h-[300px] shadow-lg">
-                  <div className="text-center text-xl font-bold text-[#4694D6] mt-1" style={{ fontSize: "2rem" }}>
+                  <div className="flex-1 flex flex-col px-4 md:px-12 gap-2 sm:gap-0 p-4 sm:p-8 border-2 border-white rounded-lg bg-[#ffffff] w-full max-w-full md:max-w-[45vw] min-h-[250px] md:min-h-[350px] shadow-lg pb-8">
+                    <div className="text-center text-xl font-bold text-[#4694D6] mt-1" style={{ fontSize: "2rem" }}>
                       First Prize Winner!
                     </div>
                     <img
@@ -219,6 +226,7 @@ export default function DesignPage() {
                 </div>
               </div>
             </div>
+            <br />
           </BackgroundGradientAnimation>
         </section>
 
@@ -326,21 +334,20 @@ export default function DesignPage() {
 
 
         <section className="flex flex-col h-full items-center pt-36 gap-4 ">
+
           <div className="group rounded-full border border-black/5 bg-neutral-100 mt-[-50] text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800">
             <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-              <span>The UX Club Presents</span>
+              <span>November 9th - 10th</span>
             </AnimatedShinyText>
           </div>
           <BlurFade>
-            <div className="py-8 hover:scale-105 transition ease-out">
+            <div className="py-4">
               <SparklesText text="Design-a-thon Schedule!" />
             </div>
           </BlurFade>
 
           <div className="flex flex-col gap-4">
-            <span className="text-2xl font-bold text-[#08195E] hover:scale-110 transition ease-out">
-              November 9th - 10th
-            </span>
+
             <br />
             <a
               className="luma-checkout--button hover:scale-105 transition ease-out"
