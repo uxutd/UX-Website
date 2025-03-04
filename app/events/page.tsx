@@ -10,9 +10,6 @@ import {
   useTheme,
 } from "@mui/material";
 
-
-
-
 export default function EventsPage() {
   const [showMore, setShowMore] = useState(false);
   const theme = useTheme();
@@ -104,6 +101,7 @@ export default function EventsPage() {
         {/* Top Section */}
         <section className="flex flex-col items-center pt-12 gap-6">
           <Box className="event-box">
+
             <div className="px-4 md:px-6 py-1 md:py-4 flex flex-col md:flex-row items-start justify-between">
               {/* Text Content */}
               <div className="flex flex-col">
@@ -133,6 +131,7 @@ export default function EventsPage() {
                 className="w-[21.625rem] md:w-[24.75rem]  mt-4 md:mt-[32px] md:mr-[32px] md:ml-4"
                 src="/PortfolioEssentialsFlyer.png"
               />
+
 
             </div>
           </Box>

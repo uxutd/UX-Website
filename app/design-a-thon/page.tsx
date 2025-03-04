@@ -117,6 +117,7 @@ export default function DesignPage() {
               <a
                 className="luma-checkout--button hover:scale-105 transition ease-out"
                 href="https://utdallas.box.com/s/x5q67ny4oglb5amn4qe9yhhdbr4il789"
+
               >
                 <AnimatedGradientText>
                   <span
@@ -350,7 +351,7 @@ export default function DesignPage() {
             <br />
             <a
               className="luma-checkout--button hover:scale-105 transition ease-out"
-              href="https://discord.gg/BBwy4Gfh"
+              href="https://discord.gg/TRQxZ6bDHH"
             >
               <AnimatedGradientText>
                 <span
