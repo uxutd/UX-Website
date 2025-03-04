@@ -115,11 +115,11 @@ export default function EventsPage() {
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
                   style={{ wordSpacing: "0.65rem", WebkitTextStroke: "0.25px white" }}
                 >
-                  March 5, 7 pm
+                  March 5th, 7:00pm
                 </h1>
                 <h1
-                  className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
-                  style={{ wordSpacing: "0.65rem", WebkitTextStroke: "1.75px white" }}
+                  className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#ffffff]"
+                  style={{ wordSpacing: "0.65rem", /*WebkitTextStroke: "1.75px white"*/ }}
                 >
                   ECSS 2.412
                 </h1>
@@ -128,7 +128,7 @@ export default function EventsPage() {
               {/* Flyer Image */}
               <img
                 alt="Portfolio Essentials Flyer"
-                className="w-[21.625rem] md:w-[24.75rem]  mt-4 md:mt-[32px] md:mr-[32px] md:ml-4"
+                className="flyer-image w-[21.625rem] md:w-[24.75rem] sm:w-[12rem] mt-4 md:mt-[32px] md:mr-[32px] md:ml-4"
                 src="/PortfolioEssentialsFlyer.png"
               />
 
@@ -139,13 +139,14 @@ export default function EventsPage() {
 
         {/* Up Next Section */}
         <section className="flex flex-col pt-12 sm:pb-10 md:pb-20 ">
-          <img alt="Arrow" className="arrow-image hover:scale-105 transition ease-out" src="/Arrow.png" />
+          <img alt="Arrow" className="arrow-image" src="/Arrow.png" />
           <div className="upnext-text flex justify-start px-4 md:px-10">
             <h1
-              className="text-1xl md:text-3xl font-semibold leading-tight text-[#ffffff] hover:scale-105 transition ease-out"
+              className="text-1xl md:text-3xl font-semibold leading-tight text-[#3E68FD] "
               style={{
                 wordSpacing: "0.1rem",
-                WebkitTextStroke: "1.75px #3e68fd",
+                /*WebkitTextStroke: "1.75px #3e68fd",*/
+
               }}
             >
               Up next

@@ -212,8 +212,8 @@
   width: 200px;
   height: auto;
   position: absolute;
-  left: 894.5px;
-  top: 258px;
+  left: 775.5px;
+  top: 175px;
   z-index: 1;
   border-radius: 6px;
 }
@@ -352,7 +352,7 @@
     /* Increase the width */
     height: auto;
     /* Maintain aspect ratio */
-    left: 450px;
+    left: 570px;
     /* Adjust horizontal position */
     top: 400px;
     /* Adjust vertical position */
@@ -369,7 +369,7 @@
     /* Ensure the position is absolute */
     top: 310px !important;
     /* Move the text upwards */
-    left: 0;
+    left: 10;
     /* Optional: Center or adjust horizontally */
     transform: translateX(20%);
     /* Optional: Adjust horizontal alignment */
@@ -383,7 +383,7 @@
     /* Ensure the position is absolute */
     top: 520px !important;
     /* Move the text upwards */
-    left: 250px;
+    left: 380px;
     /* Optional: Center or adjust horizontally */
     transform: translateX(20%);
     /* Optional: Adjust horizontal alignment */
