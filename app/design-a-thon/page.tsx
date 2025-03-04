@@ -235,7 +235,7 @@ export default function DesignPage() {
               <iframe
                 src="https://drive.google.com/file/d/1Lnpax7eizohJA8jKuGRMXSEy5cU1WEOl/preview"
                 allow="autoplay"
-                className="absolute top-0 left-0 w-full h-full"
+                className="absolute top-0 left-0 w-[85vw] h-[45vw] rounded-lg"
                 style={{ border: 'none' }}
               ></iframe>
             </div>
@@ -334,11 +334,7 @@ export default function DesignPage() {
 
         <section className="flex flex-col h-full items-center pt-36 gap-4 ">
 
-          <div className="group rounded-full border border-black/5 bg-neutral-100 mt-[-50] text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800">
-            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-              <span>November 9th - 10th</span>
-            </AnimatedShinyText>
-          </div>
+
           <BlurFade>
             <div className="py-4">
               <SparklesText text="Design-a-thon Schedule!" />
