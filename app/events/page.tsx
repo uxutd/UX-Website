@@ -49,22 +49,40 @@ export default function EventsPage() {
 
   const events = [
     {
+      title: "Portfolio Essentials",
+      date: "03/05/2025",
+      image: "/portfolioessentials.jpg",
+      alt: "Event 10",
+    },
+    {
+      title: "Design For Devs",
+      date: "02/17/2025 - 02/18/2025",
+      image: "/designfordevs.jpg",
+      alt: "Event 9",
+    },
+    {
+      title: "Spring 2025 Kickoff",
+      date: "02/03/2025",
+      image: "/springkickoff2025.jpg",
+      alt: "Event 8",
+    },
+    {
       title: "End-of-Sem Social",
       date: "12/02/2024",
       image: "/eossocial.jpg",
-      alt: "Event 1",
+      alt: "Event 7",
     },
     {
       title: "UXperience: The First Draft",
-      date: "11/09/2024",
+      date: "11/09/2024 - 11/10/2024",
       image: "/designathon.jpg",
-      alt: "Event 2",
+      alt: "Event 6",
     },
     {
       title: "Design & Unwind Social",
       date: "10/30/2024",
       image: "/designandunwind.jpg",
-      alt: "Event 3",
+      alt: "Event 5",
     },
     {
       title: "Design Systems Workshop",
@@ -77,19 +95,19 @@ export default function EventsPage() {
       title: "Intro UX Design Workshop",
       date: "09/30/2024",
       image: "/introtoux.jpg",
-      alt: "Event 5",
+      alt: "Event 3",
     },
     {
       title: "Figma Workshop Series",
       date: "09/24/2024 - 11/12/2024",
       image: "/figmaworkshop.png",
-      alt: "Event 6",
+      alt: "Event 2",
     },
     {
       title: "Fall 2024 Kickoff",
       date: "09/12/2024",
       image: "/fallkickoff.jpg",
-      alt: "Event 7",
+      alt: "Event 1",
     },
   ];
 
