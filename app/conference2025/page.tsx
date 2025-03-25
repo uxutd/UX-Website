@@ -21,7 +21,7 @@ export default function ConferencePage() {
     return (
         <>
             <section className="text-white flex flex-col items-center justify-center min-h-screen md:min-h-[95vh] py-20 bg-cover bg-center" style={{ backgroundImage: "url('/finalmap.svg')" }}>
-                <div className="scale-125 transform">
+                <div className="scale-90 transform">
                     <div className="relative">
                         <img
                             src="/paperhero.png"
@@ -93,16 +93,34 @@ export default function ConferencePage() {
                     </div>
                 </div>
             )}
-            <div className="flex flex-col md:flex-row items-start justify-between my-10">
+            <div className="flex flex-col md:flex-row items-start justify-start my-10">
                 <img
                     src="/conferenceschedule.svg"
                     alt="Conference Schedule"
-                    className="w-[100%] max-w-[1100px] h-auto mr-auto"
+                    className="w-[60%] max-w-400px] h-auto"
                 />
+                <div className="flex flex-col w-[35%] max-w-[400px] ml-0 mt-12">
+                    <h1 className="text-6xl font-bold text-blue-500">
+                        Title
+                    </h1>
+                    <p className="mt-9 text-2xl text-gray-700">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
             </div>
             <div style={{ height: "1200px" }}></div>
             <div className="flex flex-col items-center my-10">
-                <div className="w-full max-w-[800px] scale-125 transform">
+                <div
+                    className="w-full scale-125 transform"
+                    style={{
+                        backgroundColor: "#d9f0ff",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        borderRadius: "8px",
+                        padding: "20px",
+                    }}
+                >
                     <AnimatedTestimonialsDemo />
                 </div>
             </div>
@@ -127,35 +145,35 @@ export function AnimatedTestimonialsDemo() {
                 "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
             name: "Averi Collen",
             designation: "UX Researcher at CBRE",
-            src: "/UX_Officers/kk.svg",
+            src: "/averi.png",
         },
         {
             quote:
                 "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
             name: "Linh-Hoa Nguyen",
             designation: "Sr. Experience Designer at Capital One",
-            src: "/UX_Officers/mani.svg",
+            src: "/linh-hoa.jpg",
         },
         {
             quote:
                 "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
             name: "Brian Sullivan",
-            designation: "Operations Director at CloudScale",
-            src: "/UX_Officers/mani.svg",
+            designation: "Director of Design Strategy at Sabre",
+            src: "/brian.png",
         },
         {
             quote:
                 "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
             name: "Everett Swain",
-            designation: "Engineering Lead at DataPro",
-            src: "/UX_Officers/kk.svg",
+            designation: "AI Experience Designer at Guardian Life",
+            src: "/everett.jpg",
         },
         {
             quote:
                 "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
             name: "Preston McCauley",
-            designation: "VP of Technology at FutureNet",
-            src: "/UX_Officers/vidur.svg",
+            designation: "Director of AI and Innovation at Tonic3",
+            src: "/preston.jpg",
         },
     ];
     return <AnimatedTestimonials testimonials={testimonials} />;
