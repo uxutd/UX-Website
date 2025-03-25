@@ -21,57 +21,59 @@ export default function ConferencePage() {
     return (
         <>
             <section className="text-white flex flex-col items-center justify-center min-h-screen md:min-h-[95vh] py-20 bg-cover bg-center" style={{ backgroundImage: "url('/finalmap.svg')" }}>
-                <div className="relative">
-                    <img
-                        src="/paperhero.png"
-                        alt="Hero Image"
-                        className="max-w-[100%] h-auto w-full md:max-w-[600px] lg:max-w-[1000px] mx-auto transform translate-y-1/8"
-                    />
-                    {/* Design image positioned absolutely above the title */}
-                    <img
-                        src="/design.svg"
-                        alt="Design"
-                        className="absolute w-[40%] max-w-[400px] top-[30%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                    />
-                    {/* Uncharted title image positioned absolutely in the middle */}
-                    <img
-                        src="/uncharted.svg"
-                        alt="Uncharted Title"
-                        className="absolute w-[70%] max-w-[500px] top-[58%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                    />
-                    {/* Ticket image positioned absolutely */}
-                    <img
-                        src="/ticket.svg"
-                        alt="Ticket"
-                        className="absolute w-[40%] max-w-[600px] -bottom-[5%] left-[-20px] transform translate-y-1/4"
-                    />
-                    <img
-                        src="/tape.svg"
-                        alt="Tape"
-                        className="absolute w-[40%] max-w-[200px] top-[-40px] right-0 transform -translate-y-1/12 translate-x-1/4"
-                    />
-                    {/* Path image positioned as a dotted line between Uncharted and Location */}
-                    <img
-                        src="/path.png"
-                        alt="Path"
-                        className="absolute w-[8%] max-w-[100px] top-[70%] left-[82%] transform -translate-x-1/2 rotate-[8deg]"
-                    />
-                    {/* Location image moved further down */}
-                    <img
-                        src="/location.svg"
-                        alt="Loc"
-                        className="rotate-[8deg] absolute w-[10%] max-w-[200px] bottom-[15px] right-[7%] transform translate-y-1/8 translate-x-1/4"
-                    />
-                    <a
-                        onClick={toggleIframe}
-                        className="absolute w-[35%] max-w-[550px] -bottom-[8.5%] right-[2%] transform translate-y-1/8 translate-x-1/4 transition-transform duration-300 hover:scale-105 cursor-pointer"
-                    >
+                <div className="scale-125 transform">
+                    <div className="relative">
                         <img
-                            src="/register.png"
-                            alt="Register"
-                            className="w-full h-auto"
+                            src="/paperhero.png"
+                            alt="Hero Image"
+                            className="max-w-[100%] h-auto w-full md:max-w-[600px] lg:max-w-[1000px] mx-auto transform translate-y-1/8"
                         />
-                    </a>
+                        {/* Design image positioned absolutely above the title */}
+                        <img
+                            src="/design.svg"
+                            alt="Design"
+                            className="absolute w-[40%] max-w-[400px] top-[30%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                        />
+                        {/* Uncharted title image positioned absolutely in the middle */}
+                        <img
+                            src="/uncharted.svg"
+                            alt="Uncharted Title"
+                            className="absolute w-[70%] max-w-[500px] top-[58%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                        />
+                        {/* Ticket image positioned absolutely */}
+                        <img
+                            src="/ticket.svg"
+                            alt="Ticket"
+                            className="absolute w-[40%] max-w-[600px] -bottom-[5%] left-[-20px] transform translate-y-1/4"
+                        />
+                        <img
+                            src="/tape.svg"
+                            alt="Tape"
+                            className="absolute w-[40%] max-w-[200px] top-[-40px] right-0 transform -translate-y-1/12 translate-x-1/4"
+                        />
+                        {/* Path image positioned as a dotted line between Uncharted and Location */}
+                        <img
+                            src="/path.png"
+                            alt="Path"
+                            className="absolute w-[8%] max-w-[100px] top-[70%] left-[82%] transform -translate-x-1/2 rotate-[8deg]"
+                        />
+                        {/* Location image moved further down */}
+                        <img
+                            src="/location.svg"
+                            alt="Loc"
+                            className="rotate-[8deg] absolute w-[10%] max-w-[200px] bottom-[15px] right-[7%] transform translate-y-1/8 translate-x-1/4"
+                        />
+                        <a
+                            onClick={toggleIframe}
+                            className="absolute w-[35%] max-w-[550px] -bottom-[8.5%] right-[2%] transform translate-y-1/8 translate-x-1/4 transition-transform duration-300 hover:scale-105 cursor-pointer"
+                        >
+                            <img
+                                src="/register.png"
+                                alt="Register"
+                                className="w-full h-auto"
+                            />
+                        </a>
+                    </div>
                 </div>
             </section>
             {showIframe && (
@@ -97,16 +99,23 @@ export default function ConferencePage() {
                     alt="Conference Schedule"
                     className="w-[100%] max-w-[1100px] h-auto mr-auto"
                 />
-                <div className="w-full md:w-[40%] mt-10 md:mt-0">
+            </div>
+            <div style={{ height: "1200px" }}></div>
+            <div className="flex flex-col items-center my-10">
+                <div className="w-full max-w-[800px] scale-125 transform">
                     <AnimatedTestimonialsDemo />
                 </div>
             </div>
-            <div style={{ height: "500px" }}></div>
-            <img
-                src="/conferencefooter.svg"
-                alt="Conference Footer"
-                className="w-[100%] max-w-[1100px] h-auto mx-auto"
-            />
+            <div className="relative">
+                <WavyBackgroundDemo />
+                <div className="absolute inset-0 flex justify-center items-center z-10" style={{ top: "100px" }}>
+                    <img
+                        src="/conferencefooter.svg"
+                        alt="Conference Footer"
+                        className="w-[70%] max-w-[100%] h-auto"
+                    />
+                </div>
+            </div>
         </>
     );
 }
@@ -116,38 +125,51 @@ export function AnimatedTestimonialsDemo() {
         {
             quote:
                 "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-            name: "Sarah Chen",
-            designation: "Product Manager at TechFlow",
+            name: "Averi Collen",
+            designation: "UX Researcher at CBRE",
             src: "/UX_Officers/kk.svg",
         },
         {
             quote:
                 "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-            name: "Michael Rodriguez",
-            designation: "CTO at InnovateSphere",
-            src: "/UX_Officers/kk.svg",
+            name: "Linh-Hoa Nguyen",
+            designation: "Sr. Experience Designer at Capital One",
+            src: "/UX_Officers/mani.svg",
         },
         {
             quote:
                 "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-            name: "Emily Watson",
+            name: "Brian Sullivan",
             designation: "Operations Director at CloudScale",
-            src: "/UX_Officers/kk.svg",
+            src: "/UX_Officers/mani.svg",
         },
         {
             quote:
                 "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-            name: "James Kim",
+            name: "Everett Swain",
             designation: "Engineering Lead at DataPro",
             src: "/UX_Officers/kk.svg",
         },
         {
             quote:
                 "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-            name: "Lisa Thompson",
+            name: "Preston McCauley",
             designation: "VP of Technology at FutureNet",
             src: "/UX_Officers/vidur.svg",
         },
     ];
     return <AnimatedTestimonials testimonials={testimonials} />;
+}
+
+import { WavyBackground } from "@/components/ui/wavy-background";
+
+export function WavyBackgroundDemo() {
+    return (
+        <WavyBackground className="w-full pb-40 -mb-60">
+          <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
+          </p>
+          <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
+          </p>
+        </WavyBackground>
+      );
 }
