@@ -180,7 +180,7 @@ export function AnimatedTestimonialsDemo() {
 
 export function WavyBackgroundDemo() {
   return (
-    <WavyBackground className="w-full pb-40 -mb-60">
+    <WavyBackground className="w-full pb-40">
       <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center"></p>
       <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center"></p>
     </WavyBackground>
