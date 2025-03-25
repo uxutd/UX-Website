@@ -142,14 +142,14 @@ export function AnimatedTestimonialsDemo() {
     const testimonials = [
         {
             quote:
-                "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+                "Averi has three years of experience and brings firsthand expertise in user-centered design.",
             name: "Averi Collen",
             designation: "UX Researcher at CBRE",
             src: "/averi.png",
         },
         {
             quote:
-                "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
+                "Linh-Hoa has worked on various products (Consumer, B2B, B2C, and internal) at Capital One since 2021. Her design background is in graphic and brand design as shown in her B.A. in Arts, Technology, and Emerging Communication and Minor in Marketing from UT Dallas.",
             name: "Linh-Hoa Nguyen",
             designation: "Sr. Experience Designer at Capital One",
             src: "/linh-hoa.jpg",
@@ -163,9 +163,9 @@ export function AnimatedTestimonialsDemo() {
         },
         {
             quote:
-                "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-            name: "Everett Swain",
-            designation: "AI Experience Designer at Guardian Life",
+                "Everett Swain II is the founder of UXD Academy and Hour Table. He has over 13 years of experience working with major companies like Wayfair, 7-Eleven, and Prudential.",
+            name: "Everett Swain II",
+            designation: "Founder of UXD Academy & AI Experience Designer at Guardian Life",
             src: "/everett.jpg",
         },
         {
