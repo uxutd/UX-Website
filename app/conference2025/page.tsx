@@ -119,7 +119,7 @@ export default function ConferencePage() {
         <div className="w-full max-w-[800px] bg-blue-100 rounded-lg p-8 shadow-lg">
           <AnimatedTestimonialsDemo />
         </div>
-        <div className="mt-8 w-full max-w-[600px]">
+        <div className="mt-8 w-full max-w-[800px] scale-110">
           <img src="/conferenceschedule.svg" alt="Conference Schedule" className="w-full h-auto object-contain" />
         </div>
       </div>
@@ -130,7 +130,7 @@ export default function ConferencePage() {
           <img
             src="/conferencefooter.svg"
             alt="Conference Footer"
-            className="w-[70%] max-w-[800px] h-auto object-contain"
+            className="w-[70%] max-w-[800px] h-auto object-contain mb-20 md:scale-100 w-[85%]"
           />
         </div>
       </div>
@@ -180,7 +180,8 @@ export function AnimatedTestimonialsDemo() {
 
 export function WavyBackgroundDemo() {
   return (
-    <WavyBackground className="w-full pb-40">
+    <WavyBackground className="w-full pb-0 md:scale-100 w-full">
+      {/* The scale-75 class applies scaling for mobile view, while md:scale-100 resets it for larger screens */}
       <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center"></p>
       <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center"></p>
     </WavyBackground>
