@@ -23,7 +23,7 @@ export const siteConfig = {
     },
     {
       label: "Conference",
-      href: "/conference2025",
+      href: "/conference",
     },
   ],
   navMenuItems: [
@@ -45,7 +45,7 @@ export const siteConfig = {
     },
     {
       label: "Conference",
-      href: "/conference2025",
+      href: "/conference",
     },
   ],
   links: {
