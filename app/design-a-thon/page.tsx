@@ -233,6 +233,7 @@ export default function DesignPage() {
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://drive.google.com/file/d/1Lnpax7eizohJA8jKuGRMXSEy5cU1WEOl/preview"
                 style={{ border: "none" }}
+                title="Design A-thon Video Preview"
               />
             </div>
           </div>

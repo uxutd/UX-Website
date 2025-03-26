@@ -22,25 +22,25 @@ export default function ConferencePage() {
         <div className="scale-90 transform">
           <div className="relative">
             <img
-              alt="Conference Hero Image showcasing design elements"
+              alt="Conference hero design with event details"
               className="max-w-[100%] h-auto w-full md:max-w-[600px] lg:max-w-[1000px] mx-auto transform translate-y-1/8 object-contain"
               src="/paperhero.png"
             />
             {/* Design image positioned absolutely above the title */}
             <img
-              alt="Design elements of the conference"
+              alt="Decorative design elements for conference"
               className="absolute w-[40%] max-w-[400px] top-[30%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-contain"
               src="/design.svg"
             />
             {/* Uncharted title image positioned absolutely in the middle */}
             <img
-              alt="Uncharted theme title"
+              alt="UXperience Conference Uncharted theme title"
               className="absolute w-[70%] max-w-[500px] top-[58%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-contain"
               src="/uncharted.svg"
             />
             {/* Ticket image positioned absolutely */}
             <img
-              alt="Conference ticket icon"
+              alt="Conference ticket registration button"
               className="absolute w-[40%] max-w-[600px] -bottom-[5%] left-[-20px] transform translate-y-1/4 object-contain"
               src="/ticket.svg"
             />
@@ -52,13 +52,13 @@ export default function ConferencePage() {
             />
             {/* Path image positioned as a dotted line between Uncharted and Location */}
             <img
-              alt="Dotted path connecting conference elements"
+              alt="Dotted connecting path between conference elements"
               className="absolute w-[8%] max-w-[100px] top-[70%] left-[82%] transform -translate-x-1/2 rotate-[8deg] object-contain"
               src="/path.png"
             />
             {/* Location image moved further down */}
             <img
-              alt="Location icon"
+              alt="Conference location icon"
               className="rotate-[8deg] absolute w-[10%] max-w-[200px] bottom-[15px] right-[7%] transform translate-y-1/8 translate-x-1/4 object-contain"
               src="/location.svg"
             />
@@ -69,7 +69,7 @@ export default function ConferencePage() {
               onClick={toggleIframe}
             >
               <img
-                alt="Register button"
+                alt="Conference registration button"
                 className="w-full h-auto object-contain"
                 src="/register.png"
               />
@@ -92,7 +92,7 @@ export default function ConferencePage() {
                 className="w-full h-full border-none"
                 loading="lazy"
                 src="https://www.eventbrite.com/e/uxperience-conference-design-uncharted-tickets-1269729879249?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl"
-                title="Eventbrite Registration Page for UXperience Conference"
+                title="UXperience Conference Eventbrite Registration Page"
               />
             </Suspense>
             <button
@@ -105,35 +105,6 @@ export default function ConferencePage() {
           </div>
         </div>
       )}
-
-      {showIframe && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-          <div className="relative w-[90%] max-w-[800px] h-[80%] bg-white rounded-lg overflow-hidden">
-            <Suspense
-              fallback={
-                <div className="flex items-center justify-center h-full">
-                  Loading...
-                </div>
-              }
-            >
-              <iframe
-                className="w-full h-full border-none"
-                loading="lazy"
-                src="https://www.eventbrite.com/e/uxperience-conference-design-uncharted-tickets-1269729879249?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl"
-                title="Eventbrite Registration"
-              />
-            </Suspense>
-            <button
-              aria-label="Close registration form"
-              className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-red-600 transition-colors"
-              onClick={toggleIframe}
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-      )}
-
       <div className="flex flex-col items-center mt-16 px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-blue-500">
           Celebrating 5 Years of UX at UTD
@@ -216,7 +187,7 @@ export function AnimatedTestimonialsDemo() {
     },
     {
       quote:
-        "Averi has three years of experience and brings firsthand expertise in user-centered design.",
+        "Averi is a UX Researcher at CBRE, driving user-centered design solutions in commercial real estate. A University of North Texas graduate, she leads CBRE's engagement with UX students across DFW universities.",
       name: "Averi Collen",
       designation: "UX Researcher at CBRE",
       src: "/averi.png",
