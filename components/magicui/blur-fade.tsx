@@ -48,21 +48,23 @@ export default function BlurFade({
 
   return (
     <AnimatePresence>
-      <motion.div
-        ref={ref}
-        animate={isInView ? "visible" : "hidden"}
-        className={className}
-        exit="hidden"
-        initial="hidden"
-        transition={{
-          delay: 0.04 + delay,
-          duration,
-          ease: "easeOut",
-        }}
-        variants={combinedVariants}
-      >
-        {children}
-      </motion.div>
+      {isInView && (
+        <motion.div
+          ref={ref}
+          animate="visible"
+          className={className}
+          exit="hidden"
+          initial="hidden"
+          transition={{
+            delay: 0.04 + delay,
+            duration,
+            ease: "easeOut",
+          }}
+          variants={combinedVariants}
+        >
+          {children}
+        </motion.div>
+      )}
     </AnimatePresence>
   );
 }

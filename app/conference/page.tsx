@@ -24,7 +24,7 @@ export default function ConferencePage() {
     },
     {
       quote:
-        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
+        "Brian Sullivan is the Director of Design Strategy at Sabre. He helps travel brands build products and services for the future of travel. He works with large brands including American Airlines, Hyatt Hotels, Virgin Australia, AMEX, and more.",
       name: "Brian Sullivan",
       designation: "Director of Design Strategy at Sabre",
       src: "/brian.png",
@@ -46,7 +46,7 @@ export default function ConferencePage() {
     },
     {
       quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
+        "Preston McCauley is an AI, UX, and immersive technologies expert with 25+ years of experience creating human-centered AI systems. As the author of Generative AI for Everyone: A Practical Guidebook, he helps professionals in various fields integrate AI as a creative companion to enhance productivity and engagement.",
       name: "Preston McCauley",
       designation: "Director of AI and Innovation at Tonic3",
       src: "/preston.jpg",
