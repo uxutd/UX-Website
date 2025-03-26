@@ -1,18 +1,14 @@
 "use client";
 import { useEffect } from "react";
-import { Card, CardHeader, CardContent, useMediaQuery } from "@mui/material";
 
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import TypingAnimation from "@/components/ui/typing-animation";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
-import { Button } from "@/components/ui/button";
-import { BoxReveal } from "@/components/magicui/box-reveal"; import BlurFade from "@/components/magicui/blur-fade";
+import BlurFade from "@/components/magicui/blur-fade";
 import { cn } from "@/lib/utils";
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 import SparklesText from "@/components/ui/sparkles-text";
-import { HyperText } from "@/components/magicui/hyper-text";
-
 
 export default function DesignPage() {
   useEffect(() => {
@@ -117,7 +113,6 @@ export default function DesignPage() {
               <a
                 className="luma-checkout--button hover:scale-105 transition ease-out"
                 href="https://utdallas.box.com/s/x5q67ny4oglb5amn4qe9yhhdbr4il789"
-
               >
                 <AnimatedGradientText>
                   <span
@@ -133,11 +128,7 @@ export default function DesignPage() {
           </BlurFade>
           <br />
           <br />
-
         </section>
-
-
-
 
         <section className="text-white h-auto w-[100vw] flex flex-col justify-center items-center px-4">
           <BackgroundGradientAnimation
@@ -152,18 +143,16 @@ export default function DesignPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  <TypingAnimation
-                    text="Designathon 2024: The First Draft"
-                  />
+                  <TypingAnimation text="Designathon 2024: The First Draft" />
                 </h1>
               </div>
 
               {/* Wide Image (Centered and Longer) */}
               <div className="flex items-center px-24 justify-center w-full h-[40vh]">
                 <img
-                  src="/dthongroup.png"
                   alt="Designathon Group"
                   className="w-[80vw] h-[40vh] object-cover rounded-lg"
+                  src="/dthongroup.png"
                 />
               </div>
 
@@ -188,7 +177,6 @@ export default function DesignPage() {
                         </div>
                       </div>
                     </div>
-
                     {/* Second Row of Stats */}
                     <div className="flex flex-col md:flex-row gap-1 sm:gap-5 mt-8">
                       <div className="flex-1">
@@ -208,19 +196,21 @@ export default function DesignPage() {
                     </div>
                     <br /> <br />
                   </div>
-
                 </div>
 
                 {/* Second Div (Right Side) */}
                 <div className="pr-4 md:pr-36 pl-4 py-4 md:py-8 flex flex-col gap-4 flex-1">
                   <div className="flex-1 flex flex-col px-4 md:px-12 gap-2 sm:gap-0 p-4 sm:p-8 border-2 border-white rounded-lg bg-[#ffffff] w-full max-w-full md:max-w-[45vw] min-h-[250px] md:min-h-[350px] shadow-lg pb-8">
-                    <div className="text-center text-xl font-bold text-[#4694D6] mt-1" style={{ fontSize: "2rem" }}>
+                    <div
+                      className="text-center text-xl font-bold text-[#4694D6] mt-1"
+                      style={{ fontSize: "2rem" }}
+                    >
                       First Prize Winner!
                     </div>
                     <img
-                      src="/dthonwinnernames.png"
                       alt="Designathon Winner"
                       className="w-[full] h-[full] object-cover rounded-lg"
+                      src="/dthonwinnernames.png"
                     />
                   </div>
                 </div>
@@ -231,19 +221,22 @@ export default function DesignPage() {
         </section>
 
         <section className="pt-10 pb-10 w-screen flex justify-center items-center px-4">
-          <div className="flex justify-center w-full" style={{ maxWidth: '85vw' }}>
-            <div className="relative w-full" style={{ paddingTop: '56.25%' }}> {/* 16:9 Aspect Ratio */}
+          <div
+            className="flex justify-center w-full"
+            style={{ maxWidth: "85vw" }}
+          >
+            <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+              {" "}
+              {/* 16:9 Aspect Ratio */}
               <iframe
-                src="https://drive.google.com/file/d/1Lnpax7eizohJA8jKuGRMXSEy5cU1WEOl/preview"
                 allow="autoplay"
                 className="absolute top-0 left-0 w-full h-full"
-                style={{ border: 'none' }}
-              ></iframe>
+                src="https://drive.google.com/file/d/1Lnpax7eizohJA8jKuGRMXSEy5cU1WEOl/preview"
+                style={{ border: "none" }}
+              />
             </div>
           </div>
         </section>
-
-
 
         {/* Saturday Schedule 
           <div className="py-24 sm:py-32 mb-[-10]">
@@ -332,9 +325,7 @@ export default function DesignPage() {
           </div>
           */}
 
-
         <section className="flex flex-col h-full items-center pt-36 gap-4 ">
-
           <div className="group rounded-full border border-black/5 bg-neutral-100 mt-[-50] text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800">
             <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
               <span>November 9th - 10th</span>
@@ -347,7 +338,6 @@ export default function DesignPage() {
           </BlurFade>
 
           <div className="flex flex-col gap-4">
-
             <br />
             <a
               className="luma-checkout--button hover:scale-105 transition ease-out"
@@ -568,8 +558,6 @@ export default function DesignPage() {
           </div>
         </section>
 
-
-
         <section className="flex items-center justify-center h-full gap-4">
           <BackgroundGradientAnimation>
             <div className="absolute z-50 inset-0 flex flex-col gap-2 items-center justify-center pointer-events-none text-center ">
@@ -579,7 +567,7 @@ export default function DesignPage() {
             </div>
           </BackgroundGradientAnimation>
         </section>
-      </main >
+      </main>
     </>
   );
 }

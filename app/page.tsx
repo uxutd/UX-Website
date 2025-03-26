@@ -205,10 +205,10 @@ export default function Home() {
               >
                 <Image
                   alt={`Corporate logo ${index + 1}`}
+                  className="object-contain"
+                  height={150}
                   src={src}
                   width={150}
-                  height={150}
-                  className="object-contain"
                 />
               </div>
             ))}

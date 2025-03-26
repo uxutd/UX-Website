@@ -35,25 +35,20 @@ export const BoxReveal = ({
   return (
     <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
       <motion.div
+        animate={mainControls}
+        initial="hidden"
+        transition={{ duration: duration ? duration : 0.5, delay: 0.25 }}
         variants={{
           hidden: { opacity: 0, y: 75 },
           visible: { opacity: 1, y: 0 },
         }}
-        initial="hidden"
-        animate={mainControls}
-        transition={{ duration: duration ? duration : 0.5, delay: 0.25 }}
       >
         {children}
       </motion.div>
 
       <motion.div
-        variants={{
-          hidden: { left: 0 },
-          visible: { left: "100%" },
-        }}
-        initial="hidden"
         animate={slideControls}
-        transition={{ duration: duration ? duration : 0.5, ease: "easeIn" }}
+        initial="hidden"
         style={{
           position: "absolute",
           top: 4,
@@ -62,6 +57,11 @@ export const BoxReveal = ({
           right: 0,
           zIndex: 20,
           background: boxColor,
+        }}
+        transition={{ duration: duration ? duration : 0.5, ease: "easeIn" }}
+        variants={{
+          hidden: { left: 0 },
+          visible: { left: "100%" },
         }}
       />
     </div>

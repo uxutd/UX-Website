@@ -14,8 +14,9 @@ export default function EventsPage() {
   const [showMore, setShowMore] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const EventTitle: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-
+  const EventTitle: React.FC<{ children: React.ReactNode }> = ({
+    children,
+  }) => (
     <Typography
       sx={{
         fontSize: isMobile ? "0.85rem" : "2rem",
@@ -24,7 +25,6 @@ export default function EventsPage() {
         fontFamily: "Bricolage Grotesque",
         fontWeight: "bold",
         textShadow: "0.1875rem 0.125rem 0.25rem #3E68FD",
-
       }}
     >
       {children}
@@ -119,25 +119,33 @@ export default function EventsPage() {
         {/* Top Section */}
         <section className="flex flex-col items-center pt-12 gap-6">
           <Box className="event-box">
-
             <div className="px-4 md:px-6 py-1 md:py-4 flex flex-col md:flex-row items-start justify-between">
               {/* Text Content */}
               <div className="flex flex-col">
                 <h1
                   className="text-3xl md:text-[3.1rem] font-semibold leading-tight mb-2 text-white"
-                  style={{ wordSpacing: "0.25rem", WebkitTextStroke: "0.25px white" }}
+                  style={{
+                    wordSpacing: "0.25rem",
+                    WebkitTextStroke: "0.25px white",
+                  }}
                 >
                   Portfolio Essentials
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
-                  style={{ wordSpacing: "0.65rem", WebkitTextStroke: "0.25px white" }}
+                  style={{
+                    wordSpacing: "0.65rem",
+                    WebkitTextStroke: "0.25px white",
+                  }}
                 >
                   March 5, 7 pm
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
-                  style={{ wordSpacing: "0.65rem", WebkitTextStroke: "1.75px white" }}
+                  style={{
+                    wordSpacing: "0.65rem",
+                    WebkitTextStroke: "1.75px white",
+                  }}
                 >
                   ECSS 2.412
                 </h1>
@@ -149,15 +157,17 @@ export default function EventsPage() {
                 className="w-[21.625rem] md:w-[24.75rem]  mt-4 md:mt-[32px] md:mr-[32px] md:ml-4"
                 src="/PortfolioEssentialsFlyer.png"
               />
-
-
             </div>
           </Box>
         </section>
 
         {/* Up Next Section */}
         <section className="flex flex-col pt-12 sm:pb-10 md:pb-20 ">
-          <img alt="Arrow" className="arrow-image hover:scale-105 transition ease-out" src="/Arrow.png" />
+          <img
+            alt="Arrow"
+            className="arrow-image hover:scale-105 transition ease-out"
+            src="/Arrow.png"
+          />
           <div className="upnext-text flex justify-start px-4 md:px-10">
             <h1
               className="text-1xl md:text-3xl font-semibold leading-tight text-[#ffffff] hover:scale-105 transition ease-out"
@@ -204,7 +214,6 @@ export default function EventsPage() {
                 color: "#3E68FD",
                 textAlign: isMobile ? "center" : "left",
                 fontSize: "2rem",
-
               }}
               variant="h3"
             >
@@ -221,7 +230,6 @@ export default function EventsPage() {
                 right: isMobile ? "-3.5rem" : "0.5rem",
                 top: isMobile ? "1.5rem" : "0.0rem",
                 zIndex: 1,
-
               }}
             />
           </Box>
@@ -285,7 +293,6 @@ export default function EventsPage() {
                       flexDirection: "column",
                       justifyContent: "flex-start",
                       padding: isMobile ? "0.75rem" : "1.2rem",
-
                     }}
                   >
                     <EventTitle>{event.title}</EventTitle>
@@ -317,4 +324,3 @@ export default function EventsPage() {
     </div>
   );
 }
-

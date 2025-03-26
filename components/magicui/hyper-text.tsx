@@ -1,8 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, MotionProps } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+
+import { cn } from "@/lib/utils";
 
 type CharacterSet = string[] | readonly string[];
 
@@ -56,6 +57,7 @@ export function HyperText({
       const startTimeout = setTimeout(() => {
         setIsAnimating(true);
       }, delay);
+
       return () => clearTimeout(startTimeout);
     }
 
