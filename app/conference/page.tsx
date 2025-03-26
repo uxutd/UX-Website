@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { useState, Suspense } from "react"
-import { X } from "lucide-react"
+import { useState, Suspense } from "react";
+import { X } from "lucide-react";
 
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials"
-import { WavyBackground } from "@/components/ui/wavy-background"
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 export default function ConferencePage() {
-  const [showIframe, setShowIframe] = useState(false)
+  const [showIframe, setShowIframe] = useState(false);
 
   const toggleIframe = () => {
-    setShowIframe(!showIframe)
-  }
+    setShowIframe(!showIframe);
+  };
 
   // Moved these components inside the main component
   const testimonials = [
@@ -33,7 +33,8 @@ export default function ConferencePage() {
       quote:
         "Everett Swain II is the founder of UXD Academy and Hour Table. He has over 13 years of experience working with major companies like Wayfair, 7-Eleven, and Prudential.",
       name: "Everett Swain II",
-      designation: "Founder of UXD Academy & AI Experience Designer at Guardian Life",
+      designation:
+        "Founder of UXD Academy & AI Experience Designer at Guardian Life",
       src: "/everett.jpg",
     },
     {
@@ -50,7 +51,7 @@ export default function ConferencePage() {
       designation: "Director of AI and Innovation at Tonic3",
       src: "/preston.jpg",
     },
-  ]
+  ];
 
   return (
     <>
@@ -107,7 +108,11 @@ export default function ConferencePage() {
               className="absolute w-[35%] max-w-[550px] -bottom-[8.5%] right-[2%] transform translate-y-1/8 translate-x-1/4 transition-transform duration-300 hover:scale-105 cursor-pointer focus:outline-none"
               onClick={toggleIframe}
             >
-              <img alt="Conference registration button" className="w-full h-auto object-contain" src="/register.png" />
+              <img
+                alt="Conference registration button"
+                className="w-full h-auto object-contain"
+                src="/register.png"
+              />
             </button>
           </div>
         </div>
@@ -116,7 +121,13 @@ export default function ConferencePage() {
       {showIframe && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
           <div className="relative w-[90%] max-w-[800px] h-[80%] bg-white rounded-lg overflow-hidden">
-            <Suspense fallback={<div className="flex items-center justify-center h-full">Loading...</div>}>
+            <Suspense
+              fallback={
+                <div className="flex items-center justify-center h-full">
+                  Loading...
+                </div>
+              }
+            >
               <iframe
                 className="w-full h-full border-none"
                 loading="lazy"
@@ -135,10 +146,13 @@ export default function ConferencePage() {
         </div>
       )}
       <div className="flex flex-col items-center mt-16 px-4 mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-500">Celebrating 5 Years of UX Conference at UTD</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-blue-500">
+          Celebrating 5 Years of UX Conference at UTD
+        </h1>
         <p className="mt-6 text-lg md:text-xl text-gray-700 max-w-[600px] text-center">
-          Join us as we celebrate five incredible years of innovation, collaboration, and growth in our UX community.
-          Together, we'll chart new territories and navigate the next chapters of design!
+          Join us as we celebrate five incredible years of innovation,
+          collaboration, and growth in our UX community. Together, we&apos;ll
+          chart new territories and navigate the next chapters of design!
         </p>
         <div className="w-full max-w-[1067px] mt-8">
           <div className="aspect-video rounded-lg shadow-lg overflow-hidden">
@@ -156,12 +170,18 @@ export default function ConferencePage() {
 
       <div className="flex flex-col items-center w-full mx-auto my-12 px-6 md:px-12 bg-[#3a5e9e] py-8 md:py-16">
         <div className="w-full max-w-[1067px] bg-blue-100 rounded-lg p-8 shadow-lg min-h-[300px] flex flex-col justify-between items-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-blue-500 text-center mb-8">Meet Our Speakers</h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-blue-500 text-center mb-8">
+            Meet Our Speakers
+          </h1>
           <AnimatedTestimonials testimonials={testimonials} />
         </div>
 
         <div className="mt-12 w-full max-w-[800px] scale-110">
-          <img alt="Conference Schedule" className="w-full h-auto object-contain" src="/conferenceschedule.svg" />
+          <img
+            alt="Conference Schedule"
+            className="w-full h-auto object-contain"
+            src="/conferenceschedule.svg"
+          />
         </div>
       </div>
 
@@ -170,7 +190,10 @@ export default function ConferencePage() {
           <p className="text-xl sm:text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center leading-tight" />
           <p className="text-sm sm:text-base md:text-lg mt-2 sm:mt-3 text-white font-normal inter-var text-center leading-tight" />
         </WavyBackground>
-        <div className="absolute inset-0 flex justify-center items-center z-10" style={{ top: "100px" }}>
+        <div
+          className="absolute inset-0 flex justify-center items-center z-10"
+          style={{ top: "100px" }}
+        >
           <img
             alt="Conference Footer"
             className="w-[85%] max-w-[800px] h-auto object-contain mb-10 md:w-[70%] md:mb-20 mx-auto"
@@ -179,6 +202,5 @@ export default function ConferencePage() {
         </div>
       </div>
     </>
-  )
+  );
 }
-
