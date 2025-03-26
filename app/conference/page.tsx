@@ -111,7 +111,7 @@ export default function ConferencePage() {
               <img
                 alt="Conference registration button"
                 className="w-full h-auto object-contain"
-                src="/register.png"
+                src="/Register.png"
               />
             </button>
           </div>
