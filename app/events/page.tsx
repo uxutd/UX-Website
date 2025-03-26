@@ -14,8 +14,9 @@ export default function EventsPage() {
   const [showMore, setShowMore] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const EventTitle: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-
+  const EventTitle: React.FC<{ children: React.ReactNode }> = ({
+    children,
+  }) => (
     <Typography
       sx={{
         fontSize: isMobile ? "0.85rem" : "2rem",
@@ -24,7 +25,6 @@ export default function EventsPage() {
         fontFamily: "Bricolage Grotesque",
         fontWeight: "bold",
         textShadow: "0.1875rem 0.125rem 0.25rem #3E68FD",
-
       }}
     >
       {children}
@@ -49,22 +49,40 @@ export default function EventsPage() {
 
   const events = [
     {
+      title: "Portfolio Essentials",
+      date: "03/05/2025",
+      image: "/portfolioessentials.jpg",
+      alt: "Event 10",
+    },
+    {
+      title: "Design For Devs",
+      date: "02/17/2025 - 02/18/2025",
+      image: "/designfordevs.jpg",
+      alt: "Event 9",
+    },
+    {
+      title: "Spring 2025 Kickoff",
+      date: "02/03/2025",
+      image: "/springkickoff2025.jpg",
+      alt: "Event 8",
+    },
+    {
       title: "End-of-Sem Social",
       date: "12/02/2024",
       image: "/eossocial.jpg",
-      alt: "Event 1",
+      alt: "Event 7",
     },
     {
       title: "UXperience: The First Draft",
-      date: "11/09/2024",
+      date: "11/09/2024 - 11/10/2024",
       image: "/designathon.jpg",
-      alt: "Event 2",
+      alt: "Event 6",
     },
     {
       title: "Design & Unwind Social",
       date: "10/30/2024",
       image: "/designandunwind.jpg",
-      alt: "Event 3",
+      alt: "Event 5",
     },
     {
       title: "Design Systems Workshop",
@@ -77,19 +95,19 @@ export default function EventsPage() {
       title: "Intro UX Design Workshop",
       date: "09/30/2024",
       image: "/introtoux.jpg",
-      alt: "Event 5",
+      alt: "Event 3",
     },
     {
       title: "Figma Workshop Series",
       date: "09/24/2024 - 11/12/2024",
       image: "/figmaworkshop.png",
-      alt: "Event 6",
+      alt: "Event 2",
     },
     {
       title: "Fall 2024 Kickoff",
       date: "09/12/2024",
       image: "/fallkickoff.jpg",
-      alt: "Event 7",
+      alt: "Event 1",
     },
   ];
 
@@ -101,25 +119,33 @@ export default function EventsPage() {
         {/* Top Section */}
         <section className="flex flex-col items-center pt-12 gap-6">
           <Box className="event-box">
-
             <div className="px-4 md:px-6 py-1 md:py-4 flex flex-col md:flex-row items-start justify-between">
               {/* Text Content */}
               <div className="flex flex-col">
                 <h1
                   className="text-3xl md:text-[3.1rem] font-semibold leading-tight mb-2 text-white"
-                  style={{ wordSpacing: "0.25rem", WebkitTextStroke: "0.25px white" }}
+                  style={{
+                    wordSpacing: "0.25rem",
+                    WebkitTextStroke: "0.25px white",
+                  }}
                 >
                   Portfolio Essentials
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
-                  style={{ wordSpacing: "0.65rem", WebkitTextStroke: "0.25px white" }}
+                  style={{
+                    wordSpacing: "0.65rem",
+                    WebkitTextStroke: "0.25px white",
+                  }}
                 >
                   March 5, 7 pm
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
-                  style={{ wordSpacing: "0.65rem", WebkitTextStroke: "1.75px white" }}
+                  style={{
+                    wordSpacing: "0.65rem",
+                    WebkitTextStroke: "1.75px white",
+                  }}
                 >
                   ECSS 2.412
                 </h1>
@@ -131,15 +157,17 @@ export default function EventsPage() {
                 className="w-[21.625rem] md:w-[24.75rem]  mt-4 md:mt-[32px] md:mr-[32px] md:ml-4"
                 src="/PortfolioEssentialsFlyer.png"
               />
-
-
             </div>
           </Box>
         </section>
 
         {/* Up Next Section */}
         <section className="flex flex-col pt-12 sm:pb-10 md:pb-20 ">
-          <img alt="Arrow" className="arrow-image hover:scale-105 transition ease-out" src="/Arrow.png" />
+          <img
+            alt="Arrow"
+            className="arrow-image hover:scale-105 transition ease-out"
+            src="/Arrow.png"
+          />
           <div className="upnext-text flex justify-start px-4 md:px-10">
             <h1
               className="text-1xl md:text-3xl font-semibold leading-tight text-[#ffffff] hover:scale-105 transition ease-out"
@@ -186,7 +214,6 @@ export default function EventsPage() {
                 color: "#3E68FD",
                 textAlign: isMobile ? "center" : "left",
                 fontSize: "2rem",
-
               }}
               variant="h3"
             >
@@ -203,7 +230,6 @@ export default function EventsPage() {
                 right: isMobile ? "-3.5rem" : "0.5rem",
                 top: isMobile ? "1.5rem" : "0.0rem",
                 zIndex: 1,
-
               }}
             />
           </Box>
@@ -267,7 +293,6 @@ export default function EventsPage() {
                       flexDirection: "column",
                       justifyContent: "flex-start",
                       padding: isMobile ? "0.75rem" : "1.2rem",
-
                     }}
                   >
                     <EventTitle>{event.title}</EventTitle>
@@ -299,4 +324,3 @@ export default function EventsPage() {
     </div>
   );
 }
-
