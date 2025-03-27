@@ -46,7 +46,7 @@ export default function ConferencePage() {
     },
     {
       quote:
-        "Preston McCauley is an AI, UX, and immersive technologies expert with 25+ years of experience creating human-centered AI systems. As the author of Generative AI for Everyone: A Practical Guidebook, he helps professionals in various fields integrate AI as a creative companion to enhance productivity and engagement.",
+        "Preston McCauley is an AI, UX, and immersive technologies expert with 25+ years of experience creating human-centered AI systems. He is also the author of Generative AI for Everyone: A Practical Guidebook.",
       name: "Preston McCauley",
       designation: "Director of AI and Innovation at Tonic3",
       src: "/preston.jpg",
@@ -169,7 +169,7 @@ export default function ConferencePage() {
       </div>
 
       <div className="flex flex-col items-center w-full mx-auto my-12 px-6 md:px-12 bg-[#3a5e9e] py-8 md:py-16">
-        <div className="w-full max-w-[1067px] bg-blue-100 rounded-lg p-8 shadow-lg min-h-[300px] flex flex-col justify-between items-center">
+        <div className="w-full max-w-[1067px] bg-blue-100 rounded-lg p-8 shadow-lg min-h-[600px] flex flex-col justify-between items-center">
           <h1 className="text-3xl md:text-5xl font-bold text-blue-500 text-center mb-8">
             Meet Our Speakers
           </h1>
@@ -186,18 +186,26 @@ export default function ConferencePage() {
       </div>
 
       <div className="relative mb-10 pt-16">
-        <WavyBackground className="w-full md:scale-100">
+        {/* Remove WavyBackground and conferencefooter for mobile */}
+        <WavyBackground className="hidden md:block w-full md:scale-100">
           <p className="text-xl sm:text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center leading-tight" />
           <p className="text-sm sm:text-base md:text-lg mt-2 sm:mt-3 text-white font-normal inter-var text-center leading-tight" />
         </WavyBackground>
         <div
-          className="absolute inset-0 flex justify-center items-center z-10"
+          className="hidden md:flex absolute inset-0 justify-center items-center z-10"
           style={{ top: "100px" }}
         >
           <img
             alt="Conference Footer"
             className="w-[85%] max-w-[800px] h-auto object-contain mb-10 md:w-[70%] md:mb-20 mx-auto"
             src="/conferencefooter.svg"
+          />
+        </div>
+        <div className="block md:hidden" style={{ marginTop: "-115px", marginBottom: "-40px"}}>
+          <img
+            alt="Mobile Footer"
+            className="w-full h-auto object-contain"
+            src="/mobilefooter.svg"
           />
         </div>
       </div>
