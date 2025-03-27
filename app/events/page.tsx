@@ -156,6 +156,9 @@ export default function EventsPage() {
                 alt="Portfolio Essentials Flyer"
                 className="w-[21.625rem] md:w-[24.75rem]  mt-4 md:mt-[32px] md:mr-[32px] md:ml-4"
                 src="/PortfolioEssentialsFlyer.png"
+                style={{
+                  display: isMobile ? "none" : "block",
+                }}
               />
             </div>
           </Box>
