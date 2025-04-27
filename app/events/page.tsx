@@ -129,25 +129,23 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  Portfolio Essentials
+                  End of Semester Social
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
                   style={{
                     wordSpacing: "0.65rem",
-                    WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  March 5, 7 pm
+                  April 28st, 7:00 PM
                 </h1>
                 <h1
-                  className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
+                  className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#ffffff]"
                   style={{
                     wordSpacing: "0.65rem",
-                    WebkitTextStroke: "1.75px white",
                   }}
                 >
-                  ECSS 2.412
+                  ECSW 1.355
                 </h1>
               </div>
 
@@ -155,7 +153,7 @@ export default function EventsPage() {
               <img
                 alt="Portfolio Essentials Flyer"
                 className="w-[21.625rem] md:w-[24.75rem]  mt-4 md:mt-[32px] md:mr-[32px] md:ml-4"
-                src="/PortfolioEssentialsFlyer.png"
+                src="/eventspage.png"
                 style={{
                   display: isMobile ? "none" : "block",
                 }}
