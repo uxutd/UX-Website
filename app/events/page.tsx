@@ -51,19 +51,19 @@ export default function EventsPage() {
     {
       title: "End of Semester Social",
       date: "04/28/2025",
-      image: "/uxclub_social.jpg",
+      image: "/uxclub_social.png",
       alt: "Event 14",
     },
     {
       title: "Intuit Campus Tour",
       date: "04/11/2025",
-      image: "/intuit_campus_tour.jpg",
+      image: "/intuit_campus_tour.png",
       alt: "Event 13",
     },
     {
       title: "Design Uncharted Conference",
       date: "03/29/2025",
-      image: "/spring_2025_conference.jpg",
+      image: "/spring_2025_conference.png",
       alt: "Event 12",
     },
     {
@@ -178,8 +178,8 @@ export default function EventsPage() {
               {/* Flyer Image */}
               <img
                 alt="Fall Kickoff Flyer" 
-                className="w-[20rem] md:w-[15rem]  mt-2 md:mt-[6px] md:mr-[160px] md:ml-4"
-                src="/fall_kickoff_flyer.png"
+                className="w-[20rem] md:w-[30rem]  mt-2 md:mt-[20px] md:mr-[40px] md:ml-4"
+                src="/fall_kickoff_TV_round.png"
                 style={{
                   display: isMobile ? "none" : "block",
                 }}
