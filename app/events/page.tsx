@@ -49,6 +49,30 @@ export default function EventsPage() {
 
   const events = [
     {
+      title: "End of Semester Social",
+      date: "04/28/2025",
+      image: "/uxclub_social.png",
+      alt: "Event 14",
+    },
+    {
+      title: "Intuit Campus Tour",
+      date: "04/11/2025",
+      image: "/intuit_campus_tour.png",
+      alt: "Event 13",
+    },
+    {
+      title: "Design Uncharted Conference",
+      date: "03/29/2025",
+      image: "/spring_2025_conference.png",
+      alt: "Event 12",
+    },
+    {
+      title: "CBRE Campus Tour",
+      date: "03/06/2025",
+      image: "/cbre_campus_tour.png",
+      alt: "Event 11",
+    },
+    {
       title: "Portfolio Essentials",
       date: "03/05/2025",
       image: "/portfolioessentials.jpg",
@@ -129,7 +153,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  Portfolio Essentials
+                  Fall 2025 Kickoff
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
@@ -138,7 +162,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  March 5, 7 pm
+                  September 8, 7 pm
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
@@ -147,15 +171,15 @@ export default function EventsPage() {
                     WebkitTextStroke: "1.75px white",
                   }}
                 >
-                  ECSS 2.412
+                  ECSW 1.315
                 </h1>
               </div>
 
               {/* Flyer Image */}
               <img
-                alt="Portfolio Essentials Flyer"
-                className="w-[21.625rem] md:w-[24.75rem]  mt-4 md:mt-[32px] md:mr-[32px] md:ml-4"
-                src="/PortfolioEssentialsFlyer.png"
+                alt="Fall Kickoff Flyer" 
+                className="w-[20rem] md:w-[30rem]  mt-2 md:mt-[20px] md:mr-[40px] md:ml-4"
+                src="/fall_kickoff_TV_round.png"
                 style={{
                   display: isMobile ? "none" : "block",
                 }}
@@ -171,7 +195,7 @@ export default function EventsPage() {
             className="arrow-image hover:scale-105 transition ease-out"
             src="/Arrow.png"
           />
-          <div className="upnext-text flex justify-start px-4 md:px-10">
+          <div className="upnext-text flex justify-start px-4 md:px-9 mt-3">
             <h1
               className="text-1xl md:text-3xl font-semibold leading-tight text-[#ffffff] hover:scale-105 transition ease-out"
               style={{
@@ -181,7 +205,7 @@ export default function EventsPage() {
             >
               Up next
               <br />
-              for UX!
+              for the UX Club!
             </h1>
           </div>
         </section>
