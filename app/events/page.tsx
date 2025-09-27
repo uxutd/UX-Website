@@ -49,6 +49,12 @@ export default function EventsPage() {
 
   const events = [
     {
+      title: "Fall 2025 Kickoff",
+      date: "09/08/2025",
+      image: "/fallkickoff25.jpg",
+      alt: "Event 15"
+    },
+    {
       title: "End of Semester Social",
       date: "04/28/2025",
       image: "/uxclub_social.png",
@@ -153,7 +159,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  Fall 2025 Kickoff
+                  Figma Workshop
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
@@ -162,7 +168,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  September 8, 7 pm
+                  September 29, 7pm
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
@@ -171,15 +177,15 @@ export default function EventsPage() {
                     WebkitTextStroke: "1.75px white",
                   }}
                 >
-                  ECSW 1.315
+                  GR 3.302
                 </h1>
               </div>
 
               {/* Flyer Image */}
               <img
-                alt="Fall Kickoff Flyer" 
+                alt="Figma Workshop Flyer" 
                 className="w-[20rem] md:w-[30rem]  mt-2 md:mt-[20px] md:mr-[40px] md:ml-4"
-                src="/fall_kickoff_TV_round.png"
+                src="/figmaworkshop1_laptop.webp"
                 style={{
                   display: isMobile ? "none" : "block",
                 }}
@@ -195,7 +201,7 @@ export default function EventsPage() {
             className="arrow-image hover:scale-105 transition ease-out"
             src="/Arrow.png"
           />
-          <div className="upnext-text flex justify-start px-4 md:px-9 mt-3">
+          <div className="upnext-text flex justify-start px-4 md:px-20.0 mt-3">
             <h1
               className="text-1xl md:text-3xl font-semibold leading-tight text-[#ffffff] hover:scale-105 transition ease-out"
               style={{
