@@ -7,82 +7,82 @@ import { WordRotate } from "@/components/ui/word-rotate";
 export default function AboutPage() {
   const officers = [
     {
-      name: "Mani Vipat",
+      name: "Vaishali Sathiyachalam",
       title: "President",
-      img: "/UX_Officers/mani.svg",
-      linkedIn: "https://www.linkedin.com/in/manasivipat/",
+      img: "/UX_Officers/vai.png",
+      linkedIn: "https://www.linkedin.com/in/vaishali-sathiyachalam/",
     },
     {
-      name: "Kshitij Kulshrestha",
+      name: "Sally Nguyen",
       title: "Vice President",
-      img: "/UX_Officers/kk.svg",
-      linkedIn: "https://www.linkedin.com/in/kshitijkulshrestha/",
+      img: "/UX_Officers/sally.png",
+      linkedIn: "https://www.linkedin.com/in/an-nguyen-tran/",
     },
     {
-      name: "Varshni Karthikeyan",
+      name: "Rohan Cheruku",
       title: "Secretary",
-      img: "/UX_Officers/varshni.svg",
-      linkedIn: "https://www.linkedin.com/in/varshnik/",
+      img: "/UX_Officers/rohan.png",
+      linkedIn: "https://www.linkedin.com/in/rohancheruku/",
     },
     {
-      name: "Manasa Valluru",
+      name: "Hiba Mubeen",
       title: "Marketing Director",
-      img: "/UX_Officers/manasav.svg",
-      linkedIn: "https://www.linkedin.com/in/manasa-valluru-28a729201/",
+      img: "/UX_Officers/hiba.png",
+      linkedIn: "https://www.linkedin.com/in/hiba-mubeen/",
     },
   ];
 
   const officersRowTwo = [
     {
-      name: "Jasper Cao",
+      name: "Aakriti Ramakrishnan",
       title: "Finance",
-      img: "/UX_Officers/jasper.jpg",
-      linkedIn: "https://www.linkedin.com/in/caojasper/",
+      img: "/UX_Officers/aakriti.png",
+      linkedIn: "https://www.linkedin.com/in/aakritiramakrishnan/",
     },
     {
       name: "Ankiita Murali",
       title: "Finance",
-      img: "/UX_Officers/ankiita.svg",
+      img: "/UX_Officers/ankiita.png",
       linkedIn: "https://www.linkedin.com/in/ankiita-murali/",
     },
     {
-      name: "Vaishali Sathiyachalam",
+      name: "Ananya Singamsetty",
       title: "Event Coordinator",
-      img: "/UX_Officers/vai.svg",
-      linkedIn: "https://www.linkedin.com/in/vaishali-sathiyachalam/",
+      img: "/UX_Officers/ananya.png",
+      linkedIn: "https://www.linkedin.com/in/ananyasingamsetty/",
     },
     {
       name: "Sumayya Ali",
       title: "Event Coordinator",
-      img: "/UX_Officers/sumayya.svg",
+      img: "/UX_Officers/sumayya.png",
       linkedIn: "https://www.linkedin.com/in/sumayyaali04/",
     },
   ];
 
   const officersRowThree = [
     {
-      name: "Sahil Lalani",
+      name: "Sarah Zaki",
       title: "Corporate Relations",
-      img: "/UX_Officers/sahil.svg",
-      linkedIn: "https://www.linkedin.com/in/sahil-lalani/",
+      img: "/UX_Officers/sarah.png",
+      linkedIn: "https://www.linkedin.com/in/sarah-zaki1/",
     },
     {
       name: "Srinaya Vemula",
       title: "Corporate Relations",
-      img: "/UX_Officers/sri.svg",
+      img: "/UX_Officers/srinaya.png",
       linkedIn: "https://www.linkedin.com/in/srinayavemula/",
     },
     {
-      name: "Tanvi Deshpande",
+      name: "Alfredo Ayala",
       title: "Student Engagement",
-      img: "/UX_Officers/tanvi.svg",
-      linkedIn: "https://www.linkedin.com/in/tanvi-d/",
+      img: "/UX_Officers/alfredo.png",
+      linkedIn: "https://www.linkedin.com/in/alfredo-ayala-64646464646464646464/",
     },
     {
-      name: "Shreya Mekala",
+      name: "Aryan KC",
       title: "Student Engagement",
-      img: "/UX_Officers/shreya.svg",
-      linkedIn: "https://www.linkedin.com/in/shreyamekala04/",
+      img: "/UX_Officers/aryan.png",
+      linkedIn: "https://www.linkedin.com/in/aryankc/",
     },
   ];
 
@@ -90,67 +90,67 @@ export default function AboutPage() {
     {
       name: "Elise Hart",
       title: "Designer",
-      img: "/UX_Officers/elise.svg",
+      img: "/UX_Officers/elise.png",
       linkedIn: "https://www.linkedin.com/in/elisech/",
     },
     {
-      name: "Ananya Singamsetty",
-      title: "Designer",
-      img: "/UX_Officers/ananya.svg",
-      linkedIn: "https://www.linkedin.com/in/ananyasingamsetty/",
-    },
-    {
-      name: "Tram La",
-      title: "Designer",
-      img: "/UX_Officers/tram.svg",
-      linkedIn: "https://www.linkedin.com/in/tram-la-tla2design/",
-    },
-    {
-      name: "Sally Nguyen",
-      title: "Social Media Coordinator",
-      img: "/UX_Officers/sally.svg",
-      linkedIn: "https://www.linkedin.com/in/an-nguyen-tran/",
-    },
-  ];
-
-  const officersRowFive = [
-    {
-      name: "Hiba Mubeen",
-      title: "Media Coordinator",
-      img: "/UX_Officers/hiba.svg",
-      linkedIn: "https://www.linkedin.com/in/hiba-mubeen/",
-    },
-    {
       name: "Vidur Nangia",
-      title: "Web Developer",
-      img: "/UX_Officers/vidur.svg",
+      title: "Designer",
+      img: "/UX_Officers/vidur.png",
       linkedIn: "https://www.linkedin.com/in/vidur-nangia/",
     },
     {
-      name: "Rohan Cheruku",
-      title: "Web Developer",
-      img: "/UX_Officers/rohan.svg",
-      linkedIn: "https://www.linkedin.com/in/rohancheruku/",
+      name: "Chris Tran",
+      title: "Designer",
+      img: "/UX_Officers/chris.png",
+      linkedIn: "https://www.linkedin.com/in/christopherthanhtran/",
     },
     {
-      name: "Vincent Joubarne",
+      name: "Priyanka Jidagamu",
+      title: "Social Media Coordinator",
+      img: "/UX_Officers/priyanka.png",
+      linkedIn: "https://www.linkedin.com/in/priyanka-jidagamu/",
+    },
+  ];
+  
+  const officersRowFive = [
+    {
+      name: "Dhurga Venugopal",
+      title: "Media Coordinator",
+      img: "/UX_Officers/dhurga.png",
+      linkedIn: "https://www.linkedin.com/in/dhurga-venugopal-4b62b42a6/",
+    },
+    {
+      name: "Bennett Feigenbaum",
+      title: "Web Developer",
+      img: "/UX_Officers/bennett.png",
+      linkedIn: "https://www.linkedin.com/in/bennettfeigenbaum/",
+    },
+    {
+      name: "Mariamawit Dabi",
+      title: "Web Developer",
+      img: "/UX_Officers/mary.png",
+      linkedIn: "https://www.linkedin.com/in/mariamawitdabi/",
+    },
+    {
+      name: "Mani Vipat",
       title: "Chief of Internal Affairs",
-      img: "/UX_Officers/vincent.svg",
-      linkedIn: "https://www.linkedin.com/in/vincentjoubarne/",
+      img: "/UX_Officers/mani.svg",
+      linkedIn: "https://www.linkedin.com/in/manasivipat/",
     },
   ];
   const officersRowSix = [
     {
-      name: "Nawaar A-Salam",
+      name: "Manasa Valluru",
       title: "Advisor",
-      img: "/UX_Officers/nawaar.svg",
-      linkedIn: "https://www.linkedin.com/in/nasalam/",
+      img: "/UX_Officers/manasav.svg",
+      linkedIn: "https://www.linkedin.com/in/manasa-valluru-28a729201/",
     },
     {
-      name: "Manasa Paruchuri",
+      name: "Kshitij Kulshrestha",
       title: "Advisor",
-      img: "/UX_Officers/manasap.svg",
-      linkedIn: "https://www.linkedin.com/in/manasaparuchuri/",
+      img: "/UX_Officers/kk.svg",
+      linkedIn: "https://www.linkedin.com/in/kshitijkulshrestha/",
     },
     {
       name: "Shaz Kumar",
@@ -159,10 +159,10 @@ export default function AboutPage() {
       linkedIn: "https://www.linkedin.com/in/shaswatkumar1/",
     },
     {
-      name: "Abel Thomas",
-      title: "Corporate Advisor",
-      img: "/UX_Officers/abel.svg",
-      linkedIn: "https://www.linkedin.com/in/abel-thomas-at/",
+      name: "Varshni Karthikeyan",
+      title: "Advisor",
+      img: "/UX_Officers/varshni.svg",
+      linkedIn: "https://www.linkedin.com/in/varshnik/",
     },
   ];
 
