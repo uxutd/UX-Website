@@ -9,25 +9,25 @@ export default function AboutPage() {
     {
       name: "Vaishali Sathiyachalam",
       title: "President",
-      img: "/UX_Officers/vai.png",
+      img: "/UX_Officers/vai.svg",
       linkedIn: "https://www.linkedin.com/in/vaishali-sathiyachalam/",
     },
     {
       name: "Sally Nguyen",
       title: "Vice President",
-      img: "/UX_Officers/sally.png",
+      img: "/UX_Officers/sally.svg",
       linkedIn: "https://www.linkedin.com/in/an-nguyen-tran/",
     },
     {
       name: "Rohan Cheruku",
       title: "Secretary",
-      img: "/UX_Officers/rohan.png",
+      img: "/UX_Officers/rohan.svg",
       linkedIn: "https://www.linkedin.com/in/rohancheruku/",
     },
     {
       name: "Hiba Mubeen",
       title: "Marketing Director",
-      img: "/UX_Officers/hiba.png",
+      img: "/UX_Officers/hiba.svg",
       linkedIn: "https://www.linkedin.com/in/hiba-mubeen/",
     },
   ];
@@ -36,25 +36,25 @@ export default function AboutPage() {
     {
       name: "Aakriti Ramakrishnan",
       title: "Finance",
-      img: "/UX_Officers/aakriti.png",
+      img: "/UX_Officers/aakriti.svg",
       linkedIn: "https://www.linkedin.com/in/aakritiramakrishnan/",
     },
     {
       name: "Ankiita Murali",
       title: "Finance",
-      img: "/UX_Officers/ankiita.png",
+      img: "/UX_Officers/ankiita.svg",
       linkedIn: "https://www.linkedin.com/in/ankiita-murali/",
     },
     {
       name: "Ananya Singamsetty",
       title: "Event Coordinator",
-      img: "/UX_Officers/ananya.png",
+      img: "/UX_Officers/ananya.svg",
       linkedIn: "https://www.linkedin.com/in/ananyasingamsetty/",
     },
     {
       name: "Sumayya Ali",
       title: "Event Coordinator",
-      img: "/UX_Officers/sumayya.png",
+      img: "/UX_Officers/sumayya.svg",
       linkedIn: "https://www.linkedin.com/in/sumayyaali04/",
     },
   ];
@@ -63,25 +63,25 @@ export default function AboutPage() {
     {
       name: "Sarah Zaki",
       title: "Corporate Relations",
-      img: "/UX_Officers/sarah.png",
+      img: "/UX_Officers/sarah.svg",
       linkedIn: "https://www.linkedin.com/in/sarah-zaki1/",
     },
     {
       name: "Srinaya Vemula",
       title: "Corporate Relations",
-      img: "/UX_Officers/srinaya.png",
+      img: "/UX_Officers/srinaya.svg",
       linkedIn: "https://www.linkedin.com/in/srinayavemula/",
     },
     {
       name: "Alfredo Ayala",
       title: "Student Engagement",
-      img: "/UX_Officers/alfredo.png",
+      img: "/UX_Officers/alfredo.svg",
       linkedIn: "https://www.linkedin.com/in/alfredo-ayala-64646464646464646464/",
     },
     {
       name: "Aryan KC",
       title: "Student Engagement",
-      img: "/UX_Officers/aryan.png",
+      img: "/UX_Officers/aryan.svg",
       linkedIn: "https://www.linkedin.com/in/aryankc/",
     },
   ];
@@ -90,25 +90,25 @@ export default function AboutPage() {
     {
       name: "Elise Hart",
       title: "Designer",
-      img: "/UX_Officers/elise.png",
+      img: "/UX_Officers/elise.svg",
       linkedIn: "https://www.linkedin.com/in/elisech/",
     },
     {
       name: "Vidur Nangia",
       title: "Designer",
-      img: "/UX_Officers/vidur.png",
+      img: "/UX_Officers/vidur.svg",
       linkedIn: "https://www.linkedin.com/in/vidur-nangia/",
     },
     {
       name: "Chris Tran",
       title: "Designer",
-      img: "/UX_Officers/chris.png",
+      img: "/UX_Officers/chris.svg",
       linkedIn: "https://www.linkedin.com/in/christopherthanhtran/",
     },
     {
       name: "Priyanka Jidagamu",
       title: "Social Media Coordinator",
-      img: "/UX_Officers/priyanka.png",
+      img: "/UX_Officers/priyanka.svg",
       linkedIn: "https://www.linkedin.com/in/priyanka-jidagamu/",
     },
   ];
@@ -117,19 +117,19 @@ export default function AboutPage() {
     {
       name: "Dhurga Venugopal",
       title: "Media Coordinator",
-      img: "/UX_Officers/dhurga.png",
+      img: "/UX_Officers/dhurga.svg",
       linkedIn: "https://www.linkedin.com/in/dhurga-venugopal-4b62b42a6/",
     },
     {
       name: "Bennett Feigenbaum",
       title: "Web Developer",
-      img: "/UX_Officers/bennett.png",
+      img: "/UX_Officers/bennett.svg",
       linkedIn: "https://www.linkedin.com/in/bennettfeigenbaum/",
     },
     {
       name: "Mariamawit Dabi",
       title: "Web Developer",
-      img: "/UX_Officers/mary.png",
+      img: "/UX_Officers/mary.svg",
       linkedIn: "https://www.linkedin.com/in/mariamawitdabi/",
     },
     {
@@ -155,7 +155,7 @@ export default function AboutPage() {
     {
       name: "Shaz Kumar",
       title: "Advisor",
-      img: "/UX_Officers/shaz.jpg",
+      img: "/UX_Officers/shaz.JPG",
       linkedIn: "https://www.linkedin.com/in/shaswatkumar1/",
     },
     {
@@ -223,7 +223,7 @@ export default function AboutPage() {
             <img
               alt="About"
               className="rounded-lg mt-6 w-full h-auto"
-              src="/ConferenceAbout.jpg"
+              src="/ConferenceAbout.JPG"
               style={{ height: "300px", width: "450px", objectFit: "cover" }}
             />
           </div>
