@@ -59,6 +59,9 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%
   }
+  .theme {
+    --animate-rippling: rippling var(--duration) ease-out
+  }
 }
 
 @layer base {
@@ -75,12 +78,9 @@
   font-family: "Bricolage Grotesque", sans-serif;
 }
 
-
 .officer-wrapper img {
   transition: transform 0.3s ease-in-out;
 }
-
-
 
 .officer-wrapper {
   position: relative;
@@ -116,7 +116,6 @@
   /* LinkedIn blue */
   z-index: 10;
 }
-
 
 .font-bricolage {
   font-family: 'Bricolage Grotesque', sans-serif;
@@ -157,7 +156,6 @@
   padding: 10px;
   /* Space between the image and box edges */
 }
-
 
 .fullscreen-center {
   display: flex;
@@ -271,8 +269,6 @@
   }
 }
 
-
-
 /* Base styles for the arrow image */
 .arrowpsst-image {
   width: 100px;
@@ -315,8 +311,6 @@
   left: 400px;
 }
 
-
-
 @media (min-width: 1280px) {
   .arrow-image {
     width: 250px;
@@ -358,10 +352,6 @@
     /* Adjust vertical position */
   }
 }
-
-
-
-
 
 @media (max-width: 1000px) {
   .upnext-text {
@@ -454,4 +444,16 @@
     /* Fallback text color */
   }
 
+}
+
+@theme inline {
+  @keyframes rippling {
+  0% {
+    opacity: 1;
+    }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    }
+  }
 }
