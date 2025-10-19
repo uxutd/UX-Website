@@ -223,7 +223,7 @@ export default function AboutPage() {
             <img
               alt="About"
               className="rounded-lg mt-6 w-full h-auto"
-              src="/ConferenceAbout.JPG"
+              src="/ConferenceAbout.jpg"
               style={{ height: "300px", width: "450px", objectFit: "cover" }}
             />
           </div>
