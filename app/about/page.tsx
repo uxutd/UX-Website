@@ -7,37 +7,37 @@ import { WordRotate } from "@/components/ui/word-rotate";
 export default function AboutPage() {
   const officers = [
     {
-      name: "Mani Vipat",
+      name: "Vaishali Sathiyachalam",
       title: "President",
-      img: "/UX_Officers/mani.svg",
-      linkedIn: "https://www.linkedin.com/in/manasivipat/",
+      img: "/UX_Officers/vai.svg",
+      linkedIn: "https://www.linkedin.com/in/vaishali-sathiyachalam/",
     },
     {
-      name: "Kshitij Kulshrestha",
+      name: "Sally Nguyen",
       title: "Vice President",
-      img: "/UX_Officers/kk.svg",
-      linkedIn: "https://www.linkedin.com/in/kshitijkulshrestha/",
+      img: "/UX_Officers/sally.svg",
+      linkedIn: "https://www.linkedin.com/in/an-nguyen-tran/",
     },
     {
-      name: "Varshni Karthikeyan",
+      name: "Rohan Cheruku",
       title: "Secretary",
-      img: "/UX_Officers/varshni.svg",
-      linkedIn: "https://www.linkedin.com/in/varshnik/",
+      img: "/UX_Officers/rohan.svg",
+      linkedIn: "https://www.linkedin.com/in/rohancheruku/",
     },
     {
-      name: "Manasa Valluru",
+      name: "Hiba Mubeen",
       title: "Marketing Director",
-      img: "/UX_Officers/manasav.svg",
-      linkedIn: "https://www.linkedin.com/in/manasa-valluru-28a729201/",
+      img: "/UX_Officers/hiba.svg",
+      linkedIn: "https://www.linkedin.com/in/hiba-mubeen/",
     },
   ];
 
   const officersRowTwo = [
     {
-      name: "Jasper Cao",
+      name: "Aakriti Ramakrishnan",
       title: "Finance",
-      img: "/UX_Officers/jasper.jpg",
-      linkedIn: "https://www.linkedin.com/in/caojasper/",
+      img: "/UX_Officers/aakriti.svg",
+      linkedIn: "https://www.linkedin.com/in/aakritiramakrishnan/",
     },
     {
       name: "Ankiita Murali",
@@ -46,10 +46,10 @@ export default function AboutPage() {
       linkedIn: "https://www.linkedin.com/in/ankiita-murali/",
     },
     {
-      name: "Vaishali Sathiyachalam",
+      name: "Ananya Singamsetty",
       title: "Event Coordinator",
-      img: "/UX_Officers/vai.svg",
-      linkedIn: "https://www.linkedin.com/in/vaishali-sathiyachalam/",
+      img: "/UX_Officers/ananya.svg",
+      linkedIn: "https://www.linkedin.com/in/ananyasingamsetty/",
     },
     {
       name: "Sumayya Ali",
@@ -61,28 +61,28 @@ export default function AboutPage() {
 
   const officersRowThree = [
     {
-      name: "Sahil Lalani",
+      name: "Sarah Zaki",
       title: "Corporate Relations",
-      img: "/UX_Officers/sahil.svg",
-      linkedIn: "https://www.linkedin.com/in/sahil-lalani/",
+      img: "/UX_Officers/sarah.svg",
+      linkedIn: "https://www.linkedin.com/in/sarah-zaki1/",
     },
     {
       name: "Srinaya Vemula",
       title: "Corporate Relations",
-      img: "/UX_Officers/sri.svg",
+      img: "/UX_Officers/srinaya.svg",
       linkedIn: "https://www.linkedin.com/in/srinayavemula/",
     },
     {
-      name: "Tanvi Deshpande",
+      name: "Alfredo Ayala",
       title: "Student Engagement",
-      img: "/UX_Officers/tanvi.svg",
-      linkedIn: "https://www.linkedin.com/in/tanvi-d/",
+      img: "/UX_Officers/alfredo.svg",
+      linkedIn: "https://www.linkedin.com/in/alfredo-ayala-64646464646464646464/",
     },
     {
-      name: "Shreya Mekala",
+      name: "Aryan KC",
       title: "Student Engagement",
-      img: "/UX_Officers/shreya.svg",
-      linkedIn: "https://www.linkedin.com/in/shreyamekala04/",
+      img: "/UX_Officers/aryan.svg",
+      linkedIn: "https://www.linkedin.com/in/aryankc/",
     },
   ];
 
@@ -94,63 +94,63 @@ export default function AboutPage() {
       linkedIn: "https://www.linkedin.com/in/elisech/",
     },
     {
-      name: "Ananya Singamsetty",
-      title: "Designer",
-      img: "/UX_Officers/ananya.svg",
-      linkedIn: "https://www.linkedin.com/in/ananyasingamsetty/",
-    },
-    {
-      name: "Tram La",
-      title: "Designer",
-      img: "/UX_Officers/tram.svg",
-      linkedIn: "https://www.linkedin.com/in/tram-la-tla2design/",
-    },
-    {
-      name: "Sally Nguyen",
-      title: "Social Media Coordinator",
-      img: "/UX_Officers/sally.svg",
-      linkedIn: "https://www.linkedin.com/in/an-nguyen-tran/",
-    },
-  ];
-
-  const officersRowFive = [
-    {
-      name: "Hiba Mubeen",
-      title: "Media Coordinator",
-      img: "/UX_Officers/hiba.svg",
-      linkedIn: "https://www.linkedin.com/in/hiba-mubeen/",
-    },
-    {
       name: "Vidur Nangia",
-      title: "Web Developer",
+      title: "Designer",
       img: "/UX_Officers/vidur.svg",
       linkedIn: "https://www.linkedin.com/in/vidur-nangia/",
     },
     {
-      name: "Rohan Cheruku",
-      title: "Web Developer",
-      img: "/UX_Officers/rohan.svg",
-      linkedIn: "https://www.linkedin.com/in/rohancheruku/",
+      name: "Chris Tran",
+      title: "Designer",
+      img: "/UX_Officers/chris.svg",
+      linkedIn: "https://www.linkedin.com/in/christopherthanhtran/",
     },
     {
-      name: "Vincent Joubarne",
-      title: "Chief of Internal Affairs",
-      img: "/UX_Officers/vincent.svg",
-      linkedIn: "https://www.linkedin.com/in/vincentjoubarne/",
+      name: "Priyanka Jidagamu",
+      title: "Social Media Coordinator",
+      img: "/UX_Officers/priyanka.svg",
+      linkedIn: "https://www.linkedin.com/in/priyanka-jidagamu/",
+    },
+  ];
+  
+  const officersRowFive = [
+    {
+      name: "Dhurga Venugopal",
+      title: "Media Coordinator",
+      img: "/UX_Officers/dhurga.svg",
+      linkedIn: "https://www.linkedin.com/in/dhurga-venugopal-4b62b42a6/",
+    },
+    {
+      name: "Bennett Feigenbaum",
+      title: "Web Developer",
+      img: "/UX_Officers/bennett.svg",
+      linkedIn: "https://www.linkedin.com/in/bennettfeigenbaum/",
+    },
+    {
+      name: "Mariamawit Dabi",
+      title: "Web Developer",
+      img: "/UX_Officers/mary.svg",
+      linkedIn: "https://www.linkedin.com/in/mariamawitdabi/",
     },
   ];
   const officersRowSix = [
     {
-      name: "Nawaar A-Salam",
-      title: "Advisor",
-      img: "/UX_Officers/nawaar.svg",
-      linkedIn: "https://www.linkedin.com/in/nasalam/",
+      name: "Mani Vipat",
+      title: "Chief of Internal Affairs",
+      img: "/UX_Officers/mani.svg",
+      linkedIn: "https://www.linkedin.com/in/manasivipat/",
     },
     {
-      name: "Manasa Paruchuri",
+      name: "Manasa Valluru",
       title: "Advisor",
-      img: "/UX_Officers/manasap.svg",
-      linkedIn: "https://www.linkedin.com/in/manasaparuchuri/",
+      img: "/UX_Officers/manasav.svg",
+      linkedIn: "https://www.linkedin.com/in/manasa-valluru-28a729201/",
+    },
+    {
+      name: "Kshitij Kulshrestha",
+      title: "Advisor",
+      img: "/UX_Officers/kk.svg",
+      linkedIn: "https://www.linkedin.com/in/kshitijkulshrestha/",
     },
     {
       name: "Shaz Kumar",
@@ -159,10 +159,10 @@ export default function AboutPage() {
       linkedIn: "https://www.linkedin.com/in/shaswatkumar1/",
     },
     {
-      name: "Abel Thomas",
-      title: "Corporate Advisor",
-      img: "/UX_Officers/abel.svg",
-      linkedIn: "https://www.linkedin.com/in/abel-thomas-at/",
+      name: "Varshni Karthikeyan",
+      title: "Advisor",
+      img: "/UX_Officers/varshni.svg",
+      linkedIn: "https://www.linkedin.com/in/varshnik/",
     },
   ];
 
@@ -223,7 +223,7 @@ export default function AboutPage() {
             <img
               alt="About"
               className="rounded-lg mt-6 w-full h-auto"
-              src="/ConferenceAbout.jpg"
+              src="/ConferenceAbout.JPG"
               style={{ height: "300px", width: "450px", objectFit: "cover" }}
             />
           </div>
@@ -265,7 +265,6 @@ export default function AboutPage() {
           officersRowThree,
           officersRowFour,
           officersRowFive,
-          officersRowSix,
         ].map((officerRow, rowIndex) => (
           <section
             key={rowIndex}
@@ -304,6 +303,39 @@ export default function AboutPage() {
           </section>
         ))}
 
+        {/* Add "Meet the Advisors" header right after row five */}
+      <section className="w-full flex justify-center mt-10">
+        <BlurFade>
+          <div className="py-8">
+            <AnimatedGradientText>
+              <span className="tracking-tight inline font-semibold text-[2rem] md:text-[2.3rem] lg:text-5xl leading-9 text-center inline animate-gradient bg-gradient-to-r from-[#253B75] via-[#3E68FD] to-[#253B75] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent">
+              Meet the Advisors!
+              </span>
+            </AnimatedGradientText>
+          </div>
+        </BlurFade>
+      </section>
+
+        {/* Continue with the next row (Advisors) (officersRowSix is down here instead of in the array since it is separated by "Meet the Advisors") */}
+      <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8">
+        {officersRowSix.map((officer, index) => (
+          <div key={index} className="m-2 sm:m-4 relative flex flex-col items-center">
+          <a href={officer.linkedIn} target="_blank" rel="noopener noreferrer">
+            <Image
+              alt={officer.name}
+              src={officer.img}
+              width={250}
+              height={250}
+            className="rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square"
+            />
+          </a>
+          <h3 className="text-sm sm:text-lg font-semibold mt-2">
+          {officer.name}
+          </h3>
+            <h4 className="text-xs sm:text-sm text-center">{officer.title}</h4>
+          </div>
+        ))}
+      </section>
         <br />
       </main>
     </>
