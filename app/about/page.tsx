@@ -155,7 +155,7 @@ export default function AboutPage() {
     {
       name: "Shaz Kumar",
       title: "Advisor",
-      img: "/UX_Officers/shaz.JPG",
+      img: "/UX_Officers/shaz.jpg",
       linkedIn: "https://www.linkedin.com/in/shaswatkumar1/",
     },
     {
