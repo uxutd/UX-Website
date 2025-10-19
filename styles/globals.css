@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarpanch:wght@700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -456,4 +457,9 @@
     opacity: 0;
     }
   }
+}
+
+/* Hide global Footer when a page requests no footer */
+body.no-footer footer {
+  display: none !important;
 }
