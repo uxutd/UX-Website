@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { MorphingText } from "@/components/ui/morphing-text";
 import { MagicCard } from "@/components/ui/magic-card";
 import { Carousel } from "@/components/aceternity/carousel";
+import { Vortex } from "@/components/ui/vortex";
 
 
 export default function DesignPage() {
@@ -198,12 +199,10 @@ export default function DesignPage() {
                       <div className="mt-10 flex justify-center">
                         <Carousel
                           slides={[
-                            { title: "Maurice Cruz", button: "LinkedIn", src: "/dthonvenus.svg" },
-                            { title: "Rohan Cheruku", button: "LinkedIn", src: "/dthonmars.svg" },
-                            { title: "Vidur Nangia", button: "LinkedIn", src: "/dthonneptune.svg" },
-                            { title: "Mary Dabi", button: "LinkedIn", src: "/dthonvenus.svg" },
-                            { title: "Bennett Feigenbaum", button: "LinkedIn", src: "/dthonmars.svg" },
-                            { title: "UX Club", button: "LinkedIn", src: "/dthonneptune.svg" },
+                            { title: "Grace Nguyen",  src: "/dthonvenus.svg",   subtitle: "Sr. Product Designer @ Google" },
+                            { title: "Jonathan Castaneda", src: "/dthonmars.svg",    subtitle: "Sr. Product Design Manager, Design Systems & Accessibility @ Cencora" },
+                            { title: "Averi Collens", src: "/dthonneptune.svg",    subtitle: "UX Researcher @ CBRE" },
+                            { title: "Kyle Reubens",  src: "/dthonvenus.svg", subtitle: "Freelance UX Designer"},
                           ]}
                           spacing="2vmin"
                           //initialIndex={1}
@@ -364,7 +363,7 @@ export default function DesignPage() {
                 style={{ top: aboutConfig2.top, left: aboutConfig2.left, width: aboutConfig2.width, ...aboutConfig2.style }}
                 aria-labelledby="dthon-about-title-2"
               >
-                <h2 id="dthon-about-title-2" className="text-xl font-semibold text-black" style={{ fontFamily: "Sarpanch, sans-serif" }}>UXperience: The First Draft</h2>
+                <h2 id="dthon-about-title-2" className="text-xl font-semibold text-black" style={{ fontFamily: "Sarpanch, sans-serif" }}>UXperience: The First Draft (2024)</h2>
                 <p className="mt-2 text-black/90" style={{ fontFamily: "Sarpanch, sans-serif" }}>• 147+ attendees, <br/> • 39+ projects, <br/> • 20+ professionals,<br/> • $1400 won in prize money<br/> </p>
                 <div className="mt-4">
                 </div>
@@ -418,12 +417,12 @@ export default function DesignPage() {
                       className="mx-auto max-w-3xl text-left md:text-center text-base md:text-lg leading-relaxed text-black/85"
                       style={{ fontFamily: "Bricolage Grotesque, sans-serif" }}
                     >
-                      <strong className="font-semibold text-black/90">UXperience</strong> is a student-run design-a-thon exploring
-                      future-forward design and user experience. Join workshops, competitions, and collaborative challenges on
-                      October 25–26. Expect hands-on sessions, mentorship, and prototype demos.
+                      <strong className="font-semibold text-black/90">UXperience</strong> is an intensive 24-hour event that compresses
+                      weeks of product design into a single day. It replaces a traditional four-week design challenge and features
+                      non-stop collaboration, workshops, and networking opportunities.
                       <br /><br />
-                      It’s a focused 24-hour sprint that compresses weeks of product design into one day of creativity, teamwork,
-                      and innovation—network with professionals, explore workshops, and build something you’re proud to show.
+                      Join us for two epic days of designing, brainstorming, and building the future of user experience together. 
+                      It’s your chance to tackle exciting design challenges with fellow creatives and bring your boldest ideas to life!
                     </p>
                     </div>
                   </div>
@@ -441,6 +440,25 @@ export default function DesignPage() {
             />
           </div>
         </div>
+        <div className="w-100% mx-auto h-[30rem] overflow-hidden">
+      <Vortex
+        backgroundColor="black"
+        className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
+      >
+        <h2 className="text-white text-2xl md:text-6xl font-bold text-center">
+          Can't wait to see you there!
+        </h2>
+        <p className="text-white text-sm md:text-2xl max-w-xl mt-6 text-center">
+          UXperience: Echoes of Tomorrow (10/25-10/26)
+        </p>
+        <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
+          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
+            Register now
+          </button>
+          <button className="px-4 py-2  text-white ">Explore</button>
+        </div>
+      </Vortex>
+    </div>
       </section>
     </>
   );

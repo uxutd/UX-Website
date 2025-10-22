@@ -1,11 +1,11 @@
 "use client";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
-import { useState, useRef, useId, useEffect } from "react";
+import { useState, useRef, useId } from "react";
 
 interface SlideData {
-  title: string;
-  button: string;
-  src: string;
+  title: string;      // plain text (or swap to dangerouslySetInnerHTML if you want <br/>)
+  src: string;        // headshot image
+  subtitle?: string;  // bio under the title
 }
 
 interface SlideProps {
@@ -17,105 +17,96 @@ interface SlideProps {
 
 const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   const slideRef = useRef<HTMLLIElement>(null);
-
-  const xRef = useRef(0);
-  const yRef = useRef(0);
-  const frameRef = useRef<number>();
-
-  useEffect(() => {
-    const animate = () => {
-      if (!slideRef.current) return;
-
-      const x = xRef.current;
-      const y = yRef.current;
-
-      slideRef.current.style.setProperty("--x", `${x}px`);
-      slideRef.current.style.setProperty("--y", `${y}px`);
-
-      frameRef.current = requestAnimationFrame(animate);
-    };
-
-    frameRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (frameRef.current) {
-        cancelAnimationFrame(frameRef.current);
-      }
-    };
-  }, []);
+  const planetRef = useRef<HTMLDivElement>(null);
+  const frameRef = useRef<number | null>(null);
 
   const handleMouseMove = (event: React.MouseEvent) => {
     const el = slideRef.current;
-    if (!el) return;
+    const planet = planetRef.current;
+    if (!el || !planet) return;
 
     const r = el.getBoundingClientRect();
-    xRef.current = event.clientX - (r.left + Math.floor(r.width / 2));
-    yRef.current = event.clientY - (r.top + Math.floor(r.height / 2));
+    const x = event.clientX - (r.left + Math.floor(r.width / 2));
+    const y = event.clientY - (r.top + Math.floor(r.height / 2));
+
+    if (frameRef.current) cancelAnimationFrame(frameRef.current);
+    frameRef.current = requestAnimationFrame(() => {
+      if (current === index) {
+        planet.style.transform = `translate3d(${x / 30}px, ${y / 30}px, 0)`;
+      } else {
+        planet.style.transform = "none";
+      }
+    });
   };
 
   const handleMouseLeave = () => {
-    xRef.current = 0;
-    yRef.current = 0;
+    if (frameRef.current) {
+      cancelAnimationFrame(frameRef.current);
+      frameRef.current = null;
+    }
+    const planet = planetRef.current;
+    if (planet) planet.style.transform = "none";
   };
 
   const imageLoaded = (event: React.SyntheticEvent<HTMLImageElement>) => {
     event.currentTarget.style.opacity = "1";
   };
 
-  const { src, button, title } = slide;
+  const { src, title, subtitle } = slide;
 
   return (
-    <div className="[perspective:1200px] [transform-style:preserve-3d]">
-      <li
-        ref={slideRef}
-        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[48vmin] h-[48vmin] mx-[3vmin] z-10 "
-        onClick={() => handleSlideClick(index)}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        style={{
-          transform:
-            current !== index ? "scale(0.8) rotateX(8deg)" : "scale(1) rotateX(0deg)",
-          transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-          transformOrigin: "bottom",
-        }}
+    <li
+      ref={slideRef}
+      className="flex flex-1 flex-col items-center justify-start relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[48vmin] h-[48vmin] mx-[3vmin] z-10"
+      onClick={() => handleSlideClick(index)}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transform: current !== index ? "scale(0.9) rotateX(6deg)" : "scale(1) rotateX(0deg)",
+        transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+        transformOrigin: "bottom",
+      }}
+    >
+      {/* Planet container (circular mask) */}
+      <div
+        ref={planetRef}
+        className="
+          relative w-[70%] aspect-square mx-auto
+          rounded-full overflow-hidden
+          ring-2 ring-[#B5A0FF]/60 shadow-[0_10px_30px_rgba(0,0,0,0.25)]
+          bg-gradient-to-br from-[#E8E4FF] via-[#DAD0FF] to-[#C8BBFF]
+          transition-transform duration-150 ease-out
+        "
       >
-        <div
-          className="w-[70%] h-[70%] mx-auto mb-4 overflow-hidden relative transition-all duration-150 ease-out"
-          style={{
-            transform:
-              current === index
-                ? "translate3d(calc(var(--x) / 30), calc(var(--y) / 30), 0)"
-                : "none",
-          }}
-        >
-          <img
-            className="w-full h-full object-cover transition-opacity duration-600 ease-in-out"
-            style={{ opacity: current === index ? 1 : 0.8 }}
-            alt={title}
-            src={src}
-            onLoad={imageLoaded}
-            loading="eager"
-            decoding="sync"
-          />
+        <img
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+          style={{ opacity: current === index ? 1 : 0.85 }}
+          alt={title}
+          src={src}
+          onLoad={imageLoaded}
+          loading="eager"
+          decoding="sync"
+        />
+      </div>
 
-          {/* Centered overlay inside the image */}
-          <article
-            className={`absolute inset-0 flex flex-col items-center justify-center p-4 transition-opacity duration-500 ease-in-out pointer-events-none ${
-              current === index ? "opacity-100 visible" : "opacity-0 invisible"
-            }`}
-          >
-            <h2 className="text-base md:text-xl lg:text-2xl font-semibold text-center text-white">
-              {title}
-            </h2>
-            <div className="mt-4">
-              <button className="px-4 py-2 w-fit mx-auto sm:text-sm text-black bg-white h-10 border border-transparent text-xs flex justify-center items-center rounded-2xl hover:shadow-lg transition duration-200 pointer-events-auto">
-                {button}
-              </button>
-            </div>
-          </article>
-        </div>
-      </li>
-    </div>
+      {/* Title and bio under the planet */}
+      <div className="mt-4 px-4">
+        <h2
+          className="
+            text-lg md:text-xl lg:text-2xl font-semibold
+            bg-gradient-to-r from-[#6A41FF] via-[#B5A0FF] to-[#6A41FF]
+            bg-clip-text text-transparent
+          "
+        >
+          {title}
+        </h2>
+        {subtitle && (
+          <p className="mt-1 text-xs md:text-sm lg:text-base text-black/90 leading-snug">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    </li>
   );
 };
 
@@ -133,7 +124,7 @@ const CarouselControl = ({ type, title, handleClick }: CarouselControlProps) => 
         pointer-events-auto
         absolute top-1/2 -translate-y-1/2
         w-10 h-10 flex items-center justify-center
-        bg-neutral-200 dark:bg-neutral-800
+        bg-neutral-200/80 dark:bg-neutral-800/80
         border-3 border-transparent rounded-full
         focus:border-[#6D64F7] focus:outline-none
         hover:-translate-y-[calc(50%-2px)] active:translate-y-[calc(50%)]
@@ -147,21 +138,23 @@ const CarouselControl = ({ type, title, handleClick }: CarouselControlProps) => 
       title={title}
       onClick={handleClick}
     >
-      <IconArrowNarrowRight className="text-neutral-600 dark:text-neutral-200" />
+      <IconArrowNarrowRight className="text-neutral-700 dark:text-neutral-200" />
     </button>
   );
 };
 
 interface CarouselProps {
   slides: SlideData[];
-  spacing?: string; // CSS length for side margin per slide (e.g., '4vmin')
-  initialIndex?: number; // 0-based index to start on
+  spacing?: string;      // CSS length (e.g., '4vmin')
+  initialIndex?: number; // 0-based
+  offsetY?: string;      // move carousel up/down (e.g., '-2rem', '-6vmin')
 }
 
 export function Carousel({
   slides,
   spacing = "4vmin",
   initialIndex = 0,
+  offsetY = "-3vmin",
 }: CarouselProps) {
   const [current, setCurrent] = useState(initialIndex);
 
@@ -176,9 +169,7 @@ export function Carousel({
   };
 
   const handleSlideClick = (index: number) => {
-    if (current !== index) {
-      setCurrent(index);
-    }
+    if (current !== index) setCurrent(index);
   };
 
   const id = useId();
@@ -187,8 +178,10 @@ export function Carousel({
     <div
       className="relative w-[50vmin] h-[50vmin] mx-auto"
       aria-labelledby={`carousel-heading-${id}`}
-      // Share spacing with children (slides and arrows)
-      style={{ ["--gap" as any]: spacing }}
+      style={{
+        ["--gap" as any]: spacing,
+        transform: `translateY(${offsetY})`,
+      }}
     >
       <ul
         className="absolute flex transition-transform duration-1000 ease-in-out"
@@ -199,18 +192,17 @@ export function Carousel({
         }}
       >
         {slides.map((slide, index) => (
-          <div key={index} style={{ margin: "3 var(--gap)" }}>
-            <Slide
-              slide={slide}
-              index={index}
-              current={current}
-              handleSlideClick={handleSlideClick}
-            />
-          </div>
+          <Slide
+            key={index}
+            slide={slide}
+            index={index}
+            current={current}
+            handleSlideClick={handleSlideClick}
+          />
         ))}
       </ul>
 
-      {/* Controls: inside the visible frame, aligned to the spacing/margins */}
+      {/* Controls */}
       <div className="pointer-events-none absolute inset-0 z-20">
         <CarouselControl
           type="previous"
