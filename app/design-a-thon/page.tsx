@@ -95,8 +95,8 @@ export default function DesignPage() {
   return (
     <>
       {/* Hero Section */}
-      <section
-        className="text-white min-h-[480vh] py-20 bg-cover bg-center relative overflow-visible"
+      <div
+        className="text-white py-20 bg-cover bg-center relative overflow-visible"
         style={{ backgroundImage: "url('/dthonbackLONG.png')" }}
       >
         {/* Grid Container */}
@@ -603,7 +603,7 @@ export default function DesignPage() {
             />
           </div>
         </div>
-        <div className="w-full mx-auto h-[30rem] overflow-hidden relative">
+        <div className="w-full mx-auto h-[30rem] overflow-hidden absolute">
           <Vortex
             backgroundColor="black"
             className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
@@ -613,7 +613,7 @@ export default function DesignPage() {
             </h2>
           </Vortex>
         </div>
-      </section>
+      </div>
     </>
   );
 }
