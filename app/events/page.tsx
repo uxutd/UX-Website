@@ -52,7 +52,7 @@ export default function EventsPage() {
       title: "Fall 2025 Kickoff",
       date: "09/08/2025",
       image: "/fallkickoff25.jpg",
-      alt: "Event 15"
+      alt: "Event 15",
     },
     {
       title: "End of Semester Social",
@@ -183,7 +183,7 @@ export default function EventsPage() {
 
               {/* Flyer Image */}
               <img
-                alt="Figma Workshop Flyer" 
+                alt="Figma Workshop Flyer"
                 className="w-[20rem] md:w-[30rem]  mt-2 md:mt-[20px] md:mr-[40px] md:ml-4"
                 src="/figmaworkshop1_laptop.webp"
                 style={{
