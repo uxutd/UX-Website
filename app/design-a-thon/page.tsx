@@ -118,10 +118,10 @@ export default function DesignPage() {
             </div>
           </div>
 
-          {/* Register Button */}
+          {/* Learn More Button */}
           <div className="col-start-5 col-span-4 row-start-2 flex items-center justify-center mb-8">
             <a
-              aria-label="register"
+              aria-label="learnMore"
               className={`
                 luma-checkout--button 
                 transition-all duration-300 ease-out
@@ -153,7 +153,7 @@ export default function DesignPage() {
               <div className="absolute inset-0 rounded-full overflow-hidden">
                 <MagicCard className="w-full h-full" />
               </div>
-              <span className="relative z-10">register</span>
+              <span className="relative z-10">join now!</span>
             </a>
           </div>
 
