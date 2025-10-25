@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Transition } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-const transition = {
+// Properly typed transition object
+const transition: Transition = {
   type: "spring",
   mass: 0.5,
   damping: 11.5,
@@ -25,7 +26,7 @@ export const MenuItem = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div className="relative " onMouseEnter={() => setActive(item)}>
+    <div className="relative" onMouseEnter={() => setActive(item)}>
       <motion.p
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
         transition={{ duration: 0.3 }}
@@ -45,10 +46,7 @@ export const MenuItem = ({
                 layoutId="active" // layoutId ensures smooth animation
                 transition={transition}
               >
-                <motion.div
-                  layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
-                >
+                <motion.div layout className="w-max h-full p-4">
                   {children}
                 </motion.div>
               </motion.div>
@@ -69,8 +67,8 @@ export const Menu = ({
 }) => {
   return (
     <nav
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
-      onMouseLeave={() => setActive(null)} // resets the state
+      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6"
+      onMouseLeave={() => setActive(null)}
     >
       {children}
     </nav>
@@ -113,7 +111,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
       {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black "
+      className="text-neutral-700 dark:text-neutral-200 hover:text-black"
     >
       {children}
     </Link>
