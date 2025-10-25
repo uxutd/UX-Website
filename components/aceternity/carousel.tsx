@@ -3,9 +3,9 @@ import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { useState, useRef, useId } from "react";
 
 interface SlideData {
-  title: string;      // plain text (or swap to dangerouslySetInnerHTML if you want <br/>)
-  src: string;        // headshot image
-  subtitle?: string;  // bio under the title
+  title: string; // plain text (or swap to dangerouslySetInnerHTML if you want <br/>)
+  src: string; // headshot image
+  subtitle?: string; // bio under the title
 }
 
 interface SlideProps {
@@ -62,7 +62,10 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
-        transform: current !== index ? "scale(0.9) rotateX(6deg)" : "scale(1) rotateX(0deg)",
+        transform:
+          current !== index
+            ? "scale(0.9) rotateX(6deg)"
+            : "scale(1) rotateX(0deg)",
         transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
         transformOrigin: "bottom",
       }}
@@ -73,8 +76,6 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         className="
           relative w-[70%] aspect-square mx-auto
           rounded-full overflow-hidden
-          ring-2 ring-[#B5A0FF]/60 shadow-[0_10px_30px_rgba(0,0,0,0.25)]
-          bg-gradient-to-br from-[#E8E4FF] via-[#DAD0FF] to-[#C8BBFF]
           transition-transform duration-150 ease-out
         "
       >
@@ -94,14 +95,14 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         <h2
           className="
             text-lg md:text-xl lg:text-2xl font-semibold
-            bg-gradient-to-r from-[#6A41FF] via-[#B5A0FF] to-[#6A41FF]
-            bg-clip-text text-transparent
+            bg-gradient-to-r text-white/55]
+            bg-clip-text
           "
         >
           {title}
         </h2>
         {subtitle && (
-          <p className="mt-1 text-xs md:text-sm lg:text-base text-black/90 leading-snug">
+          <p className="mt-1 text-xs md:text-sm lg:text-base text-white/90 leading-snug">
             {subtitle}
           </p>
         )}
@@ -116,7 +117,11 @@ interface CarouselControlProps {
   handleClick: () => void;
 }
 
-const CarouselControl = ({ type, title, handleClick }: CarouselControlProps) => {
+const CarouselControl = ({
+  type,
+  title,
+  handleClick,
+}: CarouselControlProps) => {
   const isPrev = type === "previous";
   return (
     <button
@@ -145,9 +150,9 @@ const CarouselControl = ({ type, title, handleClick }: CarouselControlProps) => 
 
 interface CarouselProps {
   slides: SlideData[];
-  spacing?: string;      // CSS length (e.g., '4vmin')
+  spacing?: string; // CSS length (e.g., '4vmin')
   initialIndex?: number; // 0-based
-  offsetY?: string;      // move carousel up/down (e.g., '-2rem', '-6vmin')
+  offsetY?: string; // move carousel up/down (e.g., '-2rem', '-6vmin')
 }
 
 export function Carousel({
@@ -201,20 +206,6 @@ export function Carousel({
           />
         ))}
       </ul>
-
-      {/* Controls */}
-      <div className="pointer-events-none absolute inset-0 z-20">
-        <CarouselControl
-          type="previous"
-          title="Go to previous slide"
-          handleClick={handlePreviousClick}
-        />
-        <CarouselControl
-          type="next"
-          title="Go to next slide"
-          handleClick={handleNextClick}
-        />
-      </div>
     </div>
   );
 }
