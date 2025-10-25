@@ -202,7 +202,7 @@ export default function DesignPage() {
                           id="speakers-heading"
                         >
                           <span
-                            className="bg-gradient-to-r text-[#9B7FD8]   bg-clip-text text-transparent"
+                            className="bg-gradient-to-r text-[#9B7FD8]   bg-clip-text"
                             style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
                           >
                             Meet Our Speakers
@@ -268,7 +268,7 @@ export default function DesignPage() {
                     <div className="border-[#B5A0FF]/20 bg-white/60 backdrop-blur-md shadow-[0_10px_40px_rgba(0,0,0,0.1)]  backdrop-blur-md rounded-2xl px-8 py-4 shadow-md">
                       {/* Gradient text */}
                       <h2
-                        className="text-5xl md:text-6xl font-extrabold text-center text-white bg-clip-text text-transparent"
+                        className="text-5xl md:text-6xl font-extrabold text-center text-white bg-clip-text"
                         style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
                       >
                         Design-a-thon Schedule
@@ -558,7 +558,7 @@ export default function DesignPage() {
                       id="dthon-about-title-3"
                     >
                       <span
-                        className="bg-gradient-to-r text-[#2a0d4d] bg-clip-text text-transparent"
+                        className="bg-gradient-to-r text-[#2a0d4d] bg-clip-text"
                         style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
                       >
                         What is Designathon?
