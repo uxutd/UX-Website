@@ -1,574 +1,619 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-import { TextHoverEffect } from "@/components/ui/text-hover-effect";
-import TypingAnimation from "@/components/ui/typing-animation";
-import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
-import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
-import BlurFade from "@/components/magicui/blur-fade";
-import { cn } from "@/lib/utils";
-import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
-import SparklesText from "@/components/ui/sparkles-text";
+import { MorphingText } from "@/components/ui/morphing-text";
+import { MagicCard } from "@/components/ui/magic-card";
+import { Carousel } from "@/components/aceternity/carousel";
+import { Vortex } from "@/components/ui/vortex";
 
 export default function DesignPage() {
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  // Simple config for the ABOUT title on the left (percent-based, easy to tweak)
+  const aboutConfig = {
+    top: "25%",
+    left: "20%",
+    width: "40%", // width relative to moon image container
+    classes: "z-20 rounded-3xl p-2 text-center text-sm md:text-base",
+    style: {
+      maxWidth: 920,
+      fontFamily: "Bai Jamjuree, sans-serif" as any,
+    },
+  } as const;
+
+  // Independent config for the STATSoverlay on the right
+  const aboutConfig2 = {
+    top: "23%",
+    left: "68%",
+    width: "20%",
+    // Theme colors: main B5A0FF and sub DAD0FF; softened translucency so the purple blends with the moon
+    classes:
+      "z-20 bg-gradient-to-br from-[#B5A0FF]/30 via-[#B5A0FF]/20 to-[#DAD0FF]/15 backdrop-blur-sm border border-[#B5A0FF]/8 text-black/90 rounded-2xl p-6 text-sm md:text-base",
+    // Softer shadow and lower contrast so the card reads as part of the moon surface
+    style: {
+      ...aboutConfig.style,
+      boxShadow: "0 10px 30px rgba(0,0,0,0.35)" as any,
+    },
+  } as const;
+
+  // Independent config for the WHAT IS DESIGNATHON overlay in the center
+  const aboutConfig3 = {
+    top: "8%",
+    left: "50%",
+    width: "min(90%, 980px)",
+    // Theme colors: main #B5A0FF and sub #DAD0FF; softened translucency so the purple blends with the moon
+    classes:
+      "z-20 bg-gradient-to-br from-[#B5A0FF]/35 via-[#B5A0FF]/20 to-[#DAD0FF]/15 backdrop-blur-sm border border-[#B5A0FF]/8 text-black/90 text-center rounded-2xl p-6 text-sm md:text-base",
+    // Softer shadow and lower contrast so the card reads as part of the moon surface
+    style: {
+      ...aboutConfig.style,
+      boxShadow: "0 10px 30px rgba(0,0,0,0.35)" as any,
+    },
+  } as const;
+
   useEffect(() => {
-    // Dynamically adding the script once the component is mounted
+    // Hide global footer while on this page and set page-local background
+    document.body.classList.add("no-footer");
+    const previousBg = document.body.style.backgroundColor;
+
+    // apply purple background for this page only
+    document.body.style.backgroundColor = "#ffffffff";
+
+    return () => {
+      document.body.classList.remove("no-footer");
+      // restore previous background
+      document.body.style.backgroundColor = previousBg || "";
+    };
+  }, []);
+
+  useEffect(() => {
+    if (document.getElementById("luma-checkout")) {
+      setScriptLoaded(true);
+
+      return;
+    }
+
     const script = document.createElement("script");
 
     script.id = "luma-checkout";
     script.src = "https://embed.lu.ma/checkout-button.js";
     script.async = true;
+    script.onload = () => setScriptLoaded(true);
+    script.onerror = () => setScriptLoaded(true); //fallback
+
     document.body.appendChild(script);
 
     return () => {
-      // Cleanup the script when the component is unmounted
-      document.body.removeChild(script);
+      const existingScript = document.getElementById("luma-checkout");
+
+      if (existingScript && existingScript === script) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
-  const saturdaySchedule = [
-    { time: "9:00am", event: "Check In/Boothing", location: "ECSW Atrium" },
-    {
-      time: "10:00am",
-      event: "Team Formin Mixer",
-      location: "ECSW 'Bird's Nest'",
-    },
-    { time: "10:00am", event: "& Sponsor Networking", location: "ECSW Atrium" },
-    { time: "11:00am", event: "Opening Ceremony", location: "SLC 1.102" },
-    { time: "12:00pm", event: "Designing Starts 💙", location: "Anywhere!" },
-    { time: "12:30pm", event: "Lunch", location: "ECSW Atrium" },
-    {
-      time: "1:00pm",
-      event: "User Personas Workshop w/ Mercedes Johnson",
-      location: "ECSW 1.355",
-    },
-    {
-      time: "2:15pm",
-      event: "Hacking the Design-a-thon Workshop w/ CBRE",
-      location: "ECSW 1.365",
-    },
-    { time: "4:00pm", event: "Intro to UX Workshop", location: "ECSW 1.355" },
-    {
-      time: "5:00pm",
-      event: "Storytelling in UX Workshop",
-      location: "ECSW 1.365",
-    },
-    { time: "5:00pm", event: "& Color and Connect", location: "ECSW 3.210" },
-    {
-      time: "6:15pm",
-      event: "& Rapid Prototyping in Figma Workshop",
-      location: "ECSW 1.355",
-    },
-    {
-      time: "7:15pm",
-      event: "Info Architecture Workshop",
-      location: "ECSW 1.365",
-    },
-    { time: "8:30pm", event: "Dinner", location: "ECSW Atrium" },
-    { time: "10:30pm", event: "Brain Break!", location: "TBD" },
-  ];
-
   return (
     <>
-      <main className="flex flex-col items-center justify-center w-full flex-1 gap-4 text-center">
-        <section className="flex flex-col h-full items-center pt-36 gap-4">
-          <div
-            className={cn(
-              "group rounded-full border border-black/5 bg-neutral-100 mt-[-50] text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
-            )}
-          >
-            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-              <span>The UX Club Presents</span>
-            </AnimatedShinyText>
-          </div>
-
-          <BlurFade>
-            <div className="flex items-center justify-center pt-12 w-[100vw]">
-              <TextHoverEffect text="UXPERIENCE" />
+      {/* Hero Section */}
+      <section
+        className="text-white min-h-[480vh] py-20 bg-cover bg-center relative overflow-visible"
+        style={{ backgroundImage: "url('/dthonbackLONG.png')" }}
+      >
+        {/* Grid Container */}
+        <div className="grid grid-cols-12 grid-rows-[auto_auto_1fr_auto] min-h-[120vh] gap-6 px-6">
+          {/* Title Section */}
+          <div className="col-start-2 col-span-10 row-start-1 flex flex-col items-center justify-center mb-8">
+            <div className="mb-6 mt-24">
+              <img
+                alt="UXPERIENCE"
+                className="w-full hover:scale-105 transition ease-out max-w-2xl h-auto"
+                src="/uxperience.png"
+              />
             </div>
-          </BlurFade>
-
-          <div className="flex items-center justify-center relative">
-            <BlurFade delay={2}>
-              <div className="relative overflow-hidden hover:rotate-[4deg] hover:scale-110 transition ease-out">
-                <img
-                  alt="UXPERIENCE Logo"
-                  className="w-[80vw] max-w-[600px] h-auto sm:w-[60vw]" // Improved width scaling for mobile screens
-                  src="/Group3.svg"
-                />
-                <TypingAnimation
-                  className="absolute inset-0 flex items-center justify-center font-bold text-[#08195E] rotate-[-2deg] text-[1.5rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] xl:text-[4rem] p-[3%] sm:p-[2%] md:p-[5%] lg:p-[5%] xl:p-[5%] max-w-full overflow-hidden whitespace-nowrap min-w-0" // Adjusted for mobile and larger screens
-                  duration={200}
-                  text="The First Draft"
-                />
-              </div>
-            </BlurFade>
-          </div>
-
-          <BlurFade delay={2}>
-            <div className="flex flex-col gap-4">
-              <span className="text-2xl font-bold text-[#08195E] hover:scale-110 transition ease-out">
-                November 9th - 10th 2024
-              </span>
-              <a
-                className="luma-checkout--button hover:scale-105 transition ease-out"
-                href="https://utdallas.box.com/s/x5q67ny4oglb5amn4qe9yhhdbr4il789"
-              >
-                <AnimatedGradientText>
-                  <span
-                    className={cn(
-                      `inline animate-gradient text-2xl bg-gradient-to-r from-sky-500 via-blue-300 to-white bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
-                    )}
-                  >
-                    Check out Dthon pics!
-                  </span>
-                </AnimatedGradientText>
-              </a>
-            </div>
-          </BlurFade>
-          <br />
-          <br />
-        </section>
-
-        <section className="text-white h-auto w-[100vw] flex flex-col justify-center items-center px-4">
-          <BackgroundGradientAnimation
-            containerClassName="h-auto" // Allow the gradient to expand
-          >
-            <div className="relative z-10">
-              <div className="px-18 md:px-36 py-4 md:py-8 flex flex-col">
-                <h1
-                  className="text-left text-3xl md:text-[2.5rem] font-semibold leading-tight mb-2 text-[#ffffff]"
-                  style={{
-                    wordSpacing: "0.25rem",
-                    WebkitTextStroke: "0.25px white",
-                  }}
-                >
-                  <TypingAnimation text="Designathon 2024: The First Draft" />
-                </h1>
-              </div>
-
-              {/* Wide Image (Centered and Longer) */}
-              <div className="flex items-center px-24 justify-center w-full h-[40vh]">
-                <img
-                  alt="Designathon Group"
-                  className="w-[80vw] h-[40vh] object-cover rounded-lg"
-                  src="/dthongroup.png"
-                />
-              </div>
-
-              <div className="flex flex-col md:flex-row w-full">
-                {/* First Div (Left Side) */}
-                <div className="pl-4 md:pl-36 pr-4 py-4 md:py-8 flex flex-col gap-4 flex-1">
-                  <div className="flex-1 flex flex-col px-4 md:px-12 gap-1 sm:gap-2 p-4 sm:p-8 border-2 border-white rounded-lg bg-transparent w-full max-w-full md:max-w-[45vw] min-h-[250px] md:min-h-[350px] shadow-lg pb-8">
-                    {/* First Row of Stats */}
-                    <div className="flex flex-col md:flex-row gap-1 sm:gap-5 mt-11">
-                      <div className="flex-1">
-                        <div className="bg-white text-[#4694D6] rounded-2xl p-2 flex items-center justify-center h-[100px] shadow-lg">
-                          <h1 className="text-1xl md:text-[1.935rem] font-semibold leading-tight text-center">
-                            177+ Registrations
-                          </h1>
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <div className="bg-white text-[#4694D6] rounded-2xl p-2 flex items-center justify-center h-[100px] shadow-lg">
-                          <h1 className="text-1xl md:text-[1.935rem] font-semibold leading-tight text-center">
-                            $1400+ in Won Prizes
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Second Row of Stats */}
-                    <div className="flex flex-col md:flex-row gap-1 sm:gap-5 mt-8">
-                      <div className="flex-1">
-                        <div className="bg-white text-[#4694D6] rounded-2xl p-2 flex items-center justify-center h-[100px] shadow-lg">
-                          <h1 className="text-1xl md:text-[1.935rem] font-semibold leading-tight text-center">
-                            20+ Professionals
-                          </h1>
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <div className="bg-white text-[#4694D6] rounded-2xl p-2 flex items-center justify-center h-[100px] shadow-lg">
-                          <h1 className="text-1xl md:text-[1.935rem] font-semibold leading-tight text-center">
-                            10+ Design Workshops
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                    <br /> <br />
-                  </div>
-                </div>
-
-                {/* Second Div (Right Side) */}
-                <div className="pr-4 md:pr-36 pl-4 py-4 md:py-8 flex flex-col gap-4 flex-1">
-                  <div className="flex-1 flex flex-col px-4 md:px-12 gap-2 sm:gap-0 p-4 sm:p-8 border-2 border-white rounded-lg bg-[#ffffff] w-full max-w-full md:max-w-[45vw] min-h-[250px] md:min-h-[350px] shadow-lg pb-8">
-                    <div
-                      className="text-center text-xl font-bold text-[#4694D6] mt-1"
-                      style={{ fontSize: "2rem" }}
-                    >
-                      First Prize Winner!
-                    </div>
-                    <img
-                      alt="Designathon Winner"
-                      className="w-[full] h-[full] object-cover rounded-lg"
-                      src="/dthonwinnernames.png"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <br />
-          </BackgroundGradientAnimation>
-        </section>
-
-        <section className="pt-10 pb-10 w-screen flex justify-center items-center px-4">
-          <div
-            className="flex justify-center w-full"
-            style={{ maxWidth: "85vw" }}
-          >
-            <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-              {" "}
-              {/* 16:9 Aspect Ratio */}
-              <iframe
-                allow="autoplay"
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://drive.google.com/file/d/1Lnpax7eizohJA8jKuGRMXSEy5cU1WEOl/preview"
-                style={{ border: "none" }}
-                title="Design A-thon Video Preview"
+            <div className="flex flex-col hover:scale-105 active:scale-100 transition-all duration-300 ease-out">
+              <MorphingText
+                className="!text-3xl pr-80 !h-auto !max-w-16 text-center"
+                texts={["echoes of tomorrow", "october 25th-26th"]}
               />
             </div>
           </div>
-        </section>
 
-        {/* Saturday Schedule 
-          <div className="py-24 sm:py-32 mb-[-10]">
-            <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 ">
-              <h2 className="text-center text-base/7 font-semibold  text-indigo-600">
-                Join the Innovation
-              </h2>
-              <p className="mx-auto mt-2 max-w-lg text-pretty text-center text-4xl font-medium tracking-tight text-white sm:text-5xl hover:scale-105 transition ease-out">
-                Unleash Your Creativity at Our Design-a-thon
-              </p>
-              <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-                <Card className="lg:row-span-2 bg-white rounded-lg shadow-md p-4 ">
-                  <CardHeader>
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      What is a Design-a-thon?
-                    </h3>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">
-                      A Design-a-thon is an exciting event where participants
-                      collaborate to solve real-world problems through design
-                      thinking. It{`'`}s a marathon of creativity, innovation,
-                      and teamwork, typically lasting 24-48 hours.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-white rounded-lg shadow-md p-4 ">
-                  <CardHeader>
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      What We Do
-                    </h3>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="list-disc pl-5 text-gray-600 text-left">
-                      <li>Brainstorm innovative solutions</li>
-                      <li>Prototype and iterate designs</li>
-                      <li>Present ideas to industry experts</li>
-                      <li>Network with like-minded individuals</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-white rounded-lg shadow-md p-4 ">
-                  <CardHeader>
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      How to Join
-                    </h3>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">
-                      Registration is easy! Visit our website, fill out the
-                      application form, and select your preferred team size. We
-                      {`'`}ll review your application and get back to you within
-                      a week.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="lg:col-span-2 bg-white rounded-lg shadow-md p-4 ">
-                  <CardHeader>
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      Who Can Participate?
-                    </h3>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 mb-4">
-                      Our Design-a-thon is open to anyone passionate about
-                      design and problem-solving, including:
-                    </p>
-                    <ul className="list-disc pl-5 text-gray-600 text-left">
-                      <li>Students (high school and university)</li>
-                      <li>Professional designers</li>
-                      <li>Engineers and developers</li>
-                      <li>Entrepreneurs and innovators</li>
-                      <li>Design enthusiasts of all backgrounds</li>
-                    </ul>
-                    <p className="text-gray-600 mt-4">
-                      No prior design experience is required – just bring your
-                      creativity and enthusiasm!
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-          */}
-
-        <section className="flex flex-col h-full items-center pt-36 gap-4 ">
-          <div className="group rounded-full border border-black/5 bg-neutral-100 mt-[-50] text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800">
-            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-              <span>November 9th - 10th</span>
-            </AnimatedShinyText>
-          </div>
-          <BlurFade>
-            <div className="py-4">
-              <SparklesText text="Design-a-thon Schedule!" />
-            </div>
-          </BlurFade>
-
-          <div className="flex flex-col gap-4">
-            <br />
+          {/* Register Button */}
+          <div className="col-start-5 col-span-4 row-start-2 flex items-center justify-center mb-8">
             <a
-              className="luma-checkout--button hover:scale-105 transition ease-out"
-              href="https://discord.gg/TRQxZ6bDHH"
+              aria-label="register"
+              className={`
+                luma-checkout--button 
+                transition-all duration-300 ease-out
+                inline-flex items-center justify-center
+                rounded-full 
+                shadow-2xl
+                hover:scale-105 active:scale-100
+                transform-gpu
+                ${!scriptLoaded ? "opacity-50 cursor-not-allowed" : "opacity-100 cursor-pointer"}
+              `}
+              data-luma-action="checkout"
+              data-luma-event-id="evt-2025"
+              href="https://discord.gg/dFwVTrWR"
+              role="button"
+              style={{
+                backgroundColor: "#D9D9D9",
+                color: "#000000",
+                fontFamily: "Bai Jamjuree, sans-serif",
+                fontWeight: "800",
+                padding: "12px 20px",
+                fontSize: "1.25rem",
+                minHeight: "45px",
+                width: "280px",
+                maxWidth: "380px",
+              }}
+              tabIndex={0}
+              onClick={(e) => !scriptLoaded && e.preventDefault()}
             >
-              <AnimatedGradientText>
-                <span
-                  className={cn(
-                    `inline animate-gradient text-2xl bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-white/40 bg-clip-text text-transparent`,
-                  )}
-                >
-                  Stay updated!
-                </span>
-              </AnimatedGradientText>
+              <div className="absolute inset-0 rounded-full overflow-hidden">
+                <MagicCard className="w-full h-full" />
+              </div>
+              <span className="relative z-10">register</span>
             </a>
-
-            <br />
           </div>
 
-          <div
-            className="flex flex-col lg:flex-row gap-8 relative align-items: stretch justify-center"
-            id="schedule-section"
-          >
-            {/* Saturday Schedule */}
-            <div
-              className="flex flex-col w-full overflow-y-auto mx-auto px-4"
-              style={{ maxHeight: "800px" }}
-            >
-              <div className="text-3xl font-black py-6 text-[#0C1533] text-center lg:text-left hover:scale-105 transition ease-out">
-                Day 1 - Saturday
-              </div>
-              {/* Event Blocks for Saturday */}
-              {saturdaySchedule.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-white mb-8 mx-2 p-2 border-2 rounded-3xl border-[#05149C] border-opacity-20 hover:scale-105 transition ease-out"
-                >
-                  <div className="border-b border-[#4D8889] p-2">
-                    <div className="flex justify-between pb-1">
-                      <div className="text-md font-bold">{item.time}</div>
-                      <div className="text-md font-bold text-right">
-                        {item.event}
+          {/* Moon Section */}
+          <div className="col-span-full row-start-4 flex items-end relative">
+            <div className="relative w-full">
+              <img
+                alt="Moon Design"
+                className="w-full h-auto transform scale-70"
+                src="/moon 1.svg"
+              />
+
+              <section
+                aria-labelledby="speakers-heading"
+                className="w-full mt-60 px-6"
+                style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+              >
+                <div className="mx-auto max-w-6xl">
+                  {/* Gradient border wrapper */}
+                  <div
+                    className="
+                    relative rounded-3xl p-[1px]
+                    bg-gradient-to-br from-[#B5A0FF]/10 via-[#C8BBFF]/10 to-[#DAD0FF]/10
+                    shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+                  "
+                  >
+                    {/* Glass panel */}
+                    <div
+                      className="
+                      relative rounded-[calc(theme(borderRadius.3xl)-1px)]
+                      bg-white/10 backdrop-blur-xl
+                      ring-1 ring-white/30
+                      px-6 py-8 md:px-12 md:py-12
+                      text-black/90
+                    "
+                    >
+                      {/* Decorative glows */}
+                      <span className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-[#B5A0FF]/25 blur-2xl" />
+                      <span className="pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-[#DAD0FF]/25 blur-2xl" />
+
+                      {/* Header */}
+                      <header className="text-center">
+                        <h2
+                          className="font-extrabold tracking-[-0.02em] leading-tight
+                                    text-3xl md:text-5xl lg:text-6xl"
+                          id="speakers-heading"
+                        >
+                          <span
+                            className="bg-gradient-to-r text-[#B5A0FF]   bg-clip-text text-transparent"
+                            style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                          >
+                            Meet Our Speakers
+                          </span>
+                        </h2>
+                        <div className="mx-auto mt-4 mb-6 h-px w-24 bg-gradient-to-r from-transparent via-[#6A41FF]/50 to-transparent" />
+                        <p
+                          className="mx-auto max-w-2xl text-sm md:text-base text-white/70"
+                          style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                        >
+                          Catch our amazing speakers at our design workshops!
+                        </p>
+                      </header>
+
+                      {/* Carousel */}
+                      <div className="mt-10 flex justify-center">
+                        <Carousel
+                          slides={[
+                            {
+                              title: "Grace Nguyen",
+                              src: "/graceSpeaker.svg",
+                              subtitle:
+                                "Senior UX Researcher @ Baylor Scott & White Health",
+                            },
+                            {
+                              title: "Jonathan Castaneda",
+                              src: "/jonSpeaker.svg",
+                              subtitle:
+                                "Sr. Product Design Manager, Design Systems & Accessibility @ Cencora",
+                            },
+                            {
+                              title: "Averi Collens",
+                              src: "/averiSpeaker.svg",
+                              subtitle: "UX Researcher @ CBRE",
+                            },
+                            {
+                              title: "Kyle Reubens",
+                              src: "/kleSpeaker.svg",
+                              subtitle: "Freelance UX Designer",
+                            },
+                          ]}
+                          spacing="2vmin"
+                          //initialIndex={1}
+                        />
                       </div>
                     </div>
                   </div>
-                  <div className="flex justify-between">
-                    <div className="text-gray-600 flex text-left">
-                      {item.location}
+                </div>
+              </section>
+
+              {/* Schedule Section */}
+              <section className="relative flex flex-col items-center justify-center pt-36 pb-24 px-6">
+                {/* Decorative glow */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(181,160,255,0.25)_0%,transparent_70%)] blur-3xl" />
+                </div>
+
+                {/* Section Heading */}
+                <div className="relative flex justify-center mt-10 mb-14">
+                  {/* Outer gradient border */}
+                  <div className="relative p-[2px] rounded-2xl bg-gradient-to-r border-white">
+                    {/* Inner translucent box */}
+                    <div className="border-[#B5A0FF]/20 bg-white/60 backdrop-blur-md shadow-[0_10px_40px_rgba(0,0,0,0.1)]  backdrop-blur-md rounded-2xl px-8 py-4 shadow-md">
+                      {/* Gradient text */}
+                      <h2
+                        className="text-5xl md:text-6xl font-extrabold text-center text-white bg-clip-text text-transparent"
+                        style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                      >
+                        Design-a-thon Schedule
+                      </h2>
                     </div>
                   </div>
                 </div>
-              ))}
+
+                {/* Schedule Panels */}
+                <div className="flex flex-col lg:flex-row gap-10 justify-center w-full max-w-7xl px-6">
+                  {/* --- Day 1 --- */}
+                  <div
+                    className="flex flex-col w-full overflow-y-auto mx-auto p-6 rounded-3xl border border-[#B5A0FF]/20 bg-white/60 backdrop-blur-md shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-transform duration-300"
+                    style={{ maxHeight: "800px" }}
+                  >
+                    <h3
+                      className="text-3xl font-bold text-white/90 mb-8 text-center lg:text-left"
+                      style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                    >
+                      Day 1 — Saturday
+                    </h3>
+                    {[
+                      {
+                        time: "9:00 AM",
+                        event: "Student Check-In & Boothing",
+                        location: "ECSW Atrium",
+                      },
+                      {
+                        time: "10:00 AM",
+                        event: "Team Forming Workshop - UX",
+                        location: "ECSW 'Bird's Nest'",
+                      },
+                      {
+                        time: "11:00 AM",
+                        event: "Opening Ceremony",
+                        location: "ECSS 2.415",
+                      },
+                      {
+                        time: "12:00 PM",
+                        event: "Designing Starts 💙",
+                        location: "Anywhere!",
+                      },
+                      {
+                        time: "12:30 PM",
+                        event: "Lunch",
+                        location: "ECSW Atrium",
+                      },
+                      {
+                        time: "1:00 PM",
+                        event: "Workshop by Grace - Real-World UX",
+                        location: "ECSW 1.355",
+                      },
+                      {
+                        time: "2:15 PM",
+                        event: "Workshop by Averi - UX Research",
+                        location: "ECSW 1.365",
+                      },
+                      {
+                        time: "3:30 PM",
+                        event:
+                          "Workshop by Jonathan - Starting with Accessibility First",
+                        location: "ECSW 1.355",
+                      },
+                      {
+                        time: "5:00 PM",
+                        event: "Color and Connect",
+                        location: "ECSW 3.210",
+                      },
+                      {
+                        time: "6:00 PM",
+                        event: "Workshop by Kyle - Advanced Figma Techniques",
+                        location: "ECSW 1.355",
+                      },
+                      {
+                        time: "7:15 PM",
+                        event: "Fun Activity!",
+                        location: "ECSW Atrium",
+                      },
+                      {
+                        time: "8:00 PM",
+                        event: "Dinner",
+                        location: "ECSW Atrium",
+                      },
+                      {
+                        time: "10:30 PM",
+                        event: "Final Office Hours",
+                        location: "ECSW Atrium",
+                      },
+                      {
+                        time: "12:00 AM - 7:00 AM",
+                        event: "Quiet Hours",
+                        location: "",
+                      },
+                    ].map((item, index) => (
+                      <div
+                        key={index}
+                        className="bg-white/80 border border-[#B5A0FF]/20 rounded-2xl p-4 mb-4 hover:bg-[#F8F6FF] hover:shadow-md transition-all duration-300"
+                      >
+                        <div className="flex justify-between font-semibold text-[#3D2FBF]">
+                          <span
+                            className="text-[#08195E] font-bold"
+                            style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                          >
+                            {item.time}
+                          </span>
+                          <span>{item.event}</span>
+                        </div>
+                        <div
+                          className="text-gray-600 italic text-sm mt-1"
+                          style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                        >
+                          {item.location}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* --- Day 2 --- */}
+                  <div
+                    className="flex flex-col w-full overflow-y-auto mx-auto p-6 rounded-3xl border border-[#B5A0FF]/20 bg-white/60 backdrop-blur-md shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-transform duration-300"
+                    style={{ maxHeight: "800px" }}
+                  >
+                    <h3
+                      className="text-3xl font-bold text-white/90 mb-8 text-center lg:text-left"
+                      style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                    >
+                      Day 2 — Sunday
+                    </h3>
+                    {[
+                      {
+                        time: "12:00 AM - 7:00 AM",
+                        event: "Quiet Hours",
+                        location: "",
+                      },
+                      {
+                        time: "8:00 AM",
+                        event: "Breakfast!",
+                        location: "ECSW Atrium",
+                      },
+                      {
+                        time: "12:00 PM",
+                        event: "Designing Ends",
+                        location: "",
+                      },
+                      {
+                        time: "12:30 PM",
+                        event: "Lunch",
+                        location: "ECSW Atrium",
+                      },
+                      {
+                        time: "1:30 PM - 4:00 PM",
+                        event: "Judging Expo!",
+                        location: "ECSW 1.315",
+                      },
+                      {
+                        time: "5:00 PM",
+                        event: "Closing Ceremony",
+                        location: "ECSW 1.315",
+                      },
+                    ].map((item, index) => (
+                      <div
+                        key={index}
+                        className="bg-white/80 border border-[#B5A0FF]/20 rounded-2xl p-4 mb-4 hover:bg-[#F8F6FF] hover:shadow-md transition-all duration-300"
+                      >
+                        <div className="flex justify-between font-semibold text-[#3D2FBF]">
+                          <span
+                            className="text-[#08195E] font-bold"
+                            style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                          >
+                            {item.time}
+                          </span>
+                          <span>{item.event}</span>
+                        </div>
+                        <div
+                          className="text-gray-600 italic text-sm mt-1"
+                          style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                        >
+                          {item.location}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Custom Scrollbar Styling */}
+                <style>{`
+                  /* Scrollbar for WebKit browsers */
+                  div::-webkit-scrollbar {
+                    width: 10px;
+                  }
+                  div::-webkit-scrollbar-track {
+                    background: rgba(255, 255, 255, 0.5);
+                    border-radius: 9999px;
+                  }
+                  div::-webkit-scrollbar-thumb {
+                    background: linear-gradient(180deg, #b5a0ff, #6a41ff);
+                    border-radius: 9999px;
+                    border: 2px solid rgba(255, 255, 255, 0.6);
+                  }
+                  div::-webkit-scrollbar-thumb:hover {
+                    background: linear-gradient(180deg, #6a41ff, #4d2aff);
+                  }
+
+                  /* Firefox scrollbar */
+                  div {
+                    scrollbar-width: thin;
+                    scrollbar-color: #ffffffff hsla(0, 0%, 100%, 0.40);
+                  }
+                `}</style>
+              </section>
+
+              {/* Absolutely-positioned About card over the moon image */}
+              {/*<div
+                className={"absolute -translate-x-1/2 left-1/2 " + aboutConfig.classes}
+                style={{ top: aboutConfig.top, left: aboutConfig.left, width: aboutConfig.width, ...aboutConfig.style }}
+                aria-labelledby="dthon-about-title"
+              >
+                <h2 id="dthon-about-title" className="font-extrabold text-black" style={{ fontFamily: "Sarpanch, sans-serif", fontSize: "135px", lineHeight: 1 }}>About</h2>
+                <div className="mt-4">
+                </div>
+              </div>*/}
+
+              {/* Refer to aboutConfig2 for editing this one*/}
+              <div
+                aria-labelledby="dthon-about-title-2"
+                className={"absolute -translate-x-1/2 " + aboutConfig2.classes}
+                style={{
+                  top: aboutConfig2.top,
+                  left: aboutConfig2.left,
+                  width: aboutConfig2.width,
+                  ...aboutConfig2.style,
+                }}
+              >
+                <h2
+                  className="text-xl font-semibold text-black"
+                  id="dthon-about-title-2"
+                  style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                >
+                  UXperience: The First Draft (2024)
+                </h2>
+                <p
+                  className="mt-2 text-black/90"
+                  style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                >
+                  • 147+ attendees, <br /> • 39+ projects, <br /> • 20+
+                  professionals,
+                  <br /> • $1400 won in prize money
+                  <br />{" "}
+                </p>
+                <div className="mt-4" />
+              </div>
+
+              {/* Refer to aboutConfig3 for editing this one (WHAT IS DESIGNATHON CARD) */}
+              <div
+                aria-labelledby="dthon-about-title-3"
+                className={"absolute -translate-x-1/2 " + aboutConfig3.classes}
+                style={{
+                  top: aboutConfig3.top,
+                  left: aboutConfig3.left,
+                  width: aboutConfig3.width,
+                  ...aboutConfig3.style,
+                }}
+              >
+                {/* Gradient border wrapper */}
+                <div
+                  className="
+                    relative rounded-3xl p-[1px]
+                    transition-transform duration-300 ease-out hover:-translate-y-0.5
+                  "
+                >
+                  {/* Glass panel */}
+                  <div
+                    className="
+                      relative rounded-[calc(theme(borderRadius.3xl)-1px)]
+                      bg-white/10 
+                      ring-1 ring-white/30
+                      px-6 py-7 md:px-10 md:py-10
+                      text-black/90
+                    "
+                  >
+                    {/* Heading */}
+                    <h3
+                      className="
+                        font-extrabold text-black tracking-[-0.01em]
+                        text-2xl md:text-4xl lg:text-5xl leading-tight
+                      "
+                      id="dthon-about-title-3"
+                    >
+                      <span
+                        className="bg-gradient-to-r text-[#370E79] bg-clip-text text-transparent"
+                        style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                      >
+                        What is Designathon?
+                      </span>
+                    </h3>
+
+                    {/* Divider */}
+                    <div className="mx-auto mt-4 mb-6 h-px w-24 bg-gradient-to-r from-transparent via-[#6A41FF]/50 to-transparent" />
+
+                    {/* Body copy */}
+                    <p
+                      className="mx-auto max-w-3xl text-left md:text-center text-base md:text-lg leading-relaxed text-black/85"
+                      style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
+                    >
+                      <strong className="font-semibold text-black/90">
+                        UXperience
+                      </strong>{" "}
+                      is an intensive 24-hour event that compresses weeks of
+                      product design into a single day. It replaces a
+                      traditional four-week design challenge and features
+                      non-stop collaboration, workshops, and networking
+                      opportunities.
+                      <br />
+                      <br />
+                      Join us for an exciting 24-hour Design-a-Thon that
+                      compresses weeks of product design into a single day of
+                      creativity, teamwork, and innovation! Network with
+                      professionals, explore workshops, and have fun!
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            {/* Sunday Schedule */}
-            <div className="flex flex-col w-full mx-auto px-4">
-              <div className="text-3xl font-black py-6 text-[#0C1533] text-center lg:text-left hover:scale-105 transition ease-out">
-                Day 2 - Sunday
-              </div>
-              {/* Event Blocks for Sunday */}
-              <div className="bg-white mb-8 mx-2 p-2 border-2 rounded-3xl border-[#05149C] border-opacity-20 hover:scale-105 transition ease-out">
-                <div className="border-b border-[#4D8889] p-2  ">
-                  <div className="flex justify-between pb-1">
-                    <div className="text-md font-bold  ">12:00am</div>
-                    <div className="text-md font-bold text-right ">
-                      Quiet Hours
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-between">
-                  <div className="text-gray-600 flex items-center">
-                    <svg
-                      aria-hidden="true"
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuw"
-                      data-testid="LocationOnIcon"
-                      focusable="false"
-                      style={{ fontSize: "large", marginRight: "2px" }}
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="..." />
-                    </svg>
-                    Anywhere!
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white mb-8 mx-2 p-2 border-2 rounded-3xl border-[#05149C] border-opacity-20 hover:scale-105 transition ease-out">
-                <div className="border-b border-[#4D8889] p-2">
-                  <div className="flex justify-between pb-1">
-                    <div className="text-md font-bold  ">8:00am</div>
-                    <div className="text-md font-bold text-right ">
-                      Breakfast!
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-between">
-                  <div className="text-gray-600 flex items-center">
-                    <svg
-                      aria-hidden="true"
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuw"
-                      data-testid="LocationOnIcon"
-                      focusable="false"
-                      style={{ fontSize: "large", marginRight: "2px" }}
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="..." />
-                    </svg>
-                    ECSW Atrium
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white mb-8 mx-2 p-2 border-2 rounded-3xl border-[#05149C] border-opacity-20 hover:scale-105 transition ease-out">
-                <div className="border-b border-[#4D8889] p-2">
-                  <div className="flex justify-between pb-1">
-                    <div className="text-md font-bold  ">12:00pm</div>
-                    <div className="text-md font-bold text-right ">
-                      Designing Ends
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-between">
-                  <div className="text-gray-600 flex items-center">
-                    <svg
-                      aria-hidden="true"
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuw"
-                      data-testid="LocationOnIcon"
-                      focusable="false"
-                      style={{ fontSize: "large", marginRight: "2px" }}
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="..." />
-                    </svg>
-                    HH
-                  </div>
-                </div>
-              </div>
-
-              {/* Event Block: Designing Starts */}
-              <div className="bg-white mb-8 mx-2 p-2 border-2 rounded-3xl border-[#05149C] border-opacity-20 hover:scale-105 transition ease-out">
-                <div className="border-b border-[#4D8889] p-2">
-                  <div className="flex justify-between pb-1">
-                    <div className="text-md font-bold  ">12:30pm</div>
-                    <div className="text-md font-bold text-right ">Lunch</div>
-                  </div>
-                </div>
-                <div className="flex justify-between">
-                  <div className="text-gray-600 flex items-center">
-                    <svg
-                      aria-hidden="true"
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuw"
-                      data-testid="LocationOnIcon"
-                      focusable="false"
-                      style={{ fontSize: "large", marginRight: "2px" }}
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="..." />
-                    </svg>
-                    ECSW Atrium
-                  </div>
-                </div>
-              </div>
-
-              {/* Event Block: Lunch */}
-              <div className="bg-white mb-8 mx-2 p-2 border-2 rounded-3xl border-[#05149C] border-opacity-20 hover:scale-105 transition ease-out">
-                <div className="border-b border-[#4D8889] p-2">
-                  <div className="flex justify-between pb-1">
-                    <div className="text-md font-bold  ">1:30pm</div>
-                    <div className="text-md font-bold text-right ">
-                      Juding Expo!
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-between">
-                  <div className="text-gray-600 flex items-center">
-                    <svg
-                      aria-hidden="true"
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuw"
-                      data-testid="LocationOnIcon"
-                      focusable="false"
-                      style={{ fontSize: "large", marginRight: "2px" }}
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="..." />
-                    </svg>
-                    ECSW 1.315
-                  </div>
-                </div>
-              </div>
-
-              {/* Event Block: Understanding User Personas Workshop */}
-              <div className="bg-white mb-8 mx-2 p-2 border-2 rounded-3xl border-[#05149C] border-opacity-20 hover:scale-105 transition ease-out">
-                <div className="border-b border-[#4D8889] p-2">
-                  <div className="flex justify-between pb-1">
-                    <div className="text-md font-bold  ">4:30pm</div>
-                    <div className="text-md font-bold justify-right">
-                      Closing Ceremony
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-between">
-                  <div className="text-gray-600 flex items-center">
-                    <svg
-                      aria-hidden="true"
-                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuw"
-                      data-testid="LocationOnIcon"
-                      focusable="false"
-                      style={{ fontSize: "large", marginRight: "2px" }}
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="..." />
-                    </svg>
-                    ECSW 1.315
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Repeat for other Sunday events */}
           </div>
-        </section>
 
-        <section className="flex items-center justify-center h-full gap-4">
-          <BackgroundGradientAnimation>
-            <div className="absolute z-50 inset-0 flex flex-col gap-2 items-center justify-center pointer-events-none text-center ">
-              <p className="text-white font-bold text-3xl md:text-4xl lg:text-7xl drop-shadow-2xl ">
-                Thank you for joining us.
-              </p>
-            </div>
-          </BackgroundGradientAnimation>
-        </section>
-      </main>
+          {/* Astronaut Section */}
+          <div className="absolute right-6 mt-72 mr-80 ">
+            <img
+              alt="astronaut"
+              className="w-48 h-auto scale-85 "
+              src="/astronaut.svg"
+            />
+          </div>
+        </div>
+        <div className="w-100% mx-auto h-[30rem] overflow-hidden">
+          <Vortex
+            backgroundColor="black"
+            className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
+          >
+            <h2 className="text-white text-2xl md:text-5xl font-bold text-center">
+              Can't wait to see you there!
+            </h2>
+          </Vortex>
+        </div>
+      </section>
     </>
   );
 }
