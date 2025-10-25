@@ -168,7 +168,7 @@ export default function DesignPage() {
 
               <section
                 aria-labelledby="speakers-heading"
-                className="w-full mt-60 px-6"
+                className="w-full mt-60"
                 style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
               >
                 <div className="mx-auto max-w-6xl">
@@ -202,7 +202,7 @@ export default function DesignPage() {
                           id="speakers-heading"
                         >
                           <span
-                            className="bg-gradient-to-r text-[#B5A0FF]   bg-clip-text text-transparent"
+                            className="bg-gradient-to-r text-[#9B7FD8]   bg-clip-text text-transparent"
                             style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
                           >
                             Meet Our Speakers
@@ -558,7 +558,7 @@ export default function DesignPage() {
                       id="dthon-about-title-3"
                     >
                       <span
-                        className="bg-gradient-to-r text-[#370E79] bg-clip-text text-transparent"
+                        className="bg-gradient-to-r text-[#2a0d4d] bg-clip-text text-transparent"
                         style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
                       >
                         What is Designathon?
@@ -603,13 +603,13 @@ export default function DesignPage() {
             />
           </div>
         </div>
-        <div className="w-100% mx-auto h-[30rem] overflow-hidden">
+        <div className="w-full mx-auto h-[30rem] overflow-hidden relative">
           <Vortex
             backgroundColor="black"
             className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
           >
             <h2 className="text-white text-2xl md:text-5xl font-bold text-center">
-              Can't wait to see you there!
+              Can&apos;t wait to see you there!
             </h2>
           </Vortex>
         </div>

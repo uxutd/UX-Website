@@ -201,7 +201,10 @@ export default function ConferencePage() {
             src="/conferencefooter.svg"
           />
         </div>
-        <div className="block md:hidden" style={{ marginTop: "-115px", marginBottom: "-40px"}}>
+        <div
+          className="block md:hidden"
+          style={{ marginTop: "-115px", marginBottom: "-40px" }}
+        >
           <img
             alt="Mobile Footer"
             className="w-full h-auto object-contain"

@@ -23,6 +23,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   const handleMouseMove = (event: React.MouseEvent) => {
     const el = slideRef.current;
     const planet = planetRef.current;
+
     if (!el || !planet) return;
 
     const r = el.getBoundingClientRect();
@@ -45,6 +46,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
       frameRef.current = null;
     }
     const planet = planetRef.current;
+
     if (planet) planet.style.transform = "none";
   };
 
@@ -58,9 +60,6 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     <li
       ref={slideRef}
       className="flex flex-1 flex-col items-center justify-start relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[48vmin] h-[48vmin] mx-[3vmin] z-10"
-      onClick={() => handleSlideClick(index)}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
       style={{
         transform:
           current !== index
@@ -70,43 +69,50 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         transformOrigin: "bottom",
       }}
     >
-      {/* Planet container (circular mask) */}
-      <div
-        ref={planetRef}
-        className="
-          relative w-[70%] aspect-square mx-auto
-          rounded-full overflow-hidden
-          transition-transform duration-150 ease-out
-        "
+      <button
+        className="w-full h-full bg-transparent border-none p-0 cursor-pointer flex flex-col items-center justify-start"
+        onClick={() => handleSlideClick(index)}
+        onMouseLeave={handleMouseLeave}
+        onMouseMove={handleMouseMove}
       >
-        <img
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out"
-          style={{ opacity: current === index ? 1 : 0.85 }}
-          alt={title}
-          src={src}
-          onLoad={imageLoaded}
-          loading="eager"
-          decoding="sync"
-        />
-      </div>
-
-      {/* Title and bio under the planet */}
-      <div className="mt-4 px-4">
-        <h2
+        {/* Planet container (circular mask) */}
+        <div
+          ref={planetRef}
           className="
-            text-lg md:text-xl lg:text-2xl font-semibold
-            bg-gradient-to-r text-white/55]
-            bg-clip-text
+            relative w-[70%] aspect-square mx-auto
+            rounded-full overflow-hidden
+            transition-transform duration-150 ease-out
           "
         >
-          {title}
-        </h2>
-        {subtitle && (
-          <p className="mt-1 text-xs md:text-sm lg:text-base text-white/90 leading-snug">
-            {subtitle}
-          </p>
-        )}
-      </div>
+          <img
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+            decoding="sync"
+            loading="eager"
+            src={src}
+            style={{ opacity: current === index ? 1 : 0.85 }}
+            onLoad={imageLoaded}
+          />
+        </div>
+
+        {/* Title and bio under the planet */}
+        <div className="mt-4 px-4">
+          <h2
+            className="
+              text-lg md:text-xl lg:text-2xl font-semibold
+              bg-gradient-to-r text-white/55]
+              bg-clip-text
+            "
+          >
+            {title}
+          </h2>
+          {subtitle && (
+            <p className="mt-1 text-xs md:text-sm lg:text-base text-white/90 leading-snug">
+              {subtitle}
+            </p>
+          )}
+        </div>
+      </button>
     </li>
   );
 };
@@ -123,6 +129,7 @@ const CarouselControl = ({
   handleClick,
 }: CarouselControlProps) => {
   const isPrev = type === "previous";
+
   return (
     <button
       className={`
@@ -165,11 +172,13 @@ export function Carousel({
 
   const handlePreviousClick = () => {
     const previous = current - 1;
+
     setCurrent(previous < 0 ? slides.length - 1 : previous);
   };
 
   const handleNextClick = () => {
     const next = current + 1;
+
     setCurrent(next === slides.length ? 0 : next);
   };
 
@@ -181,8 +190,8 @@ export function Carousel({
 
   return (
     <div
-      className="relative w-[50vmin] h-[50vmin] mx-auto"
       aria-labelledby={`carousel-heading-${id}`}
+      className="relative w-[50vmin] h-[50vmin] mx-auto"
       style={{
         ["--gap" as any]: spacing,
         transform: `translateY(${offsetY})`,
@@ -199,10 +208,10 @@ export function Carousel({
         {slides.map((slide, index) => (
           <Slide
             key={index}
-            slide={slide}
-            index={index}
             current={current}
             handleSlideClick={handleSlideClick}
+            index={index}
+            slide={slide}
           />
         ))}
       </ul>

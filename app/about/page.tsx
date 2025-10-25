@@ -76,7 +76,8 @@ export default function AboutPage() {
       name: "Alfredo Ayala",
       title: "Student Engagement",
       img: "/UX_Officers/alfredo.svg",
-      linkedIn: "https://www.linkedin.com/in/alfredo-ayala-64646464646464646464/",
+      linkedIn:
+        "https://www.linkedin.com/in/alfredo-ayala-64646464646464646464/",
     },
     {
       name: "Aryan KC",
@@ -112,7 +113,7 @@ export default function AboutPage() {
       linkedIn: "https://www.linkedin.com/in/priyanka-jidagamu/",
     },
   ];
-  
+
   const officersRowFive = [
     {
       name: "Dhurga Venugopal",
@@ -304,38 +305,47 @@ export default function AboutPage() {
         ))}
 
         {/* Add "Meet the Advisors" header right after row five */}
-      <section className="w-full flex justify-center mt-10">
-        <BlurFade>
-          <div className="py-8">
-            <AnimatedGradientText>
-              <span className="tracking-tight inline font-semibold text-[2rem] md:text-[2.3rem] lg:text-5xl leading-9 text-center inline animate-gradient bg-gradient-to-r from-[#253B75] via-[#3E68FD] to-[#253B75] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent">
-              Meet the Advisors!
-              </span>
-            </AnimatedGradientText>
-          </div>
-        </BlurFade>
-      </section>
+        <section className="w-full flex justify-center mt-10">
+          <BlurFade>
+            <div className="py-8">
+              <AnimatedGradientText>
+                <span className="tracking-tight inline font-semibold text-[2rem] md:text-[2.3rem] lg:text-5xl leading-9 text-center inline animate-gradient bg-gradient-to-r from-[#253B75] via-[#3E68FD] to-[#253B75] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent">
+                  Meet the Advisors!
+                </span>
+              </AnimatedGradientText>
+            </div>
+          </BlurFade>
+        </section>
 
         {/* Continue with the next row (Advisors) (officersRowSix is down here instead of in the array since it is separated by "Meet the Advisors") */}
-      <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8">
-        {officersRowSix.map((officer, index) => (
-          <div key={index} className="m-2 sm:m-4 relative flex flex-col items-center">
-          <a href={officer.linkedIn} target="_blank" rel="noopener noreferrer">
-            <Image
-              alt={officer.name}
-              src={officer.img}
-              width={250}
-              height={250}
-            className="rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square"
-            />
-          </a>
-          <h3 className="text-sm sm:text-lg font-semibold mt-2">
-          {officer.name}
-          </h3>
-            <h4 className="text-xs sm:text-sm text-center">{officer.title}</h4>
-          </div>
-        ))}
-      </section>
+        <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8">
+          {officersRowSix.map((officer, index) => (
+            <div
+              key={index}
+              className="m-2 sm:m-4 relative flex flex-col items-center"
+            >
+              <a
+                href={officer.linkedIn}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Image
+                  alt={officer.name}
+                  className="rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square"
+                  height={250}
+                  src={officer.img}
+                  width={250}
+                />
+              </a>
+              <h3 className="text-sm sm:text-lg font-semibold mt-2">
+                {officer.name}
+              </h3>
+              <h4 className="text-xs sm:text-sm text-center">
+                {officer.title}
+              </h4>
+            </div>
+          ))}
+        </section>
         <br />
       </main>
     </>
