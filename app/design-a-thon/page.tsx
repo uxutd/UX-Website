@@ -153,7 +153,7 @@ export default function DesignPage() {
               <div className="absolute inset-0 rounded-full overflow-hidden">
                 <MagicCard className="w-full h-full" />
               </div>
-              <span className="relative z-10">learn more</span>
+              <span className="relative z-10">join now!</span>
             </a>
           </div>
 
