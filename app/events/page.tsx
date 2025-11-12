@@ -49,6 +49,12 @@ export default function EventsPage() {
 
   const events = [
     {
+      title: "Echoes of Tomorrow",
+      date: "10/25/2025 - 10/26/2025",
+      image: "Echoes of Tomorrow.webp",
+      alt: "Event 16",
+    },
+    {
       title: "Fall 2025 Kickoff",
       date: "09/08/2025",
       image: "/fallkickoff25.jpg",
@@ -159,7 +165,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  Figma Workshop
+                  Portfolio Power Hour
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
@@ -168,7 +174,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  September 29, 7pm
+                  November 17th, 7pm
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
@@ -177,15 +183,15 @@ export default function EventsPage() {
                     WebkitTextStroke: "1.75px white",
                   }}
                 >
-                  GR 3.302
+                  ECSW 1.355
                 </h1>
               </div>
 
               {/* Flyer Image */}
               <img
-                alt="Figma Workshop Flyer"
-                className="w-[20rem] md:w-[30rem]  mt-2 md:mt-[20px] md:mr-[40px] md:ml-4"
-                src="/figmaworkshop1_laptop.webp"
+                alt="Portfolio Power Hour Flyer"
+                className="w-[20rem] md:w-[30rem] -mt-36 scale-50"
+                src="PPH_flyer.webp"
                 style={{
                   display: isMobile ? "none" : "block",
                 }}
