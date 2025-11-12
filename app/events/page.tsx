@@ -52,6 +52,12 @@ export default function EventsPage() {
       title: "Echoes of Tomorrow",
       date: "10/25/2025 - 10/26/2025",
       image: "Echoes of Tomorrow.webp",
+      alt: "Event 17",
+    },
+    {
+      title: "Between the Lines",
+      date: "09/25/2025",
+      image: "figma_workshop-06.webp",
       alt: "Event 16",
     },
     {
