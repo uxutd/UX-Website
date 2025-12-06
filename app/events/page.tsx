@@ -49,6 +49,12 @@ export default function EventsPage() {
 
   const events = [
     {
+      title: "Portfolio Power Hour",
+      date: "11/17/25",
+      image: "Portfolio_Power_Hour-135.jpg",
+      alt: "Event 18",
+    },
+    {
       title: "Echoes of Tomorrow",
       date: "10/25/2025 - 10/26/2025",
       image: "Echoes of Tomorrow.webp",
@@ -171,7 +177,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  Portfolio Power Hour
+                  EOS Social
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
@@ -180,7 +186,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  November 17th, 7pm
+                  December 8th, 7pm
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
@@ -189,15 +195,15 @@ export default function EventsPage() {
                     WebkitTextStroke: "1.75px white",
                   }}
                 >
-                  ECSW 1.355
+                  ECSW 2.306
                 </h1>
               </div>
 
               {/* Flyer Image */}
               <img
-                alt="Portfolio Power Hour Flyer"
+                alt="EOS Fall 2025 Flyer"
                 className="w-[20rem] md:w-[30rem] -mt-36 scale-50"
-                src="PPH_flyer.webp"
+                src="EOSF25Flyer.png"
                 style={{
                   display: isMobile ? "none" : "block",
                 }}
