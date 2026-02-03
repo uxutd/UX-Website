@@ -15,9 +15,6 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  icons: {
-    icon: "/UX_White_Logo.svg", // Path to your favicon or icon
-  },
   openGraph: {
     title: siteConfig.name, // Title for the Open Graph preview
     description: siteConfig.description, // Description for the Open Graph preview
