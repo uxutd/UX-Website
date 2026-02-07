@@ -49,6 +49,12 @@ export default function EventsPage() {
 
   const events = [
     {
+      title: "Spring 2026 Kickoff",
+      date: "02/03/2026",
+      image: "spring2026kickoffcover.jpg",
+      alt: "Event 20",
+    },
+    {
       title: "End of Semester Social",
       date: "12/08/2025",
       image: "F25_EOSsocial.webp",
@@ -183,7 +189,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  Spring 2026 Kickoff
+                  Design Principles Workshop
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
@@ -192,7 +198,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  February 3rd, 7pm
+                  February 9th, 7pm
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
@@ -201,7 +207,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "1.75px white",
                   }}
                 >
-                  SLC 2.303
+                  ECSS 2.305
                 </h1>
               </div>
 
@@ -209,7 +215,7 @@ export default function EventsPage() {
               <img
                 alt="Spring 2026 Kickoff Flyer"
                 className="w-[20rem] md:w-[30rem] -mt-36 scale-50"
-                src="spring2026kickoff.webp"
+                src="UX x Nebulab Collab (1).png"
                 style={{
                   display: isMobile ? "none" : "block",
                 }}
