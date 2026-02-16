@@ -24,12 +24,6 @@ export default function AboutPage() {
       img: "/UX_Officers/rohan.svg",
       linkedIn: "https://www.linkedin.com/in/rohancheruku/",
     },
-    {
-      name: "Hiba Mubeen",
-      title: "Marketing Director",
-      img: "/UX_Officers/hiba.svg",
-      linkedIn: "https://www.linkedin.com/in/hiba-mubeen/",
-    },
   ];
 
   const officersRowTwo = [
@@ -46,54 +40,48 @@ export default function AboutPage() {
       linkedIn: "https://www.linkedin.com/in/ankiita-murali/",
     },
     {
-      name: "Ananya Singamsetty",
+      name: "Srinaya Vemula",
       title: "Event Coordinator",
-      img: "/UX_Officers/ananya.svg",
-      linkedIn: "https://www.linkedin.com/in/ananyasingamsetty/",
+      img: "/UX_Officers/sri.svg",
+      linkedIn: "https://www.linkedin.com/in/srinayavemula/",
     },
-    {
-      name: "Sumayya Ali",
-      title: "Event Coordinator",
-      img: "/UX_Officers/sumayya.svg",
-      linkedIn: "https://www.linkedin.com/in/sumayyaali04/",
-    },
+    //{
+      //name: "???",
+      //title: "Event Coordinator",
+      //img: "/UX_Officers/srinaya.svg",
+      //linkedIn: "https://www.linkedin.com/in/srinayavemula/",
+    //},
   ];
 
   const officersRowThree = [
     {
-      name: "Sarah Zaki",
+      name: "Aamna Zaidi",
       title: "Corporate Relations",
-      img: "/UX_Officers/sarah.svg",
-      linkedIn: "https://www.linkedin.com/in/sarah-zaki1/",
+      img: "/UX_Officers/aamna.svg",
+      linkedIn: "https://www.linkedin.com/in/zaamna/",
     },
     {
-      name: "Srinaya Vemula",
+      name: "Batrisyia Nablan",
       title: "Corporate Relations",
-      img: "/UX_Officers/srinaya.svg",
-      linkedIn: "https://www.linkedin.com/in/srinayavemula/",
+      img: "/UX_Officers/batrisyia.svg",
+      linkedIn: "https://www.linkedin.com/in/aleabatrisyianablan/",
     },
     {
       name: "Alfredo Ayala",
       title: "Student Engagement",
-      img: "/UX_Officers/alfredo.svg",
+      img: "/UX_Officers/fredo.svg",
       linkedIn:
         "https://www.linkedin.com/in/alfredo-ayala-64646464646464646464/",
     },
     {
       name: "Aryan KC",
       title: "Student Engagement",
-      img: "/UX_Officers/aryan.svg",
+      img: "/UX_Officers/kc.svg",
       linkedIn: "https://www.linkedin.com/in/aryankc/",
     },
   ];
 
   const officersRowFour = [
-    {
-      name: "Elise Hart",
-      title: "Designer",
-      img: "/UX_Officers/elise.svg",
-      linkedIn: "https://www.linkedin.com/in/elisech/",
-    },
     {
       name: "Vidur Nangia",
       title: "Designer",
@@ -101,10 +89,16 @@ export default function AboutPage() {
       linkedIn: "https://www.linkedin.com/in/vidur-nangia/",
     },
     {
-      name: "Chris Tran",
+      name: "Tommy Nguyen",
       title: "Designer",
-      img: "/UX_Officers/chris.svg",
-      linkedIn: "https://www.linkedin.com/in/christopherthanhtran/",
+      img: "/UX_Officers/tommy.svg",
+      linkedIn: "https://www.linkedin.com/in/tommy-nguyen-ba899423a/",
+    },
+    {
+      name: "Sumayya Ali",
+      title: "Designer",
+      img: "/UX_Officers/sumayya.svg",
+      linkedIn: "https://www.linkedin.com/in/sumayya-ali/",
     },
     {
       name: "Priyanka Jidagamu",
@@ -153,6 +147,8 @@ export default function AboutPage() {
       img: "/UX_Officers/kk.svg",
       linkedIn: "https://www.linkedin.com/in/kshitijkulshrestha/",
     },
+  ];
+  const officersRowSeven = [
     {
       name: "Shaz Kumar",
       title: "Advisor",
@@ -164,6 +160,12 @@ export default function AboutPage() {
       title: "Advisor",
       img: "/UX_Officers/varshni.svg",
       linkedIn: "https://www.linkedin.com/in/varshnik/",
+    },
+        {
+      name: "Hiba Mubeen",
+      title: "Advisor",
+      img: "/UX_Officers/hiba.svg",
+      linkedIn: "https://www.linkedin.com/in/hiba-mubeen/",
     },
   ];
 
@@ -320,6 +322,35 @@ export default function AboutPage() {
         {/* Continue with the next row (Advisors) (officersRowSix is down here instead of in the array since it is separated by "Meet the Advisors") */}
         <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8">
           {officersRowSix.map((officer, index) => (
+            <div
+              key={index}
+              className="m-2 sm:m-4 relative flex flex-col items-center"
+            >
+              <a
+                href={officer.linkedIn}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Image
+                  alt={officer.name}
+                  className="rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square"
+                  height={250}
+                  src={officer.img}
+                  width={250}
+                />
+              </a>
+              <h3 className="text-sm sm:text-lg font-semibold mt-2">
+                {officer.name}
+              </h3>
+              <h4 className="text-xs sm:text-sm text-center">
+                {officer.title}
+              </h4>
+            </div>
+          ))}
+        {/*officersRowSeven displays the last 3 officers (we have 6 advisors as of S26) */}
+        </section>
+                <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8">
+          {officersRowSeven.map((officer, index) => (
             <div
               key={index}
               className="m-2 sm:m-4 relative flex flex-col items-center"
