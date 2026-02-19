@@ -49,8 +49,20 @@ export default function EventsPage() {
 
   const events = [
     {
+      title: "Spring 2026 Kickoff",
+      date: "02/03/2026",
+      image: "spring2026kickoffcover.jpg",
+      alt: "Event 20",
+    },
+    {
+      title: "End of Semester Social",
+      date: "12/08/2025",
+      image: "F25_EOSsocial.webp",
+      alt: "Event 19",
+    },
+    {
       title: "Portfolio Power Hour",
-      date: "11/17/25",
+      date: "11/17/2025",
       image: "Portfolio_Power_Hour-135.jpg",
       alt: "Event 18",
     },
@@ -177,7 +189,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  EOS Social
+                  Design Principles Workshop
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
@@ -186,7 +198,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  December 8th, 7pm
+                  February 9th, 7pm
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
@@ -195,15 +207,15 @@ export default function EventsPage() {
                     WebkitTextStroke: "1.75px white",
                   }}
                 >
-                  ECSW 2.306
+                  ECSS 2.305
                 </h1>
               </div>
 
               {/* Flyer Image */}
               <img
-                alt="EOS Fall 2025 Flyer"
+                alt="Spring 2026 Kickoff Flyer"
                 className="w-[20rem] md:w-[30rem] -mt-36 scale-50"
-                src="EOSF25Flyer.png"
+                src="UX x Nebulab Collab (1).png"
                 style={{
                   display: isMobile ? "none" : "block",
                 }}

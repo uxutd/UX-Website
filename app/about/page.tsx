@@ -136,16 +136,22 @@ export default function AboutPage() {
       linkedIn: "https://www.linkedin.com/in/manasivipat/",
     },
     {
+      name: "Kshitij Kulshrestha",
+      title: "Internal Advisor",
+      img: "/UX_Officers/kk.svg",
+      linkedIn: "https://www.linkedin.com/in/kshitijkulshrestha/",
+    },
+        {
+      name: "Varshni Karthikeyan",
+      title: "Advisor",
+      img: "/UX_Officers/varshni.svg",
+      linkedIn: "https://www.linkedin.com/in/varshnik/",
+    },
+    {
       name: "Manasa Valluru",
       title: "Advisor",
       img: "/UX_Officers/manasav.svg",
       linkedIn: "https://www.linkedin.com/in/manasa-valluru-28a729201/",
-    },
-    {
-      name: "Kshitij Kulshrestha",
-      title: "Advisor",
-      img: "/UX_Officers/kk.svg",
-      linkedIn: "https://www.linkedin.com/in/kshitijkulshrestha/",
     },
   ];
   const officersRowSeven = [
@@ -155,17 +161,18 @@ export default function AboutPage() {
       img: "/UX_Officers/shaz.jpg",
       linkedIn: "https://www.linkedin.com/in/shaswatkumar1/",
     },
+
     {
-      name: "Varshni Karthikeyan",
-      title: "Advisor",
-      img: "/UX_Officers/varshni.svg",
-      linkedIn: "https://www.linkedin.com/in/varshnik/",
-    },
-        {
       name: "Hiba Mubeen",
       title: "Advisor",
       img: "/UX_Officers/hiba.svg",
       linkedIn: "https://www.linkedin.com/in/hiba-mubeen/",
+    },
+    {
+      name: "Elise Hart",
+      title: "Advisor",
+      img: "/UX_Officers/elise.svg",
+      linkedIn: "https://www.linkedin.com/in/elisech/",
     },
   ];
 
@@ -349,7 +356,7 @@ export default function AboutPage() {
           ))}
         {/*officersRowSeven displays the last 3 officers (we have 6 advisors as of S26) */}
         </section>
-                <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8">
+        <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8">
           {officersRowSeven.map((officer, index) => (
             <div
               key={index}
