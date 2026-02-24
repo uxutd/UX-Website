@@ -214,8 +214,8 @@ export default function EventsPage() {
               {/* Flyer Image */}
               <img
                 alt="Spring 2026 Kickoff Flyer"
-                className="w-[20rem] md:w-[30rem] -mt-36 scale-50"
-                src="UX x Nebulab Collab (1).png"
+                className="w-[20rem] md:w-[30rem] mr-4 scale-100"
+                src="uxnebcollab_laptop.webp"
                 style={{
                   display: isMobile ? "none" : "block",
                 }}
