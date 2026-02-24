@@ -170,7 +170,7 @@ export default function AboutPage() {
     },
     {
       name: "Elise Hart",
-      title: "Advisor",
+      title: "Design Advisor",
       img: "/UX_Officers/elise.svg",
       linkedIn: "https://www.linkedin.com/in/elisech/",
     },
