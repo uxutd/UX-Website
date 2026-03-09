@@ -49,6 +49,12 @@ export default function EventsPage() {
 
   const events = [
     {
+      title: "Design Principles Workshop",
+      date: "02/09/2026",
+      image: "nebulaDesignWorkshop.webp",
+      alt: "Event 21",
+    },
+    {
       title: "Spring 2026 Kickoff",
       date: "02/03/2026",
       image: "spring2026kickoffcover.jpg",
@@ -189,7 +195,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  Design Principles Workshop
+                  Interview Prep Workshop
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
@@ -198,7 +204,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  February 9th, 7pm
+                  March 9th, 7pm
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
@@ -207,15 +213,15 @@ export default function EventsPage() {
                     WebkitTextStroke: "1.75px white",
                   }}
                 >
-                  ECSS 2.305
+                  SLC 1.102
                 </h1>
               </div>
 
               {/* Flyer Image */}
               <img
-                alt="Spring 2026 Kickoff Flyer"
+                alt="Interview Workshop Flyer"
                 className="w-[20rem] md:w-[30rem] mr-4 scale-100"
-                src="uxnebcollab_laptop.webp"
+                src="interviewPrepFlyer.webp"
                 style={{
                   display: isMobile ? "none" : "block",
                 }}
