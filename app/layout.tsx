@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
-  description: siteConfig.description,
   openGraph: {
     title: siteConfig.name, // Title for the Open Graph preview
     description: siteConfig.description, // Description for the Open Graph preview
