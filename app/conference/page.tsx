@@ -56,51 +56,34 @@ export default function ConferencePage() {
   return (
     <>
       <section
-        className="text-white flex flex-col items-center justify-center min-h-screen md:min-h-[95vh] py-20 bg-cover bg-center"
-        style={{ backgroundImage: "url('/finalmap.svg')" }}
+        className="text-white flex flex-col items-center justify-center min-h-screen md:min-h-[100vh] py-20 bg-cover bg-center"
+        style={{ backgroundImage: "url('/designbetweenspacesbackground.svg')" }}
       >
         <div className="scale-90 transform">
           <div className="relative">
             <img
               alt="Conference hero design with event details"
               className="max-w-[100%] h-auto w-full md:max-w-[600px] lg:max-w-[1000px] mx-auto transform translate-y-1/8 object-contain"
-              src="/paperhero.png"
+              src="/paperhero.png" //I am not joking I just deleted the image and kept the image size the same because every other image in the container was dependent on the size of this image.
             />
-            {/* Design image positioned absolutely above the title */}
-            <img
-              alt="Decorative design elements for conference"
-              className="absolute w-[40%] max-w-[400px] top-[30%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-contain"
-              src="/design.svg"
-            />
-            {/* Uncharted title image positioned absolutely in the middle */}
+
+            {/* Design Between Spaces title image positioned absolutely in the middle */}
             <img
               alt="UXperience Conference Uncharted theme title"
-              className="absolute w-[70%] max-w-[500px] top-[58%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-contain"
-              src="/uncharted.svg"
+              className="absolute w-[70%] max-w-[500px] top-[30%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-contain"
+              src="/designbetweenspaces.svg"
             />
             {/* Ticket image positioned absolutely */}
             <img
               alt="Conference ticket registration button"
-              className="absolute w-[40%] max-w-[600px] -bottom-[5%] left-[-20px] transform translate-y-1/4 object-contain"
-              src="/ticket.svg"
-            />
-            {/* Tape image */}
-            <img
-              alt="Decorative tape element"
-              className="absolute w-[40%] max-w-[200px] top-[-40px] right-0 transform -translate-y-1/12 translate-x-1/4 object-contain"
-              src="/tape.svg"
-            />
-            {/* Path image positioned as a dotted line between Uncharted and Location */}
-            <img
-              alt="Dotted connecting path between conference elements"
-              className="absolute w-[8%] max-w-[100px] top-[70%] left-[82%] transform -translate-x-1/2 rotate-[8deg] object-contain"
-              src="/path.png"
+              className="absolute top-[65%] -bottom-[15%] left-[-20px] transform object-contain"
+              src="/designbetweenspacessignperson.svg"
             />
             {/* Location image moved further down */}
             <img
               alt="Conference location icon"
               className="rotate-[8deg] absolute w-[10%] max-w-[200px] bottom-[15px] right-[7%] transform translate-y-1/8 translate-x-1/4 object-contain"
-              src="/location.svg"
+              src="/designbetweenspaceslocation.svg"
             />
             {/* Register button */}
             <button
@@ -111,7 +94,7 @@ export default function ConferencePage() {
               <img
                 alt="Conference registration button"
                 className="w-full h-auto object-contain"
-                src="/Register.png"
+                src="/designbetweenspacesregister.svg"
               />
             </button>
           </div>
@@ -145,31 +128,9 @@ export default function ConferencePage() {
           </div>
         </div>
       )}
-      <div className="flex flex-col items-center mt-16 px-4 mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-500">
-          Celebrating 5 Years of UX Conference at UTD
-        </h1>
-        <p className="mt-6 text-lg md:text-xl text-gray-700 max-w-[600px] text-center">
-          Join us as we celebrate five incredible years of innovation,
-          collaboration, and growth in our UX community. Together, we&apos;ll
-          chart new territories and navigate the next chapters of design!
-        </p>
-        <div className="w-full max-w-[1067px] mt-8">
-          <div className="aspect-video rounded-lg shadow-lg overflow-hidden">
-            <iframe
-              allowFullScreen
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              className="w-full h-full"
-              frameBorder="0"
-              src="https://www.youtube.com/embed/mMlVFjzoF04"
-              title="YouTube video player"
-            />
-          </div>
-        </div>
-      </div>
 
-      <div className="flex flex-col items-center w-full mx-auto my-12 px-6 md:px-12 bg-[#3a5e9e] py-8 md:py-16">
-        <div className="w-full max-w-[1067px] bg-blue-100 rounded-lg p-8 shadow-lg min-h-[600px] flex flex-col justify-between items-center">
+      <div className="flex flex-col items-center w-full mx-auto px-6 md:px-12 bg-[#516ED4] py-8 md:py-16">
+        <div className="w-full max-w-[1067px] bg-[#FAD8BF] rounded-lg p-8 border border-[#F9732B] shadow-lg min-h-[600px] flex flex-col justify-between items-center">
           <h1 className="text-3xl md:text-5xl font-bold text-blue-500 text-center mb-8">
             Meet Our Speakers
           </h1>
@@ -180,7 +141,7 @@ export default function ConferencePage() {
           <img
             alt="Conference Schedule"
             className="w-full h-auto object-contain"
-            src="/conferenceschedule.svg"
+            src="/designbetweenspacesschedule.svg"
           />
         </div>
       </div>
