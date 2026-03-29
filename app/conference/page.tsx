@@ -56,10 +56,10 @@ export default function ConferencePage() {
   return (
     <>
       <section
-        className="text-white flex flex-col items-center justify-center min-h-screen md:min-h-[100vh] py-20 bg-cover bg-center"
+        className="text-white flex flex-col items-center justify-center min-h-screen md:min-h-[100vh] py-20 bg-cover bg-center scale-100"
         style={{ backgroundImage: "url('/designbetweenspacesbackground.svg')" }}
       >
-        <div className="scale-90 transform">
+        <div className="scale-100 transform"> {/* I needed a container for the div this actually scales nothing */ }
           <div className="relative">
             <img
               alt="Conference hero design with event details"
@@ -114,7 +114,7 @@ export default function ConferencePage() {
               <iframe
                 className="w-full h-full border-none"
                 loading="lazy"
-                src="https://www.eventbrite.com/e/uxperience-conference-design-uncharted-tickets-1269729879249?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl"
+                src="https://www.eventbrite.com/e/uxperience-conference-design-between-spaces-tickets-1984138544799?aff=oddtdtcreator&utm_source=ig&utm_medium=social&utm_content=link_in_bio"
                 title="UXperience Conference Eventbrite Registration Page"
               />
             </Suspense>
@@ -129,8 +129,8 @@ export default function ConferencePage() {
         </div>
       )}
 
-      <div className="flex flex-col items-center w-full mx-auto px-6 md:px-12 bg-[#516ED4] py-8 md:py-16">
-        <div className="w-full max-w-[1067px] bg-[#FAD8BF] rounded-lg p-8 border border-[#F9732B] shadow-lg min-h-[600px] flex flex-col justify-between items-center">
+      <div className="flex flex-col items-center w-full mx-auto px-6 md:px-12 bg-gradient-to-b from-[#516ED4] to-[#161E3C] py-8 md:py-16">
+        <div className="w-full max-w-[1067px] bg-[#FAD8BF] rounded-lg p-8 border border-[#F9732B] border-8 shadow-lg min-h-[600px] flex flex-col justify-between items-center">
           <h1 className="text-3xl md:text-5xl font-bold text-blue-500 text-center mb-8">
             Meet Our Speakers
           </h1>
