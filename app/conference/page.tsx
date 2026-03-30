@@ -17,39 +17,40 @@ export default function ConferencePage() {
   const testimonials = [
     {
       quote:
-        "Linh-Hoa has worked at Capital One since 2021 on various products. She holds a B.A. in Arts, Technology, and Emerging Communication with a Minor in Marketing from UT Dallas and founded the UX conference.",
-      name: "Linh-Hoa Nguyen",
-      designation: "Sr. Experience Designer at Capital One",
-      src: "/linh-hoa.jpg",
+        "",
+      name: "Gordon Clines",
+      designation: "Associate Partner, Product Design & Engineering, IBM Consulting",
+      src: "/Clines_Gordon.jpg",
+    },
+    //After Gordon, the photos are strangely thin idk but i'll come back to it.
+    {
+      quote:
+        "",
+      name: "Craig Moser",
+      designation: "UX Design Executive @ IBM",
+      src: "/preston.jpg", //Put Craig's actual photo here.
     },
     {
       quote:
-        "Brian Sullivan is the Director of Design Strategy at Sabre. He helps travel brands build products and services for the future of travel. He works with large brands including American Airlines, Hyatt Hotels, Virgin Australia, AMEX, and more.",
-      name: "Brian Sullivan",
-      designation: "Director of Design Strategy at Sabre",
-      src: "/brian.png",
+        "",
+      name: "Barbara Ruiz",
+      designation: "Senior Designer @ Cencora",
+      src: "/Ruiz_Barbara.jpg",
     },
     {
       quote:
-        "Everett Swain II is the founder of UXD Academy and Hour Table. He has over 13 years of experience working with major companies like Wayfair, 7-Eleven, and Prudential.",
-      name: "Everett Swain II",
+        "",
+      name: "Kimberly Ezeama",
       designation:
-        "Founder of UXD Academy & AI Experience Designer at Guardian Life",
-      src: "/everett.jpg",
+        "Senior Product Designer",
+      src: "/kimberly.png",
     },
     {
       quote:
-        "Averi is a UX Researcher at CBRE, driving user-centered design solutions in commercial real estate. A University of North Texas graduate, she leads CBRE's engagement with UX students across DFW universities.",
-      name: "Averi Collen",
-      designation: "UX Researcher at CBRE",
-      src: "/averi.png",
-    },
-    {
-      quote:
-        "Preston McCauley is an AI, UX, and immersive technologies expert with 25+ years of experience creating human-centered AI systems. He is also the author of Generative AI for Everyone: A Practical Guidebook.",
-      name: "Preston McCauley",
-      designation: "Director of AI and Innovation at Tonic3",
-      src: "/preston.jpg",
+        "",
+      name: "Nat Weston",
+      designation: "Independent Consultant",
+      src: "/JN_Weston.jpg",
     },
   ];
 
