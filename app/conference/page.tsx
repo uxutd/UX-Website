@@ -17,7 +17,7 @@ export default function ConferencePage() {
   const testimonials = [
     {
       quote:
-        "",
+        "Gordon has worked in various industries and has seen first-hand how accessibility needs, challenges, and opportunities can be wildly different. His talk explores how accessibility becomes a differentiating feature when designing products for individuals with unique needs rather than broad personas. He will share specific examples of this approach in practice, while also highlighting the new possibilities AI is unlocking that designers should be exploring.",
       name: "Gordon Clines",
       designation: "Associate Partner, Product Design & Engineering, IBM Consulting",
       src: "/Clines_Gordon.jpg",
@@ -25,21 +25,21 @@ export default function ConferencePage() {
     //After Gordon, the photos are strangely thin idk but i'll come back to it.
     {
       quote:
-        "",
+        "With 30 years of experience in UX, Craig’s talk challenges the industry tendency to treat accessibility as a final compliance task. He explores the vital shift toward inclusive design by considering the full spectrum of human ability from a project’s inception. Focusing on the “edges” of user experience and utilizing AI as a strategic copilot, he talks about how teams can build products that are truly usable for the full range of human experience.",
       name: "Craig Moser",
       designation: "UX Design Executive @ IBM",
       src: "/preston.jpg", //Put Craig's actual photo here.
     },
     {
       quote:
-        "",
+        "Barbara’s talk explores the necessity of inclusive design in the rapidly evolving healthcare sector. With her design experience in healthcare like Walmart Health, CVS, and Cencora, Barbara highlights the importance of designing with every user in mind. This session dives into how we can ensure no one is excluded from essential care, providing a roadmap for creating truly accessible experiences.",
       name: "Barbara Ruiz",
       designation: "Senior Designer @ Cencora",
       src: "/Ruiz_Barbara.jpg",
     },
     {
       quote:
-        "",
+        "In medicine, the first rule is to do no harm! But what does that look like in the world of digital product design? Drawing from her background in healthcare and UX, Kimberly’s session explores how we can translate clinical ethics into design to prioritize safety and accountability. This talk challenges designers to look beyond simple usability and ask how we can ensure every user is accounted for, protected, and empowered by the products we build.",
       name: "Kimberly Ezeama",
       designation:
         "Senior Product Designer",
@@ -47,7 +47,7 @@ export default function ConferencePage() {
     },
     {
       quote:
-        "",
+        "Nat has designed the UX for just about anything you can think of, including physical and voice only products. Successful design requires more than just technical skill; it demands the ability to think laterally across different platforms. This session explores how lateral thinking transforms the design process. Nat will share real examples from her diverse career to show how a curious mindset leads to more innovative, inclusive UX.",
       name: "Nat Weston",
       designation: "Independent Consultant",
       src: "/JN_Weston.jpg",
