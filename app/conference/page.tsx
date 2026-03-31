@@ -28,7 +28,7 @@ export default function ConferencePage() {
         "With 30 years of experience in UX, Craig’s talk challenges the industry tendency to treat accessibility as a final compliance task. He explores the vital shift toward inclusive design by considering the full spectrum of human ability from a project’s inception. Focusing on the “edges” of user experience and utilizing AI as a strategic copilot, he talks about how teams can build products that are truly usable for the full range of human experience.",
       name: "Craig Moser",
       designation: "UX Design Executive @ IBM",
-      src: "/preston.jpg", //Put Craig's actual photo here.
+      src: "/Moser_Craig.png",
     },
     {
       quote:
