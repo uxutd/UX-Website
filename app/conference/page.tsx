@@ -22,7 +22,6 @@ export default function ConferencePage() {
       designation: "Associate Partner, Product Design & Engineering, IBM Consulting",
       src: "/Clines_Gordon.jpg",
     },
-    //After Gordon, the photos are strangely thin idk but i'll come back to it.
     {
       quote:
         "With 30 years of experience in UX, Craig’s talk challenges the industry tendency to treat accessibility as a final compliance task. He explores the vital shift toward inclusive design by considering the full spectrum of human ability from a project’s inception. Focusing on the “edges” of user experience and utilizing AI as a strategic copilot, he talks about how teams can build products that are truly usable for the full range of human experience.",
@@ -131,11 +130,29 @@ export default function ConferencePage() {
       )}
 
       <div className="flex flex-col items-center w-full mx-auto px-6 md:px-12 bg-gradient-to-b from-[#516ED4] to-[#161E3C] py-8 md:py-16">
-        <div className="w-full max-w-[1067px] bg-[#FAD8BF] rounded-lg p-8 border border-[#F9732B] border-8 shadow-lg min-h-[600px] flex flex-col justify-between items-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-blue-500 text-center mb-8">
-            Meet Our Speakers
-          </h1>
-          <AnimatedTestimonials testimonials={testimonials} />
+        <div className="relative w-full min-h-[600px] max-w-[1067px] flex flex-col justify-center items-center">
+          <img
+            alt="Meet Our Speakers Section Title"
+            className="w-full max-w-[800px] h-auto object-contain mb-24"
+            src="/designbetweenspacesmeetourspeakers.svg"
+          />
+          <div className="absolute inset-0 w-full max-w-[800px] mx-auto pointer-events-none">
+            {/* Window panes on the side of the speakers section */}
+            <img
+              alt="Conference ticket registration button"
+              className="absolute top-[21%] -bottom-[15%] left-[-340px]"
+              src="/designbetweenspacesleftpane.svg"
+            />
+            <img
+              alt="Conference ticket registration button"
+              className="absolute top-[21%] -bottom-[15%] left-[935px]"
+              src="/designbetweenspacesrightpane.svg"
+            />
+          </div>
+
+          <div className="relative z-10 w-full max-w-[1800px] max-h-[624px] bg-[#FAD8BF] p-8 border border-[#F9732B] border-8 shadow-lg flex flex-col justify-center">
+            <AnimatedTestimonials testimonials={testimonials} />
+          </div>
         </div>
 
         <div className="mt-12 w-full max-w-[800px] scale-110">
