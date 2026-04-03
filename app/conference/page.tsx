@@ -130,6 +130,7 @@ export default function ConferencePage() {
       )}
 
       {/* Gradient section - speakers and schedule, no bottom padding */}
+      <div className="mt-2 bg-gradient-to-b from-[#FF8C00] to-[#161E3C]"></div>
       <div className="flex flex-col items-center w-full mx-auto px-6 md:px-12 bg-gradient-to-b from-[#516ED4] to-[#161E3C] pt-8 md:pt-16 pb-0">
         <div className="relative w-full min-h-[600px] max-w-[1067px] flex flex-col justify-center items-center">
           <img
