@@ -161,7 +161,7 @@ export default function ConferencePage() {
           <img
             alt="Conference Schedule"
             className="w-full h-auto object-contain"
-            src="/designbetweenspacesschedule.svg"
+            src="/designbetweenspacesschedule_ver2.svg"
           />
         </div>
       </div>
