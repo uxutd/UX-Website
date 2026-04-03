@@ -4,7 +4,6 @@ import { useState, Suspense } from "react";
 import { X } from "lucide-react";
 
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
-import { WavyBackground } from "@/components/ui/wavy-background";
 
 export default function ConferencePage() {
   const [showIframe, setShowIframe] = useState(false);
@@ -13,13 +12,13 @@ export default function ConferencePage() {
     setShowIframe(!showIframe);
   };
 
-  // Moved these components inside the main component
   const testimonials = [
     {
       quote:
         "Gordon has worked in various industries and has seen first-hand how accessibility needs, challenges, and opportunities can be wildly different. His talk explores how accessibility becomes a differentiating feature when designing products for individuals with unique needs rather than broad personas. He will share specific examples of this approach in practice, while also highlighting the new possibilities AI is unlocking that designers should be exploring.",
       name: "Gordon Clines",
-      designation: "Associate Partner, Product Design & Engineering, IBM Consulting",
+      designation:
+        "Associate Partner, Product Design & Engineering, IBM Consulting",
       src: "/Clines_Gordon.jpg",
     },
     {
@@ -40,8 +39,7 @@ export default function ConferencePage() {
       quote:
         "In medicine, the first rule is to do no harm! But what does that look like in the world of digital product design? Drawing from her background in healthcare and UX, Kimberly’s session explores how we can translate clinical ethics into design to prioritize safety and accountability. This talk challenges designers to look beyond simple usability and ask how we can ensure every user is accounted for, protected, and empowered by the products we build.",
       name: "Kimberly Ezeama",
-      designation:
-        "Senior Product Designer",
+      designation: "Senior Product Designer",
       src: "/kimberly.png",
     },
     {
@@ -59,7 +57,9 @@ export default function ConferencePage() {
         className="text-white flex flex-col items-center justify-center min-h-screen md:min-h-[100vh] py-20 bg-cover bg-center scale-100"
         style={{ backgroundImage: "url('/designbetweenspacesbackground.svg')" }}
       >
-        <div className="scale-100 transform"> {/* I needed a container for the div this actually scales nothing */ }
+        <div className="scale-100 transform">
+          {" "}
+          {/* I needed a container for the div this actually scales nothing */}
           <div className="relative">
             <img
               alt="Conference hero design with event details"
@@ -129,7 +129,8 @@ export default function ConferencePage() {
         </div>
       )}
 
-      <div className="flex flex-col items-center w-full mx-auto px-6 md:px-12 bg-gradient-to-b from-[#516ED4] to-[#161E3C] py-8 md:py-16">
+      {/* Gradient section - speakers and schedule, no bottom padding */}
+      <div className="flex flex-col items-center w-full mx-auto px-6 md:px-12 bg-gradient-to-b from-[#516ED4] to-[#161E3C] pt-8 md:pt-16 pb-0">
         <div className="relative w-full min-h-[600px] max-w-[1067px] flex flex-col justify-center items-center">
           <img
             alt="Meet Our Speakers Section Title"
@@ -137,14 +138,13 @@ export default function ConferencePage() {
             src="/designbetweenspacesmeetourspeakers.svg"
           />
           <div className="absolute inset-0 w-full max-w-[800px] mx-auto pointer-events-none">
-            {/* Window panes on the side of the speakers section */}
             <img
-              alt="Conference ticket registration button"
+              alt="Conference left pane decoration"
               className="absolute top-[21%] -bottom-[15%] left-[-340px]"
               src="/designbetweenspacesleftpane.svg"
             />
             <img
-              alt="Conference ticket registration button"
+              alt="Conference right pane decoration"
               className="absolute top-[21%] -bottom-[15%] left-[935px]"
               src="/designbetweenspacesrightpane.svg"
             />
@@ -155,7 +155,8 @@ export default function ConferencePage() {
           </div>
         </div>
 
-        <div className="mt-12 w-full max-w-[800px] scale-110">
+        {/* Schedule image (billboard) */}
+        <div className="mt-12 w-full max-w-[800px] scale-110 overflow-hidden">
           <img
             alt="Conference Schedule"
             className="w-full h-auto object-contain"
@@ -163,30 +164,21 @@ export default function ConferencePage() {
           />
         </div>
       </div>
-
-      <div className="relative mb-10 pt-16">
-        {/* Remove WavyBackground and conferencefooter for mobile */}
-        <WavyBackground className="hidden md:block w-full md:scale-100">
-          <p className="text-xl sm:text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center leading-tight" />
-          <p className="text-sm sm:text-base md:text-lg mt-2 sm:mt-3 text-white font-normal inter-var text-center leading-tight" />
-        </WavyBackground>
-        <div
-          className="hidden md:flex absolute inset-0 justify-center items-center z-10"
-          style={{ top: "100px" }}
-        >
+      <div className="w-full">
+        {/* Desktop Footer */}
+        <div className="hidden md:block">
           <img
             alt="Conference Footer"
-            className="w-[85%] max-w-[800px] h-auto object-contain mb-10 md:w-[70%] md:mb-20 mx-auto"
-            src="/conferencefooter.svg"
+            className="w-full h-auto block"
+            src="/26conference_footer_ver4.webp"
           />
         </div>
-        <div
-          className="block md:hidden"
-          style={{ marginTop: "-115px", marginBottom: "-40px" }}
-        >
+
+        {/* Mobile Footer */}
+        <div className="block md:hidden -mt-28 -mb-10">
           <img
             alt="Mobile Footer"
-            className="w-full h-auto object-contain"
+            className="w-full h-auto"
             src="/mobilefooter.svg"
           />
         </div>
