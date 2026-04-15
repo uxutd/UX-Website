@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { WavyBackground } from "@/components/ui/wavy-background";
 
-export default function ConferencePage() {
+export default function ConferencePage2025() {
   const [showIframe, setShowIframe] = useState(false);
 
   const toggleIframe = () => {

@@ -1,11 +1,14 @@
 "use client";
 
 import { useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { X } from "lucide-react";
-
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import ConferencePage2025 from "./previous-years/2025_page";
 
-export default function ConferencePage() {
+function ConferencePageContent() {
+  const searchParams = useSearchParams();
+  const edition = searchParams.get("edition") || "2026";
   const [showIframe, setShowIframe] = useState(false);
 
   const toggleIframe = () => {
@@ -50,6 +53,10 @@ export default function ConferencePage() {
       src: "/JN_Weston.jpg",
     },
   ];
+
+  if (edition === "2025") {
+    return <ConferencePage2025 />;
+  }
 
   return (
     <>
@@ -185,5 +192,13 @@ export default function ConferencePage() {
         </div>
       </div>
     </>
+  );
+}
+
+export default function ConferencePage() {
+  return (
+    <Suspense fallback={<div className="text-white p-10">Loading...</div>}>
+      <ConferencePageContent />
+    </Suspense>
   );
 }
