@@ -73,7 +73,7 @@ export default function ConferencePage() {
               className="absolute w-[70%] max-w-[500px] top-[30%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-contain"
               src="/designbetweenspaces.svg"
             />
-            {/* Ticket image positioned absolutely */}
+            {/* Person holding sign positioned absolutely */}
             <img
               alt="Conference ticket registration button"
               className="absolute top-[65%] -bottom-[15%] left-[-20px] transform object-contain"
@@ -89,7 +89,7 @@ export default function ConferencePage() {
             <button
               aria-label="Register for the conference"
               className="absolute w-[35%] max-w-[550px] -bottom-[8.5%] right-[2%] transform translate-y-1/8 translate-x-1/4 transition-transform duration-300 hover:scale-105 cursor-pointer focus:outline-none"
-              onClick={toggleIframe}
+              //onClick={toggleIframe}  !!Uncomment when you have next year's eventbrite link!!
             >
               <img
                 alt="Conference registration button"
@@ -157,7 +157,7 @@ export default function ConferencePage() {
         </div>
 
         {/* Schedule image (billboard) */}
-        <div className="mt-12 w-full max-w-[800px] scale-110 overflow-hidden">
+        <div className="mt-24 w-full max-w-[800px] scale-110 overflow-hidden">
           <img
             alt="Conference Schedule"
             className="w-full h-auto object-contain"
