@@ -49,6 +49,12 @@ export default function EventsPage() {
 
   const events = [
     {
+      title: "Design Between Spaces Conference",
+      date: "04/04/2026",
+      image: "/conference2026photo.jpg",
+      alt: "Event 23",
+    },
+    {
       title: "Interview Prep Workshop",
       date: "03/09/2026",
       image: "interviewWorkshopEvent.webp",
@@ -201,7 +207,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  Design Between Spaces Conference
+                  Unplug and Unwind Social
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
@@ -210,7 +216,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  April 4th, 9am
+                  April 27th, 7pm
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
@@ -219,15 +225,15 @@ export default function EventsPage() {
                     WebkitTextStroke: "1.75px white",
                   }}
                 >
-                  SCI Atrium
+                  ECSS 2.410
                 </h1>
               </div>
 
               {/* Flyer Image */}
               <img
-                alt="Conference Flyer"
+                alt="Unplug and Unwind Flyer"
                 className="w-[20rem] md:w-[30rem] mr-4 scale-100"
-                src="conferenceFlyer.webp"
+                src="unplugandunwind.png"
                 style={{
                   display: isMobile ? "none" : "block",
                 }}
