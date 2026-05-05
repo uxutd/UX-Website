@@ -49,6 +49,12 @@ export default function EventsPage() {
 
   const events = [
     {
+      title: "Unplug and Unwind Social",
+      date: "04/27/2026",
+      image: "/unplugandunwind.png", // Couldn't find the actual album so this'll have to do for now.
+      alt: "Event 24",
+    },    
+    {
       title: "Design Between Spaces Conference",
       date: "04/04/2026",
       image: "/conference2026photo.jpg",
