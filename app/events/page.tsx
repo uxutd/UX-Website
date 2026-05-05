@@ -207,7 +207,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  Unplug and Unwind Social
+                  See you next semester!
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
@@ -216,7 +216,7 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  April 27th, 7pm
+                  {/* ENTER Month Day, Time HERE */}
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
@@ -225,15 +225,15 @@ export default function EventsPage() {
                     WebkitTextStroke: "1.75px white",
                   }}
                 >
-                  ECSS 2.410
+                  {/* ENTER LOCATION HERE */}
                 </h1>
               </div>
 
               {/* Flyer Image */}
               <img
-                alt="Unplug and Unwind Flyer"
+                alt="See you next semester!"
                 className="w-[20rem] md:w-[30rem] mr-4 scale-100"
-                src="unplugandunwind.png"
+                src="conference 2026 officers.jpg"
                 style={{
                   display: isMobile ? "none" : "block",
                 }}
