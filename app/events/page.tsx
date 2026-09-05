@@ -10,6 +10,9 @@ import {
   useTheme,
 } from "@mui/material";
 
+import { Divider } from "./Divider";
+import { past_events as events, current_event } from "./data";
+
 export default function EventsPage() {
   const [showMore, setShowMore] = useState(false);
   const theme = useTheme();
@@ -47,148 +50,6 @@ export default function EventsPage() {
     </Typography>
   );
 
-  const events = [
-    {
-      title: "Design Between Spaces Conference",
-      date: "04/04/2026",
-      image: "/conference2026photo.jpg",
-      alt: "Event 23",
-    },
-    {
-      title: "Interview Prep Workshop",
-      date: "03/09/2026",
-      image: "interviewWorkshopEvent.webp",
-      alt: "Event 22",
-    },
-    {
-      title: "Design Principles Workshop",
-      date: "02/09/2026",
-      image: "nebulaDesignWorkshop.webp",
-      alt: "Event 21",
-    },
-    {
-      title: "Spring 2026 Kickoff",
-      date: "02/03/2026",
-      image: "spring2026kickoffcover.jpg",
-      alt: "Event 20",
-    },
-    {
-      title: "End of Semester Social",
-      date: "12/08/2025",
-      image: "F25_EOSsocial.webp",
-      alt: "Event 19",
-    },
-    {
-      title: "Portfolio Power Hour",
-      date: "11/17/2025",
-      image: "Portfolio_Power_Hour-135.jpg",
-      alt: "Event 18",
-    },
-    {
-      title: "Echoes of Tomorrow",
-      date: "10/25/2025 - 10/26/2025",
-      image: "Echoes of Tomorrow.webp",
-      alt: "Event 17",
-    },
-    {
-      title: "Between the Lines",
-      date: "09/25/2025",
-      image: "figma_workshop-06.webp",
-      alt: "Event 16",
-    },
-    {
-      title: "Fall 2025 Kickoff",
-      date: "09/08/2025",
-      image: "/fallkickoff25.jpg",
-      alt: "Event 15",
-    },
-    {
-      title: "End of Semester Social",
-      date: "04/28/2025",
-      image: "/uxclub_social.png",
-      alt: "Event 14",
-    },
-    {
-      title: "Intuit Campus Tour",
-      date: "04/11/2025",
-      image: "/intuit_campus_tour.png",
-      alt: "Event 13",
-    },
-    {
-      title: "Design Uncharted Conference",
-      date: "03/29/2025",
-      image: "/spring_2025_conference.png",
-      alt: "Event 12",
-    },
-    {
-      title: "CBRE Campus Tour",
-      date: "03/06/2025",
-      image: "/cbre_campus_tour.png",
-      alt: "Event 11",
-    },
-    {
-      title: "Portfolio Essentials",
-      date: "03/05/2025",
-      image: "/portfolioessentials.jpg",
-      alt: "Event 10",
-    },
-    {
-      title: "Design For Devs",
-      date: "02/17/2025 - 02/18/2025",
-      image: "/designfordevs.jpg",
-      alt: "Event 9",
-    },
-    {
-      title: "Spring 2025 Kickoff",
-      date: "02/03/2025",
-      image: "/springkickoff2025.jpg",
-      alt: "Event 8",
-    },
-    {
-      title: "End-of-Sem Social",
-      date: "12/02/2024",
-      image: "/eossocial.jpg",
-      alt: "Event 7",
-    },
-    {
-      title: "UXperience: The First Draft",
-      date: "11/09/2024 - 11/10/2024",
-      image: "/designathon.jpg",
-      alt: "Event 6",
-    },
-    {
-      title: "Design & Unwind Social",
-      date: "10/30/2024",
-      image: "/designandunwind.jpg",
-      alt: "Event 5",
-    },
-    {
-      title: "Design Systems Workshop",
-      date: "10/07/2024",
-      image: "/designsystems.jpg",
-      alt: "Event 4",
-      sx: { objectPosition: "center bottom", transform: "scale(1.1)" },
-    },
-    {
-      title: "Intro UX Design Workshop",
-      date: "09/30/2024",
-      image: "/introtoux.jpg",
-      alt: "Event 3",
-    },
-    {
-      title: "Figma Workshop Series",
-      date: "09/24/2024 - 11/12/2024",
-      image: "/figmaworkshop.png",
-      alt: "Event 2",
-    },
-    {
-      title: "Fall 2024 Kickoff",
-      date: "09/12/2024",
-      image: "/fallkickoff.jpg",
-      alt: "Event 1",
-    },
-  ];
-
   const visibleEvents = showMore ? events : events.slice(0, 6);
 
   return (
@@ -207,16 +68,17 @@ export default function EventsPage() {
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  Unplug and Unwind Social
+                  {current_event.headline}
                 </h1>
                 <h1
-                  className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-white"
+                  className="text-2xl md:text-[2.535rem] leading-tight mb-2 text-white"
                   style={{
                     wordSpacing: "0.65rem",
                     WebkitTextStroke: "0.25px white",
                   }}
                 >
-                  April 27th, 7pm
+                  {current_event.date}, <br />
+                  {current_event.time}
                 </h1>
                 <h1
                   className="text-2xl md:text-[2.535rem] font-semibold leading-tight mb-2 text-[#3e68fd]"
@@ -225,48 +87,32 @@ export default function EventsPage() {
                     WebkitTextStroke: "1.75px white",
                   }}
                 >
-                  ECSS 2.410
+                  {current_event.location}
                 </h1>
               </div>
 
               {/* Flyer Image */}
               <img
-                alt="Unplug and Unwind Flyer"
-                className="w-[20rem] md:w-[30rem] mr-4 scale-100"
-                src="unplugandunwind.png"
-                style={{
-                  display: isMobile ? "none" : "block",
-                }}
+                alt={current_event.headline}
+                className="hidden md:block md:max-w-[35rem] w-full h-auto mr-4"
+                src={current_event.img_url}
               />
             </div>
           </Box>
         </section>
-
-        {/* Up Next Section */}
-        <section className="flex flex-col pt-12 sm:pb-10 md:pb-20 ">
-          <img
-            alt="Arrow"
-            className="arrow-image hover:scale-105 transition ease-out"
-            src="/Arrow.png"
-          />
-          <div className="upnext-text flex justify-start px-4 md:px-20.0 mt-3">
-            <h1
-              className="text-1xl md:text-3xl font-semibold leading-tight text-[#ffffff] hover:scale-105 transition ease-out"
-              style={{
-                wordSpacing: "0.1rem",
-                WebkitTextStroke: "1.75px #3e68fd",
-              }}
-            >
+        <Divider
+          text={
+            <>
               Up next
               <br />
-              for the UX Club!
-            </h1>
-          </div>
-        </section>
+              for the UX Club
+            </>
+          }
+        />
       </section>
 
       {/* Previous Events Section */}
-      <section className="sm:py-0 md:py-20 ">
+      <section className="sm:py-0 md:py-20">
         <Box
           sx={{
             display: "flex",
