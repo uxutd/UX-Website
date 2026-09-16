@@ -182,7 +182,7 @@ export default function AboutPage() {
     <>
       {/* Intro Section */}
 
-      <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center min-h-screen md:min-h-[87.5vh] py-20">
+      <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center min-h-[60vh] md:min-h-[87.5vh] py-20">
         <div className="container mx-auto px-4 md:px-36 flex flex-col justify-center h-full animate-slide-in">
           <h1
             className="text-4xl md:text-[4.375rem] font-semibold leading-tight mb-0"
@@ -278,7 +278,7 @@ export default function AboutPage() {
         ].map((officerRow, rowIndex) => (
           <section
             key={rowIndex}
-            className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8"
+            className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8 [&>*:last-child:nth-child(odd)]:col-span-2 [&>*:last-child:nth-child(odd)]:justify-self-center"
           >
             {officerRow.map((officer, index) => (
               <div
@@ -286,11 +286,7 @@ export default function AboutPage() {
                 className="m-2 sm:m-4 relative flex flex-col items-center"
               >
                 <div className="off-wrapper grow relative">
-                  <a
-                    href={officer.linkedIn}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
+                  
                     <Image
                       alt={officer.name}
                       className={`rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square ${["tanvi", "shreya", "ananya", "tram", "sally", "rohan"].includes(officer.name.toLowerCase()) ? "object-[top_center]" : ""}`}
@@ -298,7 +294,6 @@ export default function AboutPage() {
                       src={officer.img}
                       width={250}
                     />
-                  </a>
                 </div>
                 <div className="flex justify-center mt-2">
                   <h3 className="text-sm sm:text-lg font-semibold">
@@ -308,6 +303,16 @@ export default function AboutPage() {
                 <h4 className="text-xs sm:text-sm text-center">
                   {officer.title}
                 </h4>
+                <a
+                    href={officer.linkedIn}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <img 
+                    src = "../linkedInLogo.png"
+                     className = "justify-center flex w-7 h-7">
+                    </img>
+                  </a>
               </div>
             ))}
           </section>
@@ -327,17 +332,13 @@ export default function AboutPage() {
         </section>
 
         {/* Continue with the next row (Advisors) (officersRowSix is down here instead of in the array since it is separated by "Meet the Advisors") */}
-        <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8">
+        <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8 ">
           {officersRowSix.map((officer, index) => (
             <div
               key={index}
-              className="m-2 sm:m-4 relative flex flex-col items-center"
+              className="m-2 sm:m-4 relative flex flex-col items-center "
             >
-              <a
-                href={officer.linkedIn}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+             
                 <Image
                   alt={officer.name}
                   className="rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square"
@@ -345,28 +346,33 @@ export default function AboutPage() {
                   src={officer.img}
                   width={250}
                 />
-              </a>
               <h3 className="text-sm sm:text-lg font-semibold mt-2">
                 {officer.name}
               </h3>
               <h4 className="text-xs sm:text-sm text-center">
                 {officer.title}
               </h4>
+              <a
+                    href={officer.linkedIn}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <img 
+                    src = "../linkedInLogo.png"
+                     className = "justify-center flex w-7 h-7">
+                    </img>
+                  </a>
             </div>
           ))}
         {/*officersRowSeven displays the last 3 officers (we have 6 advisors as of S26) */}
         </section>
-        <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8">
+        <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8 [&>*:last-child:nth-child(odd)]:col-span-2 [&>*:last-child:nth-child(odd)]:justify-self-center">
           {officersRowSeven.map((officer, index) => (
             <div
               key={index}
               className="m-2 sm:m-4 relative flex flex-col items-center"
             >
-              <a
-                href={officer.linkedIn}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+              
                 <Image
                   alt={officer.name}
                   className="rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square"
@@ -374,13 +380,22 @@ export default function AboutPage() {
                   src={officer.img}
                   width={250}
                 />
-              </a>
               <h3 className="text-sm sm:text-lg font-semibold mt-2">
                 {officer.name}
               </h3>
               <h4 className="text-xs sm:text-sm text-center">
                 {officer.title}
               </h4>
+              <a
+                    href={officer.linkedIn}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <img 
+                    src = "../linkedInLogo.png"
+                     className = "justify-center flex w-7 h-7">
+                    </img>
+                  </a>
             </div>
           ))}
         </section>
