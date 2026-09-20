@@ -13,8 +13,9 @@ import {
 import { cn } from "@/lib/utils";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import NumberTicker from "@/components/magicui/number-ticker";
-import WordPullUp from "@/components/magicui/word-pull-up";
 import BlurFade from "@/components/magicui/blur-fade";
+
+import WordStagger from "@/components/gsap/WordStagger";
 
 const images: string[] = [
   "/corporateTransparent/adobe.png",
@@ -63,7 +64,11 @@ export default function Home() {
         </a>
         <BlurFade>
           <div className="py-8 hover:scale-105 transition ease-out">
-            <WordPullUp
+            {/* <WordPullUp
+              className="tracking-tight inline font-semibold text-[2.3rem] lg:text-5xl leading-9 text-[#3E68FD]"
+              words="We help design the future by empowering UT Dallas students through user-centric design"
+            /> */}
+            <WordStagger
               className="tracking-tight inline font-semibold text-[2.3rem] lg:text-5xl leading-9 text-[#3E68FD]"
               words="We help design the future by empowering UT Dallas students through user-centric design"
             />
