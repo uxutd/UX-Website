@@ -1,187 +1,12 @@
-import Image from "next/image";
-
-import BlurFade from "@/components/magicui/blur-fade";
-import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
+import { officers, advisors } from "./data";
 import { WordRotate } from "@/components/ui/word-rotate";
+import OfficerGrid from "./components/OfficerGrid";
+import { SectionHeader } from "./components/SectionHeader";
 
 export default function AboutPage() {
-  const officers = [
-    {
-      name: "Vaishali Sathiyachalam",
-      title: "President",
-      img: "/UX_Officers/vai.svg",
-      linkedIn: "https://www.linkedin.com/in/vaishali-sathiyachalam/",
-    },
-    {
-      name: "Sally Nguyen",
-      title: "Vice President",
-      img: "/UX_Officers/sally.svg",
-      linkedIn: "https://www.linkedin.com/in/an-nguyen-tran/",
-    },
-    {
-      name: "Rohan Cheruku",
-      title: "Secretary",
-      img: "/UX_Officers/rohan.svg",
-      linkedIn: "https://www.linkedin.com/in/rohancheruku/",
-    },
-  ];
-
-  const officersRowTwo = [
-    {
-      name: "Aakriti Ramakrishnan",
-      title: "Finance",
-      img: "/UX_Officers/aakriti.svg",
-      linkedIn: "https://www.linkedin.com/in/aakritiramakrishnan/",
-    },
-    {
-      name: "Ankiita Murali",
-      title: "Finance",
-      img: "/UX_Officers/ankiita.svg",
-      linkedIn: "https://www.linkedin.com/in/ankiita-murali/",
-    },
-    {
-      name: "Srinaya Vemula",
-      title: "Event Coordinator",
-      img: "/UX_Officers/sri.svg",
-      linkedIn: "https://www.linkedin.com/in/srinayavemula/",
-    },
-    //{
-      //name: "???",
-      //title: "Event Coordinator",
-      //img: "/UX_Officers/srinaya.svg",
-      //linkedIn: "https://www.linkedin.com/in/srinayavemula/",
-    //},
-  ];
-
-  const officersRowThree = [
-    {
-      name: "Aamna Zaidi",
-      title: "Corporate Relations",
-      img: "/UX_Officers/aamna.svg",
-      linkedIn: "https://www.linkedin.com/in/zaamna/",
-    },
-    {
-      name: "Batrisyia Nablan",
-      title: "Corporate Relations",
-      img: "/UX_Officers/batrisyia.svg",
-      linkedIn: "https://www.linkedin.com/in/aleabatrisyianablan/",
-    },
-    {
-      name: "Alfredo Ayala",
-      title: "Student Engagement",
-      img: "/UX_Officers/fredo.svg",
-      linkedIn:
-        "https://www.linkedin.com/in/alfredo-ayala-64646464646464646464/",
-    },
-    {
-      name: "Aryan KC",
-      title: "Student Engagement",
-      img: "/UX_Officers/kc.svg",
-      linkedIn: "https://www.linkedin.com/in/aryankc/",
-    },
-  ];
-
-  const officersRowFour = [
-    {
-      name: "Vidur Nangia",
-      title: "Designer",
-      img: "/UX_Officers/vidur.svg",
-      linkedIn: "https://www.linkedin.com/in/vidur-nangia/",
-    },
-    {
-      name: "Tommy Nguyen",
-      title: "Designer",
-      img: "/UX_Officers/tommy.svg",
-      linkedIn: "https://www.linkedin.com/in/tommy-nguyen-ba899423a/",
-    },
-    {
-      name: "Sumayya Ali",
-      title: "Designer",
-      img: "/UX_Officers/sumayya.svg",
-      linkedIn: "https://www.linkedin.com/in/sumayya-ali/",
-    },
-    {
-      name: "Priyanka Jidagamu",
-      title: "Social Media Coordinator",
-      img: "/UX_Officers/priyanka.svg",
-      linkedIn: "https://www.linkedin.com/in/priyanka-jidagamu/",
-    },
-  ];
-
-  const officersRowFive = [
-    {
-      name: "Dhurga Venugopal",
-      title: "Media Coordinator",
-      img: "/UX_Officers/dhurga.svg",
-      linkedIn: "https://www.linkedin.com/in/dhurga-venugopal-4b62b42a6/",
-    },
-    {
-      name: "Bennett Feigenbaum",
-      title: "Web Developer",
-      img: "/UX_Officers/bennett.svg",
-      linkedIn: "https://www.linkedin.com/in/bennettfeigenbaum/",
-    },
-    {
-      name: "Mariamawit Dabi",
-      title: "Web Developer",
-      img: "/UX_Officers/mary.svg",
-      linkedIn: "https://www.linkedin.com/in/mariamawitdabi/",
-    },
-  ];
-  const officersRowSix = [
-    {
-      name: "Mani Vipat",
-      title: "Chief of Internal Affairs",
-      img: "/UX_Officers/mani.svg",
-      linkedIn: "https://www.linkedin.com/in/manasivipat/",
-    },
-    {
-      name: "Kshitij Kulshrestha",
-      title: "Internal Advisor",
-      img: "/UX_Officers/kk.svg",
-      linkedIn: "https://www.linkedin.com/in/kshitijkulshrestha/",
-    },
-        {
-      name: "Varshni Karthikeyan",
-      title: "Advisor",
-      img: "/UX_Officers/varshni.svg",
-      linkedIn: "https://www.linkedin.com/in/varshnik/",
-    },
-    {
-      name: "Manasa Valluru",
-      title: "Advisor",
-      img: "/UX_Officers/manasav.svg",
-      linkedIn: "https://www.linkedin.com/in/manasa-valluru-28a729201/",
-    },
-  ];
-  const officersRowSeven = [
-    {
-      name: "Shaz Kumar",
-      title: "Advisor",
-      img: "/UX_Officers/shaz.jpg",
-      linkedIn: "https://www.linkedin.com/in/shaswatkumar1/",
-    },
-
-    {
-      name: "Hiba Mubeen",
-      title: "Advisor",
-      img: "/UX_Officers/hiba.svg",
-      linkedIn: "https://www.linkedin.com/in/hiba-mubeen/",
-    },
-    {
-      name: "Elise Hart",
-      title: "Design Advisor",
-      img: "/UX_Officers/elise.svg",
-      linkedIn: "https://www.linkedin.com/in/elisech/",
-    },
-  ];
-
-  const heroWords = ["innovators", "engineers", "designers", "futurists"];
-
   return (
     <>
-      {/* Intro Section */}
-
+      {/* Hero */}
       <section className="bg-[#0C1533] text-white flex flex-col items-center justify-center min-h-[60vh] md:min-h-[87.5vh] py-20">
         <div className="container mx-auto px-4 md:px-36 flex flex-col justify-center h-full animate-slide-in">
           <h1
@@ -196,7 +21,7 @@ export default function AboutPage() {
           >
             interfaces,
           </h1>
-          <div className="inline-block flex flex-row gap-2">
+          <div className="flex flex-row gap-2">
             <h2 className="text-2xl md:text-[1.575rem] mt-2 inline-block">
               We are
             </h2>
@@ -225,21 +50,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* About Section */}
-      <main className="px-[5vw] md:px-[10vw]">
+      {/* About + Team */}
+      <main className="w-full px-[5vw] md:px-[10vw]">
         <section className="flex flex-col md:flex-row items-start justify-between gap-8 mt-12 p-6 md:pl-16">
-          {/* Image Section */}
           <div className="w-full md:w-[40%] mb-6 md:mb-0 flex-1">
             <img
               alt="About"
               className="rounded-lg mt-6 w-full h-auto"
               src="/ConferenceAbout.jpg"
-              style={{ height: "300px", width: "450px", objectFit: "cover" }}
             />
           </div>
-
-          {/* Text Section */}
-          <div className="w-full md:w-[60%] lg:w-[65%] pr-12 md:pr-16 lg:pr-24 flex-1">
+          <div className="w-full flex-1">
             <p className="text-lg leading-relaxed mt-4">
               User experience is for{" "}
               <span className="text-[#3E68FD]">everyone</span>, encompassing
@@ -254,151 +75,11 @@ export default function AboutPage() {
             </p>
           </div>
         </section>
+        <SectionHeader>Meet the Team!</SectionHeader>
+        <OfficerGrid people={officers} />
 
-        {/* Meet the Team Header */}
-        <section className="w-full flex justify-center mt-10">
-          <BlurFade>
-            <div className="py-8">
-              <AnimatedGradientText>
-                <span className="tracking-tight inline font-semibold text-[2rem] md:text-[2.3rem] lg:text-5xl leading-9 text-center inline animate-gradient bg-gradient-to-r from-[#253B75] via-[#3E68FD] to-[#253B75] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent">
-                  Meet the Team!
-                </span>
-              </AnimatedGradientText>
-            </div>
-          </BlurFade>
-        </section>
-
-        {/* Officers Sections */}
-        {[
-          officers,
-          officersRowTwo,
-          officersRowThree,
-          officersRowFour,
-          officersRowFive,
-        ].map((officerRow, rowIndex) => (
-          <section
-            key={rowIndex}
-            className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8 [&>*:last-child:nth-child(odd)]:col-span-2 [&>*:last-child:nth-child(odd)]:justify-self-center"
-          >
-            {officerRow.map((officer, index) => (
-              <div
-                key={index}
-                className="m-2 sm:m-4 relative flex flex-col items-center"
-              >
-                <div className="off-wrapper grow relative">
-                  
-                    <Image
-                      alt={officer.name}
-                      className={`rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square ${["tanvi", "shreya", "ananya", "tram", "sally", "rohan"].includes(officer.name.toLowerCase()) ? "object-[top_center]" : ""}`}
-                      height={250}
-                      src={officer.img}
-                      width={250}
-                    />
-                </div>
-                <div className="flex justify-center mt-2">
-                  <h3 className="text-sm sm:text-lg font-semibold">
-                    {officer.name}
-                  </h3>
-                </div>
-                <h4 className="text-xs sm:text-sm text-center">
-                  {officer.title}
-                </h4>
-                <a
-                    href={officer.linkedIn}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <img 
-                    src = "../linkedInLogo.png"
-                     className = "justify-center flex w-7 h-7">
-                    </img>
-                  </a>
-              </div>
-            ))}
-          </section>
-        ))}
-
-        {/* Add "Meet the Advisors" header right after row five */}
-        <section className="w-full flex justify-center mt-10">
-          <BlurFade>
-            <div className="py-8">
-              <AnimatedGradientText>
-                <span className="tracking-tight inline font-semibold text-[2rem] md:text-[2.3rem] lg:text-5xl leading-9 text-center inline animate-gradient bg-gradient-to-r from-[#253B75] via-[#3E68FD] to-[#253B75] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent">
-                  Meet the Advisors!
-                </span>
-              </AnimatedGradientText>
-            </div>
-          </BlurFade>
-        </section>
-
-        {/* Continue with the next row (Advisors) (officersRowSix is down here instead of in the array since it is separated by "Meet the Advisors") */}
-        <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8 ">
-          {officersRowSix.map((officer, index) => (
-            <div
-              key={index}
-              className="m-2 sm:m-4 relative flex flex-col items-center "
-            >
-             
-                <Image
-                  alt={officer.name}
-                  className="rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square"
-                  height={250}
-                  src={officer.img}
-                  width={250}
-                />
-              <h3 className="text-sm sm:text-lg font-semibold mt-2">
-                {officer.name}
-              </h3>
-              <h4 className="text-xs sm:text-sm text-center">
-                {officer.title}
-              </h4>
-              <a
-                    href={officer.linkedIn}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <img 
-                    src = "../linkedInLogo.png"
-                     className = "justify-center flex w-7 h-7">
-                    </img>
-                  </a>
-            </div>
-          ))}
-        {/*officersRowSeven displays the last 3 officers (we have 6 advisors as of S26) */}
-        </section>
-        <section className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-wrap justify-center text-center mt-8 [&>*:last-child:nth-child(odd)]:col-span-2 [&>*:last-child:nth-child(odd)]:justify-self-center">
-          {officersRowSeven.map((officer, index) => (
-            <div
-              key={index}
-              className="m-2 sm:m-4 relative flex flex-col items-center"
-            >
-              
-                <Image
-                  alt={officer.name}
-                  className="rounded-lg w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] object-cover aspect-square"
-                  height={250}
-                  src={officer.img}
-                  width={250}
-                />
-              <h3 className="text-sm sm:text-lg font-semibold mt-2">
-                {officer.name}
-              </h3>
-              <h4 className="text-xs sm:text-sm text-center">
-                {officer.title}
-              </h4>
-              <a
-                    href={officer.linkedIn}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <img 
-                    src = "../linkedInLogo.png"
-                     className = "justify-center flex w-7 h-7">
-                    </img>
-                  </a>
-            </div>
-          ))}
-        </section>
+        <SectionHeader>Meet the Advisors!</SectionHeader>
+        <OfficerGrid people={advisors} />
         <br />
       </main>
     </>
