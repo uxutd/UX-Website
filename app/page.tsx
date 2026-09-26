@@ -43,10 +43,14 @@ export default function Home() {
     <main className="flex flex-col items-center justify-center w-full flex-1 px-[10vw] pt-24 gap-4 text-center">
       <div className="flex flex-col items-center justify-center w-full max-w-3xl text-center p-2 leading-tight pt-12">
         <div className="flex absolute top-[10vw] left-[-10vw] hidden lg:flex">
-          <Image alt="UX Club" height={450} src="/Arrow.png" width={450} />
+          <div className="relative w-[450px] h-[450px]">
+            <Image alt="UX Club" src="/Arrow.png" fill className="object-contain" sizes="450px" loading="eager"/>
+          </div>
         </div>
         <div className="flex absolute top-[10vw] right-[-10vw] hidden lg:flex">
-          <Image alt="UX Club" height={450} src="/Pixie.png" width={450} />
+          <div className="relative w-[500px] h-[500px]">
+            <Image alt="UX Club" src="/Pixie.png" fill className="object-contain" sizes="450px" loading="eager"/>
+          </div>
         </div>
         <a href="/about">
           <BlurFade blur="30px" duration={2}>
@@ -111,11 +115,10 @@ export default function Home() {
                       <CardContent className="flex items-center justify-center text-gray-900 dark:text-gray-100">
                         <Image
                           alt={`Image ${index + 1}`}
-                          height={200} // adjust the height as per your requirements
-                          objectFit="cover" // adjust the object-fit as per your requirements
-                          src={`/ux-pic${index + 1}.png`}
-                          style={{ borderRadius: "10px" }}
-                          width={500} // adjust the width as per your requirements
+                          height={200}
+                          src={`/ux-pics${index + 1}.png`}
+                          className="rounded-[10px] object-cover"
+                          width={500}
                         />
                       </CardContent>
                     </Card>
@@ -203,13 +206,15 @@ export default function Home() {
                 className="flex items-center justify-center p-2"
                 style={{ flex: "1 0 16.66%", maxWidth: "16.66%" }}
               >
-                <Image
-                  alt={`Corporate logo ${index + 1}`}
-                  className="object-contain"
-                  height={150}
-                  src={src}
-                  width={150}
-                />
+                <div className="relative w-[150px] h-[150px]">
+                  <Image
+                    alt={`Corporate logo ${index + 1}`}
+                    className="object-contain"
+                    fill
+                    sizes="150px"
+                    src={src}
+                  />
+                </div>
               </div>
             ))}
           </div>
