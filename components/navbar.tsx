@@ -52,7 +52,6 @@ export const Navbar = () => {
                 alt="UX Club Logo"
                 className="rounded-sm"
                 height={48}
-                quality={100}
                 src={uxlogo}
                 width={48}
               />
