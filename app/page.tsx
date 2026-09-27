@@ -112,12 +112,12 @@ export default function Home() {
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div>
                     <Card>
-                      <CardContent className="flex items-center justify-center text-gray-900 dark:text-gray-100">
+                      <CardContent className="flex items-center justify-center text-gray-900 dark:text-gray-100" >
                         <Image
                           alt={`Image ${index + 1}`}
                           height={200}
-                          src={`/ux-pics${index + 1}.png`}
-                          className="rounded-[10px] object-cover"
+                          src={`/ux-picz${index + 1}.png`}
+                          className="rounded-[10px] object-fit"
                           width={500}
                         />
                       </CardContent>
