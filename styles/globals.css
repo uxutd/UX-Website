@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sarpanch:wght@700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sarpanch:wght@700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@theme {
+  --color-linear-first: #dafbff;
+  --color-linear-second: #ffd889;
+}
 
 @layer base {
   :root {
@@ -31,7 +36,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
 
   .dark {
@@ -58,10 +63,10 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
   .theme {
-    --animate-rippling: rippling var(--duration) ease-out
+    --animate-rippling: rippling var(--duration) ease-out;
   }
 }
 
@@ -91,12 +96,16 @@
 }
 
 .off-wrapper img {
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    filter 0.3s ease-in-out;
 }
 
 .off-wrapper:hover img {
   transform: scale(1.05);
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    filter 0.3s ease-in-out;
 
   /*filter: grayscale(100%); /* Slight gray overlay */
 }
@@ -119,7 +128,7 @@
 }
 
 .font-bricolage {
-  font-family: 'Bricolage Grotesque', sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
 }
 
 .grid-container {
@@ -307,8 +316,8 @@
 }
 
 .psst-text {
-  wordSpacing: "0.1rem";
-  position: 'absolute';
+  wordspacing: "0.1rem";
+  position: "absolute";
   left: 400px;
 }
 
@@ -320,9 +329,8 @@
     right: 300px;
     top: 40px;
     z-index: 1;
-    transform: 'rotate(-15deg)'
+    transform: "rotate(-15deg)";
   }
-
 }
 
 /* Shrink the arrow image for smaller screens */
@@ -364,7 +372,6 @@
     /* Optional: Center or adjust horizontally */
     transform: translateX(20%);
     /* Optional: Adjust horizontal alignment */
-
   }
 }
 
@@ -444,17 +451,16 @@
     color: #3e68fd;
     /* Fallback text color */
   }
-
 }
 
 @theme inline {
   @keyframes rippling {
-  0% {
-    opacity: 1;
+    0% {
+      opacity: 1;
     }
-  100% {
-    transform: scale(2);
-    opacity: 0;
+    100% {
+      transform: scale(2);
+      opacity: 0;
     }
   }
 }
