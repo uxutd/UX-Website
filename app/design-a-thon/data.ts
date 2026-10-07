@@ -50,7 +50,7 @@ const heroData: IHeroProps = {
 const aboutData: IAboutProps = {
   title: "What is UXPERIENCE?",
   description:
-    "UXperience is an intensive 24-hour event that compresses weeks of product design into a single day. It replaces a traditional four-week design challenge and features non-stop collaboration, workshops, and networking opportunities. Join us for an exciting 24-hour Design-a-Thon that compresses weeks of product design into a single day of creativity, teamwork, and innovation! Network with professionals, explore workshops, and have fun!",
+    "UXperience is an intensive 24-hour event that compresses weeks of product design into a single day. It replaces a traditional four-week design challenge and features non-stop collaboration, workshops, and networking opportunities.\n\nJoin us for an exciting 24-hour Design-a-Thon that compresses weeks of product design into a single day of creativity, teamwork, and innovation! Network with professionals, explore workshops, and have fun!",
 };
 
 const firstDraftData: IFirstDraftProps = {
@@ -65,33 +65,81 @@ const firstDraftData: IFirstDraftProps = {
 
 const cardData: TCard[] = [
   {
-    name: "",
-    work_position: "",
+    name: "Bob",
+    work_position: "SWE @ Fart",
+  },
+  {
+    name: "Bob",
+    work_position: "SWE @ Fart",
+  },
+  {
+    name: "Bob",
+    work_position: "SWE @ Fart",
   },
 ];
 
 const meetSpeakerData: IMeetSpeakersProps = {
   title: "Meet our Speakers",
-  subheadline: "",
+  subheadline: "Catch our amazing speakers at our design workshops!",
   cards: cardData,
 };
 
 const day_one_data: TScheduleEntry[] = [
   {
-    action: "",
+    action: "Check-In",
+    location: "ECSW Altrum",
+  },
+  {
+    action: "Opening Ceremony",
+    location: "HH Room",
+  },
+  {
+    action: "Designing Starts",
     location: "",
+  },
+  {
+    action: "Workshop",
+    location: "ECSW Altrum",
+  },
+  {
+    action: "Lunch",
+    location: "ECSW Altrum",
+  },
+  {
+    action: "Workshop",
+    location: "ECSW Altrum",
   },
 ];
 
 const day_two_data: TScheduleEntry[] = [
   {
-    action: "",
+    action: "Sleeping",
+    location: "ECSW Altrum",
+  },
+  {
+    action: "Breakfast",
+    location: "HH Room | 10am",
+  },
+  {
+    action: "Designing Starts",
     location: "",
+  },
+  {
+    action: "Workshop",
+    location: "ECSW Altrum",
+  },
+  {
+    action: "Lunch",
+    location: "ECSW Altrum",
+  },
+  {
+    action: "Workshop",
+    location: "ECSW Altrum",
   },
 ];
 
 const scheduleData: IScheduleProps = {
-  title: "",
+  title: "Schedule",
   day_one_entries: day_one_data,
   day_two_entries: day_two_data,
 };
