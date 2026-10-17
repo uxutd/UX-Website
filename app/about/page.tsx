@@ -9,7 +9,7 @@ export default function AboutPage() {
     {
       name: "Mariamawit Dabi",
       title: "President",
-      img: "/UX_Officers/mary.jpg",
+      img: "/UX_Officers/maryd.png",
       linkedIn: "https://www.linkedin.com/in/mariamawitdabi/",
     },
     {
@@ -21,7 +21,7 @@ export default function AboutPage() {
     {
       name: "Bindu Dullur",
       title: "Secretary",
-      img: "/UX_Officers/binduDullur.jpg",
+      img: "/UX_Officers/bindud.png",
       linkedIn: "https://www.linkedin.com/feed/foryou/",
     },
   ];
@@ -30,19 +30,19 @@ export default function AboutPage() {
     {
       name: "Kayla Burks",
       title: "Corporate Relations",
-      img: "/UX_Officers/kayla.jpg",
+      img: "/UX_Officers/kaylab.png",
       linkedIn: "https://www.linkedin.com/in/kayla-burks-8490b8331/",
     },
     {
       name: "Sheryl Gerald",
       title: "Corporate Relations",
-      img: "/UX_Officers/sheryl.jpg",
+      img: "/UX_Officers/sherylg.png",
       linkedIn: "https://www.linkedin.com/in/scgerxld07/",
     },
     {
       name: "Shiloh Asir",
       title: "Student Engagement",
-      img: "/UX_Officers/shilohasir.jpg",
+      img: "/UX_Officers/shiloh.png",
       linkedIn: "https://www.linkedin.com/in/shiloh-asir-4ba811406/",
     },
     //{
@@ -63,7 +63,7 @@ export default function AboutPage() {
     {
       name: "Muskan Pirani",
       title: "Event Coordinator",
-      img: "/UX_Officers/muskan.jpg",
+      img: "/UX_Officers/muskan.png",
       linkedIn: "https://www.linkedin.com/in/muskanpirani1/",
     },
     {
@@ -85,19 +85,19 @@ export default function AboutPage() {
     {
       name: "Vidur Nangia",
       title: "Designer",
-      img: "/UX_Officers/vidur.jpg",
+      img: "/UX_Officers/vidur.png",
       linkedIn: "https://www.linkedin.com/in/vidur-nangia/",
     },
     {
       name: "Tommy Nguyen",
       title: "Designer",
-      img: "/UX_Officers/tommy.jpg",
+      img: "/UX_Officers/tommy.png",
       linkedIn: "https://www.linkedin.com/in/tommy-nguyen-ba899423a/",
     },
     {
       name: "Emmalyn Ramirez",
       title: "Designer",
-      img: "/UX_Officers/emmalyn.jpg",
+      img: "/UX_Officers/emmalynr.png",
       linkedIn: "https://www.linkedin.com/in/emmalynramirez/",
     },
     // {
@@ -124,8 +124,8 @@ export default function AboutPage() {
     {
       name: "Madailein Quinn",
       title: "Web Developer",
-      img: "/UX_Officers/maddy.jpg",
-      linkedIn: "www.linkedin.com/in/quinnmadailein",
+      img: "/UX_Officers/maddy.png",
+      linkedIn: "https://www.linkedin.com/in/quinnmadailein/",
     },
   ];
   const officersRowSix = [
