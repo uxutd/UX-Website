@@ -94,7 +94,7 @@ export default function EventsPage() {
               {/* Flyer Image */}
               <img
                 alt={current_event.headline}
-                className="hidden md:block md:max-w-[35rem] w-full h-auto mr-4"
+                className="hidden md:block md:max-w-[400px] max-h-[325] object-contain shrink-0 mr-4"
                 src={current_event.img_url}
               />
             </div>
