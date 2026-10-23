@@ -53,7 +53,7 @@ function Picture({ img }: { img: number }) {
   return (
     <div className="picture absolute top-1/2 left-1/2 w-[56px] md:w-[80px] aspect-[5/8] bg-white">
       <Image
-        src={`${src}/${img}.jpg`}
+        src={`${src}/dynamic-elements/${img}.jpg`}
         alt=""
         fill
         sizes="100px"
