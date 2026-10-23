@@ -30,6 +30,14 @@ const cantora = Cantora_One({
   variable: "--font-cantora",
 });
 
+import { Megrim } from "next/font/google";
+
+const megrim = Megrim({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-megrim",
+});
+
 // Components
 
 const START_ROTATIONS = [10, 30, 80, -100, 9, 120, 89, -110];
@@ -491,7 +499,7 @@ function page() {
   return (
     <section
       id="smooth-wrapper"
-      className={`${cantora.className} shrink-0 text-black flex flex-col items-center min-h-screen`}
+      className={`${cantora.className} ${megrim.variable} shrink-0 text-black flex flex-col items-center min-h-screen`}
     >
       <Bubbles />
       <Index navItems={navItems} />

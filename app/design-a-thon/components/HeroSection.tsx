@@ -122,7 +122,7 @@ function HeroSection({ title, date, location, checkInTime }: IHeroProps) {
       </picture>
       <img
         src={`${staticSrc}/dthon_title.png`}
-        className="w-full max-w-[800px] h-auto"
+        className="w-full max-w-[900px] h-auto"
       />
       <div className="lg:px-64 w-full flex flex-col items-center gap-4 text-4xl text-white/80">
         <div className="flex flex-row items-center gap-6 md:gap-3 sm:gap-12">
