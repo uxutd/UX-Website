@@ -1,21 +1,28 @@
-import { Calendar, User2 } from "lucide-react";
-import {
-  heroData,
-  aboutData,
-  firstDraftData,
-  meetSpeakerData,
-  scheduleData,
-} from "./data";
-import type {
-  IHeroProps,
-  IAboutProps,
-  IFirstDraftProps,
-  IMeetSpeakersProps,
-  IScheduleProps,
-  TScheduleEntry,
-} from "./data";
+"use client";
+import { AboutCardSection } from "./components/AboutSection";
+import { RulesSection } from "./components/RulesSection";
+import { HeroSection } from "./components/HeroSection";
+import { MentorsSection } from "./components/MentorsSection";
+import { SponsorSection } from "./components/SponsorsSection";
+import { ScheduleSection } from "./components/ScheduleSection";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { SplitText } from "gsap/SplitText";
+import { heroData } from "./data";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollSmoother, ScrollTrigger, SplitText);
 
 import { Cantora_One } from "next/font/google";
+import { Bubbles } from "./components/SVGAssets";
+import { PartnersSection } from "./components/PartnersSection";
+
+const src = "/dthon_2026_assets";
+const gradient1 =
+  "bg-[linear-gradient(to_bottom,#4FC3D9_0%,#2A9DBF_8%,#1782A3_18%,#0E5A86_30%,#0A3D6B_42%,#072646_52%,#04142B_60%,#020A17_66%,#01050C_72%,#010307_100%)]";
+
+const gradient2 = "bg-[linear-gradient(to_bottom,#1887A6,#106186,#073B67)]";
 
 const cantora = Cantora_One({
   weight: "400",
@@ -24,166 +31,494 @@ const cantora = Cantora_One({
 });
 
 // Components
-function HeroSection({ title, date, checkInTime }: IHeroProps) {
-  return (
-    <div className="text-[#02367B] w-full min-h-screen flex flex-col items-center justify-center gap-6 text-center">
-      <h1 className="uppercase text-8xl">{title}</h1>
-      <div className="flex flex-col items-center gap-2 text-4xl">
-        <p>{date}</p>
-        <p className="flex flex-row items-center">Check-in @ {checkInTime}</p>
-      </div>
-    </div>
-  );
-}
 
-function AboutCardSection({ title, description }: IAboutProps) {
-  return (
-    <div className="w-full h-auto max-w-[1480px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 p-6 bg-white rounded-3xl">
-      <div className="h-[780] bg-zinc-100 rounded-3xl" />
-      <div className="flex flex-col items-start gap-6 min-w-0">
-        <h1 className="text-[#41BAD0] text-6xl">{title}</h1>
-        <p className="text-3xl text-left whitespace-pre-line">{description}</p>
-      </div>
-    </div>
-  );
-}
-
-function FirstDraftSection({ title, stats }: IFirstDraftProps) {
-  return (
-    <div className="w-full h-auto flex flex-col items-center gap-6 p-6 text-white">
-      <h1 className="text-6xl">{title}</h1>
-      <ul className="flex flex-col items-center gap-2">
-        {stats?.map((item, i) => (
-          <li className="text-3xl" key={i}>
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function MeetSpeakersSection({
-  title,
-  subheadline,
-  cards,
-}: IMeetSpeakersProps) {
-  return (
-    <div className="w-full max-w-6xl mx-auto flex flex-col items-center gap-16 p-6 text-center text-white">
-      <div className="flex flex-col items-center gap-4">
-        <h1 className="text-6xl">{title}</h1>
-        {subheadline && <h2 className="max-w-2xl text-2xl">{subheadline}</h2>}
-      </div>
-      <div className="w-full flex flex-wrap justify-center gap-4">
-        {cards?.map((item, i) => (
-          <div
-            key={i}
-            className="w-full sm:w-[300px] h-[420px] flex flex-col overflow-hidden bg-white text-black rounded-3xl shadow-lg"
-          >
-            <div className="h-2/3 shrink-0 flex items-center justify-center bg-zinc-100">
-              {item.img_src ? (
-                <img
-                  alt={item.name}
-                  className="w-full h-full object-cover"
-                  src={item.img_src}
-                />
-              ) : (
-                <User2 size={72} className="text-zinc-400" />
-              )}
-            </div>
-            <div className="h-1/3 flex flex-col items-center justify-center gap-1 px-2">
-              <p className="text-xl">{item.name}</p>
-              {item.work_position && (
-                <p className="text-lg text-zinc-600">{item.work_position}</p>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ScheduleEntry({ action, location }: TScheduleEntry) {
-  return (
-    <div className="w-full h-full max-h-[102px] flex flex-col gap-1 p-4 bg-white text-black rounded-3xl">
-      <p className="text-2xl font-bold">{action}</p>
-      <p className="text-xl text-black/80">
-        {location == "" ? "Any Room" : location}
-      </p>
-    </div>
-  );
-}
-
-function ScheduleSection({
-  title,
-  day_one_entries,
-  day_two_entries,
-}: IScheduleProps) {
-  return (
-    <div className="w-full max-w-7xl mx-auto flex flex-col items-center gap-10 px-6 py-24">
-      <h1 className="text-white text-6xl">{title}</h1>
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="flex flex-col gap-6">
-          <div className="w-full flex flex-col items-center text-4xl gap-4 text-white font-bold">
-            <Calendar size={36} />
-            <p>Day One</p>
-          </div>
-          {day_one_entries?.map((item, i) => (
-            <ScheduleEntry key={i} {...item} />
-          ))}
-        </div>
-        <div className="flex flex-col gap-6">
-          <div className="w-full flex flex-col items-center text-4xl gap-4 text-white font-bold">
-            <Calendar size={36} />
-            <p>Day Two</p>
-          </div>
-          {day_two_entries?.map((item, i) => (
-            <ScheduleEntry key={i} {...item} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
+const START_ROTATIONS = [10, 30, 80, -100, 9, 120, 89, -110];
 
 // Main Page
 
-function Water() {
+function Index({ navItems }: { navItems: string[] }) {
   return (
     <div
-      className="absolute inset-0 flex flex-col pointer-events-none"
-      aria-hidden="true"
+      id="dthon-index"
+      className="fixed top-1/2 -translate-y-1/2 -right-1 md:top-24 md:translate-y-0 md:right-6 z-30 flex flex-col md:gap-2 p-1 md:p-3 rounded-xl transition-colors duration-300 hover:bg-black/40 opacity-0 invisible"
     >
-      <svg
-        className="block w-full h-40 shrink-0"
-        viewBox="0 0 1440 320"
-        preserveAspectRatio="none"
-      >
-        <path
-          fill="#55E3EA"
-          d="M0,160 C240,0 480,0 720,160 S1200,320 1440,160 L1440,320 L0,320 Z"
-        />
-      </svg>
-      <div className="flex-1 -mt-px bg-[linear-gradient(to_bottom,#55E3EA_0%,#02367B_46%,#072657_56%,#0C1533_69%,#000000_89%)]" />
+      {navItems.map((item, i) => (
+        <p
+          id={`index-${item.toLowerCase()}`}
+          onClick={() =>
+            ScrollSmoother.get()?.scrollTo(
+              `#${item.toLowerCase()}-section`,
+              true,
+            )
+          }
+          key={i}
+          className="p-2 md:p-0 text-white/20 text-xs cursor-pointer underline-offset-4 transition-colors duration-200 hover:text-white [&.active]:text-white [&.active]:underline"
+        >
+          <span className="md:hidden block w-1.5 h-1.5 rounded-full bg-current" />
+          <span className="hidden md:inline">{item}</span>
+        </p>
+      ))}
     </div>
   );
 }
 
+const heroTimelineAnimation = () => {
+  // Hero
+  gsap.to("#hero-section > :not(#hero-bg):not(#hero-decoration)", {
+    opacity: 0,
+    y: -300,
+    scrollTrigger: {
+      trigger: "#hero-section",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  // Hero: kelp leans away and fades
+  const kelpOut = {
+    trigger: "#hero-section",
+    start: "top top",
+    end: "40% top",
+    scrub: true,
+  };
+
+  gsap.to(".kelp-left", {
+    // rotation: -45,
+    xPercent: -50,
+    opacity: 0,
+    // force3D: true,
+    transformOrigin: "0% 100%",
+    ease: "sine.in",
+    scrollTrigger: kelpOut,
+  });
+
+  gsap.to(".kelp-right", {
+    // rotation: 45,
+    xPercent: 50,
+    opacity: 0,
+    // force3D: true,
+    transformOrigin: "100% 100%",
+    ease: "sine.in",
+    scrollTrigger: kelpOut,
+  });
+};
+
+const bubbleTransitionAnimation = ({
+  trigger_location,
+}: {
+  trigger_location: string;
+}) => {
+  // Descent: bubbles rise between sections
+  const descent = {
+    trigger: trigger_location,
+    start: "top bottom",
+    end: "top top",
+    scrub: true,
+    invalidateOnRefresh: true,
+  };
+
+  const bubbles = gsap.utils.toArray<HTMLElement>(".bubble");
+
+  bubbles.forEach((b) => {
+    const s = gsap.utils.random(8, 40);
+    gsap.set(b, {
+      width: s,
+      height: s,
+      left: `${gsap.utils.random(0, 100)}%`,
+    });
+  });
+
+  gsap.fromTo(
+    bubbles,
+    { y: 0, x: 0 },
+    {
+      y: () => -window.innerHeight - 100,
+      x: () => gsap.utils.random(-60, 60),
+      ease: "none",
+      stagger: { each: 0.03, from: "random" },
+      immediateRender: false,
+      scrollTrigger: descent,
+    },
+  );
+};
+
+const pinAwareBackgroundAnimation = ({ target }: { target: string }) => {
+  // Background tracks scroll, but holds still during any pinned section
+  const pins = ScrollTrigger.getAll().filter((st) => st.pin);
+
+  const pinnedSoFar = (s: number) =>
+    pins.reduce(
+      (sum, st) => sum + gsap.utils.clamp(0, st.end - st.start, s - st.start),
+      0,
+    );
+
+  const resize = () => {
+    const max = ScrollTrigger.maxScroll(window);
+    gsap.set(target, { height: max - pinnedSoFar(max) + window.innerHeight });
+  };
+
+  ScrollTrigger.addEventListener("refresh", resize);
+  resize();
+
+  ScrollTrigger.create({
+    start: 0,
+    end: "max",
+    onUpdate: (self) => {
+      const s = self.scroll();
+      gsap.set(target, { y: -(s - pinnedSoFar(s)) });
+    },
+  });
+
+  return () => ScrollTrigger.removeEventListener("refresh", resize);
+};
+
+const jellyDrift = (jelly: HTMLElement) => {
+  const baby = jelly.offsetWidth < 50;
+  const range = baby ? 25 : 40;
+
+  return gsap.to(jelly, {
+    x: () => gsap.utils.random(-range, range),
+    y: () => gsap.utils.random(-range * 0.75, range * 0.75),
+    rotation: () => gsap.utils.random(-8, 8),
+    duration: baby ? gsap.utils.random(3, 5) : gsap.utils.random(6, 10),
+    ease: "sine.inOut",
+    repeat: -1,
+    repeatRefresh: true,
+  });
+};
+
+const ambientAnimation = () => {
+  const tweens: gsap.core.Tween[] = [];
+
+  // Kelp sway
+  tweens.push(
+    gsap.to("#kelp", {
+      rotation: 3,
+      transformOrigin: "50% 100%",
+      duration: 3,
+      ease: "sine.inOut",
+      repeat: -1,
+      yoyo: true,
+    }),
+  );
+
+  // Jellyfish drift (mentors jellies have their own trigger)
+  gsap.utils
+    .toArray<HTMLElement>(".jellyfish")
+    .filter((j) => !j.closest("#mentors-section"))
+    .forEach((jelly) => tweens.push(jellyDrift(jelly)));
+
+  // Fish school swims across
+  tweens.push(
+    gsap
+      .fromTo(
+        "#fishes",
+        { x: () => window.innerWidth + 100 },
+        { x: () => -600, y: "+=40", duration: 45, ease: "none", repeat: -1 },
+      )
+      .progress(0.25),
+  );
+
+  // Pause everything while the decorated sections are offscreen
+  ScrollTrigger.create({
+    trigger: "#hero-section",
+    endTrigger: "#about-section",
+    start: "top bottom",
+    end: "bottom top",
+    onToggle: (self) =>
+      tweens.forEach((t) => (self.isActive ? t.resume() : t.pause())),
+  });
+};
+
+const mentorsJellyfishAnimation = () => {
+  // Mentors: jellyfish drift, paused while the section is offscreen
+  const tweens = gsap.utils
+    .toArray<HTMLElement>("#mentors-section .jellyfish")
+    .map((jelly) => jellyDrift(jelly).pause());
+
+  ScrollTrigger.create({
+    trigger: "#mentors-section",
+    start: "top bottom",
+    end: "bottom top",
+    onToggle: (self) =>
+      tweens.forEach((t) => (self.isActive ? t.resume() : t.pause())),
+  });
+};
+
+const aboutTimelineAnimation = () => {
+  // About: setup
+  const pics = gsap.utils.toArray<HTMLElement>(".picture");
+  const paragraphs = gsap.utils.toArray<HTMLElement>(".about-paragraph");
+  const angle = (i: number) => (i / pics.length) * Math.PI * 2;
+  const radius = () => {
+    const margin = window.innerWidth < 768 ? 40 : 100;
+    return Math.min(window.innerWidth, window.innerHeight) / 2 - margin;
+  };
+
+  gsap.set(pics, {
+    xPercent: -50,
+    yPercent: -50,
+    rotation: (i) => START_ROTATIONS[i],
+  });
+
+  // About: header + cards fan out
+  // About: header in → out, then cards appear and fan out
+  const aboutTl = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#about-section",
+        start: "center center",
+        end: "+=8000",
+        scrub: true,
+        pin: true,
+        invalidateOnRefresh: true,
+      },
+    })
+    .from("#about-header", { y: 50, autoAlpha: 0 })
+    .to("#about-header", { y: -50, autoAlpha: 0, duration: 1 }, "+=2")
+    .fromTo(pics, { scale: 0 }, { scale: 1, stagger: 0.3 })
+    .to(pics, {
+      x: (i) => Math.cos(angle(i)) * radius(),
+      y: (i) => Math.sin(angle(i)) * radius(),
+      rotation: (i) => (i / pics.length) * 360,
+      stagger: 0.05,
+    })
+    .addLabel("text");
+
+  // About: paragraphs swap in place
+  paragraphs.forEach((p, i) => {
+    const words = SplitText.create(p, { type: "words" }).words;
+
+    aboutTl.from(words, { y: 100, autoAlpha: 0, stagger: 0.005 });
+
+    if (i < paragraphs.length - 1) {
+      aboutTl.to(words, { y: -100, autoAlpha: 0, stagger: 0.005 }, "+=1");
+    }
+  });
+
+  // About: ring orbits during the text, then text fades and cards explode
+  aboutTl
+    .to(
+      "#picture-rotation",
+      {
+        rotation: 180,
+        ease: "none",
+        duration: aboutTl.duration() - aboutTl.labels.text,
+      },
+      "text",
+    )
+    .to("#about-description", { opacity: 0 })
+    .to(pics, {
+      x: (i) => Math.cos(angle(i)) * radius() * 4,
+      y: (i) => Math.sin(angle(i)) * radius() * 4,
+      rotation: () => gsap.utils.random(-720, 720),
+      scale: () => gsap.utils.random(0.4, 1.6),
+      autoAlpha: 0,
+      ease: "power4.in",
+      duration: 2,
+      stagger: { each: 0.02, from: "random" },
+    });
+};
+
+const indexAnimation = ({ navItems }: { navItems: string[] }) => {
+  // Index: active state
+  navItems.forEach((item) => {
+    const name = item.toLowerCase();
+    if (!document.querySelector(`#${name}-section`)) return;
+
+    ScrollTrigger.create({
+      trigger: `#${name}-section`,
+      start: "top center",
+      end: "bottom center",
+      toggleClass: { targets: `#index-${name}`, className: "active" },
+    });
+  });
+
+  // Index: visibility
+  gsap.to("#dthon-index", {
+    autoAlpha: 1,
+    duration: 0.3,
+    scrollTrigger: {
+      trigger: "#about-section",
+      start: "top center",
+      toggleActions: "play none none reverse",
+    },
+  });
+};
+
+const partnersAnimation = () => {
+  gsap.to("#partners-track", {
+    xPercent: -50,
+    duration: 20,
+    ease: "none",
+    repeat: -1,
+  });
+};
+
+const sectionJellyfishAnimation = (section: string) => {
+  // Jellyfish drift, paused while the section is offscreen
+  const tweens = gsap.utils
+    .toArray<HTMLElement>(`${section} .jellyfish`)
+    .map((jelly) => jellyDrift(jelly).pause());
+
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top bottom",
+    end: "bottom top",
+    onToggle: (self) =>
+      tweens.forEach((t) => (self.isActive ? t.resume() : t.pause())),
+  });
+};
+
+const navbarAnimation = () => {
+  // Navbar: show on scroll up, hide when idle
+  const showNav = gsap
+    .from("#dthon-navbar", { yPercent: -100, duration: 0.3, paused: true })
+    .progress(1);
+
+  let idleTimer: ReturnType<typeof setTimeout> | undefined;
+
+  ScrollTrigger.create({
+    start: "top top",
+    end: "max",
+    onUpdate: (self) => {
+      clearTimeout(idleTimer);
+
+      if (self.direction === -1) {
+        showNav.play();
+        idleTimer = setTimeout(() => showNav.reverse(), 1500);
+      } else {
+        showNav.reverse();
+      }
+    },
+  });
+
+  return () => clearTimeout(idleTimer);
+};
+
+const rulesTimelineAnimation = () => {
+  const rules = gsap.utils.toArray<HTMLElement>(".rule");
+
+  const rulesTl = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#rules-section",
+        start: "center center",
+        end: () => `+=${rules.length * 400}`,
+        scrub: true,
+        pin: true,
+        invalidateOnRefresh: true,
+      },
+    })
+    .from("#rules-header", { y: 40, autoAlpha: 0 })
+    .addLabel("rules");
+
+  // Rules: each one surfaces, the previous one dims
+  rules.forEach((rule, i) => {
+    rulesTl.from(rule, { y: 60, autoAlpha: 0, filter: "blur(8px)" });
+    if (i > 0) rulesTl.to(rules[i - 1], { opacity: 0.3 }, "<");
+  });
+
+  // Rules: gauge fills across the whole reveal, then hold on the last rule
+  rulesTl
+    .to(
+      "#rules-gauge",
+      {
+        scaleY: 1,
+        ease: "none",
+        duration: rulesTl.duration() - rulesTl.labels.rules,
+      },
+      "rules",
+    )
+    .to({}, { duration: 0.5 });
+};
+
+const scheduleAnimation = () => {
+  gsap.utils.toArray<HTMLElement>(".schedule-col").forEach((col, c) => {
+    const side = c === 0 ? -1 : 1;
+
+    gsap.from(col.querySelectorAll(".schedule-entry"), {
+      y: 120,
+      x: 60 * side,
+      rotation: 4 * side,
+      scale: 0.9,
+      autoAlpha: 0,
+      filter: "blur(10px)",
+      stagger: 0.15,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: col,
+        start: "top 80%",
+        end: "bottom 60%",
+      },
+    });
+  });
+};
+
 function page() {
+  const navItems = ["About", "Schedule", "Rules", "Mentors", "Sponsor"];
+
+  useGSAP(() => {
+    ScrollTrigger.config({ ignoreMobileResize: true });
+    ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1.2,
+    });
+
+    heroTimelineAnimation();
+    bubbleTransitionAnimation({ trigger_location: "#about-section" });
+    aboutTimelineAnimation();
+    ambientAnimation();
+    mentorsJellyfishAnimation();
+    indexAnimation({ navItems });
+    rulesTimelineAnimation();
+    scheduleAnimation();
+    sectionJellyfishAnimation("#mentors-section");
+    sectionJellyfishAnimation("#sponsor-section");
+    partnersAnimation();
+
+    const cleanupNav = navbarAnimation();
+    const cleanupBg = pinAwareBackgroundAnimation({ target: "#page-bg" }); // keep last: needs all pins
+
+    return () => {
+      cleanupNav();
+      cleanupBg();
+    };
+  });
+
   return (
     <section
-      className={`${cantora.className} shrink-0 text-black flex flex-col items-center min-h-screen pt-20 bg-gradient-to-b from-[#dafbff] to-[#ffd889]`}
+      id="smooth-wrapper"
+      className={`${cantora.className} shrink-0 text-black flex flex-col items-center min-h-screen`}
     >
-      <HeroSection {...heroData} />
-      <div className="relative w-full">
-        <Water />
-        <div className="relative z-10 flex flex-col items-center pt-[500px] pb-64 gap-[300px]">
-          <AboutCardSection {...aboutData} />
-          <FirstDraftSection {...firstDraftData} />
-          <MeetSpeakersSection {...meetSpeakerData} />
-          <ScheduleSection {...scheduleData} />
-        </div>
+      <Bubbles />
+      <Index navItems={navItems} />
+      <div
+        id="descent-blur"
+        className="fixed inset-0 z-[15] pointer-events-none bg-[#071E3D] opacity-0"
+        style={
+          {
+            "--blur": "0px",
+            backdropFilter: "blur(var(--blur))",
+            WebkitBackdropFilter: "blur(var(--blur))",
+          } as React.CSSProperties
+        }
+      />
+
+      <div
+        id="page-bg"
+        className={`fixed inset-x-0 top-0 pointer-events-none ${gradient1}`}
+      />
+      <div id="smooth-content" className="relative w-full">
+        <HeroSection {...heroData} />
+        <AboutCardSection />
+        <ScheduleSection />
+        <RulesSection />
+        <MentorsSection />
+        <SponsorSection />
+        <PartnersSection />
       </div>
     </section>
   );

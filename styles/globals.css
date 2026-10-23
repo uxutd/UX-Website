@@ -10,6 +10,18 @@
   --color-linear-second: #ffd889;
 }
 
+/* .small {
+  @apply text-[14px];
+}
+
+.p_dthon {
+  @apply text-base/[1.48];
+}
+
+.h1_dthon {
+  @apply text-[64px]/[1.2] font-bold;
+} */
+
 @layer base {
   :root {
     --background: 0 0% 100%;
