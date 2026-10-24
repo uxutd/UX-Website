@@ -1,619 +1,565 @@
 "use client";
-import { useEffect, useState } from "react";
+import { AboutCardSection } from "./components/AboutSection";
+import { RulesSection } from "./components/RulesSection";
+import { HeroSection } from "./components/HeroSection";
+import { MentorsSection } from "./components/MentorsSection";
+import { SponsorSection } from "./components/SponsorsSection";
+import { ScheduleSection } from "./components/ScheduleSection";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { SplitText } from "gsap/SplitText";
+import { heroData } from "./data";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
-import { MorphingText } from "@/components/ui/morphing-text";
-import { MagicCard } from "@/components/ui/magic-card";
-import { Carousel } from "@/components/aceternity/carousel";
-import { Vortex } from "@/components/ui/vortex";
+gsap.registerPlugin(ScrollSmoother, ScrollTrigger, SplitText);
 
-export default function DesignPage() {
-  const [scriptLoaded, setScriptLoaded] = useState(false);
+import { Cantora_One } from "next/font/google";
+import { Bubbles } from "./components/SVGAssets";
+import { PartnersSection } from "./components/PartnersSection";
 
-  // Simple config for the ABOUT title on the left (percent-based, easy to tweak)
-  const aboutConfig = {
-    top: "25%",
-    left: "20%",
-    width: "40%", // width relative to moon image container
-    classes: "z-20 rounded-3xl p-2 text-center text-sm md:text-base",
-    style: {
-      maxWidth: 920,
-      fontFamily: "Bai Jamjuree, sans-serif" as any,
-    },
-  } as const;
+const src = "/dthon_2026_assets";
+const gradient1 =
+  "bg-[linear-gradient(to_bottom,#4FC3D9_0%,#2A9DBF_8%,#1782A3_18%,#0E5A86_30%,#0A3D6B_42%,#072646_52%,#04142B_60%,#020A17_66%,#01050C_72%,#010307_100%)]";
 
-  // Independent config for the STATSoverlay on the right
-  const aboutConfig2 = {
-    top: "23%",
-    left: "68%",
-    width: "20%",
-    // Theme colors: main B5A0FF and sub DAD0FF; softened translucency so the purple blends with the moon
-    classes:
-      "z-20 bg-gradient-to-br from-[#B5A0FF]/30 via-[#B5A0FF]/20 to-[#DAD0FF]/15 backdrop-blur-sm border border-[#B5A0FF]/8 text-black/90 rounded-2xl p-6 text-sm md:text-base",
-    // Softer shadow and lower contrast so the card reads as part of the moon surface
-    style: {
-      ...aboutConfig.style,
-      boxShadow: "0 10px 30px rgba(0,0,0,0.35)" as any,
-    },
-  } as const;
+const cantora = Cantora_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-cantora",
+});
 
-  // Independent config for the WHAT IS DESIGNATHON overlay in the center
-  const aboutConfig3 = {
-    top: "8%",
-    left: "50%",
-    width: "min(90%, 980px)",
-    // Theme colors: main #B5A0FF and sub #DAD0FF; softened translucency so the purple blends with the moon
-    classes:
-      "z-20 bg-gradient-to-br from-[#B5A0FF]/35 via-[#B5A0FF]/20 to-[#DAD0FF]/15 backdrop-blur-sm border border-[#B5A0FF]/8 text-black/90 text-center rounded-2xl p-6 text-sm md:text-base",
-    // Softer shadow and lower contrast so the card reads as part of the moon surface
-    style: {
-      ...aboutConfig.style,
-      boxShadow: "0 10px 30px rgba(0,0,0,0.35)" as any,
-    },
-  } as const;
+import { Megrim } from "next/font/google";
 
-  useEffect(() => {
-    // Hide global footer while on this page and set page-local background
-    document.body.classList.add("no-footer");
-    const previousBg = document.body.style.backgroundColor;
+const megrim = Megrim({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-megrim",
+});
 
-    // apply purple background for this page only
-    document.body.style.backgroundColor = "#ffffffff";
+// Components
 
-    return () => {
-      document.body.classList.remove("no-footer");
-      // restore previous background
-      document.body.style.backgroundColor = previousBg || "";
-    };
-  }, []);
+const START_ROTATIONS = [10, 30, 80, -100, 9, 120, 89, -110];
 
-  useEffect(() => {
-    if (document.getElementById("luma-checkout")) {
-      setScriptLoaded(true);
+// Main Page
 
-      return;
-    }
-
-    const script = document.createElement("script");
-
-    script.id = "luma-checkout";
-    script.src = "https://embed.lu.ma/checkout-button.js";
-    script.async = true;
-    script.onload = () => setScriptLoaded(true);
-    script.onerror = () => setScriptLoaded(true); //fallback
-
-    document.body.appendChild(script);
-
-    return () => {
-      const existingScript = document.getElementById("luma-checkout");
-
-      if (existingScript && existingScript === script) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
-
+function Index({ navItems }: { navItems: string[] }) {
   return (
-    <>
-      {/* Hero Section */}
-      <div
-        className="text-white py-20 bg-cover bg-center relative overflow-visible"
-        style={{ backgroundImage: "url('/dthonbackLONG.png')" }}
-      >
-        {/* Grid Container */}
-        <div className="grid grid-cols-12 grid-rows-[auto_auto_1fr_auto] min-h-[120vh] gap-6 px-6">
-          {/* Title Section */}
-          <div className="col-start-2 col-span-10 row-start-1 flex flex-col items-center justify-center mb-8">
-            <div className="mb-6 mt-24">
-              <img
-                alt="UXPERIENCE"
-                className="w-full hover:scale-105 transition ease-out max-w-2xl h-auto"
-                src="/uxperience.png"
-              />
-            </div>
-            <div className="flex flex-col hover:scale-105 active:scale-100 transition-all duration-300 ease-out">
-              <MorphingText
-                className="!text-3xl pr-80 !h-auto !max-w-16 text-center"
-                texts={["echoes of tomorrow", "october 25th-26th"]}
-              />
-            </div>
-          </div>
-
-          {/* Learn More Button */}
-          <div className="col-start-5 col-span-4 row-start-2 flex items-center justify-center mb-8">
-            <a
-              aria-label="learnMore"
-              className={`
-                luma-checkout--button 
-                transition-all duration-300 ease-out
-                inline-flex items-center justify-center
-                rounded-full 
-                shadow-2xl
-                hover:scale-105 active:scale-100
-                transform-gpu
-                ${!scriptLoaded ? "opacity-50 cursor-not-allowed" : "opacity-100 cursor-pointer"}
-              `}
-              data-luma-action="checkout"
-              data-luma-event-id="evt-2025"
-              href="https://discord.gg/dFwVTrWR"
-              role="button"
-              style={{
-                backgroundColor: "#D9D9D9",
-                color: "#000000",
-                fontFamily: "Bai Jamjuree, sans-serif",
-                fontWeight: "800",
-                padding: "12px 20px",
-                fontSize: "1.25rem",
-                minHeight: "45px",
-                width: "280px",
-                maxWidth: "380px",
-              }}
-              tabIndex={0}
-              onClick={(e) => !scriptLoaded && e.preventDefault()}
-            >
-              <div className="absolute inset-0 rounded-full overflow-hidden">
-                <MagicCard className="w-full h-full" />
-              </div>
-              <span className="relative z-10">join now!</span>
-            </a>
-          </div>
-
-          {/* Moon Section */}
-          <div className="col-span-full row-start-4 flex items-end relative">
-            <div className="relative w-full">
-              <img
-                alt="Moon Design"
-                className="w-full h-auto transform scale-70"
-                src="/moon 1.svg"
-              />
-
-              <section
-                aria-labelledby="speakers-heading"
-                className="w-full mt-60"
-                style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-              >
-                <div className="mx-auto max-w-6xl">
-                  {/* Gradient border wrapper */}
-                  <div
-                    className="
-                    relative rounded-3xl p-[1px]
-                    bg-gradient-to-br from-[#B5A0FF]/10 via-[#C8BBFF]/10 to-[#DAD0FF]/10
-                    shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-                  "
-                  >
-                    {/* Glass panel */}
-                    <div
-                      className="
-                      relative rounded-[calc(theme(borderRadius.3xl)-1px)]
-                      bg-white/10 backdrop-blur-xl
-                      ring-1 ring-white/30
-                      px-6 py-8 md:px-12 md:py-12
-                      text-black/90
-                    "
-                    >
-                      {/* Decorative glows */}
-                      <span className="pointer-events-none absolute -top-10 -left-10 h-40 w-40 rounded-full bg-[#B5A0FF]/25 blur-2xl" />
-                      <span className="pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-[#DAD0FF]/25 blur-2xl" />
-
-                      {/* Header */}
-                      <header className="text-center">
-                        <h2
-                          className="font-extrabold tracking-[-0.02em] leading-tight
-                                    text-3xl md:text-5xl lg:text-6xl"
-                          id="speakers-heading"
-                        >
-                          <span
-                            className="bg-gradient-to-r text-[#9B7FD8]   bg-clip-text"
-                            style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                          >
-                            Meet Our Speakers
-                          </span>
-                        </h2>
-                        <div className="mx-auto mt-4 mb-6 h-px w-24 bg-gradient-to-r from-transparent via-[#6A41FF]/50 to-transparent" />
-                        <p
-                          className="mx-auto max-w-2xl text-sm md:text-base text-white/70"
-                          style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                        >
-                          Catch our amazing speakers at our design workshops!
-                        </p>
-                      </header>
-
-                      {/* Carousel */}
-                      <div className="mt-10 flex justify-center">
-                        <Carousel
-                          slides={[
-                            {
-                              title: "Grace Nguyen",
-                              src: "/graceSpeaker.svg",
-                              subtitle:
-                                "Senior UX Researcher @ Baylor Scott & White Health",
-                            },
-                            {
-                              title: "Jonathan Castaneda",
-                              src: "/jonSpeaker.svg",
-                              subtitle:
-                                "Sr. Product Design Manager, Design Systems & Accessibility @ Cencora",
-                            },
-                            {
-                              title: "Averi Collens",
-                              src: "/averiSpeaker.svg",
-                              subtitle: "UX Researcher @ CBRE",
-                            },
-                            {
-                              title: "Kyle Reubens",
-                              src: "/kleSpeaker.svg",
-                              subtitle: "Freelance UX Designer",
-                            },
-                          ]}
-                          spacing="2vmin"
-                          //initialIndex={1}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* Schedule Section */}
-              <section className="relative flex flex-col items-center justify-center pt-36 pb-24 px-6">
-                {/* Decorative glow */}
-                <div className="absolute inset-0 overflow-hidden">
-                  <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(181,160,255,0.25)_0%,transparent_70%)] blur-3xl" />
-                </div>
-
-                {/* Section Heading */}
-                <div className="relative flex justify-center mt-10 mb-14">
-                  {/* Outer gradient border */}
-                  <div className="relative p-[2px] rounded-2xl bg-gradient-to-r border-white">
-                    {/* Inner translucent box */}
-                    <div className="border-[#B5A0FF]/20 bg-white/60 backdrop-blur-md shadow-[0_10px_40px_rgba(0,0,0,0.1)]  backdrop-blur-md rounded-2xl px-8 py-4 shadow-md">
-                      {/* Gradient text */}
-                      <h2
-                        className="text-5xl md:text-6xl font-extrabold text-center text-white bg-clip-text"
-                        style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                      >
-                        Design-a-thon Schedule
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Schedule Panels */}
-                <div className="flex flex-col lg:flex-row gap-10 justify-center w-full max-w-7xl px-6">
-                  {/* --- Day 1 --- */}
-                  <div
-                    className="flex flex-col w-full overflow-y-auto mx-auto p-6 rounded-3xl border border-[#B5A0FF]/20 bg-white/60 backdrop-blur-md shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-transform duration-300"
-                    style={{ maxHeight: "800px" }}
-                  >
-                    <h3
-                      className="text-3xl font-bold text-white/90 mb-8 text-center lg:text-left"
-                      style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                    >
-                      Day 1 — Saturday
-                    </h3>
-                    {[
-                      {
-                        time: "9:00 AM",
-                        event: "Student Check-In & Boothing",
-                        location: "ECSW Atrium",
-                      },
-                      {
-                        time: "10:00 AM",
-                        event: "Team Forming Workshop - UX",
-                        location: "ECSW 'Bird's Nest'",
-                      },
-                      {
-                        time: "11:00 AM",
-                        event: "Opening Ceremony",
-                        location: "ECSS 2.415",
-                      },
-                      {
-                        time: "12:00 PM",
-                        event: "Designing Starts 💙",
-                        location: "Anywhere!",
-                      },
-                      {
-                        time: "12:30 PM",
-                        event: "Lunch",
-                        location: "ECSW Atrium",
-                      },
-                      {
-                        time: "1:00 PM",
-                        event: "Workshop by Grace - Real-World UX",
-                        location: "ECSW 1.355",
-                      },
-                      {
-                        time: "2:15 PM",
-                        event: "Workshop by Averi - UX Research",
-                        location: "ECSW 1.365",
-                      },
-                      {
-                        time: "3:30 PM",
-                        event:
-                          "Workshop by Jonathan - Starting with Accessibility First",
-                        location: "ECSW 1.355",
-                      },
-                      {
-                        time: "5:00 PM",
-                        event: "Color and Connect",
-                        location: "ECSW 3.210",
-                      },
-                      {
-                        time: "6:00 PM",
-                        event: "Workshop by Kyle - Advanced Figma Techniques",
-                        location: "ECSW 1.355",
-                      },
-                      {
-                        time: "7:15 PM",
-                        event: "Fun Activity!",
-                        location: "ECSW Atrium",
-                      },
-                      {
-                        time: "8:00 PM",
-                        event: "Dinner",
-                        location: "ECSW Atrium",
-                      },
-                      {
-                        time: "10:30 PM",
-                        event: "Final Office Hours",
-                        location: "ECSW Atrium",
-                      },
-                      {
-                        time: "12:00 AM - 7:00 AM",
-                        event: "Quiet Hours",
-                        location: "",
-                      },
-                    ].map((item, index) => (
-                      <div
-                        key={index}
-                        className="bg-white/80 border border-[#B5A0FF]/20 rounded-2xl p-4 mb-4 hover:bg-[#F8F6FF] hover:shadow-md transition-all duration-300"
-                      >
-                        <div className="flex justify-between font-semibold text-[#3D2FBF]">
-                          <span
-                            className="text-[#08195E] font-bold"
-                            style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                          >
-                            {item.time}
-                          </span>
-                          <span>{item.event}</span>
-                        </div>
-                        <div
-                          className="text-gray-600 italic text-sm mt-1"
-                          style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                        >
-                          {item.location}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* --- Day 2 --- */}
-                  <div
-                    className="flex flex-col w-full overflow-y-auto mx-auto p-6 rounded-3xl border border-[#B5A0FF]/20 bg-white/60 backdrop-blur-md shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-transform duration-300"
-                    style={{ maxHeight: "800px" }}
-                  >
-                    <h3
-                      className="text-3xl font-bold text-white/90 mb-8 text-center lg:text-left"
-                      style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                    >
-                      Day 2 — Sunday
-                    </h3>
-                    {[
-                      {
-                        time: "12:00 AM - 7:00 AM",
-                        event: "Quiet Hours",
-                        location: "",
-                      },
-                      {
-                        time: "8:00 AM",
-                        event: "Breakfast!",
-                        location: "ECSW Atrium",
-                      },
-                      {
-                        time: "12:00 PM",
-                        event: "Designing Ends",
-                        location: "",
-                      },
-                      {
-                        time: "12:30 PM",
-                        event: "Lunch",
-                        location: "ECSW Atrium",
-                      },
-                      {
-                        time: "1:30 PM - 4:00 PM",
-                        event: "Judging Expo!",
-                        location: "ECSW 1.315",
-                      },
-                      {
-                        time: "5:00 PM",
-                        event: "Closing Ceremony",
-                        location: "ECSW 1.315",
-                      },
-                    ].map((item, index) => (
-                      <div
-                        key={index}
-                        className="bg-white/80 border border-[#B5A0FF]/20 rounded-2xl p-4 mb-4 hover:bg-[#F8F6FF] hover:shadow-md transition-all duration-300"
-                      >
-                        <div className="flex justify-between font-semibold text-[#3D2FBF]">
-                          <span
-                            className="text-[#08195E] font-bold"
-                            style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                          >
-                            {item.time}
-                          </span>
-                          <span>{item.event}</span>
-                        </div>
-                        <div
-                          className="text-gray-600 italic text-sm mt-1"
-                          style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                        >
-                          {item.location}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Custom Scrollbar Styling */}
-                <style>{`
-                  /* Scrollbar for WebKit browsers */
-                  div::-webkit-scrollbar {
-                    width: 10px;
-                  }
-                  div::-webkit-scrollbar-track {
-                    background: rgba(255, 255, 255, 0.5);
-                    border-radius: 9999px;
-                  }
-                  div::-webkit-scrollbar-thumb {
-                    background: linear-gradient(180deg, #b5a0ff, #6a41ff);
-                    border-radius: 9999px;
-                    border: 2px solid rgba(255, 255, 255, 0.6);
-                  }
-                  div::-webkit-scrollbar-thumb:hover {
-                    background: linear-gradient(180deg, #6a41ff, #4d2aff);
-                  }
-
-                  /* Firefox scrollbar */
-                  div {
-                    scrollbar-width: thin;
-                    scrollbar-color: #ffffffff hsla(0, 0%, 100%, 0.40);
-                  }
-                `}</style>
-              </section>
-
-              {/* Absolutely-positioned About card over the moon image */}
-              {/*<div
-                className={"absolute -translate-x-1/2 left-1/2 " + aboutConfig.classes}
-                style={{ top: aboutConfig.top, left: aboutConfig.left, width: aboutConfig.width, ...aboutConfig.style }}
-                aria-labelledby="dthon-about-title"
-              >
-                <h2 id="dthon-about-title" className="font-extrabold text-black" style={{ fontFamily: "Sarpanch, sans-serif", fontSize: "135px", lineHeight: 1 }}>About</h2>
-                <div className="mt-4">
-                </div>
-              </div>*/}
-
-              {/* Refer to aboutConfig2 for editing this one*/}
-              <div
-                aria-labelledby="dthon-about-title-2"
-                className={"absolute -translate-x-1/2 " + aboutConfig2.classes}
-                style={{
-                  top: aboutConfig2.top,
-                  left: aboutConfig2.left,
-                  width: aboutConfig2.width,
-                  ...aboutConfig2.style,
-                }}
-              >
-                <h2
-                  className="text-xl font-semibold text-black"
-                  id="dthon-about-title-2"
-                  style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                >
-                  UXperience: The First Draft (2024)
-                </h2>
-                <p
-                  className="mt-2 text-black/90"
-                  style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                >
-                  • 147+ attendees, <br /> • 39+ projects, <br /> • 20+
-                  professionals,
-                  <br /> • $1400 won in prize money
-                  <br />{" "}
-                </p>
-                <div className="mt-4" />
-              </div>
-
-              {/* Refer to aboutConfig3 for editing this one (WHAT IS DESIGNATHON CARD) */}
-              <div
-                aria-labelledby="dthon-about-title-3"
-                className={"absolute -translate-x-1/2 " + aboutConfig3.classes}
-                style={{
-                  top: aboutConfig3.top,
-                  left: aboutConfig3.left,
-                  width: aboutConfig3.width,
-                  ...aboutConfig3.style,
-                }}
-              >
-                {/* Gradient border wrapper */}
-                <div
-                  className="
-                    relative rounded-3xl p-[1px]
-                    transition-transform duration-300 ease-out hover:-translate-y-0.5
-                  "
-                >
-                  {/* Glass panel */}
-                  <div
-                    className="
-                      relative rounded-[calc(theme(borderRadius.3xl)-1px)]
-                      bg-white/10 
-                      ring-1 ring-white/30
-                      px-6 py-7 md:px-10 md:py-10
-                      text-black/90
-                    "
-                  >
-                    {/* Heading */}
-                    <h3
-                      className="
-                        font-extrabold text-black tracking-[-0.01em]
-                        text-2xl md:text-4xl lg:text-5xl leading-tight
-                      "
-                      id="dthon-about-title-3"
-                    >
-                      <span
-                        className="bg-gradient-to-r text-[#2a0d4d] bg-clip-text"
-                        style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                      >
-                        What is Designathon?
-                      </span>
-                    </h3>
-
-                    {/* Divider */}
-                    <div className="mx-auto mt-4 mb-6 h-px w-24 bg-gradient-to-r from-transparent via-[#6A41FF]/50 to-transparent" />
-
-                    {/* Body copy */}
-                    <p
-                      className="mx-auto max-w-3xl text-left md:text-center text-base md:text-lg leading-relaxed text-black/85"
-                      style={{ fontFamily: "Bai Jamjuree, sans-serif" }}
-                    >
-                      <strong className="font-semibold text-black/90">
-                        UXperience
-                      </strong>{" "}
-                      is an intensive 24-hour event that compresses weeks of
-                      product design into a single day. It replaces a
-                      traditional four-week design challenge and features
-                      non-stop collaboration, workshops, and networking
-                      opportunities.
-                      <br />
-                      <br />
-                      Join us for an exciting 24-hour Design-a-Thon that
-                      compresses weeks of product design into a single day of
-                      creativity, teamwork, and innovation! Network with
-                      professionals, explore workshops, and have fun!
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Astronaut Section */}
-          <div className="absolute right-6 mt-72 mr-80 ">
-            <img
-              alt="astronaut"
-              className="w-48 h-auto scale-85 "
-              src="/astronaut.svg"
-            />
-          </div>
-        </div>
-        <div className="w-full mx-auto h-[30rem] overflow-hidden absolute">
-          <Vortex
-            backgroundColor="black"
-            className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
-          >
-            <h2 className="text-white text-2xl md:text-5xl font-bold text-center">
-              Can&apos;t wait to see you there!
-            </h2>
-          </Vortex>
-        </div>
-      </div>
-    </>
+    <div
+      id="dthon-index"
+      className="fixed top-1/2 -translate-y-1/2 -right-1 md:top-24 md:translate-y-0 md:right-6 z-30 flex flex-col md:gap-2 p-1 md:p-3 rounded-xl transition-colors duration-300 hover:bg-black/40 opacity-0 invisible"
+    >
+      {navItems.map((item, i) => (
+        <p
+          id={`index-${item.toLowerCase()}`}
+          onClick={() =>
+            ScrollSmoother.get()?.scrollTo(
+              `#${item.toLowerCase()}-section`,
+              true,
+            )
+          }
+          key={i}
+          className="p-2 md:p-0 text-white/20 text-xs cursor-pointer underline-offset-4 transition-colors duration-200 hover:text-white [&.active]:text-white [&.active]:underline"
+        >
+          <span className="md:hidden block w-1.5 h-1.5 rounded-full bg-current" />
+          <span className="hidden md:inline">{item}</span>
+        </p>
+      ))}
+    </div>
   );
 }
+
+const heroTimelineAnimation = () => {
+  // Hero
+  gsap.to("#hero-section > :not(#hero-bg):not(#hero-decoration)", {
+    opacity: 0,
+    y: -300,
+    scrollTrigger: {
+      trigger: "#hero-section",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  // Hero: kelp leans away and fades
+  const kelpOut = {
+    trigger: "#hero-section",
+    start: "top top",
+    end: "40% top",
+    scrub: true,
+  };
+
+  gsap.to(".kelp-left", {
+    // rotation: -45,
+    xPercent: -50,
+    opacity: 0,
+    // force3D: true,
+    transformOrigin: "0% 100%",
+    ease: "sine.in",
+    scrollTrigger: kelpOut,
+  });
+
+  gsap.to(".kelp-right", {
+    // rotation: 45,
+    xPercent: 50,
+    opacity: 0,
+    // force3D: true,
+    transformOrigin: "100% 100%",
+    ease: "sine.in",
+    scrollTrigger: kelpOut,
+  });
+};
+
+const bubbleTransitionAnimation = ({
+  trigger_location,
+}: {
+  trigger_location: string;
+}) => {
+  // Descent: bubbles rise between sections
+  const descent = {
+    trigger: trigger_location,
+    start: "top bottom",
+    end: "top top",
+    scrub: true,
+    invalidateOnRefresh: true,
+  };
+
+  const bubbles = gsap.utils.toArray<HTMLElement>(".bubble");
+
+  bubbles.forEach((b) => {
+    const s = gsap.utils.random(8, 40);
+    gsap.set(b, {
+      width: s,
+      height: s,
+      left: `${gsap.utils.random(0, 100)}%`,
+    });
+  });
+
+  gsap.fromTo(
+    bubbles,
+    { y: 0, x: 0 },
+    {
+      y: () => -window.innerHeight - 100,
+      x: () => gsap.utils.random(-60, 60),
+      ease: "none",
+      stagger: { each: 0.03, from: "random" },
+      immediateRender: false,
+      scrollTrigger: descent,
+    },
+  );
+};
+
+const pinAwareBackgroundAnimation = ({ target }: { target: string }) => {
+  // Background tracks scroll, but holds still during any pinned section
+  const pins = ScrollTrigger.getAll().filter((st) => st.pin);
+
+  const pinnedSoFar = (s: number) =>
+    pins.reduce(
+      (sum, st) => sum + gsap.utils.clamp(0, st.end - st.start, s - st.start),
+      0,
+    );
+
+  const resize = () => {
+    const max = ScrollTrigger.maxScroll(window);
+    gsap.set(target, { height: max - pinnedSoFar(max) + window.innerHeight });
+  };
+
+  ScrollTrigger.addEventListener("refresh", resize);
+  resize();
+
+  ScrollTrigger.create({
+    start: 0,
+    end: "max",
+    onUpdate: (self) => {
+      const s = self.scroll();
+      gsap.set(target, { y: -(s - pinnedSoFar(s)) });
+    },
+  });
+
+  return () => ScrollTrigger.removeEventListener("refresh", resize);
+};
+
+const jellyDrift = (jelly: HTMLElement) => {
+  const baby = jelly.offsetWidth < 50;
+  const range = baby ? 25 : 40;
+
+  return gsap.to(jelly, {
+    x: () => gsap.utils.random(-range, range),
+    y: () => gsap.utils.random(-range * 0.75, range * 0.75),
+    rotation: () => gsap.utils.random(-8, 8),
+    duration: baby ? gsap.utils.random(3, 5) : gsap.utils.random(6, 10),
+    ease: "sine.inOut",
+    repeat: -1,
+    repeatRefresh: true,
+  });
+};
+
+const ambientAnimation = () => {
+  const tweens: gsap.core.Tween[] = [];
+
+  // Kelp sway
+  tweens.push(
+    gsap.to("#kelp", {
+      rotation: 3,
+      transformOrigin: "50% 100%",
+      duration: 3,
+      ease: "sine.inOut",
+      repeat: -1,
+      yoyo: true,
+    }),
+  );
+
+  // Jellyfish drift (mentors jellies have their own trigger)
+  gsap.utils
+    .toArray<HTMLElement>(".jellyfish")
+    .filter((j) => !j.closest("#mentors-section"))
+    .forEach((jelly) => tweens.push(jellyDrift(jelly)));
+
+  // Fish school swims across
+  tweens.push(
+    gsap
+      .fromTo(
+        "#fishes",
+        { x: () => window.innerWidth + 100 },
+        { x: () => -600, y: "+=40", duration: 45, ease: "none", repeat: -1 },
+      )
+      .progress(0.25),
+  );
+
+  // Pause everything while the decorated sections are offscreen
+  ScrollTrigger.create({
+    trigger: "#hero-section",
+    endTrigger: "#about-section",
+    start: "top bottom",
+    end: "bottom top",
+    onToggle: (self) =>
+      tweens.forEach((t) => (self.isActive ? t.resume() : t.pause())),
+  });
+};
+
+const mentorsJellyfishAnimation = () => {
+  // Mentors: jellyfish drift, paused while the section is offscreen
+  const tweens = gsap.utils
+    .toArray<HTMLElement>("#mentors-section .jellyfish")
+    .map((jelly) => jellyDrift(jelly).pause());
+
+  ScrollTrigger.create({
+    trigger: "#mentors-section",
+    start: "top bottom",
+    end: "bottom top",
+    onToggle: (self) =>
+      tweens.forEach((t) => (self.isActive ? t.resume() : t.pause())),
+  });
+};
+
+const aboutTimelineAnimation = () => {
+  // About: setup
+  const pics = gsap.utils.toArray<HTMLElement>(".picture");
+  const paragraphs = gsap.utils.toArray<HTMLElement>(".about-paragraph");
+  const angle = (i: number) => (i / pics.length) * Math.PI * 2;
+  const radius = () => {
+    const margin = window.innerWidth < 768 ? 40 : 100;
+    return Math.min(window.innerWidth, window.innerHeight) / 2 - margin;
+  };
+
+  gsap.set(pics, {
+    xPercent: -50,
+    yPercent: -50,
+    rotation: (i) => START_ROTATIONS[i],
+  });
+
+  // About: header + cards fan out
+  // About: header in → out, then cards appear and fan out
+  const aboutTl = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#about-section",
+        start: "center center",
+        end: "+=8000",
+        scrub: true,
+        pin: true,
+        invalidateOnRefresh: true,
+      },
+    })
+    .from("#about-header", { y: 50, autoAlpha: 0 })
+    .to("#about-header", { y: -50, autoAlpha: 0, duration: 1 }, "+=2")
+    .fromTo(pics, { scale: 0 }, { scale: 1, stagger: 0.3 })
+    .to(pics, {
+      x: (i) => Math.cos(angle(i)) * radius(),
+      y: (i) => Math.sin(angle(i)) * radius(),
+      rotation: (i) => (i / pics.length) * 360,
+      stagger: 0.05,
+    })
+    .addLabel("text");
+
+  // About: paragraphs swap in place
+  paragraphs.forEach((p, i) => {
+    const words = SplitText.create(p, { type: "words" }).words;
+
+    aboutTl.from(words, { y: 100, autoAlpha: 0, stagger: 0.005 });
+
+    if (i < paragraphs.length - 1) {
+      aboutTl.to(words, { y: -100, autoAlpha: 0, stagger: 0.005 }, "+=1");
+    }
+  });
+
+  // About: ring orbits during the text, then text fades and cards explode
+  aboutTl
+    .to(
+      "#picture-rotation",
+      {
+        rotation: 180,
+        ease: "none",
+        duration: aboutTl.duration() - aboutTl.labels.text,
+      },
+      "text",
+    )
+    .to("#about-description", { opacity: 0 })
+    .to(pics, {
+      x: (i) => Math.cos(angle(i)) * radius() * 4,
+      y: (i) => Math.sin(angle(i)) * radius() * 4,
+      rotation: () => gsap.utils.random(-720, 720),
+      scale: () => gsap.utils.random(0.4, 1.6),
+      autoAlpha: 0,
+      ease: "power4.in",
+      duration: 2,
+      stagger: { each: 0.02, from: "random" },
+    });
+};
+
+const indexAnimation = ({ navItems }: { navItems: string[] }) => {
+  // Index: active state
+  navItems.forEach((item) => {
+    const name = item.toLowerCase();
+    if (!document.querySelector(`#${name}-section`)) return;
+
+    ScrollTrigger.create({
+      trigger: `#${name}-section`,
+      start: "top center",
+      end: "bottom center",
+      toggleClass: { targets: `#index-${name}`, className: "active" },
+    });
+  });
+
+  // Index: visibility
+  gsap.to("#dthon-index", {
+    autoAlpha: 1,
+    duration: 0.3,
+    scrollTrigger: {
+      trigger: "#about-section",
+      start: "top center",
+      toggleActions: "play none none reverse",
+    },
+  });
+};
+
+const partnersAnimation = () => {
+  gsap.to("#partners-track", {
+    xPercent: -50,
+    duration: 50,
+    ease: "none",
+    repeat: -1,
+  });
+};
+
+const sectionJellyfishAnimation = (section: string) => {
+  // Jellyfish drift, paused while the section is offscreen
+  const tweens = gsap.utils
+    .toArray<HTMLElement>(`${section} .jellyfish`)
+    .map((jelly) => jellyDrift(jelly).pause());
+
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top bottom",
+    end: "bottom top",
+    onToggle: (self) =>
+      tweens.forEach((t) => (self.isActive ? t.resume() : t.pause())),
+  });
+};
+
+const navbarAnimation = () => {
+  // Navbar: show on scroll up, hide when idle
+  const showNav = gsap
+    .from("#dthon-navbar", { yPercent: -100, duration: 0.3, paused: true })
+    .progress(1);
+
+  let idleTimer: ReturnType<typeof setTimeout> | undefined;
+
+  ScrollTrigger.create({
+    start: "top top",
+    end: "max",
+    onUpdate: (self) => {
+      clearTimeout(idleTimer);
+
+      if (self.direction === -1) {
+        showNav.play();
+        idleTimer = setTimeout(() => showNav.reverse(), 1500);
+      } else {
+        showNav.reverse();
+      }
+    },
+  });
+
+  return () => clearTimeout(idleTimer);
+};
+
+const rulesTimelineAnimation = () => {
+  const rules = gsap.utils.toArray<HTMLElement>(".rule");
+
+  const rulesTl = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#rules-section",
+        start: "center center",
+        end: () => `+=${rules.length * 400}`,
+        scrub: true,
+        pin: true,
+        invalidateOnRefresh: true,
+      },
+    })
+    .from("#rules-header", { y: 40, autoAlpha: 0 })
+    .addLabel("rules");
+
+  // Rules: each one surfaces, the previous one dims
+  rules.forEach((rule, i) => {
+    rulesTl.from(rule, { y: 60, autoAlpha: 0, filter: "blur(8px)" });
+    if (i > 0) rulesTl.to(rules[i - 1], { opacity: 0.3 }, "<");
+  });
+
+  // Rules: gauge fills across the whole reveal, then hold on the last rule
+  rulesTl
+    .to(
+      "#rules-gauge",
+      {
+        scaleY: 1,
+        ease: "none",
+        duration: rulesTl.duration() - rulesTl.labels.rules,
+      },
+      "rules",
+    )
+    .to({}, { duration: 0.5 });
+};
+
+const scheduleAnimation = () => {
+  gsap.utils.toArray<HTMLElement>(".schedule-col").forEach((col, c) => {
+    const side = c === 0 ? -1 : 1;
+
+    gsap.from(col.querySelectorAll(".schedule-entry"), {
+      y: 120,
+      x: 60 * side,
+      rotation: 4 * side,
+      scale: 0.9,
+      autoAlpha: 0,
+      filter: "blur(10px)",
+      stagger: 0.15,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: col,
+        start: "top 80%",
+        end: "bottom 60%",
+      },
+    });
+  });
+};
+
+const thanksAnimation = () => {
+  const words = SplitText.create("#thanks-title", { type: "words" }).words;
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#thanks",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    })
+    .from(".thanks-line", {
+      scaleX: 0,
+      transformOrigin: (i) => (i === 0 ? "100% 50%" : "0% 50%"),
+      duration: 0.8,
+      ease: "power2.out",
+    })
+    .from(
+      words,
+      { y: 40, autoAlpha: 0, duration: 0.9, stagger: 0.15, ease: "power3.out" },
+      "<0.2",
+    )
+    .from("#thanks-sub", { autoAlpha: 0, y: 12, duration: 0.6 }, "-=0.4");
+};
+
+function page() {
+  const navItems = [
+    "About",
+    "Schedule",
+    "Rules",
+    "Mentors",
+    "Sponsor",
+    "Partners",
+  ];
+
+  useGSAP(() => {
+    ScrollTrigger.config({ ignoreMobileResize: true });
+    ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1.2,
+    });
+
+    heroTimelineAnimation();
+    bubbleTransitionAnimation({ trigger_location: "#about-section" });
+    aboutTimelineAnimation();
+    ambientAnimation();
+    mentorsJellyfishAnimation();
+    indexAnimation({ navItems });
+    rulesTimelineAnimation();
+    scheduleAnimation();
+    sectionJellyfishAnimation("#mentors-section");
+    sectionJellyfishAnimation("#sponsor-section");
+    partnersAnimation();
+
+    const cleanupNav = navbarAnimation();
+    const cleanupBg = pinAwareBackgroundAnimation({ target: "#page-bg" }); // keep last: needs all pins
+
+    return () => {
+      cleanupNav();
+      cleanupBg();
+    };
+  });
+
+  return (
+    <section
+      id="smooth-wrapper"
+      className={`${cantora.className} ${megrim.variable} shrink-0 text-black flex flex-col items-center min-h-screen`}
+    >
+      <Bubbles />
+      <Index navItems={navItems} />
+      <div
+        id="descent-blur"
+        className="fixed inset-0 z-[15] pointer-events-none bg-[#071E3D] opacity-0"
+        style={
+          {
+            "--blur": "0px",
+            backdropFilter: "blur(var(--blur))",
+            WebkitBackdropFilter: "blur(var(--blur))",
+          } as React.CSSProperties
+        }
+      />
+
+      <div
+        id="page-bg"
+        className={`fixed inset-x-0 top-0 pointer-events-none ${gradient1}`}
+      />
+      <div id="smooth-content" className="relative w-full">
+        <HeroSection {...heroData} />
+        <AboutCardSection />
+        <ScheduleSection />
+        <RulesSection />
+        <MentorsSection />
+        <SponsorSection />
+        <PartnersSection />
+      </div>
+    </section>
+  );
+}
+
+export default page;

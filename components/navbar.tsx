@@ -23,6 +23,7 @@ import uxlogo from "../public/UX_Color_Logo.svg"; // Correct image import
 
 import { siteConfig } from "@/config/site";
 import { DiscordIcon, InstagramIcon } from "@/components/icons";
+import { useGSAP } from "@gsap/react";
 
 export const Navbar = () => {
   const pathname = usePathname(); // Get the current pathname
@@ -30,18 +31,31 @@ export const Navbar = () => {
 
   useEffect(() => {
     // Fade-in effect
-    const timer = setTimeout(() => setIsVisible(true), 100); // Delay to allow for the transition
+    const timer = setTimeout(() => setIsVisible(true), 100);
 
     return () => clearTimeout(timer);
   }, []);
 
+  const isDthon = pathname.startsWith("/design-a-thon");
+
   return (
     <motion.div
-      animate={{ opacity: 1, y: 0 }} // Animate to full opacity and position
-      initial={{ opacity: 0, y: -10 }} // Initial state: transparent and slightly above
-      transition={{ duration: 0.5 }} // Transition duration
+      className={isDthon ? "fixed inset-x-0 top-0 z-50" : undefined}
+      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.5 }}
     >
-      <NextUINavbar maxWidth="xl" position="sticky">
+      <NextUINavbar
+        id={isDthon ? "dthon-navbar" : undefined}
+        maxWidth="xl"
+        position="sticky"
+        isBlurred={!isDthon}
+        classNames={
+          isDthon
+            ? { base: "bg-transparent [&_a]:!text-white [&_svg]:!text-white" }
+            : undefined
+        }
+      >
         <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
           <NavbarBrand as="li" className="gap-3 max-w-fit">
             <NextLink
