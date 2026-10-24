@@ -96,13 +96,13 @@ function AboutCardSection() {
       >
         <h1
           id="about-header"
-          className="absolute bottom-full mb-6 text-white font-light text-2xl md:text-[32px] whitespace-nowrap"
+          className="absolute bottom-full mb-6 text-white font-light text-xl min-[400px]:text-2xl md:text-[32px] whitespace-nowrap"
         >
           {aboutData.title}
         </h1>
         <div
           id="about-description"
-          className="grid max-w-xs md:max-w-md text-lg md:text-[24px] text-center text-white"
+          className="grid max-w-xs md:max-w-md text-base min-[400px]:text-lg md:text-[24px] text-center text-white"
         >
           {aboutData.description.map((paragraph, i) => (
             <p key={i} className="about-paragraph [grid-area:1/1]">

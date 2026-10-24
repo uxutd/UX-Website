@@ -1,15 +1,18 @@
-import { Clock, MapPin, CalendarDays } from "lucide-react";
+import { Clock, MapPin, CalendarDays, ArrowRight } from "lucide-react";
 import { IHeroProps } from "../data";
 import Link from "next/link";
 import { KelpLeftSvg, KelpRightSvg, JellyfishSvg, Fish } from "./SVGAssets";
 
 const src = "/dthon_2026_assets";
 const staticSrc = `${src}/static-elements`;
+const itinerarySrc = `${src}/itinerary`;
 const mobileStaticSrc = `${src}/mobile-static`;
 const background_hero = `${staticSrc}/HeroSection.png`;
 const mobile_hero = `${mobileStaticSrc}/HeroMobile.png`;
 const register_link =
   "https://luma.com/7hyx0qbk?fbclid=PAdGRleAVHwqZleHRuA2FlbQIxMQBwZG9mAmZkaWQWUQ0m1FyBSRRQpu4_IXDxzSnK-HyVYnNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABpxaG-kovFSkHs_qE7nkqNxPJ48gAno51Wp-SukcIZoNHaRaXXP_itf6reSiD_aem_Q36tztPfXpZdTDBDZzPMnQ&utm_content=link_in_bio&utm_id=97760_v0_s00_e0_tv3_a1dennhbnq5t2d&utm_medium=social&utm_source=ig";
+
+const discord_link = "https://discord.gg/tU2aHaxQ4";
 
 type TIconBox = {
   icon: React.ReactNode;
@@ -27,7 +30,7 @@ function InfoBox({ icon, data }: TIconBox) {
 function Decoration() {
   const FISH = Array.from({ length: 24 }, (_, i) => ({
     x: `${((i * 37) % 14) - 2}%`,
-    y: `${20 + ((i * 53) % 12)}%`,
+    y: `${10 + ((i * 53) % 12)}%`,
     size: 20 + (i % 3) * 2,
   }));
   const far = "linear-gradient(to bottom, #2E6E6A, #08262A)";
@@ -67,7 +70,7 @@ function Decoration() {
         <JellyfishSvg x="81%" y="60%" size={26} rotate={-5} />
       </div>
 
-      <div className="absolute inset-0 origin-top-left scale-[0.7] md:scale-100">
+      <div className="absolute inset-0 -z-[5] origin-top-left scale-[0.7] md:scale-100">
         {FISH.map((fish, i) => (
           <Fish key={i} {...fish} />
         ))}
@@ -92,14 +95,21 @@ function Decoration() {
 function Button({
   children,
   href,
+  primary,
 }: {
   children: React.ReactNode;
   href: string;
+  primary?: boolean;
 }) {
   return (
     <Link
       href={href}
-      className="inline-block px-6 py-3 md:px-4 md:py-2 min-h-11 md:min-h-0 text-sm border border-zinc-100 rounded-xl"
+      target="_blank"
+      className={`inline-block px-6 py-3 md:px-4 md:py-2 min-h-11 md:min-h-0 text-sm rounded-xl transition-colors ${
+        primary
+          ? "bg-[#0D3F41] text-white border border-[#2E6E6A] hover:bg-[#14585B]"
+          : "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
+      }`}
     >
       {children}
     </Link>
@@ -125,13 +135,27 @@ function HeroSection({ title, date, location, checkInTime }: IHeroProps) {
         className="w-full max-w-[900px] h-auto"
       />
       <div className="lg:px-64 w-full flex flex-col items-center gap-4 text-4xl text-white/80">
-        <div className="flex flex-row items-center gap-6 md:gap-3 sm:gap-12">
+        <div className="flex flex-row flex-wrap justify-center items-center gap-x-4 gap-y-2 md:gap-x-8">
           <InfoBox icon={<CalendarDays size={16} />} data={date} />
           <InfoBox icon={<Clock size={16} />} data={checkInTime} />
           <InfoBox icon={<MapPin size={16} />} data={location} />
         </div>
-        <div className="text-white flex flex-col md:flex-row gap-6 md:gap-4 mt-6">
-          <Button href={register_link}>Sign Up</Button>
+        <div className="text-white flex flex-col items-center gap-8 md:gap-4 mt-6">
+          <div className="flex flex-col md:flex-row gap-3 md:gap-4 w-full max-w-xs md:w-auto md:max-w-none">
+            <Button primary href={register_link}>
+              Sign Up
+            </Button>
+            <Button href={`${itinerarySrc}/Designer Guide.pdf`}>
+              View Itinerary
+            </Button>
+          </div>
+          <Link
+            href={discord_link}
+            target="_blank"
+            className="inline-flex items-center gap-1 text-xs text-white/70 hover:text-white transition-colors"
+          >
+            Join Discord <ArrowRight size={12} />
+          </Link>
         </div>
       </div>
       <Decoration />
