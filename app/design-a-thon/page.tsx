@@ -1,4 +1,5 @@
 "use client";
+import { useRef, useState } from "react";
 import { AboutCardSection } from "./components/AboutSection";
 import { RulesSection } from "./components/RulesSection";
 import { HeroSection } from "./components/HeroSection";
@@ -43,28 +44,97 @@ const START_ROTATIONS = [10, 30, 80, -100, 9, 120, 89, -110];
 // Main Page
 
 function Index({ navItems }: { navItems: string[] }) {
+  const railRef = useRef<HTMLDivElement>(null);
+  const suppressClick = useRef(false);
+  // Mobile scrubber state: which dot the finger is over, and its viewport y.
+  const [drag, setDrag] = useState<{ index: number; y: number } | null>(null);
+
+  // Navigate to a section, whether or not ScrollSmoother is running (phones
+  // skip it, so fall back to native scrollIntoView).
+  const goTo = (name: string) => {
+    const smoother = ScrollSmoother.get();
+    if (smoother) smoother.scrollTo(`#${name}-section`, true);
+    else
+      document
+        .getElementById(`${name}-section`)
+        ?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // The dot whose center is nearest the finger.
+  const dotAt = (clientY: number) => {
+    const dots = railRef.current?.querySelectorAll<HTMLElement>("[data-dot]");
+    if (!dots?.length) return 0;
+    let best = 0;
+    let bestDist = Infinity;
+    dots.forEach((el, i) => {
+      const r = el.getBoundingClientRect();
+      const d = Math.abs(clientY - (r.top + r.height / 2));
+      if (d < bestDist) {
+        bestDist = d;
+        best = i;
+      }
+    });
+    return best;
+  };
+
+  const track = (e: React.TouchEvent) => {
+    const t = e.touches[0];
+    setDrag({ index: dotAt(t.clientY), y: t.clientY });
+  };
+
+  const release = (e: React.TouchEvent) => {
+    if (drag) goTo(navItems[drag.index].toLowerCase());
+    setDrag(null);
+    // Swallow the click the browser synthesizes after a touch so it can't
+    // re-navigate to the dot where the finger first landed.
+    suppressClick.current = true;
+    e.preventDefault();
+  };
+
   return (
-    <div
-      id="dthon-index"
-      className="fixed top-1/2 -translate-y-1/2 -right-1 md:top-24 md:translate-y-0 md:right-6 z-30 flex flex-col md:gap-2 p-1 md:p-3 rounded-xl transition-colors duration-300 hover:bg-black/40 opacity-0 invisible"
-    >
-      {navItems.map((item, i) => (
-        <p
-          id={`index-${item.toLowerCase()}`}
-          onClick={() =>
-            ScrollSmoother.get()?.scrollTo(
-              `#${item.toLowerCase()}-section`,
-              true,
-            )
-          }
-          key={i}
-          className="p-2 md:p-0 text-white/20 text-xs cursor-pointer underline-offset-4 transition-colors duration-200 hover:text-white [&.active]:text-white [&.active]:underline"
+    <>
+      <div
+        ref={railRef}
+        id="dthon-index"
+        onTouchStart={track}
+        onTouchMove={track}
+        onTouchEnd={release}
+        className="fixed top-1/2 -translate-y-1/2 -right-1 md:top-24 md:translate-y-0 md:right-6 z-30 flex flex-col md:gap-2 p-1 md:p-3 rounded-xl transition-colors duration-300 hover:bg-black/40 opacity-0 invisible touch-none md:touch-auto"
+      >
+        {navItems.map((item, i) => (
+          <p
+            id={`index-${item.toLowerCase()}`}
+            onClick={() => {
+              if (suppressClick.current) {
+                suppressClick.current = false;
+                return;
+              }
+              goTo(item.toLowerCase());
+            }}
+            key={i}
+            className="p-2 md:p-0 text-white/20 text-xs cursor-pointer underline-offset-4 transition-colors duration-200 hover:text-white [&.active]:text-white [&.active]:underline"
+          >
+            <span
+              data-dot
+              className={`md:hidden block rounded-full bg-current transition-all duration-150 ${
+                drag?.index === i ? "w-3 h-3 text-white" : "w-1.5 h-1.5"
+              }`}
+            />
+            <span className="hidden md:inline">{item}</span>
+          </p>
+        ))}
+      </div>
+
+      {/* Mobile scrubber label pill, floating next to the finger */}
+      {drag && (
+        <div
+          className="md:hidden fixed right-9 z-40 -translate-y-1/2 pointer-events-none rounded-full bg-black/80 px-3 py-1 text-xs text-white whitespace-nowrap shadow-lg"
+          style={{ top: drag.y }}
         >
-          <span className="md:hidden block w-1.5 h-1.5 rounded-full bg-current" />
-          <span className="hidden md:inline">{item}</span>
-        </p>
-      ))}
-    </div>
+          {navItems[drag.index]}
+        </div>
+      )}
+    </>
   );
 }
 
@@ -421,8 +491,13 @@ const rulesTimelineAnimation = () => {
     .addLabel("rules");
 
   // Rules: each one surfaces, the previous one dims
+  // Rules: each one surfaces, the previous one dims
   rules.forEach((rule, i) => {
-    rulesTl.from(rule, { y: 60, autoAlpha: 0, filter: "blur(8px)" });
+    rulesTl.from(rule, {
+      y: 60,
+      autoAlpha: 0,
+      ...(ScrollTrigger.isTouch !== 1 && { filter: "blur(8px)" }),
+    });
     if (i > 0) rulesTl.to(rules[i - 1], { opacity: 0.3 }, "<");
   });
 
@@ -499,11 +574,21 @@ function page() {
 
   useGSAP(() => {
     ScrollTrigger.config({ ignoreMobileResize: true });
-    ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.2,
-    });
+    let footer: HTMLElement | null = null;
+    if (ScrollTrigger.isTouch !== 1) {
+      ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: 1.2,
+      });
+    } else {
+      // Mobile (no ScrollSmoother): the global site footer rendered by the
+      // root layout stacks below #smooth-content and adds a screen of empty
+      // dark scroll after #partners-section. On desktop ScrollSmoother's fixed
+      // wrapper pushes it out of view; match that on touch devices.
+      footer = document.querySelector("footer");
+      if (footer) footer.style.display = "none";
+    }
 
     heroTimelineAnimation();
     bubbleTransitionAnimation({ trigger_location: "#about-section" });
@@ -523,6 +608,7 @@ function page() {
     return () => {
       cleanupNav();
       cleanupBg();
+      if (footer) footer.style.display = "";
     };
   });
 
