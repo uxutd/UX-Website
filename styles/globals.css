@@ -477,6 +477,7 @@
   }
 }
 
+
 /* Hide global Footer when a page requests no footer */
 body.no-footer footer {
   display: none !important;
