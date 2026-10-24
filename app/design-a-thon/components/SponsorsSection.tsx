@@ -22,7 +22,7 @@ function SponsorSection() {
         id="sponsor-header"
         className="relative z-10 font-light text-4xl md:text-[48px]"
       >
-        {title} & Partners
+        {title}
       </h1>
 
       <div
@@ -38,6 +38,13 @@ function SponsorSection() {
         ) : (
           <p className="text-2xl md:text-3xl text-center">{company_name}</p>
         )}
+      </div>
+
+      <div className="relative z-10 flex flex-col items-center gap-2 text-center">
+        <p className="text-[10px] uppercase tracking-[0.5em] text-white/40">
+          Presented By
+        </p>
+        <p className="text-xl md:text-2xl">{company_name}</p>
       </div>
     </section>
   );

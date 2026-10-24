@@ -91,6 +91,10 @@ const partners: TPartner[] = [
     company_name: "Adobe",
     company_logo: "adobe_logo.png",
   },
+  {
+    company_name: "Doordash",
+    company_logo: "doordash_logo.png",
+  },
 ];
 
 const partnerData: IPartnerProps = {

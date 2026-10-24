@@ -22,8 +22,6 @@ const src = "/dthon_2026_assets";
 const gradient1 =
   "bg-[linear-gradient(to_bottom,#4FC3D9_0%,#2A9DBF_8%,#1782A3_18%,#0E5A86_30%,#0A3D6B_42%,#072646_52%,#04142B_60%,#020A17_66%,#01050C_72%,#010307_100%)]";
 
-const gradient2 = "bg-[linear-gradient(to_bottom,#1887A6,#106186,#073B67)]";
-
 const cantora = Cantora_One({
   weight: "400",
   subsets: ["latin"],
@@ -358,7 +356,7 @@ const indexAnimation = ({ navItems }: { navItems: string[] }) => {
 const partnersAnimation = () => {
   gsap.to("#partners-track", {
     xPercent: -50,
-    duration: 20,
+    duration: 50,
     ease: "none",
     repeat: -1,
   });
@@ -464,8 +462,40 @@ const scheduleAnimation = () => {
   });
 };
 
+const thanksAnimation = () => {
+  const words = SplitText.create("#thanks-title", { type: "words" }).words;
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#thanks",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    })
+    .from(".thanks-line", {
+      scaleX: 0,
+      transformOrigin: (i) => (i === 0 ? "100% 50%" : "0% 50%"),
+      duration: 0.8,
+      ease: "power2.out",
+    })
+    .from(
+      words,
+      { y: 40, autoAlpha: 0, duration: 0.9, stagger: 0.15, ease: "power3.out" },
+      "<0.2",
+    )
+    .from("#thanks-sub", { autoAlpha: 0, y: 12, duration: 0.6 }, "-=0.4");
+};
+
 function page() {
-  const navItems = ["About", "Schedule", "Rules", "Mentors", "Sponsor"];
+  const navItems = [
+    "About",
+    "Schedule",
+    "Rules",
+    "Mentors",
+    "Sponsor",
+    "Partners",
+  ];
 
   useGSAP(() => {
     ScrollTrigger.config({ ignoreMobileResize: true });
