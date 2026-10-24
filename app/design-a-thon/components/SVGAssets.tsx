@@ -71,16 +71,17 @@ function JellyfishSvg({
     <img
       src={`${src}/jellyfish.svg`}
       alt=""
-      style={{
-        left: x,
-        top: y,
-        width: size,
-        rotate: `${rotate}deg`,
-        filter: color
-          ? `drop-shadow(0 0 8px ${color}) drop-shadow(0 0 24px ${color})`
-          : "drop-shadow(0 0 8px rgba(230, 214, 255, 0.9)) drop-shadow(0 0 24px rgba(188, 221, 225, 0.6))",
-      }}
-      className="jellyfish absolute h-auto pointer-events-none"
+      style={
+        {
+          left: x,
+          top: y,
+          width: size,
+          rotate: `${rotate}deg`,
+          "--glow-1": color ?? "rgba(230, 214, 255, 0.9)",
+          "--glow-2": color ?? "rgba(188, 221, 225, 0.6)",
+        } as React.CSSProperties
+      }
+      className="jellyfish absolute h-auto pointer-events-none [filter:drop-shadow(0_0_6px_var(--glow-1))] md:[filter:drop-shadow(0_0_8px_var(--glow-1))_drop-shadow(0_0_24px_var(--glow-2))]"
     />
   );
 }

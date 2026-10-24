@@ -102,7 +102,7 @@ function AboutCardSection() {
         </h1>
         <div
           id="about-description"
-          className="grid max-w-xs md:max-w-md text-base min-[400px]:text-lg md:text-[24px] text-center text-white"
+          className="grid max-w-[38vmin] leading-tight md:leading-7 text-[length:clamp(11px,3.2vmin,14px)] md:max-w-md md:text-[24px] text-center text-white"
         >
           {aboutData.description.map((paragraph, i) => (
             <p key={i} className="about-paragraph [grid-area:1/1]">
