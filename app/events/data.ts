@@ -25,14 +25,20 @@ type TPreviousEvent = {
 // NOTE: Images need to be around 2000px x 1430px
 
 const current_event: TCurrentEvent = {
-  headline: "UXPERIENCE Design-a-thon",
-  date: "October 24th-25th",
-  time: "7pm - 9pm",
-  location: "ECSS 2.410",
-  img_url: "wob.png",
+  headline: "Portfolio Untold",
+  date: "November 18th",
+  time: "7:00 PM",
+  location: "Room TBD",
+  img_url: "pUntoldPlaceholder.png",
 };
 
 const past_events: TPreviousEvent[] = [
+  {
+    title: "Waves of Becoming",
+    date: "10/24/2026",
+    image: "wobevent1.JPG",
+    alt: "Event 27",
+  }, 
   {
     title: "UX X Nebula",
     date: "10/07/2026",
