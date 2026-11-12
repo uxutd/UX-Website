@@ -28,8 +28,8 @@ const current_event: TCurrentEvent = {
   headline: "Portfolio Untold",
   date: "November 18th",
   time: "7:00 PM",
-  location: "Room TBD",
-  img_url: "pUntoldPlaceholder.png",
+  location: "ECSS 2.410",
+  img_url: "portfolio_untold.png",
 };
 
 const past_events: TPreviousEvent[] = [
@@ -38,13 +38,13 @@ const past_events: TPreviousEvent[] = [
     date: "10/24/2026",
     image: "wobevent1.JPG",
     alt: "Event 27",
-  }, 
+  },
   {
     title: "UX X Nebula",
     date: "10/07/2026",
     image: "uxxnebulalabs.png",
     alt: "Event 26",
-  }, 
+  },
   {
     title: "UX Club Kickoff",
     date: "09/08/2026",
